@@ -10,10 +10,9 @@ import {
 
 import { GridPattern } from '@/components/GridPattern'
 import { Heading } from '@/components/Heading'
-import { ChatBubbleIcon } from '@/components/icons/ChatBubbleIcon'
-import { EnvelopeIcon } from '@/components/icons/EnvelopeIcon'
-import { UserIcon } from '@/components/icons/UserIcon'
-import { UsersIcon } from '@/components/icons/UsersIcon'
+import { RhoLogoIcon } from '@/components/icons/RhoLogoIcon'
+import { CraneLogoIcon } from '@/components/icons/CraneLogoIcon'
+import { KoiLogoIcon } from '@/components/icons/KoiLogoIcon'
 
 interface Resource {
   href: string
@@ -28,11 +27,10 @@ interface Resource {
 
 const resources: Array<Resource> = [
   {
-    href: '/contacts',
-    name: 'Contacts',
-    description:
-      'Learn about the contact model and how to create, retrieve, update, delete, and list contacts.',
-    icon: UserIcon,
+    href: 'https://koi.eco',
+    name: 'Koi',
+    description: 'Use Koi to calculate the impact of new technologies.',
+    icon: KoiLogoIcon,
     pattern: {
       y: 16,
       squares: [
@@ -42,11 +40,10 @@ const resources: Array<Resource> = [
     },
   },
   {
-    href: '/conversations',
-    name: 'Conversations',
-    description:
-      'Learn about the conversation model and how to create, retrieve, update, delete, and list conversations.',
-    icon: ChatBubbleIcon,
+    href: 'https://rhoimpact.com',
+    name: 'Rho Impact',
+    description: 'See more about Rho Impact, the team behind Koi.',
+    icon: RhoLogoIcon,
     pattern: {
       y: -6,
       squares: [
@@ -56,28 +53,17 @@ const resources: Array<Resource> = [
     },
   },
   {
-    href: '/messages',
-    name: 'Messages',
+    href: 'https://cranetool.org',
+    name: 'CRANE Tool',
     description:
-      'Learn about the message model and how to create, retrieve, update, delete, and list messages.',
-    icon: EnvelopeIcon,
+      'Explore CRANE, a free tool for calculating emissions reduction potential.',
+    icon: CraneLogoIcon,
     pattern: {
       y: 32,
       squares: [
         [0, 2],
         [1, 4],
       ],
-    },
-  },
-  {
-    href: '/groups',
-    name: 'Groups',
-    description:
-      'Learn about the group model and how to create, retrieve, update, delete, and list groups.',
-    icon: UsersIcon,
-    pattern: {
-      y: 22,
-      squares: [[0, 1]],
     },
   },
 ]
