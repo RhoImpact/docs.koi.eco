@@ -6,7 +6,9 @@ export const metadata = {
 
 # Quickstart
 
-This guide will get you all set up and ready to use the Koi API. We'll cover how to get started using one of our API clients and how to make your first API request. We'll also look at where to go next to find all the information you need to take full advantage of our powerful REST API. {{ className: 'lead' }}
+This guide will get you all set up and ready to use Koi.
+We'll cover how to get started using the web platform and how to use one of our API clients to make your first API request.
+We'll also look at where to go next to find all the information you need to take full advantage of our powerful REST API. {{ className: 'lead' }}
 
 <Note>
   Before you can make requests to the Koi API, you will need to grab your
@@ -26,7 +28,7 @@ curl --version
 
 ```bash {{ language: 'js' }}
 # Install the Koi JavaScript SDK
-npm install @example/koi-api --save
+npm install @koi/koi-api --save
 ```
 
 ```bash {{ language: 'python' }}
@@ -44,22 +46,24 @@ pip install koi_api
 
 ## Making your first API request
 
-After picking your preferred client, you are ready to make your first call to the Koi API. Below, you can see how to send a GET request to the Conversations endpoint to get a list of all your conversations. In the cURL example, results are limited to ten conversations, the default page length for each client.
+After picking your preferred client, you are ready to make your first call to the Koi API.
+Below, you can see how to send a GET request to the Models endpoint to get a list of all your models.
+In the cURL example, results are limited to ten models, the default page length for each client.
 
-<CodeGroup tag="GET" label="/v1/conversations">
+<CodeGroup tag="GET" label="/v1/models">
 
 ```bash {{ title: 'cURL' }}
-curl -G https://api.koi.eco/v1/conversations \
+curl -G https://api.koi.eco/v1/models \
   -H "Authorization: Bearer {token}" \
   -d limit=10
 ```
 
 ```js
-import ApiClient from '@example/koi-api'
+import ApiClient from '@koi/koi-api'
 
 const client = new ApiClient(token)
 
-await client.conversations.list()
+await client.models.list()
 ```
 
 ```python
@@ -67,21 +71,22 @@ from koi_api import ApiClient
 
 client = ApiClient(token)
 
-client.conversations.list()
+client.models.list()
 ```
 
 </CodeGroup>
 
 <div className="not-prose">
-  <Button href="/conversations" variant="text" arrow="right">
-    <>Read the docs for the Conversations endpoint</>
+  <Button href="/models" variant="text" arrow="right">
+    <>Read the docs for the Models endpoint</>
   </Button>
 </div>
 
 ## What's next?
 
-Great, you're now set up with an API client and have made your first request to the API. Here are a few links that might be handy as you venture further into the Koi API:
+Great, you're now set up with an API client and have made your first request to the API.
+Here are a few links that might be handy as you venture further into the Koi API:
 
-- [Grab your API key from the Koi dashboard](#)
-- [Check out the Conversations endpoint](/conversations)
+- [Grab your API key from the Koi dashboard](https://koi.eco/settings/api)
+- [Check out the Models endpoint](/models)
 - [Learn about the different error messages in Koi](/errors)

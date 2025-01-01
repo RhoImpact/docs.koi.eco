@@ -3,26 +3,20 @@ import { Heading } from '@/components/Heading'
 
 const guides = [
   {
-    href: '/avoided-emissions',
-    name: 'Avoided Emissions',
-    description: 'Learn about avoided emissions and how to calculate them.',
+    href: '/quickstart',
+    name: 'Quickstart',
+    description: 'Get started with Koi in minutes.',
   },
   {
-    href: '/pagination',
-    name: 'Pagination',
-    description: 'Understand how to work with paginated responses.',
+    href: '/key-concepts',
+    name: 'Key Concepts',
+    description: 'Learn about the key concepts behind Koi and impact modeling.',
   },
   {
-    href: '/errors',
-    name: 'Errors',
+    href: '/sdks',
+    name: 'SDKs',
     description:
-      'Read about the different types of errors returned by the API.',
-  },
-  {
-    href: '/webhooks',
-    name: 'Webhooks',
-    description:
-      'Learn how to programmatically configure webhooks for your app.',
+      'Learn how to use Koi with your favorite programming language.',
   },
 ]
 
