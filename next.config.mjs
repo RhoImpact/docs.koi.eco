@@ -22,6 +22,7 @@ const nextConfig = {
   },
   env: {
     NEXT_PUBLIC_KOI_STUDIO_BASE_URL: process.env.NEXT_PUBLIC_KOI_STUDIO_BASE_URL || 'https://koi.eco',
+    SLACK_WEBHOOK_URL: process.env.SLACK_WEBHOOK_URL,
   },
 }
 

@@ -237,9 +237,8 @@ export const navigation: Array<NavGroup> = [
       { title: 'Introduction', href: '/' },
       { title: 'Quickstart', href: '/quickstart' },
       { title: 'Key Concepts', href: '/key-concepts' },
-      { title: 'RESTful API', href: '/rest-api' },
-      { title: 'SDKs', href: '/sdks' },
-      { title: 'Errors', href: '/errors' },
+      { title: 'Tutorial', href: '/tutorial' },
+      { title: 'API Reference', href: '/api' },
     ],
   },
   {

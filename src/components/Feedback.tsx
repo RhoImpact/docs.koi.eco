@@ -4,6 +4,24 @@ import { forwardRef, useState } from 'react'
 import { Transition } from '@headlessui/react'
 import clsx from 'clsx'
 
+async function postToSlack(message: string) {
+  try {
+    const response = await fetch('/.netlify/functions/postToSlack', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ message }),
+    });
+
+    if (!response.ok) {
+      throw new Error('Network response was not ok');
+    }
+
+    console.log('Message posted successfully');
+  } catch (error) {
+    console.error('Error posting to Slack:', error);
+  }
+}
+
 function CheckIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
   return (
     <svg viewBox="0 0 20 20" aria-hidden="true" {...props}>
@@ -84,10 +102,17 @@ export function Feedback() {
   function onSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault()
 
-    // event.nativeEvent.submitter.dataset.response
-    // => "yes" or "no"
+    const submitEvent = event.nativeEvent as SubmitEvent
+    const response = submitEvent.submitter?.dataset.response
+    const currentPage = window.location.href
+    postToSlack(`User Feedback (Helpful?): ${response}, From Page: ${currentPage}`)
 
     setSubmitted(true)
+
+    // Revert to original state after 5 seconds
+    setTimeout(() => {
+      setSubmitted(false)
+    }, 5000)
   }
 
   return (
