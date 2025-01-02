@@ -13,12 +13,12 @@ const guides = [
     description: 'Learn about the key concepts behind Koi and impact modeling.',
   },
   {
-    href: '/rest-api',
+    href: '/api/reference',
     name: 'REST API',
     description: 'Integrate our robust climate forecasting data into your workflows.',
   },
   {
-    href: '/sdks',
+    href: '/api/sdks',
     name: 'SDKs',
     description:
       'Learn how to use Koi with your favorite programming language.',
