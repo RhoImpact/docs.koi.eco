@@ -2,6 +2,10 @@ import { Guides } from '@/components/Guides'
 import { Resources } from '@/components/Resources'
 import { HeroPattern } from '@/components/HeroPattern'
 import { BuiltOnTrust } from '@/components/BuiltOnTrust'
+import koiLogoBanner from '@/images/logos-internal/koi-logo-documentation-banner.svg'
+import Image from 'next/image'
+
+export const baseUrl = process.env.NEXT_PUBLIC_KOI_STUDIO_BASE_URL
 
 export const metadata = {
   title: 'Koi Documentation',
@@ -16,9 +20,29 @@ export const sections = [
 
 <HeroPattern />
 
-# Koi: Decarbonizing Global Industries
+<Image 
+  src={koiLogoBanner} 
+  alt="Koi Logo Banner" 
+  className="w-full"
+/>
 
-Koi represents a paradigm shift in assessing the impact of technologies on net-zero strategies, delivering the missing piece for investors, innovators, and industries to act with confidence.
+# Koi is the world's most powerful forecasting platform to shape impactful climate investments.
+
+Koi represents a paradigm shift in assessing the impact of technologies on net-zero strategies,
+delivering the missing piece for investors, innovators, and industries to act with confidence.
+
+Compared to traditional climate tools, Koi is intuitive, forward-looking, and the first **composable
+impact forecasting platform** that can be used by climate innovators, investors, and industries.
+
+1. Start by exploring <a href={`${baseUrl}`} target="_blank">starter forecasts</a> for technologies and markets that Koi has already analyzed.
+2. Then scale your decision-making with <a href={`${baseUrl}/forecasts`} target="_blank">customizable</a>, [auditable data](/key-concepts#platform-features) to maximize impact and trust.
+
+Koi provides several options to get started:
+
+- <a href={`${baseUrl}`} target="_blank"><strong>Koi Studio</strong></a>: Explore, forecast, and compare climate technologies with ease.
+- [**RESTful API**](/rest-api): Integrate our robust climate forecasting engine into your workflows with a developer-friendly interface.
+- [**Koi SDKs**](/sdks): Build custom applications with deep integration capabilities.
+- [**Documentation**](/quickstart): Comprehensive documentation to guide you every step of the way.
 
 <div className="not-prose mb-16 mt-6 flex gap-3">
   <Button href="/quickstart" arrow="right">

@@ -2,8 +2,8 @@ import Image from 'next/image'
 
 import { Button } from '@/components/Button'
 import { Heading } from '@/components/Heading'
-import logoNode from '@/images/logos/node.svg'
-import logoPython from '@/images/logos/python.svg'
+import logoNode from '@/images/logos-external/node.svg'
+import logoPython from '@/images/logos-external/python.svg'
 
 const libraries = [
   {

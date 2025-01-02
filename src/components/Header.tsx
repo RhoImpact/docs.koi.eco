@@ -13,6 +13,8 @@ import { useMobileNavigationStore } from '@/components/MobileNavigation'
 import { MobileSearch, Search } from '@/components/Search'
 import { ThemeToggle } from '@/components/ThemeToggle'
 
+export const baseUrl = process.env.NEXT_PUBLIC_KOI_STUDIO_BASE_URL
+
 function TopLevelNavItem({
   href,
   children,
@@ -81,7 +83,7 @@ export const Header = forwardRef<
         <nav className="hidden md:block">
           <ul role="list" className="flex items-center gap-8">
             <TopLevelNavItem href="/">Documentation</TopLevelNavItem>
-            <TopLevelNavItem href="https://koi.eco/contact">
+            <TopLevelNavItem href={`${baseUrl}/contact`}>
               Support
             </TopLevelNavItem>
           </ul>
@@ -92,7 +94,7 @@ export const Header = forwardRef<
           <ThemeToggle />
         </div>
         <div className="hidden min-[416px]:contents">
-          <Button href="https://koi.eco/login">Sign in</Button>
+          <Button href={`${baseUrl}/login`} target="_blank">Sign in</Button>
         </div>
       </div>
     </motion.div>

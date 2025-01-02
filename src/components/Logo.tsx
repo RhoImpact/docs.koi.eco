@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import koiLogo from '@/images/logos/koi-logo-transparentbg.svg'
+import koiLogo from '@/images/logos-internal/koi-logo-transparentbg.svg'
 
 export function Logo({
   src = koiLogo,

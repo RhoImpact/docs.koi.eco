@@ -12,6 +12,7 @@ import { useSectionStore } from '@/components/SectionProvider'
 import { Tag } from '@/components/Tag'
 import { remToPx } from '@/lib/remToPx'
 
+export const baseUrl = process.env.NEXT_PUBLIC_KOI_STUDIO_BASE_URL
 interface NavGroup {
   title: string
   links: Array<{
@@ -236,6 +237,7 @@ export const navigation: Array<NavGroup> = [
       { title: 'Introduction', href: '/' },
       { title: 'Quickstart', href: '/quickstart' },
       { title: 'Key Concepts', href: '/key-concepts' },
+      { title: 'RESTful API', href: '/rest-api' },
       { title: 'SDKs', href: '/sdks' },
       { title: 'Errors', href: '/errors' },
     ],
@@ -255,7 +257,7 @@ export function Navigation(props: React.ComponentPropsWithoutRef<'nav'>) {
     <nav {...props}>
       <ul role="list">
         <TopLevelNavItem href="/">Documentation</TopLevelNavItem>
-        <TopLevelNavItem href="https://koi.eco/contact">
+        <TopLevelNavItem href={`${baseUrl}/contact`}>
           Support
         </TopLevelNavItem>
         {navigation.map((group, groupIndex) => (
@@ -267,7 +269,7 @@ export function Navigation(props: React.ComponentPropsWithoutRef<'nav'>) {
         ))}
         <li className="sticky bottom-0 z-10 mt-6 min-[416px]:hidden">
           <Button
-            href="https://koi.eco/login"
+            href={`${baseUrl}/login`}
             variant="filled"
             className="w-full"
           >

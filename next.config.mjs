@@ -1,5 +1,4 @@
 import nextMDX from '@next/mdx'
-
 import { recmaPlugins } from './src/mdx/recma.mjs'
 import { rehypePlugins } from './src/mdx/rehype.mjs'
 import { remarkPlugins } from './src/mdx/remark.mjs'
@@ -20,6 +19,9 @@ const nextConfig = {
     outputFileTracingIncludes: {
       '/**/*': ['./src/app/**/*.mdx'],
     },
+  },
+  env: {
+    NEXT_PUBLIC_KOI_STUDIO_BASE_URL: process.env.NEXT_PUBLIC_KOI_STUDIO_BASE_URL || 'https://koi.eco',
   },
 }
 

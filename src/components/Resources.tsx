@@ -14,6 +14,8 @@ import { RhoLogoIcon } from '@/components/icons/RhoLogoIcon'
 import { CraneLogoIcon } from '@/components/icons/CraneLogoIcon'
 import { KoiLogoIcon } from '@/components/icons/KoiLogoIcon'
 
+export const baseUrl = process.env.NEXT_PUBLIC_KOI_STUDIO_BASE_URL
+
 interface Resource {
   href: string
   name: string
@@ -27,8 +29,8 @@ interface Resource {
 
 const resources: Array<Resource> = [
   {
-    href: 'https://koi.eco',
-    name: 'Koi',
+    href: `${baseUrl}`,
+    name: 'Koi Studio',
     description: 'Use Koi to calculate the impact of new technologies.',
     icon: KoiLogoIcon,
     pattern: {

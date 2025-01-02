@@ -34,7 +34,7 @@ export function BuiltOnTrust() {
       <Heading id="built-on-trust" level={2}>
         Built on Trust
       </Heading>
-      <p className="mt-6 text-gray-300">
+      <p className="mt-6 text-gray-700 dark:text-gray-300">
         Since 2018, the Rho Impact team has been actively contributing to and
         developing some of the world&apos;s most trusted data, tools, and
         methodologies for calculating the potential impact of new climate
@@ -49,10 +49,10 @@ export function BuiltOnTrust() {
             href={stat.link}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex flex-col bg-white/5 p-8 transition hover:bg-white/10"
+            className="flex flex-col bg-gray-200 p-8 transition hover:bg-gray-200 dark:bg-gray-800/5 dark:hover:bg-gray-800/10"
           >
-            <dt className="mt-4 text-sm/6 text-gray-300">{stat.description}</dt>
-            <dd className="order-first text-3xl font-semibold tracking-tight text-white">
+            <dt className="mt-4 text-sm/6 text-gray-700 dark:text-gray-300">{stat.description}</dt>
+            <dd className="order-first text-3xl font-semibold tracking-tight text-black dark:text-white">
               {stat.topline}
             </dd>
           </a>
