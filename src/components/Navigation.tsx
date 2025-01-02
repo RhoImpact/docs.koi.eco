@@ -237,8 +237,22 @@ export const navigation: Array<NavGroup> = [
       { title: 'Introduction', href: '/' },
       { title: 'Quickstart', href: '/quickstart' },
       { title: 'Key Concepts', href: '/key-concepts' },
-      { title: 'Tutorial', href: '/tutorial' },
-      { title: 'API Reference', href: '/api' },
+    ],
+  },
+  {
+    title: 'Tutorial',
+    links: [
+      { title: 'Forward', href: '/tutorial' },
+      { title: 'Chapter 0', href: '/tutorial/chapter-0' },
+    ],
+  },
+  {
+    title: 'API',
+    links: [
+      { title: 'API Reference', href: '/api/reference' },
+      { title: 'SDKs', href: '/api/sdks' },
+      { title: 'API Endpoints', href: '/api/endpoints' },
+      { title: 'Errors', href: '/api/errors' },
     ],
   },
   {

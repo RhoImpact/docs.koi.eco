@@ -1,20 +1,27 @@
 export const metadata = {
   title: 'RESTful API',
   description:
-    'Integrate our robust climate forecasting engine into your workflows with a developer-friendly interface.',
+    'Integrate our robust climate forecasting data and engine into your workflows with a developer-friendly interface.',
 }
 
+export const baseUrl = process.env.NEXT_PUBLIC_KOI_STUDIO_BASE_URL
 
-Integrate our robust climate forecasting engine into your workflows with a developer-friendly interface.
+# HTTP API Reference
+Integrate our robust climate forecasting data and engine into your workflows with a developer-friendly interface.
+
+<Warning>
+  The Koi API is currently in private beta. Please contact us if you are interested in using it.
+</Warning>
 
 <Note>
   Before you can make requests to the Koi API, you will need to grab your
-  API key from your dashboard. You find it under [Settings &raquo; API](#).
+  API key from your dashboard. You find it in <a href={`${baseUrl}`} target="_blank">Your Account Settings</a>
 </Note>
 
 ## Choose your client
 
-Before making your first API request, you need to pick which API client you will use. In addition to good ol' cURL HTTP requests, Koi offers clients for JavaScript, Python, and PHP. In the following example, you can see how to install each client.
+Before making your first API request, you need to pick which API client you will use. In addition to good ol' cURL HTTP requests, Koi offers clients for JavaScript and Python.
+In the following example, you can see how to install each client.
 
 <CodeGroup>
 
@@ -24,19 +31,19 @@ curl --version
 ```
 
 ```bash {{ language: 'js' }}
-# Install the Koi JavaScript SDK
+# COMING SOON Install the Koi JavaScript SDK
 npm install @koi/koi-api --save
 ```
 
 ```bash {{ language: 'python' }}
-# Install the Koi Python SDK
+# COMING SOON Install the Koi Python SDK
 pip install koi_api
 ```
 
 </CodeGroup>
 
 <div className="not-prose">
-  <Button href="/sdks" variant="text" arrow="right">
+  <Button href="/api/sdks" variant="text" arrow="right">
     <>Check out our list of first-party SDKs</>
   </Button>
 </div>
@@ -56,17 +63,17 @@ curl -G https://api.koi.eco/v1/models \
 ```
 
 ```js
-import ApiClient from '@koi/koi-api'
+import KoiApiClient from '@koi/koi-api'
 
-const client = new ApiClient(token)
+const client = new KoiApiClient(token)
 
 await client.models.list()
 ```
 
 ```python
-from koi_api import ApiClient
+from koi_api import KoiApiClient
 
-client = ApiClient(token)
+client = KoiApiClient(token)
 
 client.models.list()
 ```
@@ -85,5 +92,5 @@ Great, you're now set up with an API client and have made your first request to 
 Here are a few links that might be handy as you venture further into the Koi API:
 
 - [Grab your API key from the Koi dashboard](https://koi.eco/settings/api)
-- [Check out the Models endpoint](/models)
-- [Learn about the different error messages in Koi](/errors)
+- [Check out the available endpoints](/api/endpoints)
+- [Learn about the different error messages in Koi](/api/errors)
