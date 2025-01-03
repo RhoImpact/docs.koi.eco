@@ -6,10 +6,12 @@ import clsx from 'clsx'
 
 async function postToSlack(message: string) {
   try {
+    let userUUID = localStorage.getItem("userUUID") || 'anonymous';
+    const messageWithUUID = `${message} - User UUID: ${userUUID}`;
     const response = await fetch('/.netlify/functions/postToSlack', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ message }),
+      body: JSON.stringify({ message: messageWithUUID }),
     });
 
     if (!response.ok) {
