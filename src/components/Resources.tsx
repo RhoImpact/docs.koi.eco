@@ -145,7 +145,7 @@ function Resource({ resource }: { resource: Resource }) {
       <div className="relative rounded-2xl px-4 pb-4 pt-16">
         <ResourceIcon icon={resource.icon} />
         <h3 className="mt-4 text-sm font-semibold leading-7 text-zinc-900 dark:text-white">
-          <Link href={resource.href}>
+          <Link href={resource.href} target="_blank" rel="noopener noreferrer">
             <span className="absolute inset-0 rounded-2xl" />
             {resource.name}
           </Link>

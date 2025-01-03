@@ -3,22 +3,22 @@ import { Heading } from '@/components/Heading'
 
 const guides = [
   {
-    href: '/quickstart',
+    href: '/docs/quickstart',
     name: 'Quickstart',
     description: 'Get started with Koi in minutes.',
   },
   {
-    href: '/key-concepts',
+    href: '/docs/key-concepts',
     name: 'Key Concepts',
     description: 'Learn about the key concepts behind Koi and impact modeling.',
   },
   {
-    href: '/api/reference',
+    href: '/docs/api/reference',
     name: 'REST API',
     description: 'Integrate our robust climate forecasting data into your workflows.',
   },
   {
-    href: '/api/sdks',
+    href: '/docs/api/sdks',
     name: 'SDKs',
     description:
       'Learn how to use Koi with your favorite programming language.',
