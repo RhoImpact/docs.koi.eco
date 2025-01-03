@@ -26,6 +26,12 @@ const references = [
     topline: 'ECO',
     link: 'https://eco.rhoimpact.com/',
   },
+  {
+    description:
+      "Technical and Content Subject Matter Experts for CFI's ESG Cerfification Program",
+    topline: 'CFI',
+    link: 'https://corporatefinanceinstitute.com/course/carbon-market-fundamentals/',
+  },
 ]
 
 export function BuiltOnTrust() {
@@ -42,16 +48,18 @@ export function BuiltOnTrust() {
         to evolve as this important field continues to improve.
       </p>
 
-      <dl className="mt-6 grid grid-cols-1 gap-0.5 overflow-hidden rounded-xl text-center sm:grid-cols-2 lg:grid-cols-4">
+      <dl className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
         {references.map((stat, idx) => (
           <a
             key={idx}
             href={stat.link}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex flex-col bg-gray-200 p-8 transition hover:bg-gray-200 dark:bg-gray-800/5 dark:hover:bg-gray-800/10"
+            className="flex flex-col rounded-lg bg-gray-200 p-8 transition hover:bg-gray-300 dark:bg-zinc-800/70 dark:hover:bg-zinc-800"
           >
-            <dt className="mt-4 text-sm/6 text-gray-700 dark:text-gray-300">{stat.description}</dt>
+            <dt className="mt-4 text-sm/6 text-gray-700 dark:text-gray-300">
+              {stat.description}
+            </dt>
             <dd className="order-first text-3xl font-semibold tracking-tight text-black dark:text-white">
               {stat.topline}
             </dd>
