@@ -32,6 +32,12 @@ const references = [
     topline: 'CFI',
     link: 'https://corporatefinanceinstitute.com/course/carbon-market-fundamentals/',
   },
+  {
+    description:
+      'Scientific Advisory Committee member for AEFDi global avoided emissions factors database.',
+    topline: 'AEFDi',
+    link: 'https://www.mirova.com/sites/default/files/2023-05/PR_CEI-global-avoidance-factor-database_EN.pdf',
+  },
 ]
 
 export function BuiltOnTrust() {
