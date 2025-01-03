@@ -48,6 +48,7 @@
     "typescript": "^5.3.3",
     "unist-util-filter": "^5.0.1",
     "unist-util-visit": "^5.0.0",
+    "uuid": "^11.0.3",
     "zustand": "^4.3.2"
   },
   "devDependencies": {

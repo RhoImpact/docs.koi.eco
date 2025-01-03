@@ -3,12 +3,14 @@
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { motion } from 'framer-motion'
+import { useEffect } from 'react'
 
 import { Footer } from '@/components/Footer'
 import { Header } from '@/components/Header'
 import { Logo } from '@/components/Logo'
 import { Navigation } from '@/components/Navigation'
 import { type Section, SectionProvider } from '@/components/SectionProvider'
+import sendToMixpanel from '@/lib/sendToMixpanel'
 
 export function Layout({
   children,
@@ -18,6 +20,11 @@ export function Layout({
   allSections: Record<string, Array<Section>>
 }) {
   let pathname = usePathname()
+
+  useEffect(() => {
+    // Track page view in Mixpanel
+    sendToMixpanel('Page Viewed', { page: pathname })
+  }, [pathname])
 
   return (
     <SectionProvider sections={allSections[pathname] ?? []}>
