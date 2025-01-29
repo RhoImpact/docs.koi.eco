@@ -13,25 +13,11 @@ const PostHogContext = createContext<{
 export const usePostHog = () => useContext(PostHogContext)
 
 function ThemeWatcher() {
-  let { resolvedTheme, setTheme } = useTheme()
+  let { setTheme } = useTheme()
 
   useEffect(() => {
-    let media = window.matchMedia('(prefers-color-scheme: dark)')
-
-    function onMediaChange() {
-      let systemTheme = media.matches ? 'dark' : 'light'
-      if (resolvedTheme === systemTheme) {
-        setTheme('system')
-      }
-    }
-
-    onMediaChange()
-    media.addEventListener('change', onMediaChange)
-
-    return () => {
-      media.removeEventListener('change', onMediaChange)
-    }
-  }, [resolvedTheme, setTheme])
+    setTheme('dark') // Set the theme to dark by default
+  }, [setTheme])
 
   return null
 }
