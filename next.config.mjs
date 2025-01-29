@@ -21,9 +21,11 @@ const nextConfig = {
     },
   },
   env: {
-    NEXT_PUBLIC_KOI_STUDIO_BASE_URL: process.env.NEXT_PUBLIC_KOI_STUDIO_BASE_URL || 'https://koi.eco',
+    NEXT_PUBLIC_KOI_STUDIO_BASE_URL:
+      process.env.NEXT_PUBLIC_KOI_STUDIO_BASE_URL || 'https://koi.eco',
+    NEXT_PUBLIC_POSTHOG_HOST: process.env.NEXT_PUBLIC_POSTHOG_HOST,
+    NEXT_PUBLIC_POSTHOG_KEY: process.env.NEXT_PUBLIC_POSTHOG_KEY,
     SLACK_WEBHOOK_URL: process.env.SLACK_WEBHOOK_URL,
-    MIXPANEL_TOKEN: process.env.MIXPANEL_TOKEN,
   },
 }
 
