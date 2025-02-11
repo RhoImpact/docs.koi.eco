@@ -28,7 +28,7 @@ const references = [
   },
   {
     description:
-      "Technical and Content Subject Matter Experts for CFI's ESG Cerfification Program",
+      "Technical and Content Subject Matter Experts for CFI's ESG Certification Program",
     topline: 'CFI',
     link: 'https://corporatefinanceinstitute.com/course/carbon-market-fundamentals/',
   },
