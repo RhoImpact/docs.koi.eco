@@ -1,6 +1,6 @@
 import { Button } from '@/components/Button'
 import { HeroPattern } from '@/components/HeroPattern'
-
+import { KoiAsciiBraille } from '@/components/KoiAscii'
 export default function NotFound() {
   return (
     <>
@@ -10,10 +10,11 @@ export default function NotFound() {
           404
         </p>
         <h1 className="mt-2 text-2xl font-bold text-zinc-900 dark:text-white">
-          Page not found
+          There&apos;s a fish out of water!
         </h1>
-        <p className="mt-2 text-base text-zinc-600 dark:text-zinc-400">
-          Sorry, we couldn’t find the page you’re looking for.
+        <KoiAsciiBraille />
+        <p className="mt-2 text-sm text-zinc-600 dark:text-zinc-400">
+          If you believe this is an error, please <a href="mailto:support@koi.eco" className="text-blue-500 hover:underline">contact us</a>.
         </p>
         <Button href="/" arrow="right" className="mt-8">
           Back to docs
