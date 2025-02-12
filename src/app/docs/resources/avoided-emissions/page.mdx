@@ -1,0 +1,119 @@
+import fullAnimation from './images/AE_animation_full_medium.gif'
+import marketAnimation from './images/AE_animation_market_medium.gif'
+import ghgAnimation from './images/AE_animation_GHG_medium.gif'
+import factorsAnimation from './images/AE_animation_factors_medium.gif'
+import baselineMarketAnimation from './images/AE_animation_baseline_market_medium.gif'
+import baselineGHGAnimation from './images/AE_animation_baseline_GHG_medium.gif'
+import Image from 'next/image'
+
+# Factors that Determine Avoided Emissions
+
+Last updated: February 13, 2025
+
+## Visualizing avoided emissions
+
+The first step in forecasting avoided emissions is to estimate the total emissions for a market served by
+a conventional technology. The total baseline emissions can be calculated as the GHG emissions intensity
+of the conventional technology (for example, in units of kg CO2e/kg Li) multiplied by the total market
+size (annual Li production in kg). We can visualize this as the area of the grey square with a height
+equal to the GHG emissions intensity and the width equal to the market size:
+
+<div className="max-w-[50rem]">
+<Image
+src={baselineGHGAnimation}
+alt="Baseline emissions visualization"
+className="w-2/3 border-2 border-gray-600 p-2 rounded select-none mx-auto"
+/>
+</div>
+
+When a **climate solution technology** with a lower GHG emissions intensity is introduced into the market
+and displaces the conventional technology, the area of the new shape represents the total emissions of
+the market with the solution. The avoided emissions is represented by the area that is missing when
+compared to the baseline:
+
+<div className="max-w-[50rem]">
+<Image
+src={fullAnimation}
+alt="Baseline emissions visualization"
+className="w-2/3 border-2 border-gray-600 p-2 rounded select-none mx-auto"
+/>
+</div>
+
+## Factors that determine avoided emissions
+
+We can use this visualization to understand the key factors that determine the amount of avoided
+emissions that can be achieved by a climate solution technology. The avoided emissions can be calculated
+as the product of two parameters: the **per unit impact** and the **market uptake** of the solution
+technology:
+
+<div className="max-w-[50rem]">
+<Image
+src={factorsAnimation}
+alt="Baseline emissions visualization"
+className="w-2/3 border-2 border-gray-600 p-2 rounded select-none mx-auto"
+/>
+</div>
+
+The per unit impact is the difference between the solution technology GHG emissions intensity and the
+conventional technology GHG emissions intensity; this is represented by the difference in height between
+the grey (conventional technology) and green (solution technology) rectangles. The market uptake is the
+amount of the market size that is displaced by the solution technology, and is represented by the width
+of the green (solution technology) rectangle.
+
+When the GHG emissions intensity of the solution technology is lower, the per unit impact
+is higher, and more emissions are avoided by the solution technology:
+
+<div className="max-w-[50rem]">
+<Image
+src={ghgAnimation}
+alt="Baseline emissions visualization"
+className="w-2/3 border-2 border-gray-600 p-2 rounded select-none mx-auto"
+/>
+</div>
+
+In Koi Studio, you can see a detailed breakdown of this parameter in the Per Unit Impact
+tab, including the value chain associated with the solution technology and the conventional technology.
+
+Likewise, increasing the market uptake of a climate solution technology increases avoided emissions:
+
+<div className="max-w-[50rem]">
+<Image
+src={marketAnimation}
+alt="Baseline emissions visualization"
+className="w-2/3 border-2 border-gray-600 p-2 rounded select-none mx-auto"
+/>
+</div>
+
+In Koi you can see a detailed breakdown of the market capture in the Projected Market Uptake tab.
+
+There are two more factors that determine the amount of avoided emissions, and they both have to do with
+the baseline. If the GHG emissions intensity of the baseline is lower, then the calculated avoided
+emissions will be lower (and vice versa):
+
+<div className="max-w-[50rem]">
+<Image
+src={baselineGHGAnimation}
+alt="Baseline emissions visualization"
+className="w-2/3 border-2 border-gray-600 p-2 rounded select-none mx-auto"
+/>
+</div>
+
+If the baseline market size is lower, and we assume a similar percentage of the market is captured by the solution technology, then the avoided emissions will be lower (and vice versa):
+
+<div className="max-w-[50rem]">
+<Image
+src={baselineMarketAnimation}
+alt="Baseline emissions visualization"
+className="w-2/3 border-2 border-gray-600 p-2 rounded select-none mx-auto"
+/>
+</div>
+
+## Takeaway
+
+There are four main approaches to maximise the avoided emissions due to a climate solution technology:
+
+|  | By focusing on the  climate solution technology… | By focusing on the  baseline… |
+| :---- | :---- | :---- |
+| Increase the **per unit impact** of a solution technology: | Decrease the GHG emissions intensity of the solution technology. For example, this could be achieved by increasing the energy efficiency of the solution technology. | Introduce the solution technology to a baseline market where the conventional technology has a high GHG emissions intensity, therefore increasing the Per Unit Impact. For example, this could be achieved by focusing efforts on applications of the solution technology in sectors with high GHG emissions intensity |
+| Increase the **market uptake** of a solution technology: | Increase the market capture of the solution technology. The more the solution technology is adopted, the greater the avoided emissions.  | Introduce the solution technology to a large baseline market. A very niche market will most likely not have high emissions to begin with, and the solution technology will be less impactful.  |
+
