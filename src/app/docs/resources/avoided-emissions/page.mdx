@@ -6,6 +6,12 @@ import baselineMarketAnimation from './images/AE_animation_baseline_market_mediu
 import baselineGHGAnimation from './images/AE_animation_baseline_GHG_medium.gif'
 import Image from 'next/image'
 
+export const metadata = {
+  title: 'Factors that Determine Avoided Emissions',
+  description:
+    'Learn about the factors that determine the amount of avoided emissions can be attributed to a climate solution technology.',
+}
+
 # Factors that Determine Avoided Emissions
 
 Last updated: February 13, 2025
@@ -18,11 +24,11 @@ of the conventional technology (for example, in units of kg CO2e/kg Li) multipli
 size (annual Li production in kg). We can visualize this as the area of the grey square with a height
 equal to the GHG emissions intensity and the width equal to the market size:
 
-<div className="max-w-[50rem]">
+<div className="koi-docs-image-container">
 <Image
 src={baselineGHGAnimation}
 alt="Baseline emissions visualization"
-className="w-2/3 border-2 border-gray-600 p-2 rounded select-none mx-auto"
+className="koi-docs-image"
 />
 </div>
 
@@ -31,11 +37,11 @@ and displaces the conventional technology, the area of the new shape represents 
 the market with the solution. The avoided emissions is represented by the area that is missing when
 compared to the baseline:
 
-<div className="max-w-[50rem]">
+<div className="koi-docs-image-container">
 <Image
 src={fullAnimation}
 alt="Baseline emissions visualization"
-className="w-2/3 border-2 border-gray-600 p-2 rounded select-none mx-auto"
+className="koi-docs-image"
 />
 </div>
 
@@ -46,11 +52,11 @@ emissions that can be achieved by a climate solution technology. The avoided emi
 as the product of two parameters: the **per unit impact** and the **market uptake** of the solution
 technology:
 
-<div className="max-w-[50rem]">
+<div className="koi-docs-image-container">
 <Image
 src={factorsAnimation}
 alt="Baseline emissions visualization"
-className="w-2/3 border-2 border-gray-600 p-2 rounded select-none mx-auto"
+className="koi-docs-image"
 />
 </div>
 
@@ -63,11 +69,11 @@ of the green (solution technology) rectangle.
 When the GHG emissions intensity of the solution technology is lower, the per unit impact
 is higher, and more emissions are avoided by the solution technology:
 
-<div className="max-w-[50rem]">
+<div className="koi-docs-image-container">
 <Image
 src={ghgAnimation}
 alt="Baseline emissions visualization"
-className="w-2/3 border-2 border-gray-600 p-2 rounded select-none mx-auto"
+className="koi-docs-image"
 />
 </div>
 
@@ -76,11 +82,11 @@ tab, including the value chain associated with the solution technology and the c
 
 Likewise, increasing the market uptake of a climate solution technology increases avoided emissions:
 
-<div className="max-w-[50rem]">
+<div className="koi-docs-image-container">
 <Image
 src={marketAnimation}
 alt="Baseline emissions visualization"
-className="w-2/3 border-2 border-gray-600 p-2 rounded select-none mx-auto"
+className="koi-docs-image"
 />
 </div>
 
@@ -90,21 +96,21 @@ There are two more factors that determine the amount of avoided emissions, and t
 the baseline. If the GHG emissions intensity of the baseline is lower, then the calculated avoided
 emissions will be lower (and vice versa):
 
-<div className="max-w-[50rem]">
+<div className="koi-docs-image-container">
 <Image
 src={baselineGHGAnimation}
 alt="Baseline emissions visualization"
-className="w-2/3 border-2 border-gray-600 p-2 rounded select-none mx-auto"
+className="koi-docs-image"
 />
 </div>
 
 If the baseline market size is lower, and we assume a similar percentage of the market is captured by the solution technology, then the avoided emissions will be lower (and vice versa):
 
-<div className="max-w-[50rem]">
+<div className="koi-docs-image-container">
 <Image
 src={baselineMarketAnimation}
 alt="Baseline emissions visualization"
-className="w-2/3 border-2 border-gray-600 p-2 rounded select-none mx-auto"
+className="koi-docs-image"
 />
 </div>
 

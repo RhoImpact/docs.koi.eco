@@ -1,10 +1,234 @@
+import image1 from './images/image1.png'
+import image2 from './images/image2.png'
+import image3 from './images/image3.png'
+import image4 from './images/image4.png'
+import image5 from './images/image5.png'
+import image6 from './images/image6.png'
+import image7 from './images/image7.png'
+import image8 from './images/image8.png'
+import image9 from './images/image9.png'
+import image10 from './images/image10.png'
+import image11 from './images/image11.png'
+import image12 from './images/image12.png'
+import image13 from './images/image13.png'
+import Image from 'next/image'
+
 export const metadata = {
   title: 'Quickstart',
   description:
-    'This guide will get you all set up and ready to use the Koi API. We’ll cover how to get started an API client and how to make your first API request.',
+    'This guide will get you all set up and ready to use the Koi API. ' +
+    'We\'ll cover how to get started an API client and how to make your first API request.',
 }
 export const baseUrl = process.env.NEXT_PUBLIC_KOI_STUDIO_BASE_URL
 
 # Quickstart
 
-Coming soon!
+Last updated: February 13, 2025
+
+## Introduction
+
+Get started with the world's largest database and most powerful tools for impact
+forecasting. This quickstart guide will walk you through exploring Koi's climate
+solution data, building forecasts, and organizing them into collections—whether for
+product types, markets, investment portfolios, or even portfolios of portfolios.
+Let's dive in.
+
+1. **Set Up a Collection**: Koi Collections act as folders for organizing and grouping different analyses.
+   Use the toolbar to navigate to **Collections > Create New Collection** with a name and description.
+   Collections **may represent any grouping of interest** to the Koi user, such as technology type, market
+   application, or investment portfolio.
+
+<div className="koi-docs-image-container">
+<Image
+src={image1}
+alt="Koi Quickstart Image 1"
+className="koi-docs-image"
+/>
+Example collection created to explore animal-free meats.
+</div>
+
+2. **Explore Koi's Data:** Navigate to the Search section and explore Koi's datasets.
+Try searching **keywords** and **even URLs** of company websites. Notice the
+tags under each climate solution name that indicate the availability of associated data.
+
+<div className="koi-docs-image-container">
+<Image
+src={image2}
+alt="Koi Quickstart Image 2"
+className="koi-docs-image"
+/>
+Example search results for climate solutions that have associated baseline GHG intensity data.
+</div>
+
+<br />
+
+<div className="koi-docs-image-container">
+<Image
+src={image3}
+alt="Koi Quickstart Image 3"
+className="koi-docs-image"
+/>
+Example search results that have additional data available including solution GHG intensity and market size.
+</div>
+
+3. **Save Climate Solutions**: Begin loading and visualizing climate solution pages.
+
+   <Tip>
+   You can export data individually from charts or in bulk from the datasheet tab.
+   </Tip>
+
+   When you identify a climate solution you want to return to later, use the right hand
+   buttons to save it either as a **Bookmark** or as an item within your **Collection**.
+   You may adjust parameters such as the **timespan** and **functional unit** before saving,
+   and your selections will be retained when accessed later.
+
+   <Info>
+      We recommend adding a climate solution to a **Collection** when the data have been reviewed
+      by the user and are fairly complete for their use case.
+   </Info>
+
+   <Info>
+      **Bookmarks** are intended for datasets of interest but those that need further user review
+      or alterations. For example, for data gap supplementation, refinement, or integration
+      into a different model.
+   </Info>
+
+<div className="koi-docs-image-container">
+<Image
+src={image4}
+alt="Koi Quickstart Image 4"
+className="koi-docs-image"
+/>
+Climate solution being added to a collection via the "**Add to Collection**" button (upper right corner).
+</div>
+
+<br />
+
+<div className="koi-docs-image-container">
+<Image
+src={image5}
+alt="Koi Quickstart Image 5"
+className="koi-docs-image"
+/>
+Climate solution being saved as a bookmark within a new folder via the "**Bookmark**"
+button (upper right corner)
+</div>
+
+4. **Explore your collection**: Access a summary of your collection models and view the
+aggregated data by navigating through the various collection tabs, starting with the
+**Executive Summary**. Climate solutions within a collection can be added, removed or modified.
+
+<div className="koi-docs-image-container">
+<Image
+src={image6}
+alt="Koi Quickstart Image 6"
+className="koi-docs-image"
+/>
+Executive summary view of a collection.
+</div>
+
+5. **Modify models and refine your collection**: With Koi, the pond is yours to navigate—whether
+you're taking a casual swim with the pre-built models or diving deep to refine every detail.
+
+   **Customize climate solutions to develop complete models that appropriately represent your system**.
+   The level of effort you invest will determine how tailored your results are to your specific needs.
+   Some find that the complete pre-built models are enough for their purposes, while others choose
+   to put in more work to fine-tune and customize their models.
+
+   <Tip>
+      Use Koi's editing capabilities to make minor or major changes, mix and match Koi datasets,
+      supplement with your own literature findings, and adjust market sizes to reflect the
+      desired type of analysis.
+   </Tip>
+
+   Below are some example workflows for model refinement using Koi data.
+   <Warning>
+      Note that all custom models are automatically created as **clones of the original Koi model**
+      and are saved to a user's **private Forecasts**. A cloned model will need to be
+      re-added to a collection, and the Koi original removed.
+   </Warning>
+
+## Workflow 1
+
+Include additional GHG intensities for comparison in a climate solution model.
+
+
+<div className="koi-docs-image-container">
+<Image
+src={image7}
+alt="Koi Quickstart Image 7"
+className="koi-docs-image"
+/>
+Download CSV baseline data from one climate solution.
+</div>
+
+   Use the *Customize Forecast* feature to clone and edit an existing climate solution model. The custom model will inherit all of the existing model data and the user will supplement with the additional data scraped from the above CSV.
+
+{/* <div className="koi-docs-image-container">
+<Image
+src={image8}
+alt="Koi Quickstart Image 8"
+className="koi-docs-image"
+/>
+</div> */}
+
+<Tip>
+   Add the new solution GHG intensity from the CSV data in the previous step.
+</Tip>
+
+<div className="koi-docs-image-container">
+<Image
+src={image9}
+alt="Koi Quickstart Image 9"
+className="koi-docs-image"
+/>
+{/* <Image
+src={image10}
+alt="Koi Quickstart Image 10"
+className="koi-docs-image"
+/> */}
+Create a new **Solution Scenario** for the GHG intensity studied in the separate dataset.
+</div>
+
+## Workflow 2
+
+How to fill in a **data gap** to enable collection-level viewing of model results.
+
+<div className="koi-docs-image-container">
+<Image
+src={image11}
+alt="Koi Quickstart Image 11"
+className="koi-docs-image"
+/>
+Collection shows that one of the climate solutions (here it is Cultured Meat Production)
+can't compute the total avoided emissions because the market data are missing.
+</div>
+
+<br />
+
+<div className="koi-docs-image-container">
+<Image
+src={image12}
+alt="Koi Quickstart Image 12"
+className="koi-docs-image"
+/>
+Use the **Custom Forecast** functionality to add market data from the market data in a
+complete model (Fermentation-Based Protein-Rich Meat Alternatives here). Select the blue
+button to create a new available market.
+</div>
+
+<br />
+<div className="koi-docs-image-container">
+<Image
+src={image13}
+alt="Koi Quickstart Image 13"
+className="koi-docs-image"
+/>
+In this example, bovine meat market data is added to the *Cultured Meat Production* model
+from the *Fermentation-Based Protein-Rich Meat Alternatives* model.
+</div>
+
+<Tip>
+Enter data obtained from other Koi models or anywhere else that has useful information
+related to the the technology of interest.
+</Tip>
