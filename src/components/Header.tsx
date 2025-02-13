@@ -56,7 +56,7 @@ export const Header = forwardRef<
           'backdrop-blur-sm lg:left-72 xl:left-80 dark:backdrop-blur',
         isInsideMobileNavigation
           ? 'bg-white dark:bg-zinc-900'
-          : 'bg-white/[var(--bg-opacity-light)] dark:bg-zinc-900/[var(--bg-opacity-dark)]',
+          : 'bg-white/[var(--bg-opacity-light)] dark:bg-zinc-900/[var(--bg-opacity-dark)]'
       )}
       style={
         {
@@ -69,7 +69,7 @@ export const Header = forwardRef<
         className={clsx(
           'absolute inset-x-0 top-full h-px transition',
           (isInsideMobileNavigation || !mobileNavIsOpen) &&
-            'bg-zinc-900/7.5 dark:bg-white/7.5',
+            'bg-zinc-900/7.5 dark:bg-white/7.5'
         )}
       />
       <Search />
@@ -82,6 +82,7 @@ export const Header = forwardRef<
       <div className="flex items-center gap-5">
         <nav className="hidden md:block">
           <ul role="list" className="flex items-center gap-8">
+            <TopLevelNavItem href={`${baseUrl}`}>Koi</TopLevelNavItem>
             <TopLevelNavItem href="/">Documentation</TopLevelNavItem>
             <TopLevelNavItem href={`${baseUrl}/contact`}>
               Support
@@ -94,7 +95,9 @@ export const Header = forwardRef<
           <ThemeToggle />
         </div>
         <div className="hidden min-[416px]:contents">
-          <Button href={`${baseUrl}/login`} target="_blank">Sign in</Button>
+          <Button href={`${baseUrl}/login`} target="_blank">
+            Sign in
+          </Button>
         </div>
       </div>
     </motion.div>

@@ -262,7 +262,7 @@ export const navigation: Array<NavGroup> = [
     ],
   },
   {
-    title: 'Resources',
+    title: 'Useful Links',
     links: [
       { title: 'Koi', href: 'https://koi.eco' },
       { title: 'Rho Impact', href: 'https://rhoimpact.com' },
@@ -275,7 +275,8 @@ export function Navigation(props: React.ComponentPropsWithoutRef<'nav'>) {
   return (
     <nav {...props}>
       <ul role="list">
-        <TopLevelNavItem href="/">Documentation</TopLevelNavItem>
+        <TopLevelNavItem href="/">Documentation Home</TopLevelNavItem>
+        <TopLevelNavItem href={`${baseUrl}`}>Go to Koi</TopLevelNavItem>
         <TopLevelNavItem href={`${baseUrl}/contact`}>Support</TopLevelNavItem>
         {navigation.map((group, groupIndex) => (
           <NavigationGroup
