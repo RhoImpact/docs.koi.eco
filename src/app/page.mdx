@@ -5,6 +5,7 @@ import { BuiltOnTrust } from '@/components/BuiltOnTrust'
 import { Callouts } from '@/components/Callouts'
 import koiLogoBanner from '@/images/logos-internal/koi-logo-documentation-banner.svg'
 import Image from 'next/image'
+import packageJson from '../../package.json'
 
 export const baseUrl = process.env.NEXT_PUBLIC_KOI_STUDIO_BASE_URL
 
@@ -29,6 +30,8 @@ export const sections = [
 />
 
 # Koi unlocks climate investing.
+
+Last updated: {packageJson.lastUpdated} &bull; Docs Version: {packageJson.version}
 
 Koi represents a paradigm shift in assessing the impact of technologies on net-zero strategies,
 delivering the missing piece for investors, innovators, and industries to act with confidence.
