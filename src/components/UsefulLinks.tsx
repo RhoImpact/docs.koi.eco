@@ -16,7 +16,7 @@ import { KoiLogoIcon } from '@/components/icons/KoiLogoIcon'
 
 export const baseUrl = process.env.NEXT_PUBLIC_KOI_STUDIO_BASE_URL
 
-interface Resource {
+interface UsefulLink {
   href: string
   name: string
   description: string
@@ -27,7 +27,7 @@ interface Resource {
   >
 }
 
-const resources: Array<Resource> = [
+const usefulLinks: Array<UsefulLink> = [
   {
     href: `${baseUrl}`,
     name: 'Koi Studio',
@@ -70,7 +70,7 @@ const resources: Array<Resource> = [
   },
 ]
 
-function ResourceIcon({ icon: Icon }: { icon: Resource['icon'] }) {
+function UsefulLinkIcon({ icon: Icon }: { icon: UsefulLink['icon'] }) {
   return (
     <div className="flex h-7 w-7 items-center justify-center rounded-full bg-zinc-900/5 ring-1 ring-zinc-900/25 backdrop-blur-[2px] transition duration-300 group-hover:bg-white/50 group-hover:ring-zinc-900/25 dark:bg-white/7.5 dark:ring-white/15 dark:group-hover:bg-cyan-300/10 dark:group-hover:ring-cyan-400">
       <Icon className="h-5 w-5 fill-zinc-700/10 stroke-zinc-700 transition-colors duration-300 group-hover:stroke-zinc-900 dark:fill-white/10 dark:stroke-zinc-400 dark:group-hover:fill-cyan-300/10 dark:group-hover:stroke-cyan-400" />
@@ -78,11 +78,11 @@ function ResourceIcon({ icon: Icon }: { icon: Resource['icon'] }) {
   )
 }
 
-function ResourcePattern({
+function UsefulLinkPattern({
   mouseX,
   mouseY,
   ...gridProps
-}: Resource['pattern'] & {
+}: UsefulLink['pattern'] & {
   mouseX: MotionValue<number>
   mouseY: MotionValue<number>
 }) {
@@ -120,7 +120,7 @@ function ResourcePattern({
   )
 }
 
-function Resource({ resource }: { resource: Resource }) {
+function UsefulLink({ usefulLink }: { usefulLink: UsefulLink }) {
   let mouseX = useMotionValue(0)
   let mouseY = useMotionValue(0)
 
@@ -136,37 +136,45 @@ function Resource({ resource }: { resource: Resource }) {
 
   return (
     <div
-      key={resource.href}
+      key={usefulLink.href}
       onMouseMove={onMouseMove}
       className="group relative flex rounded-2xl bg-zinc-50 transition-shadow hover:shadow-md hover:shadow-zinc-900/5 dark:bg-white/2.5 dark:hover:shadow-black/5"
     >
-      <ResourcePattern {...resource.pattern} mouseX={mouseX} mouseY={mouseY} />
+      <UsefulLinkPattern
+        {...usefulLink.pattern}
+        mouseX={mouseX}
+        mouseY={mouseY}
+      />
       <div className="absolute inset-0 rounded-2xl ring-1 ring-inset ring-zinc-900/7.5 group-hover:ring-zinc-900/10 dark:ring-white/10 dark:group-hover:ring-white/20" />
       <div className="relative rounded-2xl px-4 pb-4 pt-16">
-        <ResourceIcon icon={resource.icon} />
+        <UsefulLinkIcon icon={usefulLink.icon} />
         <h3 className="mt-4 text-sm font-semibold leading-7 text-zinc-900 dark:text-white">
-          <Link href={resource.href} target="_blank" rel="noopener noreferrer">
+          <Link
+            href={usefulLink.href}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <span className="absolute inset-0 rounded-2xl" />
-            {resource.name}
+            {usefulLink.name}
           </Link>
         </h3>
         <p className="mt-1 text-sm text-zinc-600 dark:text-zinc-400">
-          {resource.description}
+          {usefulLink.description}
         </p>
       </div>
     </div>
   )
 }
 
-export function Resources() {
+export function UsefulLinks() {
   return (
     <div className="my-16 xl:max-w-none">
       <Heading level={2} id="resources">
-        Resources
+        Useful Links
       </Heading>
       <div className="not-prose mt-4 grid grid-cols-1 gap-8 border-t border-zinc-900/5 pt-10 sm:grid-cols-2 xl:grid-cols-4 dark:border-white/5">
-        {resources.map((resource) => (
-          <Resource key={resource.href} resource={resource} />
+        {usefulLinks.map((usefulLink) => (
+          <UsefulLink key={usefulLink.href} usefulLink={usefulLink} />
         ))}
       </div>
     </div>

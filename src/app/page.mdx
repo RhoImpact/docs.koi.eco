@@ -1,7 +1,8 @@
 import { Guides } from '@/components/Guides'
-import { Resources } from '@/components/Resources'
+import { UsefulLinks } from '@/components/UsefulLinks'
 import { HeroPattern } from '@/components/HeroPattern'
 import { BuiltOnTrust } from '@/components/BuiltOnTrust'
+import { Callouts } from '@/components/Callouts'
 import koiLogoBanner from '@/images/logos-internal/koi-logo-documentation-banner.svg'
 import Image from 'next/image'
 
@@ -15,7 +16,7 @@ export const metadata = {
 
 export const sections = [
   { title: 'Guides', id: 'guides' },
-  { title: 'Resources', id: 'resources' },
+  { title: 'Useful Links', id: 'useful-links' },
   { title: 'Built on Trust', id: 'built-on-trust' },
 ]
 
@@ -57,6 +58,8 @@ Koi provides several options to get started:
 
 <Guides />
 
-<Resources />
+<UsefulLinks />
 
 <BuiltOnTrust />
+
+<Callouts />

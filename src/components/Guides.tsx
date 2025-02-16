@@ -13,15 +13,16 @@ const guides = [
     description: 'Learn about the key concepts behind Koi and impact modeling.',
   },
   {
-    href: '/docs/api/reference',
-    name: 'REST API',
-    description: 'Integrate our robust climate forecasting data into your workflows.',
+    href: '/docs/resources/avoided-emissions',
+    name: 'Avoided Emissions',
+    description:
+      'Learn about determining the amount of avoided emissions that can be attributed to climate solutions.',
   },
   {
-    href: '/docs/api/sdks',
-    name: 'SDKs',
+    href: '/docs/api/reference',
+    name: 'REST API',
     description:
-      'Learn how to use Koi with your favorite programming language.',
+      'Integrate our robust climate forecasting data into your workflows.',
   },
 ]
 

@@ -1,4 +1,5 @@
-import fullAnimation from './images/AE_animation_full_medium.gif'
+import introAEImage from './images/1_Avoided_emissions_total_baseline.png'
+import fullAnimation from './images/2_AE_animation_medium.gif'
 import marketAnimation from './images/AE_animation_market_medium.gif'
 import ghgAnimation from './images/AE_animation_GHG_medium.gif'
 import factorsAnimation from './images/AE_animation_factors_medium.gif'
@@ -16,7 +17,7 @@ export const metadata = {
 
 Last updated: February 13, 2025
 
-## Visualizing avoided emissions
+## Visualizing Avoided Emissions
 
 The first step in forecasting avoided emissions is to estimate the total emissions for a market served by
 a conventional technology. The total baseline emissions can be calculated as the GHG emissions intensity
@@ -26,10 +27,11 @@ equal to the GHG emissions intensity and the width equal to the market size:
 
 <div className="koi-docs-image-container">
 <Image
-src={baselineGHGAnimation}
+src={introAEImage}
 alt="Baseline emissions visualization"
 className="koi-docs-image"
 />
+Baseline emissions can be visualized as the area of a rectangle with height equal to GHG emissions intensity and width equal to market size.
 </div>
 
 When a **climate solution technology** with a lower GHG emissions intensity is introduced into the market
@@ -43,9 +45,10 @@ src={fullAnimation}
 alt="Baseline emissions visualization"
 className="koi-docs-image"
 />
+When a climate solution technology is introduced, avoided emissions are represented by the difference in area.
 </div>
 
-## Factors that determine avoided emissions
+## Factors that Determine Avoided Emissions
 
 We can use this visualization to understand the key factors that determine the amount of avoided
 emissions that can be achieved by a climate solution technology. The avoided emissions can be calculated
@@ -58,6 +61,7 @@ src={factorsAnimation}
 alt="Baseline emissions visualization"
 className="koi-docs-image"
 />
+Avoided emissions are determined by per unit impact and market uptake of the solution technology.
 </div>
 
 The per unit impact is the difference between the solution technology GHG emissions intensity and the
@@ -75,6 +79,7 @@ src={ghgAnimation}
 alt="Baseline emissions visualization"
 className="koi-docs-image"
 />
+Lower GHG emissions intensity of the solution technology leads to higher per unit impact.
 </div>
 
 In Koi Studio, you can see a detailed breakdown of this parameter in the Per Unit Impact
@@ -88,6 +93,7 @@ src={marketAnimation}
 alt="Baseline emissions visualization"
 className="koi-docs-image"
 />
+Greater market uptake of the solution technology increases avoided emissions.
 </div>
 
 In Koi you can see a detailed breakdown of the market capture in the Projected Market Uptake tab.
@@ -102,6 +108,7 @@ src={baselineGHGAnimation}
 alt="Baseline emissions visualization"
 className="koi-docs-image"
 />
+A lower baseline GHG emissions intensity results in lower avoided emissions.
 </div>
 
 If the baseline market size is lower, and we assume a similar percentage of the market is captured by the solution technology, then the avoided emissions will be lower (and vice versa):
@@ -112,6 +119,7 @@ src={baselineMarketAnimation}
 alt="Baseline emissions visualization"
 className="koi-docs-image"
 />
+A smaller baseline market size leads to lower avoided emissions, assuming similar market capture percentage.
 </div>
 
 ## Takeaway

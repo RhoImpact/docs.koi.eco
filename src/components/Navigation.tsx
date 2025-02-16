@@ -239,13 +239,13 @@ export const navigation: Array<NavGroup> = [
       { title: 'Key Concepts', href: '/docs/key-concepts' },
     ],
   },
-  {
-    title: 'Tutorial',
-    links: [
-      { title: 'Forward', href: '/docs/tutorial' },
-      { title: 'Chapter 0', href: '/docs/tutorial/chapter-0' },
-    ],
-  },
+  // {
+  //   title: 'Tutorial',
+  //   links: [
+  //     { title: 'Forward', href: '/docs/tutorial' },
+  //     { title: 'Chapter 0', href: '/docs/tutorial/chapter-0' },
+  //   ],
+  // },
   {
     title: 'Resources',
     links: [
