@@ -11,21 +11,25 @@ import {
 } from '@/components/MobileNavigation'
 import { useMobileNavigationStore } from '@/components/MobileNavigation'
 import { MobileSearch, Search } from '@/components/Search'
-import { ThemeToggle } from '@/components/ThemeToggle'
 
-export const baseUrl = process.env.NEXT_PUBLIC_KOI_STUDIO_BASE_URL
+export const studioUrl = process.env.NEXT_PUBLIC_KOI_STUDIO_BASE_URL
+export const landingUrl = process.env.NEXT_PUBLIC_KOI_LANDING_BASE_URL
+export const feedbackUrl = process.env.NEXT_PUBLIC_KOI_FEEDBACK_BASE_URL
 
 function TopLevelNavItem({
   href,
   children,
+  target = "_self",
 }: {
   href: string
   children: React.ReactNode
+  target?: string
 }) {
   return (
     <li>
       <Link
         href={href}
+        target={target}
         className="text-sm leading-5 text-zinc-600 transition hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-white"
       >
         {children}
@@ -82,20 +86,22 @@ export const Header = forwardRef<
       <div className="flex items-center gap-5">
         <nav className="hidden md:block">
           <ul role="list" className="flex items-center gap-8">
-            <TopLevelNavItem href={`${baseUrl}`}>Koi</TopLevelNavItem>
-            <TopLevelNavItem href="/">Documentation</TopLevelNavItem>
-            <TopLevelNavItem href={`${baseUrl}/contact`}>
-              Support
+            <TopLevelNavItem target="_blank" href={`${studioUrl}`}>Koi</TopLevelNavItem>
+            <TopLevelNavItem href="/">Docs</TopLevelNavItem>
+            <TopLevelNavItem target="_blank" href={`${feedbackUrl}/roadmap?utm_source=docs&utm_content=header-nav-link`}>
+              Roadmap
+            </TopLevelNavItem>
+            <TopLevelNavItem target="_blank" href={`${landingUrl}/contact?topic=Support&utm_source=docs&utm_content=header-nav-link`}>
+              Help
             </TopLevelNavItem>
           </ul>
         </nav>
         <div className="hidden md:block md:h-5 md:w-px md:bg-zinc-900/10 md:dark:bg-white/15" />
         <div className="flex gap-4">
           <MobileSearch />
-          <ThemeToggle />
         </div>
         <div className="hidden min-[416px]:contents">
-          <Button href={`${baseUrl}/login`} target="_blank">
+          <Button href={`${studioUrl}/login`} target="_blank">
             Sign in
           </Button>
         </div>
