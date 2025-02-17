@@ -48,7 +48,7 @@ export function Guides() {
                 arrow="right"
                 aria-label={`${guide.description}`}
               >
-                Read more
+                {guide.name}
               </Button>
             </p>
           </div>

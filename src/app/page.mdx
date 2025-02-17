@@ -7,7 +7,8 @@ import koiLogoBanner from '@/images/logos-internal/koi-logo-documentation-banner
 import Image from 'next/image'
 import packageJson from '../../package.json'
 
-export const baseUrl = process.env.NEXT_PUBLIC_KOI_STUDIO_BASE_URL
+export const studioUrl = process.env.NEXT_PUBLIC_KOI_STUDIO_BASE_URL
+export const feedbackUrl = process.env.NEXT_PUBLIC_KOI_FEEDBACK_BASE_URL
 
 export const metadata = {
   title: 'Koi Documentation',
@@ -29,25 +30,35 @@ export const sections = [
   className="w-full mt-0"
 />
 
-# Koi unlocks climate investing.
+# Koi unlocks climate solutions.
 
 *Last updated: {packageJson.lastUpdated} &bull; Docs Version: {packageJson.version}*
 
-Koi represents a paradigm shift in assessing the impact of technologies on net-zero strategies,
-delivering the missing piece for investors, innovators, and industries to act with confidence.
+<a href={`${studioUrl}?utm_source=docs&utm_content=hero-banner-link`} aria-label="Explore Koi Studio" rel="noopener noreferrer" target="_blank"><strong>Koi</strong></a>
+represents a paradigm shift in assessing the potential impact of solutions, with an
+emphasis on **transparency** and **speed**.
 
-Compared to traditional climate tools, Koi is intuitive, forward-looking, and the first **composable
-impact forecasting platform** that can be used by climate innovators, investors, and industries.
+Compared to traditional climate tools, Koi is intuitive, forward-looking, and the first
+impact forecasting platform that blends the **latest generative AI with decades of hands-on forecasting experience**.
+We exist to help **scale climate solutions** by making it fast and easy for climate innovators, investors, and industries to make the right decisions.
 
-1. Start by exploring <a href={`${baseUrl}`} target="_blank">starter forecasts</a> for technologies and markets inside **Koi Studio**.
-2. Then scale your decision-making with <a href={`${baseUrl}/forecasts`} target="_blank">customizable</a>, [auditable data](/docs/key-concepts#platform-features) to maximize impact and trust.
+## Let's Begin
 
-Koi provides several options to get started:
+- Sign up for a <a href={`${studioUrl}/sign-up?utm_source=docs&utm_content=hero-banner-link`} aria-label="Sign up for Koi Studio" rel="noopener noreferrer" target="_blank">free account</a>.
+- Explore <a href={`${studioUrl}/search?utm_source=docs&utm_content=hero-banner-link`} aria-label="Search for starter forecasts" rel="noopener noreferrer" target="_blank">starter forecasts</a>
+that include
+  - curated **baseline** data
+  - starter **solution** models
+  - **market and pricing** data
 
-- <a href={`${baseUrl}`} target="_blank"><strong>Koi Studio</strong></a>: Explore, forecast, and compare climate technologies with ease.
-- [**RESTful API**](/docs/api/reference): Integrate our robust climate forecasting engine into your workflows with a developer-friendly interface.
-- [**Koi SDKs**](/docs/api/sdks): Build custom applications with deep integration capabilities.
-- [**Documentation**](/docs/quickstart): Comprehensive documentation to guide you every step of the way.
+- **Scale climate solutions** with *speed* and *transparency*.
+
+## Up Next
+
+- [**Quickstart**](/docs/quickstart): Read our quickstart guide to get started...quickly.
+- <a href={`${feedbackUrl}/roadmap?utm_source=docs&utm_content=hero-banner-link`} aria-label="See what's coming next" rel="noopener noreferrer" target="_blank"><strong>Roadmap</strong></a>: See what we're building next.
+- <a href={`${feedbackUrl}?utm_source=docs&utm_content=hero-banner-link`} aria-label="Share your feedback" rel="noopener noreferrer" target="_blank"><strong>Feedback</strong></a>: Share your feedback and influence our roadmap.
+- <a href={`${feedbackUrl}/changelog?utm_source=docs&utm_content=hero-banner-link`} aria-label="See the changelog" rel="noopener noreferrer" target="_blank"><strong>Changelog</strong></a>: Keep tabs on recent changes and new features.
 
 <div className="not-prose mb-16 mt-6 flex gap-3">
   <Button href="/docs/quickstart" arrow="right">

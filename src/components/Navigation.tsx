@@ -236,20 +236,20 @@ export const navigation: Array<NavGroup> = [
     links: [
       { title: 'Introduction', href: '/' },
       { title: 'Quickstart', href: '/docs/quickstart' },
-      { title: 'Key Concepts', href: '/docs/key-concepts' },
     ],
   },
   // {
-  //   title: 'Tutorial',
-  //   links: [
-  //     { title: 'Forward', href: '/docs/tutorial' },
-  //     { title: 'Chapter 0', href: '/docs/tutorial/chapter-0' },
-  //   ],
-  // },
-  {
-    title: 'Resources',
-    links: [
-      { title: 'Avoided Emissions', href: '/docs/resources/avoided-emissions' },
+    //   title: 'Tutorial',
+    //   links: [
+      //     { title: 'Forward', href: '/docs/tutorial' },
+      //     { title: 'Chapter 0', href: '/docs/tutorial/chapter-0' },
+      //   ],
+      // },
+      {
+        title: 'Key Concepts',
+        links: [
+          { title: 'Overview', href: '/docs/resources/key-concepts-overview' },
+          { title: 'Avoided Emissions', href: '/docs/resources/avoided-emissions' },
     ],
   },
   {
