@@ -1,5 +1,9 @@
 # Changelog
 
+## 2025-02-17
+
+- Add `ExternalLink` component to simplify link creation with UTM parameters
+
 ## 2024-11-01
 
 - Fix code block rendering when no snippet language is specified ([#1643](https://github.com/tailwindlabs/tailwindui-issues/issues/1643))

@@ -6,7 +6,7 @@ import { Callouts } from '@/components/Callouts'
 import koiLogoBanner from '@/images/logos-internal/koi-logo-documentation-banner.svg'
 import Image from 'next/image'
 import packageJson from '../../package.json'
-
+import { ExternalLink } from '@/components/ExternalLink'
 export const studioUrl = process.env.NEXT_PUBLIC_KOI_STUDIO_BASE_URL
 export const feedbackUrl = process.env.NEXT_PUBLIC_KOI_FEEDBACK_BASE_URL
 
@@ -35,19 +35,36 @@ export const sections = [
 *Last updated: {packageJson.lastUpdated}*<br />
 *Docs Version: {packageJson.version}*
 
-<a href={`${studioUrl}?utm_source=docs&utm_content=hero-banner-link`} aria-label="Explore Koi Studio" rel="noopener noreferrer" target="_blank"><strong>Koi</strong></a>
-represents a paradigm shift in assessing the potential impact of solutions, with an
+<ExternalLink
+  url={`${studioUrl}`}
+  utmContent="hero-banner-link"
+  ariaLabel="Explore Koi Studio"
+  linkText="Koi"
+/> represents a paradigm shift in *assessing the potential impact of solutions*, with an
 emphasis on **transparency** and **speed**.
 
 Compared to traditional climate tools, Koi is intuitive, forward-looking, and the first
 impact forecasting platform that blends the **latest generative AI with decades of hands-on forecasting experience**.
-We exist to help **scale climate solutions** by making it fast and easy for climate innovators, investors, and industries to make the right decisions.
+We exist to help **scale the best climate solutions, faster**.
 
 ## Let's Begin
 
-- Sign up for a <a href={`${studioUrl}/sign-up?utm_source=docs&utm_content=hero-banner-link`} aria-label="Sign up for Koi Studio" rel="noopener noreferrer" target="_blank">free account</a>.
-- Explore <a href={`${studioUrl}/search?utm_source=docs&utm_content=hero-banner-link`} aria-label="Search for starter forecasts" rel="noopener noreferrer" target="_blank">starter forecasts</a>
-that include
+- Sign up for a <ExternalLink
+    url={`${studioUrl}/sign-up`}
+    utmContent="hero-banner-link"
+    ariaLabel="Sign up for Koi Studio"
+    linkText="free account"
+    rel="noopener noreferrer"
+    target="_blank"
+  />
+- Explore <ExternalLink
+    url={`${studioUrl}/search`}
+    utmContent="hero-banner-link"
+    ariaLabel="Search for starter forecasts"
+    linkText="starter forecasts"
+    rel="noopener noreferrer"
+    target="_blank"
+  /> that include
   - curated **baseline** data
   - starter **solution** models
   - **market and pricing** data
@@ -57,9 +74,31 @@ that include
 ## Up Next
 
 - [**Quickstart**](/docs/quickstart): Read our quickstart guide to get started...quickly.
-- <a href={`${feedbackUrl}/roadmap?utm_source=docs&utm_content=hero-banner-link`} aria-label="See what's coming next" rel="noopener noreferrer" target="_blank"><strong>Roadmap</strong></a>: See what we're building next.
-- <a href={`${feedbackUrl}?utm_source=docs&utm_content=hero-banner-link`} aria-label="Share your feedback" rel="noopener noreferrer" target="_blank"><strong>Feedback</strong></a>: Share your feedback and influence our roadmap.
-- <a href={`${feedbackUrl}/changelog?utm_source=docs&utm_content=hero-banner-link`} aria-label="See the changelog" rel="noopener noreferrer" target="_blank"><strong>Changelog</strong></a>: Keep tabs on recent changes and new features.
+- [**Key Concepts**](/docs/resources/key-concepts-overview): Learn about the art and science of impact forecasting.
+- <ExternalLink
+    url={`${feedbackUrl}/roadmap`}
+    utmContent="hero-banner-link"
+    ariaLabel="See what's coming next"
+    linkText="Roadmap"
+    rel="noopener noreferrer"
+    target="_blank"
+  />: See what we're building next.
+- <ExternalLink
+    url={`${feedbackUrl}`}
+    utmContent="hero-banner-link"
+    ariaLabel="Share your feedback"
+    linkText="Feedback"
+    rel="noopener noreferrer"
+    target="_blank"
+  />: Share your feedback and influence our roadmap.
+- <ExternalLink
+    url={`${feedbackUrl}/changelog`}
+    utmContent="hero-banner-link"
+    ariaLabel="See the changelog"
+    linkText="Changelog"
+    rel="noopener noreferrer"
+    target="_blank"
+  />: Keep tabs on recent changes and new features.
 
 <div className="not-prose mb-16 mt-6 flex gap-3">
   <Button href="/docs/quickstart" arrow="right">

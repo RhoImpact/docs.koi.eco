@@ -8,9 +8,9 @@ const guides = [
     description: 'Get started with Koi in minutes.',
   },
   {
-    href: '/docs/key-concepts',
+    href: '/docs/resources/key-concepts-overview',
     name: 'Key Concepts',
-    description: 'Learn about the key concepts behind Koi and impact modeling.',
+    description: 'Learn about the art and science of impact forecasting.',
   },
   {
     href: '/docs/resources/avoided-emissions',
