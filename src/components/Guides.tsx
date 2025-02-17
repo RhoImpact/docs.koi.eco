@@ -42,7 +42,12 @@ export function Guides() {
               {guide.description}
             </p>
             <p className="mt-4">
-              <Button href={guide.href} variant="text" arrow="right">
+              <Button
+                href={guide.href}
+                variant="text"
+                arrow="right"
+                aria-label={`${guide.description}`}
+              >
                 Read more
               </Button>
             </p>
