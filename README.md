@@ -1,5 +1,12 @@
 # Koi Docs
 
+<p align="center">
+  <a href='http://makeapullrequest.com'><img alt='PRs Welcome' src='https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=shields'/></a>
+  <img alt="GitHub contributors" src="https://img.shields.io/github/contributors/RhoImpact/docs.koi.eco"/>
+  <a href='https://product.koi.eco'><img alt="Join Community" src="https://img.shields.io/badge/community-join-blue"/></a>
+  <img alt="GitHub commit activity" src="https://img.shields.io/github/commit-activity/m/RhoImpact/docs.koi.eco"/>
+</p>
+
 Koi Docs are built on top of 
 a [Tailwind UI](https://tailwindui.com) site template built using [Tailwind CSS](https://tailwindcss.com) and [Next.js](https://nextjs.org).
 
