@@ -12,24 +12,65 @@
   <a href='https://app.netlify.com/sites/koi-docs/deploys'><img alt="Netlify Status" src="https://api.netlify.com/api/v1/badges/23094999-3b88-4a3f-8040-ec49d6ba1069/deploy-status"/></a>
 </p>
 
-Koi Docs are built on top of 
-a [Tailwind UI](https://tailwindui.com) site template built using [Tailwind CSS](https://tailwindcss.com) and [Next.js](https://nextjs.org).
+---
 
-## Getting started
+<p align="center">
+  <a href="https://product.koi.eco">Feedback</a> - <a href="https://product.koi.eco/roadmap">Roadmap</a> - <a href="https://github.com/RhoImpact/docs.koi.eco/issues/new">Open an issue</a> - <a href="https://github.com/RhoImpact/docs.koi.eco/blob/main/STYLEGUIDE.md">Style guide</a>
+</p>
 
-To get started with this template, first install the npm dependencies:
+[Koi](https://app.koi.eco?utm_source=docs-readme) represents a paradigm shift in *assessing the potential impact of solutions*, with an
+emphasis on **transparency** and **speed**.
+
+Compared to traditional climate tools, Koi is intuitive, forward-looking, and the first
+impact forecasting platform that blends the **latest generative AI with decades of hands-on forecasting experience**.
+We exist to help **scale the best climate solutions, faster**.
+
+## How to Contribute to the Docs
+
+First, thank you for your interest in contributing to the Koi Documentation!
+
+### Fastest Route
+
+The fastest way to provide feedback is to visit our [Feedback Board](https://product.koi.eco?utm_source=docs-readme).
+You can use your existing Koi account to log in and submit feedback, feature requests, and bug reports.
+
+### Longer Route
+
+If you'd like to submit feedback via a pull request directly in GitHub, you can do so by following these steps:
+
+1. Navigate to the [docs.koi.eco](https://github.com/RhoImpact/docs.koi.eco) repository.
+2. Click the `Fork` button to create your own copy of the repository.
+3. You can use the GitHub UI to then modify files in your forked repository.
+4. Once you're ready to submit your changes, navigate to your forked repository and click the `Create Pull Request` button.
+5. Fill out the PR template and submit your request.
+
+## Developer Route
+If you plan on contributing to the docs in more of a programmatic fashion, here are some additional details.
+
+1. Clone the repository
+
+```bash
+git clone https://github.com/RhoImpact/docs.koi.eco.git
+```
+
+2. Install the dependencies
 
 ```bash
 npm install
 ```
 
-Next, run the development server:
+3. Run the development server
 
 ```bash
 npm run dev
 ```
 
-Finally, open [http://localhost:3000](http://localhost:3000) in your browser to view the website.
+4. Open [http://localhost:3000](http://localhost:3000) in your browser to view the website.
+
+### Additional Notes
+
+Koi Docs are built on top of 
+a [Tailwind UI](https://tailwindui.com) site template built using [Tailwind CSS](https://tailwindcss.com) and [Next.js](https://nextjs.org).
 
 ## Customizing
 
@@ -43,12 +84,15 @@ This feature requires no configuration, and works out of the box by automaticall
 
 ## License
 
-This site template is a commercial product and is licensed under the [Tailwind UI license](https://tailwindui.com/license).
+This site is built on top of a template that is a commercial product, licensed under the [Tailwind UI license](https://tailwindui.com/license).
+All original code in this repository is licensed under the [MIT License](LICENSE.md) but please respect that the Tailwind UI components are
+licensed under the Tailwind UI license and you need to purchase a license accordingly if you intend to use them.
 
 ## Learn more
 
 To learn more about the technologies used in this site template, see the following resources:
 
+- [Tailwind UI](https://tailwindui.com) - the official Tailwind UI documentation
 - [Tailwind CSS](https://tailwindcss.com/docs) - the official Tailwind CSS documentation
 - [Next.js](https://nextjs.org/docs) - the official Next.js documentation
 - [Headless UI](https://headlessui.dev) - the official Headless UI documentation
@@ -57,3 +101,4 @@ To learn more about the technologies used in this site template, see the followi
 - [Algolia Autocomplete](https://www.algolia.com/doc/ui-libraries/autocomplete/introduction/what-is-autocomplete/) - the official Algolia Autocomplete documentation
 - [FlexSearch](https://github.com/nextapps-de/flexsearch) - the official FlexSearch documentation
 - [Zustand](https://docs.pmnd.rs/zustand/getting-started/introduction) - the official Zustand documentation
+- [Koi](https://app.koi.eco?utm_source=docs-readme) - the official Koi
