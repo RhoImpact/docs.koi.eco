@@ -9,6 +9,7 @@
   <img alt="GitHub contributors" src="https://img.shields.io/github/contributors/RhoImpact/docs.koi.eco"/>
   <a href='https://product.koi.eco'><img alt="Join Community" src="https://img.shields.io/badge/community-join-blue"/></a>
   <img alt="GitHub commit activity" src="https://img.shields.io/github/commit-activity/m/RhoImpact/docs.koi.eco"/>
+  [![Netlify Status](https://api.netlify.com/api/v1/badges/23094999-3b88-4a3f-8040-ec49d6ba1069/deploy-status)](https://app.netlify.com/sites/koi-docs/deploys)
 </p>
 
 Koi Docs are built on top of 
