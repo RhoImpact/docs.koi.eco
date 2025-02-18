@@ -1,4 +1,8 @@
-# Koi Docs
+<p align="center">
+  <img alt="koi-by-rho-logo" src="https://raw.githubusercontent.com/RhoImpact/docs.koi.eco/refs/heads/main/src/images/logos-internal/koi-logo-transparentbg.svg">
+</p>
+
+# Koi Docs (docs.koi.eco)
 
 <p align="center">
   <a href='http://makeapullrequest.com'><img alt='PRs Welcome' src='https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=shields'/></a>
