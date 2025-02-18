@@ -6,7 +6,7 @@ export function Callouts() {
   return (
     <div>
       <Heading id="callouts" level={2}>
-        Callouts
+        Use of Callouts
       </Heading>
       You&apos;ll find some callouts throughout the documentation to draw your
       attention. These are usually notes that go into more detail about a
