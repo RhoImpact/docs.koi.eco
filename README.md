@@ -1,5 +1,5 @@
 <p align="center">
-  <img alt="koi-by-rho-logo" src="https://raw.githubusercontent.com/RhoImpact/docs.koi.eco/refs/heads/main/src/images/logos-internal/koi-logo-transparentbg.svg">
+  <img alt="koi-by-rho-logo" src="https://github.com/RhoImpact/docs.koi.eco/blob/main/src/images/logos-internal/github-banner-koi-by-rho.webp">
 </p>
 
 # Koi Docs (docs.koi.eco)
