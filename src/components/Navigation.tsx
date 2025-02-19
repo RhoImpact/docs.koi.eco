@@ -248,8 +248,9 @@ export const navigation: Array<NavGroup> = [
       {
         title: 'Key Concepts',
         links: [
-          { title: 'Overview', href: '/docs/resources/key-concepts-overview' },
-          { title: 'Avoided Emissions', href: '/docs/resources/avoided-emissions' },
+          { title: 'Overview', href: '/docs/key-concepts/overview' },
+          { title: 'FAQs', href: '/docs/key-concepts/faqs' },
+          { title: 'Avoided Emissions', href: '/docs/key-concepts/avoided-emissions' },
     ],
   },
   {

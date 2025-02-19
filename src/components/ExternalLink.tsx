@@ -25,10 +25,17 @@ export function ExternalLink({
   rel = 'noopener noreferrer',
   ariaLabel,
   linkText,
-  utmSource = 'docs',
+  utmSource = 'koi-docs',
   utmContent = 'docs-link',
 }: ExternalLinkProps) {
-  const href = `${url}?utm_source=${utmSource}&utm_content=${utmContent}`;
+  // Determine the href based on whether the URL is a mailto link or not
+  // If it is a mailto link, return the URL as is
+  // If it is not a mailto link, add UTM parameters to the URL
+  const href = url.startsWith('mailto:')
+    ? url
+    : `${url}${url.includes('?') ? '&' : '?'}utm_source=${utmSource}&utm_content=${utmContent}`;
+
+  // Return the anchor element with the appropriate href and attributes
   return (
     <a href={href} target={target} rel={rel} aria-label={ariaLabel || linkText}>
       {linkText}
