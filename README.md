@@ -84,9 +84,7 @@ This feature requires no configuration, and works out of the box by automaticall
 
 ## License
 
-This site is built on top of a template that is a commercial product, licensed under the [Tailwind UI license](https://tailwindui.com/license).
-All original code in this repository is licensed under the [MIT License](LICENSE.md) but please respect that the Tailwind UI components are
-licensed under the Tailwind UI license and you need to purchase a license accordingly if you intend to use them.
+This site is built using a commercially licensed template under the Tailwind UI License. All original code in this repository is licensed under the MIT License. However, Tailwind UI components remain under their original license, and you must purchase a Tailwind UI license if you intend to use them. Please respect that!
 
 ## Learn more
 
