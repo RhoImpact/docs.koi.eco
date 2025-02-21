@@ -251,6 +251,7 @@ export const navigation: Array<NavGroup> = [
           { title: 'Overview', href: '/docs/key-concepts/overview' },
           { title: 'FAQs', href: '/docs/key-concepts/faqs' },
           { title: 'Avoided Emissions', href: '/docs/key-concepts/avoided-emissions' },
+          { title: 'Methodologies', href: '/docs/key-concepts/methodologies' },
     ],
   },
   {

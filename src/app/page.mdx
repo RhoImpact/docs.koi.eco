@@ -6,7 +6,9 @@ import { Callouts } from '@/components/Callouts'
 import koiLogoBanner from '@/images/logos-internal/koi-logo-documentation-banner.svg'
 import Image from 'next/image'
 import packageJson from '../../package.json'
-import { ExternalLink } from '@/components/ExternalLink'
+import ExternalLink from '@/components/ExternalLink'
+import PageInformationalData from '@/components/PageInformationalData'
+
 export const studioUrl = process.env.NEXT_PUBLIC_KOI_STUDIO_BASE_URL
 export const feedbackUrl = process.env.NEXT_PUBLIC_KOI_FEEDBACK_BASE_URL
 
@@ -31,9 +33,10 @@ export const sections = [
 />
 
 # Koi unlocks climate solutions.
-
+<p className="text-sm italic">
 *Last updated: {packageJson.lastUpdated}*<br />
 *Docs Version: {packageJson.version}*
+</p>
 
 <ExternalLink
   url={`${studioUrl}`}

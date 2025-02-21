@@ -12,7 +12,7 @@ import image11 from './images/image11.png'
 import image12 from './images/image12.png'
 import image13 from './images/image13.png'
 import Image from 'next/image'
-
+import PageInformationalData from '@/components/PageInformationalData'
 export const metadata = {
   title: 'Quickstart',
   description:
@@ -23,7 +23,7 @@ export const baseUrl = process.env.NEXT_PUBLIC_KOI_STUDIO_BASE_URL
 
 # Quickstart
 
-Last updated: February 13, 2025
+<PageInformationalData lastModified={lastModified} />
 
 ## Introduction
 

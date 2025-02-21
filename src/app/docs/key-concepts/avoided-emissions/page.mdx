@@ -9,6 +9,8 @@ import AE1 from './images/AE_p1.webp'
 import AE2 from './images/AE_p2.webp'
 import AE3 from './images/AE_p3.webp'
 import Image from 'next/image'
+import ExternalLink from '@/components/ExternalLink'
+import PageInformationalData from '@/components/PageInformationalData'
 
 export const metadata = {
   title: 'Avoided Emissions',
@@ -18,7 +20,7 @@ export const metadata = {
 
 # Avoided Emissions
 
-Last updated: February 17, 2025
+<PageInformationalData lastModified={lastModified} />
 
 Avoided emissions are the greenhouse gas emissions that are **prevented from**
 being released into the atmosphere **as a result** of a project or
@@ -28,17 +30,7 @@ eliminate the production of greenhouse gases. Avoided emissions are an
 important metric for understanding the environmental impact of a project
 and can help to quantify the benefits of sustainable practices.
 
-## Definitions of Avoided Emissions
-
-The concept of avoided emissions is still evolving, with no universally accepted definition.
-However, significant efforts are underway to standardize it.
-In the meantime, we are tracking the definitions that align most closely with our approach.
-
-
-| Source                                             | Summary                   | <div align="center">Koi Compatible</div> |
-|----------------------------------------------------|---------------------------|------------------------------------------|
-| <a href="https://projectframe.how/glossary?utm_source=koi" target="_blank" rel="noopener noreferrer">Project Frame</a> | Avoided emissions are defined as the "positive" impact on society when comparing the GHG impact of a solution to an alternative reference scenario where the solution would not be used. They are sometimes referred to as Scope 4 Emissions, but Project Frame does not recommend the use of this term to avoid conflation with Scope 1, Scope 2, and Scope 3 used in carbon accounting. | <div align="center" className="text-green-500">&#x2713;</div> |
-| <a href="https://www.carbontrust.com/what-we-do/net-zero-transition-planning-and-delivery/avoided-emissions?utm_source=koi" target="_blank" rel="noopener noreferrer">Carbon Trust</a> | Avoided emissions refer to the greenhouse gas emissions that have been 'avoided' by using a specific product or service, comparing it to a situation had the product or service not been used. | <div align="center" className="text-green-500">&#x2713;</div> |
+See our list of [tracked methodologies as they develop](./methodologies).
 
 ## Visualizing Avoided Emissions
 

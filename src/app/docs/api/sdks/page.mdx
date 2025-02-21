@@ -1,5 +1,5 @@
 import { Libraries } from '@/components/Libraries'
-
+import PageInformationalData from '@/components/PageInformationalData'
 export const baseUrl = process.env.NEXT_PUBLIC_KOI_STUDIO_BASE_URL
 export const metadata = {
   title: 'Koi SDKs',
@@ -12,6 +12,8 @@ export const sections = [
 ]
 
 # Koi SDKs
+
+<PageInformationalData lastModified={lastModified} />
 
 Official SDKs for Koi are <span className="italic text-orange-500">coming soon</span>.
 

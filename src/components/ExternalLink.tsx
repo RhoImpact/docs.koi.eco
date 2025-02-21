@@ -19,13 +19,13 @@ type ExternalLinkProps = {
   utmContent?: string;
 };
 
-export function ExternalLink({
+export default function ExternalLink({
   url,
   target = '_blank',
   rel = 'noopener noreferrer',
   ariaLabel,
   linkText,
-  utmSource = 'koi-docs',
+  utmSource = 'koi',
   utmContent = 'docs-link',
 }: ExternalLinkProps) {
   // Determine the href based on whether the URL is a mailto link or not
