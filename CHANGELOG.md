@@ -1,6 +1,6 @@
 # Changelog
 
-## 2025-02-21
+## 2025-02-21 - 0.6.0
 
 - Add `lastUpdated` date to all pages
 - Add `PageInformationalData` component to display last updated date, author, and other metadata
