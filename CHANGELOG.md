@@ -1,5 +1,11 @@
 # Changelog
 
+## 2025-02-21
+
+- Add `lastUpdated` date to all pages
+- Add `PageInformationalData` component to display last updated date, author, and other metadata
+- New Methodologies page
+
 ## 2025-02-17
 
 - Add `ExternalLink` component to simplify link creation with UTM parameters
