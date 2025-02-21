@@ -29,6 +29,7 @@
     "autoprefixer": "^10.4.7",
     "axios": "^1.7.9",
     "clsx": "^2.1.0",
+    "dayjs": "^1.11.13",
     "fast-glob": "^3.3.0",
     "flexsearch": "^0.7.31",
     "framer-motion": "^10.18.0",
