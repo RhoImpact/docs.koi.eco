@@ -8,19 +8,21 @@ import { Footer } from '@/components/Footer'
 import { Header } from '@/components/Header'
 import { Logo } from '@/components/Logo'
 import { Navigation } from '@/components/Navigation'
-import { type Section, SectionProvider } from '@/components/SectionProvider'
+import { type Section, type SubPage, SectionProvider } from '@/components/SectionProvider'
 
 export function Layout({
   children,
   allSections,
+  allSubPages,
 }: {
   children: React.ReactNode
   allSections: Record<string, Array<Section>>
+  allSubPages: Record<string, Array<SubPage>>
 }) {
   let pathname = usePathname()
 
   return (
-    <SectionProvider sections={allSections[pathname] ?? []}>
+    <SectionProvider sections={allSections[pathname] ?? []} subPages={allSubPages[pathname] ?? []}>
       <div className="h-full lg:ml-72 xl:ml-80">
         <motion.header
           layoutScroll

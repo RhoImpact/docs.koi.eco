@@ -19,9 +19,17 @@ export interface Section {
   headingRef?: React.RefObject<HTMLHeadingElement>
 }
 
+export interface SubPage {
+  id: string
+  title: string
+  href: string
+  tag?: string
+}
+
 interface SectionState {
   sections: Array<Section>
   visibleSections: Array<string>
+  subPages: Array<SubPage>
   setVisibleSections: (visibleSections: Array<string>) => void
   registerHeading: ({
     id,
@@ -34,10 +42,11 @@ interface SectionState {
   }) => void
 }
 
-function createSectionStore(sections: Array<Section>) {
+function createSectionStore(sections: Array<Section>, subPages: Array<SubPage>) {
   return createStore<SectionState>()((set) => ({
     sections,
     visibleSections: [],
+    subPages,
     setVisibleSections: (visibleSections) =>
       set((state) =>
         state.visibleSections.join() === visibleSections.join()
@@ -127,18 +136,20 @@ const useIsomorphicLayoutEffect =
 
 export function SectionProvider({
   sections,
+  subPages,
   children,
 }: {
   sections: Array<Section>
+  subPages: Array<SubPage>
   children: React.ReactNode
 }) {
-  let [sectionStore] = useState(() => createSectionStore(sections))
+  let [sectionStore] = useState(() => createSectionStore(sections, subPages))
 
   useVisibleSections(sectionStore)
 
   useIsomorphicLayoutEffect(() => {
-    sectionStore.setState({ sections })
-  }, [sectionStore, sections])
+    sectionStore.setState({ sections, subPages })
+  }, [sectionStore, sections, subPages])
 
   return (
     <SectionStoreContext.Provider value={sectionStore}>

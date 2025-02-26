@@ -168,6 +168,14 @@ function NavigationGroup({
     [usePathname(), useSectionStore((s) => s.sections)],
     isInsideMobileNavigation
   )
+  let [subPagePathname, subPages] = useInitialValue(
+    [usePathname(), useSectionStore((s) => s.subPages)],
+    isInsideMobileNavigation
+  )
+  
+  if (subPages.length > 0) {
+    console.log(subPages, subPagePathname)
+  }
 
   let isActiveGroup =
     group.links.findIndex((link) => link.href === pathname) !== -1
@@ -202,6 +210,7 @@ function NavigationGroup({
                 {link.title}
               </NavLink>
               <AnimatePresence mode="popLayout" initial={false}>
+                {/* Add sections to the navigation (anchor tags based on headings in the page) */}
                 {link.href === pathname && sections.length > 0 && (
                   <motion.ul
                     role="list"
@@ -228,6 +237,33 @@ function NavigationGroup({
                     ))}
                   </motion.ul>
                 )}
+                {/* Add subpages to the navigation (subPages are defined in the page.mdx file) */}
+                {link.href === pathname && subPages.length > 0 && (
+                  <motion.ul
+                    role="list"
+                    initial={{ opacity: 0 }}
+                    animate={{
+                      opacity: 1,
+                      transition: { delay: 0.1 },
+                    }}
+                    exit={{
+                      opacity: 0,
+                      transition: { duration: 0.15 },
+                    }}
+                  >
+                    {subPages.map((subPage, idx) => (
+                      <li key={subPage.id + idx}>
+                        <NavLink
+                          href={`${subPagePathname}/${subPage.href}`}
+                          tag={subPage.tag}
+                          isAnchorLink
+                        >
+                          {subPage.title}
+                        </NavLink>
+                      </li>
+                    ))}
+                  </motion.ul>
+                )}
               </AnimatePresence>
             </motion.li>
           ))}
@@ -249,6 +285,7 @@ export const navigation: Array<NavGroup> = [
     links: [
       { title: 'Getting Started', href: '/docs/getting-started', icon: 'fa-regular fa-flag-swallowtail' },
       { title: 'Quickstart', href: '/docs/getting-started/quickstart', icon: 'fa-regular fa-rocket' },
+      { title: 'Features', href: '/docs/getting-started/features', icon: 'fa-regular fa-bolt' },
       { title: 'FAQs', href: '/docs/getting-started/faqs', icon: 'fa-regular fa-comment-question' },
     ],
   },
