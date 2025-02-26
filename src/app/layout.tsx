@@ -1,5 +1,6 @@
 import { type Metadata } from 'next'
 import glob from 'fast-glob'
+import Script from 'next/script'
 
 import { Providers } from '@/app/providers'
 import { Layout } from '@/components/Layout'
@@ -29,14 +30,21 @@ export default async function RootLayout({
   let allSections = Object.fromEntries(allSectionsEntries)
 
   return (
-    <html lang="en" className="h-full" suppressHydrationWarning>
-      <body className="flex min-h-full bg-white antialiased dark:bg-zinc-900">
-        <Providers>
-          <div className="w-full">
-            <Layout allSections={allSections}>{children}</Layout>
-          </div>
-        </Providers>
-      </body>
-    </html>
+    <>
+      <Script
+        src="https://kit.fontawesome.com/d6d6e756d5.js"
+        crossOrigin="anonymous"
+        strategy="lazyOnload"
+      />
+      <html lang="en" className="h-full" suppressHydrationWarning>
+        <body className="flex min-h-full bg-white antialiased dark:bg-zinc-900">
+          <Providers>
+            <div className="w-full">
+              <Layout allSections={allSections}>{children}</Layout>
+            </div>
+          </Providers>
+        </body>
+      </html>
+    </>
   )
 }

@@ -6,6 +6,8 @@ import { usePathname } from 'next/navigation'
 import { Button } from '@/components/Button'
 import { navigation } from '@/components/Navigation'
 import { Feedback } from '@/components/Feedback'
+import { githubUrl, linkedinUrl } from '@/constants/urls'
+
 function PageLink({
   label,
   page,
@@ -69,27 +71,24 @@ function PageNavigation() {
   )
 }
 
-function LinkedInIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
-  return (
-    <svg viewBox="0 0 20 20" aria-hidden="true" {...props}>
-      <path d="M4.858 2.917c0 1.043-.84 1.88-1.88 1.88-1.04 0-1.878-.837-1.878-1.88C1.1 1.877 1.938 1.04 2.978 1.04c1.038 0 1.88.837 1.88 1.877zM1.3 6.8h3.358v10.8H1.3V6.8zM7.668 6.8h3.222v1.48h.045c.448-.85 1.543-1.747 3.178-1.747 3.401 0 4.027 2.235 4.027 5.147v5.92h-3.358v-5.25c0-1.253-.022-2.864-1.747-2.864-1.747 0-2.016 1.363-2.016 2.77v5.344H7.668V6.8z" />
-    </svg>
-  )
-}
-
 function SocialLink({
   href,
-  icon: Icon,
+  icon,
   children,
 }: {
   href: string
-  icon: React.ComponentType<{ className?: string }>
+  icon: string
   children: React.ReactNode
 }) {
   return (
-    <Link href={href} className="group">
+    <Link
+      href={href}
+      className="group"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
       <span className="sr-only">{children}</span>
-      <Icon className="h-5 w-5 fill-zinc-700 transition group-hover:fill-zinc-900 dark:group-hover:fill-zinc-500" />
+      <i className={`h-5 w-5 fill-zinc-700 transition group-hover:fill-zinc-900 dark:group-hover:fill-zinc-500 ${icon}`} />
     </Link>
   )
 }
@@ -102,10 +101,16 @@ function SmallPrint() {
       </p>
       <div className="flex gap-4">
         <SocialLink
-          href="https://www.linkedin.com/company/rho-impact"
-          icon={LinkedInIcon}
+          href={linkedinUrl}
+          icon="fa-brands fa-linkedin-in"
         >
           Follow us on LinkedIn
+        </SocialLink>
+        <SocialLink
+          href={githubUrl}
+          icon="fa-brands fa-github"
+        >
+          Contribute on GitHub
         </SocialLink>
       </div>
     </div>

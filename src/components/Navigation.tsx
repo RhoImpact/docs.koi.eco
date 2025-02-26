@@ -18,6 +18,8 @@ interface NavGroup {
   links: Array<{
     title: string
     href: string
+    icon?: string
+    tag?: string
   }>
 }
 
@@ -49,12 +51,14 @@ function NavLink({
   href,
   children,
   tag,
+  icon,
   active = false,
   isAnchorLink = false,
 }: {
   href: string
   children: React.ReactNode
   tag?: string
+  icon?: string
   active?: boolean
   isAnchorLink?: boolean
 }) {
@@ -63,13 +67,16 @@ function NavLink({
       href={href}
       aria-current={active ? 'page' : undefined}
       className={clsx(
-        'flex justify-between gap-2 py-1 pr-3 text-sm transition',
+        'flex justify-start gap-2 py-1 pr-3 text-sm transition',
         isAnchorLink ? 'pl-7' : 'pl-4',
         active
           ? 'text-zinc-900 dark:text-white'
           : 'text-zinc-600 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-white'
       )}
     >
+      {icon && (
+        <span className="truncate"><i className={`${icon}`}></i></span>
+      )}
       <span className="truncate">{children}</span>
       {tag && (
         <Tag variant="small" color="zinc">
@@ -189,9 +196,9 @@ function NavigationGroup({
           )}
         </AnimatePresence>
         <ul role="list" className="border-l border-transparent">
-          {group.links.map((link) => (
-            <motion.li key={link.href} layout="position" className="relative">
-              <NavLink href={link.href} active={link.href === pathname}>
+          {group.links.map((link, idx) => (
+            <motion.li key={link.href + idx} layout="position" className="relative">
+              <NavLink href={link.href} active={link.href === pathname} tag={link.tag} icon={link.icon}>
                 {link.title}
               </NavLink>
               <AnimatePresence mode="popLayout" initial={false}>
@@ -234,24 +241,23 @@ export const navigation: Array<NavGroup> = [
   {
     title: 'Documentation',
     links: [
-      { title: 'Introduction', href: '/' },
-      { title: 'Quickstart', href: '/docs/quickstart' },
+      { title: 'Overview', href: '/', icon: 'fa-regular fa-house' },
     ],
   },
-  // {
-    //   title: 'Tutorial',
-    //   links: [
-      //     { title: 'Forward', href: '/docs/tutorial' },
-      //     { title: 'Chapter 0', href: '/docs/tutorial/chapter-0' },
-      //   ],
-      // },
-      {
-        title: 'Key Concepts',
-        links: [
-          { title: 'Overview', href: '/docs/key-concepts/overview' },
-          { title: 'FAQs', href: '/docs/key-concepts/faqs' },
-          { title: 'Avoided Emissions', href: '/docs/key-concepts/avoided-emissions' },
-          { title: 'Methodologies', href: '/docs/key-concepts/methodologies' },
+  {
+    title: 'New to Koi?',
+    links: [
+      { title: 'Getting Started', href: '/docs/getting-started', icon: 'fa-regular fa-flag-swallowtail' },
+      { title: 'Quickstart', href: '/docs/getting-started/quickstart', icon: 'fa-regular fa-rocket' },
+      { title: 'FAQs', href: '/docs/getting-started/faqs', icon: 'fa-regular fa-comment-question' },
+    ],
+  },
+  {
+    title: 'Key Concepts',
+    links: [
+      { title: 'Overview', href: '/docs/key-concepts/overview' },
+      { title: 'Avoided Emissions', href: '/docs/key-concepts/avoided-emissions' },
+      { title: 'Methodologies', href: '/docs/key-concepts/methodologies' },
     ],
   },
   {

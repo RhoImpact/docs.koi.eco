@@ -13,8 +13,8 @@ import { Heading } from '@/components/Heading'
 import { RhoLogoIcon } from '@/components/icons/RhoLogoIcon'
 import { CraneLogoIcon } from '@/components/icons/CraneLogoIcon'
 import { KoiLogoIcon } from '@/components/icons/KoiLogoIcon'
-
-export const baseUrl = process.env.NEXT_PUBLIC_KOI_STUDIO_BASE_URL
+import { ChatBubbleIcon } from '@/components/icons/ChatBubbleIcon'
+import { studioUrl, feedbackUrl } from '@/constants/urls'
 
 interface UsefulLink {
   href: string
@@ -29,10 +29,23 @@ interface UsefulLink {
 
 const usefulLinks: Array<UsefulLink> = [
   {
-    href: `${baseUrl}`,
+    href: `${studioUrl}`,
     name: 'Koi Studio',
     description: 'Use Koi to calculate the impact of new technologies.',
     icon: KoiLogoIcon,
+    pattern: {
+      y: 16,
+      squares: [
+        [0, 1],
+        [1, 3],
+      ],
+    },
+  },
+  {
+    href: `${feedbackUrl}`,
+    name: 'Koi Feedback',
+    description: 'Share your feedback and influence our roadmap.',
+    icon: ChatBubbleIcon,
     pattern: {
       y: 16,
       squares: [

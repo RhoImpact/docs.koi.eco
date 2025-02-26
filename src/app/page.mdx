@@ -1,4 +1,3 @@
-import { Guides } from '@/components/Guides'
 import { UsefulLinks } from '@/components/UsefulLinks'
 import { HeroPattern } from '@/components/HeroPattern'
 import { BuiltOnTrust } from '@/components/BuiltOnTrust'
@@ -8,9 +7,7 @@ import Image from 'next/image'
 import packageJson from '../../package.json'
 import ExternalLink from '@/components/ExternalLink'
 import PageInformationalData from '@/components/PageInformationalData'
-
-export const studioUrl = process.env.NEXT_PUBLIC_KOI_STUDIO_BASE_URL
-export const feedbackUrl = process.env.NEXT_PUBLIC_KOI_FEEDBACK_BASE_URL
+import { studioUrl, feedbackUrl, roadmapUrl, changelogUrl } from '@/constants/urls'
 
 export const metadata = {
   title: 'Koi Documentation',
@@ -18,11 +15,7 @@ export const metadata = {
     'Learn about Koi and how to use it.',
 }
 
-export const sections = [
-  { title: 'Guides', id: 'guides' },
-  { title: 'Useful Links', id: 'useful-links' },
-  { title: 'Built on Trust', id: 'built-on-trust' },
-]
+export const sections = [] // Hide sections from the navigation for the home page
 
 <HeroPattern />
 
@@ -33,10 +26,10 @@ export const sections = [
 />
 
 # Koi unlocks climate solutions.
-<p className="text-sm italic">
+<div className="text-sm italic">
 *Last updated: {packageJson.lastUpdated}*<br />
 *Docs Version: {packageJson.version}*
-</p>
+</div>
 
 <ExternalLink
   url={`${studioUrl}`}
@@ -50,36 +43,20 @@ Compared to traditional climate tools, Koi is intuitive, forward-looking, and th
 impact forecasting platform that blends the **latest generative AI with decades of hands-on forecasting experience**.
 We exist to help **scale the best climate solutions, faster**.
 
-## Let's Begin
+## Where to Begin
 
-- Sign up for a <ExternalLink
+- <ExternalLink
     url={`${studioUrl}/sign-up`}
     utmContent="hero-banner-link"
     ariaLabel="Sign up for Koi Studio"
-    linkText="free account"
+    linkText="Sign Up"
     rel="noopener noreferrer"
     target="_blank"
-  />
-- Explore <ExternalLink
-    url={`${studioUrl}/search`}
-    utmContent="hero-banner-link"
-    ariaLabel="Search for starter forecasts"
-    linkText="starter forecasts"
-    rel="noopener noreferrer"
-    target="_blank"
-  /> that include
-  - curated **baseline** data
-  - starter **solution** models
-  - Available and obtainable **market** data
-
-- **Scale climate solutions** with *speed* and *transparency*.
-
-## Up Next
-
-- [**Quickstart**](/docs/quickstart): Read our quickstart guide to get started...quickly.
-- [**Key Concepts**](/docs/resources/key-concepts-overview): Learn about the art and science of impact forecasting.
+  />: Create a free account to get started.
+- [**Getting Started**](/docs/getting-started): Start here to get up and running quickly.
+- [**Key Concepts**](/docs/key-concepts/overview): Learn about the art and science of impact forecasting.
 - <ExternalLink
-    url={`${feedbackUrl}/roadmap`}
+    url={`${roadmapUrl}`}
     utmContent="hero-banner-link"
     ariaLabel="See what's coming next"
     linkText="Roadmap"
@@ -95,7 +72,7 @@ We exist to help **scale the best climate solutions, faster**.
     target="_blank"
   />: Share your feedback and influence our roadmap.
 - <ExternalLink
-    url={`${feedbackUrl}/changelog`}
+    url={`${changelogUrl}`}
     utmContent="hero-banner-link"
     ariaLabel="See the changelog"
     linkText="Changelog"
@@ -104,19 +81,16 @@ We exist to help **scale the best climate solutions, faster**.
   />: Keep tabs on recent changes and new features.
 
 <div className="not-prose mb-16 mt-6 flex gap-3">
-  <Button href="/docs/quickstart" arrow="right">
-    <>Quickstart</>
+  <Button href="/docs/getting-started" arrow="right">
+    <>Getting Started</>
   </Button>
-  <Button href="/docs/key-concepts" variant="outline">
+  <Button href="/docs/key-concepts/overview" variant="outline">
     <>Explore Key Concepts</>
   </Button>
 </div>
 
-
-<Guides />
+<BuiltOnTrust />
 
 <UsefulLinks />
-
-<BuiltOnTrust />
 
 <Callouts />
