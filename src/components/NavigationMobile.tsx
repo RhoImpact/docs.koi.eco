@@ -42,9 +42,9 @@ function XIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
   )
 }
 
-const IsInsideMobileNavigationContext = createContext(false)
+const IsInsideNavigationMobileContext = createContext(false)
 
-function MobileNavigationDialog({
+function NavigationMobileDialog({
   isOpen,
   close,
 }: {
@@ -107,11 +107,11 @@ function MobileNavigationDialog({
   )
 }
 
-export function useIsInsideMobileNavigation() {
-  return useContext(IsInsideMobileNavigationContext)
+export function useIsInsideNavigationMobile() {
+  return useContext(IsInsideNavigationMobileContext)
 }
 
-export const useMobileNavigationStore = create<{
+export const useNavigationMobileStore = create<{
   isOpen: boolean
   open: () => void
   close: () => void
@@ -123,13 +123,13 @@ export const useMobileNavigationStore = create<{
   toggle: () => set((state) => ({ isOpen: !state.isOpen })),
 }))
 
-export function MobileNavigation() {
-  let isInsideMobileNavigation = useIsInsideMobileNavigation()
-  let { isOpen, toggle, close } = useMobileNavigationStore()
+export function NavigationMobile() {
+  let isInsideNavigationMobile = useIsInsideNavigationMobile()
+  let { isOpen, toggle, close } = useNavigationMobileStore()
   let ToggleIcon = isOpen ? XIcon : MenuIcon
 
   return (
-    <IsInsideMobileNavigationContext.Provider value={true}>
+    <IsInsideNavigationMobileContext.Provider value={true}>
       <button
         type="button"
         className="flex h-6 w-6 items-center justify-center rounded-md transition hover:bg-zinc-900/5 dark:hover:bg-white/5"
@@ -138,11 +138,11 @@ export function MobileNavigation() {
       >
         <ToggleIcon className="w-2.5 stroke-zinc-900 dark:stroke-white" />
       </button>
-      {!isInsideMobileNavigation && (
+      {!isInsideNavigationMobile && (
         <Suspense fallback={null}>
-          <MobileNavigationDialog isOpen={isOpen} close={close} />
+          <NavigationMobileDialog isOpen={isOpen} close={close} />
         </Suspense>
       )}
-    </IsInsideMobileNavigationContext.Provider>
+    </IsInsideNavigationMobileContext.Provider>
   )
 }

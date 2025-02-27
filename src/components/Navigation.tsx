@@ -5,23 +5,14 @@ import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import clsx from 'clsx'
 import { AnimatePresence, motion, useIsPresent } from 'framer-motion'
-
+import { NavGroup, navigation } from '@/constants/navigation'
 import { Button } from '@/components/Button'
-import { useIsInsideMobileNavigation } from '@/components/MobileNavigation'
+import { useIsInsideNavigationMobile } from '@/components/NavigationMobile'
 import { useSectionStore } from '@/components/SectionProvider'
 import { Tag } from '@/components/Tag'
 import { remToPx } from '@/lib/remToPx'
 
 export const baseUrl = process.env.NEXT_PUBLIC_KOI_STUDIO_BASE_URL
-interface NavGroup {
-  title: string
-  links: Array<{
-    title: string
-    href: string
-    icon?: string
-    tag?: string
-  }>
-}
 
 function useInitialValue<T>(value: T, condition = true) {
   let initialValue = useRef(value).current
@@ -99,7 +90,7 @@ function VisibleSectionHighlight({
       useSectionStore((s) => s.sections),
       useSectionStore((s) => s.visibleSections),
     ],
-    useIsInsideMobileNavigation()
+    useIsInsideNavigationMobile()
   )
 
   let isPresent = useIsPresent()
@@ -163,10 +154,10 @@ function NavigationGroup({
   // If this is the mobile navigation then we always render the initial
   // state, so that the state does not change during the close animation.
   // The state will still update when we re-open (re-render) the navigation.
-  let isInsideMobileNavigation = useIsInsideMobileNavigation()
+  let isInsideNavigationMobile = useIsInsideNavigationMobile()
   let [pathname, sections] = useInitialValue(
     [usePathname(), useSectionStore((s) => s.sections)],
-    isInsideMobileNavigation
+    isInsideNavigationMobile
   )
 
   let isActiveGroup =
@@ -181,7 +172,7 @@ function NavigationGroup({
         {group.title}
       </motion.h2>
       <div className="relative mt-3 pl-2">
-        <AnimatePresence initial={!isInsideMobileNavigation}>
+        <AnimatePresence initial={!isInsideNavigationMobile}>
           {isActiveGroup && (
             <VisibleSectionHighlight group={group} pathname={pathname} />
           )}
@@ -202,7 +193,8 @@ function NavigationGroup({
                 {link.title}
               </NavLink>
               <AnimatePresence mode="popLayout" initial={false}>
-                {link.href === pathname && sections.length > 0 && (
+                {/* Add sections to the navigation (anchor tags based on headings in the page) */}
+                {/* {link.href === pathname && sections.length > 0 && (
                   <motion.ul
                     role="list"
                     initial={{ opacity: 0 }}
@@ -227,6 +219,34 @@ function NavigationGroup({
                       </li>
                     ))}
                   </motion.ul>
+                )} */}
+                {/* Add subpages to the navigation (subPages are defined in the page.mdx file) */}
+                {/* NOTE: Adjusted logic to show section if on a subpage */}
+                {(link.href === pathname || (link.links && link.links.some(subLink => subLink.href === pathname))) && (
+                  <motion.ul
+                    role="list"
+                    initial={{ opacity: 0 }}
+                    animate={{
+                      opacity: 1,
+                      transition: { delay: 0.1 },
+                    }}
+                    exit={{
+                      opacity: 0,
+                      transition: { duration: 0.15 },
+                    }}
+                  >
+                    {link.links?.map((subLink, idx) => (
+                      <li key={subLink.href + idx}>
+                        <NavLink
+                          href={subLink.href}
+                          tag={subLink.tag}
+                          isAnchorLink
+                        >
+                          {subLink.title}
+                        </NavLink>
+                      </li>
+                    ))}
+                  </motion.ul>
                 )}
               </AnimatePresence>
             </motion.li>
@@ -237,47 +257,6 @@ function NavigationGroup({
   )
 }
 
-export const navigation: Array<NavGroup> = [
-  {
-    title: 'Documentation',
-    links: [
-      { title: 'Overview', href: '/', icon: 'fa-regular fa-house' },
-    ],
-  },
-  {
-    title: 'New to Koi?',
-    links: [
-      { title: 'Getting Started', href: '/docs/getting-started', icon: 'fa-regular fa-flag-swallowtail' },
-      { title: 'Quickstart', href: '/docs/getting-started/quickstart', icon: 'fa-regular fa-rocket' },
-      { title: 'FAQs', href: '/docs/getting-started/faqs', icon: 'fa-regular fa-comment-question' },
-    ],
-  },
-  {
-    title: 'Key Concepts',
-    links: [
-      { title: 'Overview', href: '/docs/key-concepts/overview' },
-      { title: 'Avoided Emissions', href: '/docs/key-concepts/avoided-emissions' },
-      { title: 'Methodologies', href: '/docs/key-concepts/methodologies' },
-    ],
-  },
-  {
-    title: 'API',
-    links: [
-      { title: 'API Reference', href: '/docs/api/reference' },
-      { title: 'SDKs', href: '/docs/api/sdks' },
-      { title: 'API Endpoints', href: '/docs/api/endpoints' },
-      { title: 'Errors', href: '/docs/api/errors' },
-    ],
-  },
-  {
-    title: 'Useful Links',
-    links: [
-      { title: 'Koi', href: 'https://koi.eco' },
-      { title: 'Rho Impact', href: 'https://rhoimpact.com' },
-      { title: 'CRANE', href: 'https://cranetool.org' },
-    ],
-  },
-]
 
 export function Navigation(props: React.ComponentPropsWithoutRef<'nav'>) {
   return (

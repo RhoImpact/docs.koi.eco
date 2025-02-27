@@ -4,7 +4,7 @@ import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 
 import { Button } from '@/components/Button'
-import { navigation } from '@/components/Navigation'
+import { navigation } from '@/constants/navigation'
 import { Feedback } from '@/components/Feedback'
 import { githubUrl, linkedinUrl } from '@/constants/urls'
 
