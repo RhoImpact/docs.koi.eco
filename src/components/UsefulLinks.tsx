@@ -181,7 +181,7 @@ function UsefulLink({ usefulLink }: { usefulLink: UsefulLink }) {
 
 export function UsefulLinks() {
   return (
-    <div className="my-16 xl:max-w-none">
+    <div className="my-16 xl:max-w-5xl">
       <Heading level={2} id="useful-links">
         Useful Links
       </Heading>

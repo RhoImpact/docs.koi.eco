@@ -2,6 +2,7 @@ import headlessuiPlugin from '@headlessui/tailwindcss'
 import typographyPlugin from '@tailwindcss/typography'
 import { type Config } from 'tailwindcss'
 
+import koiColors from './src/lib/koiColors'
 import typographyStyles from './typography'
 
 export default {
@@ -26,6 +27,7 @@ export default {
     },
     typography: typographyStyles,
     extend: {
+      colors: { ...koiColors },
       boxShadow: {
         glow: '0 0 4px rgb(0 0 0 / 0.1)',
       },

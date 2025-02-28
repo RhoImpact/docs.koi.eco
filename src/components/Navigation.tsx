@@ -56,12 +56,14 @@ export function NavLink({
         'flex justify-start gap-2 py-1 pr-3 text-sm transition',
         isAnchorLink ? 'pl-7' : 'pl-4',
         active
-          ? 'text-zinc-900 dark:text-white border-l-2 border-cyan-500'
+          ? 'rounded-r-md border-l-2 border-cyan-500 bg-white/5 text-zinc-900 dark:text-white'
           : 'text-zinc-600 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-white'
       )}
     >
       {icon && (
-        <span className="truncate"><i className={`${icon}`}></i></span>
+        <span className="truncate">
+          <i className={`${icon}`}></i>
+        </span>
       )}
       <span className="truncate">{children}</span>
       {tag && (
@@ -107,7 +109,11 @@ function NavigationGroup({
         />
         <ul role="list" className="border-l border-transparent">
           {group.links.map((link, idx) => (
-            <motion.li key={link.href + idx} layout="position" className="relative">
+            <motion.li
+              key={link.href + idx}
+              layout="position"
+              className="relative"
+            >
               <NavLink
                 href={link.href}
                 active={link.href === pathname}
@@ -146,7 +152,11 @@ function NavigationGroup({
                 )} */}
                 {/* Add subpages to the navigation (subPages are defined in the page.mdx file) */}
                 {/* NOTE: Adjusted logic to show section if on a subpage */}
-                {(link.href === pathname || (link.links && link.links.some(subLink => subLink.href === pathname))) && (
+                {(link.href === pathname ||
+                  (link.links &&
+                    link.links.some(
+                      (subLink) => subLink.href === pathname
+                    ))) && (
                   <motion.ul
                     role="list"
                     initial={{ opacity: 0 }}
@@ -182,14 +192,19 @@ function NavigationGroup({
   )
 }
 
-
 export function Navigation(props: React.ComponentPropsWithoutRef<'nav'>) {
   return (
     <nav {...props}>
       <ul role="list">
-        <MobileTopLevelNavItem href="/">Documentation Home</MobileTopLevelNavItem>
-        <MobileTopLevelNavItem href={`${baseUrl}`}>Go to Koi</MobileTopLevelNavItem>
-        <MobileTopLevelNavItem href={`${baseUrl}/contact`}>Support</MobileTopLevelNavItem>
+        <MobileTopLevelNavItem href="/">
+          Documentation Home
+        </MobileTopLevelNavItem>
+        <MobileTopLevelNavItem href={`${baseUrl}`}>
+          Go to Koi
+        </MobileTopLevelNavItem>
+        <MobileTopLevelNavItem href={`${baseUrl}/contact`}>
+          Support
+        </MobileTopLevelNavItem>
         {navigation.map((group, groupIndex) => (
           <NavigationGroup
             key={group.title}

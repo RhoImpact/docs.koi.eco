@@ -88,7 +88,9 @@ function SocialLink({
       rel="noopener noreferrer"
     >
       <span className="sr-only">{children}</span>
-      <i className={`h-5 w-5 fill-zinc-700 transition group-hover:fill-zinc-900 dark:group-hover:fill-zinc-500 ${icon}`} />
+      <i
+        className={`h-5 w-5 fill-zinc-700 transition group-hover:fill-zinc-900 dark:group-hover:fill-zinc-500 ${icon}`}
+      />
     </Link>
   )
 }
@@ -100,16 +102,10 @@ function SmallPrint() {
         &copy; Copyright {new Date().getFullYear()}. All rights reserved.
       </p>
       <div className="flex gap-4">
-        <SocialLink
-          href={linkedinUrl}
-          icon="fa-brands fa-linkedin-in"
-        >
+        <SocialLink href={linkedinUrl} icon="fa-brands fa-linkedin-in">
           Follow us on LinkedIn
         </SocialLink>
-        <SocialLink
-          href={githubUrl}
-          icon="fa-brands fa-github"
-        >
+        <SocialLink href={githubUrl} icon="fa-brands fa-github">
           Contribute on GitHub
         </SocialLink>
       </div>
@@ -117,9 +113,18 @@ function SmallPrint() {
   )
 }
 
-export function Footer() {
+export function Footer({
+  className,
+  id = 'footer-primary',
+}: {
+  className?: string
+  id?: string
+}) {
   return (
-    <footer className="mx-auto w-full max-w-2xl space-y-10 pb-16 lg:max-w-5xl">
+    <footer
+      id={id}
+      className={`mx-auto w-full space-y-10 px-10 pb-16 ${className || ''}`}
+    >
       <PageNavigation />
       <Feedback />
       <SmallPrint />
