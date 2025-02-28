@@ -6,11 +6,9 @@ import { usePathname } from 'next/navigation'
 import clsx from 'clsx'
 import { AnimatePresence, motion, useIsPresent } from 'framer-motion'
 import { NavGroup, navigation } from '@/constants/navigation'
-import { Button } from '@/components/Button'
 import { useIsInsideNavigationMobile } from '@/components/NavigationMobile'
 import { useSectionStore } from '@/components/SectionProvider'
 import { Tag } from '@/components/Tag'
-import { remToPx } from '@/lib/remToPx'
 
 export const baseUrl = process.env.NEXT_PUBLIC_KOI_STUDIO_BASE_URL
 
@@ -38,13 +36,14 @@ function MobileTopLevelNavItem({
   )
 }
 
-function NavLink({
+export function NavLink({
   href,
   children,
   tag,
   icon,
   active = false,
   isAnchorLink = false,
+  onClick,
 }: {
   href: string
   children: React.ReactNode
@@ -52,16 +51,18 @@ function NavLink({
   icon?: string
   active?: boolean
   isAnchorLink?: boolean
+  onClick?: () => void
 }) {
   return (
     <Link
       href={href}
+      onClick={onClick}
       aria-current={active ? 'page' : undefined}
       className={clsx(
         'flex justify-start gap-2 py-1 pr-3 text-sm transition',
         isAnchorLink ? 'pl-7' : 'pl-4',
         active
-          ? 'text-zinc-900 dark:text-white'
+          ? 'text-zinc-900 dark:text-white border-l-2 border-cyan-500'
           : 'text-zinc-600 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-white'
       )}
     >
@@ -75,72 +76,6 @@ function NavLink({
         </Tag>
       )}
     </Link>
-  )
-}
-
-function VisibleSectionHighlight({
-  group,
-  pathname,
-}: {
-  group: NavGroup
-  pathname: string
-}) {
-  let [sections, visibleSections] = useInitialValue(
-    [
-      useSectionStore((s) => s.sections),
-      useSectionStore((s) => s.visibleSections),
-    ],
-    useIsInsideNavigationMobile()
-  )
-
-  let isPresent = useIsPresent()
-  let firstVisibleSectionIndex = Math.max(
-    0,
-    [{ id: '_top' }, ...sections].findIndex(
-      (section) => section.id === visibleSections[0]
-    )
-  )
-  let itemHeight = remToPx(2)
-  let height = isPresent
-    ? Math.max(1, visibleSections.length) * itemHeight
-    : itemHeight
-  let top =
-    group.links.findIndex((link) => link.href === pathname) * itemHeight +
-    firstVisibleSectionIndex * itemHeight
-
-  return (
-    <motion.div
-      layout
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1, transition: { delay: 0.2 } }}
-      exit={{ opacity: 0 }}
-      className="absolute inset-x-0 top-0 bg-zinc-800/2.5 will-change-transform dark:bg-white/2.5"
-      style={{ borderRadius: 8, height, top }}
-    />
-  )
-}
-
-function ActivePageMarker({
-  group,
-  pathname,
-}: {
-  group: NavGroup
-  pathname: string
-}) {
-  let itemHeight = remToPx(2)
-  let offset = remToPx(0.25)
-  let activePageIndex = group.links.findIndex((link) => link.href === pathname)
-  let top = offset + activePageIndex * itemHeight
-
-  return (
-    <motion.div
-      layout
-      className="absolute left-2 h-6 w-px bg-cyan-500"
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1, transition: { delay: 0.2 } }}
-      exit={{ opacity: 0 }}
-      style={{ top }}
-    />
   )
 }
 
@@ -172,24 +107,19 @@ function NavigationGroup({
         {group.title}
       </motion.h2>
       <div className="relative mt-3 pl-2">
-        <AnimatePresence initial={!isInsideNavigationMobile}>
-          {isActiveGroup && (
-            <VisibleSectionHighlight group={group} pathname={pathname} />
-          )}
-        </AnimatePresence>
         <motion.div
           layout
           className="absolute inset-y-0 left-2 w-px bg-zinc-900/10 dark:bg-white/5"
         />
-        <AnimatePresence initial={false}>
-          {isActiveGroup && (
-            <ActivePageMarker group={group} pathname={pathname} />
-          )}
-        </AnimatePresence>
         <ul role="list" className="border-l border-transparent">
           {group.links.map((link, idx) => (
             <motion.li key={link.href + idx} layout="position" className="relative">
-              <NavLink href={link.href} active={link.href === pathname} tag={link.tag} icon={link.icon}>
+              <NavLink
+                href={link.href}
+                active={link.href === pathname}
+                tag={link.tag}
+                icon={link.icon}
+              >
                 {link.title}
               </NavLink>
               <AnimatePresence mode="popLayout" initial={false}>
@@ -241,6 +171,7 @@ function NavigationGroup({
                           href={subLink.href}
                           tag={subLink.tag}
                           isAnchorLink
+                          active={subLink.href === pathname}
                         >
                           {subLink.title}
                         </NavLink>

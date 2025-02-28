@@ -27,9 +27,9 @@ export const navigation: Array<NavGroup> = [
         { title: 'Getting Started', href: '/docs/getting-started', icon: 'fa-regular fa-flag-swallowtail' },
         { title: 'Quickstart', href: '/docs/getting-started/quickstart', icon: 'fa-regular fa-rocket' },
         { title: 'Features', href: '/docs/getting-started/features', icon: 'fa-regular fa-bolt', links: [
-          { title: 'sCollections', href: '/docs/getting-started/features/collections', icon: 'fa-regular fa-folder' },
-          { title: 'sForecasts', href: '/docs/getting-started/features/forecasts', icon: 'fa-regular fa-chart-line' },
-          { title: 'sSearch', href: '/docs/getting-started/features/search', icon: 'fa-regular fa-magnifying-glass' },
+          { title: 'Collections', href: '/docs/getting-started/features/collections', icon: 'fa-regular fa-folder' },
+          { title: 'Forecasts', href: '/docs/getting-started/features/forecasts', icon: 'fa-regular fa-chart-line' },
+          { title: 'Search', href: '/docs/getting-started/features/search', icon: 'fa-regular fa-magnifying-glass' },
         ] },
         { title: 'FAQs', href: '/docs/getting-started/faqs', icon: 'fa-regular fa-comment-question' },
       ],

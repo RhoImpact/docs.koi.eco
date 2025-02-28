@@ -28,7 +28,7 @@ export const PostHogProvider: React.FC<{ children: React.ReactNode }> = ({
   const [posthogInitialized, setPosthogInitialized] = useState(false)
 
   useEffect(() => {
-    if (!posthog.isFeatureEnabled('posthog-initialized')) {
+    if (process.env.NODE_ENV !== 'development' && !posthog.isFeatureEnabled('posthog-initialized')) {
       posthog.init(process.env.NEXT_PUBLIC_POSTHOG_KEY || '', {
         api_host: process.env.NEXT_PUBLIC_POSTHOG_HOST || '',
       })

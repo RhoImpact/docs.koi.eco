@@ -17,10 +17,8 @@ async function postToSlack(message: string) {
     if (!response.ok) {
       throw new Error('Network response was not ok');
     }
-
-    console.log('Message posted successfully');
   } catch (error) {
-    console.error('Error posting to Slack:', error);
+    console.error('Error posting:', error);
   }
 }
 
