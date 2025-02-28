@@ -19,24 +19,6 @@ function useInitialValue<T>(value: T, condition = true) {
   return condition ? initialValue : value
 }
 
-function MobileTopLevelNavItem({
-  href,
-  children,
-}: {
-  href: string
-  children: React.ReactNode
-}) {
-  return (
-    <li className="md:hidden">
-      <Link
-        href={href}
-        className="block py-1 text-sm text-zinc-600 transition hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-white"
-      >
-        {children}
-      </Link>
-    </li>
-  )
-}
 
 function NavLink({
   href,
@@ -165,36 +147,17 @@ function NavigationGroup({
 
   return (
     <li className={clsx('relative mt-6', className)}>
-      <motion.h2
-        layout="position"
-        className="text-xs font-semibold text-zinc-900 dark:text-white"
-      >
-        {group.title}
-      </motion.h2>
       <div className="relative mt-3 pl-2">
-        <AnimatePresence initial={!isInsideNavigationMobile}>
-          {isActiveGroup && (
-            <VisibleSectionHighlight group={group} pathname={pathname} />
-          )}
-        </AnimatePresence>
         <motion.div
           layout
           className="absolute inset-y-0 left-2 w-px bg-zinc-900/10 dark:bg-white/5"
         />
-        <AnimatePresence initial={false}>
-          {isActiveGroup && (
-            <ActivePageMarker group={group} pathname={pathname} />
-          )}
-        </AnimatePresence>
         <ul role="list" className="border-l border-transparent">
           {group.links.map((link, idx) => (
             <motion.li key={link.href + idx} layout="position" className="relative">
-              <NavLink href={link.href} active={link.href === pathname} tag={link.tag} icon={link.icon}>
-                {link.title}
-              </NavLink>
               <AnimatePresence mode="popLayout" initial={false}>
                 {/* Add sections to the navigation (anchor tags based on headings in the page) */}
-                {/* {link.href === pathname && sections.length > 0 && (
+                {link.href === pathname && sections.length > 0 && (
                   <motion.ul
                     role="list"
                     initial={{ opacity: 0 }}
@@ -219,34 +182,6 @@ function NavigationGroup({
                       </li>
                     ))}
                   </motion.ul>
-                )} */}
-                {/* Add subpages to the navigation (subPages are defined in the page.mdx file) */}
-                {/* NOTE: Adjusted logic to show section if on a subpage */}
-                {(link.href === pathname || (link.links && link.links.some(subLink => subLink.href === pathname))) && (
-                  <motion.ul
-                    role="list"
-                    initial={{ opacity: 0 }}
-                    animate={{
-                      opacity: 1,
-                      transition: { delay: 0.1 },
-                    }}
-                    exit={{
-                      opacity: 0,
-                      transition: { duration: 0.15 },
-                    }}
-                  >
-                    {link.links?.map((subLink, idx) => (
-                      <li key={subLink.href + idx}>
-                        <NavLink
-                          href={subLink.href}
-                          tag={subLink.tag}
-                          isAnchorLink
-                        >
-                          {subLink.title}
-                        </NavLink>
-                      </li>
-                    ))}
-                  </motion.ul>
                 )}
               </AnimatePresence>
             </motion.li>
@@ -258,13 +193,11 @@ function NavigationGroup({
 }
 
 
-export function Navigation(props: React.ComponentPropsWithoutRef<'nav'>) {
+export function NavigationSections(props: React.ComponentPropsWithoutRef<'nav'>) {
   return (
     <nav {...props}>
       <ul role="list">
-        <MobileTopLevelNavItem href="/">Documentation Home</MobileTopLevelNavItem>
-        <MobileTopLevelNavItem href={`${baseUrl}`}>Go to Koi</MobileTopLevelNavItem>
-        <MobileTopLevelNavItem href={`${baseUrl}/contact`}>Support</MobileTopLevelNavItem>
+        {/* todo: only for the current page and only for sections */}
         {navigation.map((group, groupIndex) => (
           <NavigationGroup
             key={group.title}
