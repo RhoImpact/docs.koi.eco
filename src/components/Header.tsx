@@ -11,7 +11,7 @@ import {
 } from '@/components/NavigationMobile'
 import { useNavigationMobileStore } from '@/components/NavigationMobile'
 import { MobileSearch, Search } from '@/components/Search'
-import { studioUrl, landingUrl, feedbackUrl } from '@/constants/urls'
+import { studioUrl, landingUrl, feedbackUrl } from '@/shared/urls'
 
 function TopLevelNavItem({
   href,

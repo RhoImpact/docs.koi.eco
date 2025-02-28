@@ -1,3 +1,5 @@
+import { useRef } from "react"
+
 export interface NavGroup {
     title: string
     links: Array<{
@@ -14,6 +16,17 @@ export interface NavGroup {
     }>
   }
   
+export interface NavSection {
+    title: string;
+    href: string;
+    links?: NavSection[];
+}
+
+export function useInitialValue<T>(value: T, condition = true) {
+  let initialValue = useRef(value).current
+  return condition ? initialValue : value
+}
+
 export const navigation: Array<NavGroup> = [
     {
       title: 'Documentation',

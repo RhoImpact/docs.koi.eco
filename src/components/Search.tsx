@@ -21,7 +21,7 @@ import {
 import { Dialog, DialogPanel, DialogBackdrop } from '@headlessui/react'
 import clsx from 'clsx'
 
-import { navigation } from '@/constants/navigation'
+import { navigation } from '@/shared/navigation'
 import { type Result } from '@/mdx/search.mjs'
 
 type EmptyObject = Record<string, never>

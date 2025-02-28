@@ -4,9 +4,9 @@ import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 
 import { Button } from '@/components/Button'
-import { navigation } from '@/constants/navigation'
+import { navigation } from '@/shared/navigation'
 import { Feedback } from '@/components/Feedback'
-import { githubUrl, linkedinUrl } from '@/constants/urls'
+import { githubUrl, linkedinUrl } from '@/shared/urls'
 
 function PageLink({
   label,

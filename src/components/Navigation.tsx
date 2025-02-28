@@ -1,21 +1,15 @@
 'use client'
 
-import { useRef } from 'react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import clsx from 'clsx'
-import { AnimatePresence, motion, useIsPresent } from 'framer-motion'
-import { NavGroup, navigation } from '@/constants/navigation'
+import { AnimatePresence, motion } from 'framer-motion'
+import { NavGroup, navigation, useInitialValue } from '@/shared/navigation'
 import { useIsInsideNavigationMobile } from '@/components/NavigationMobile'
 import { useSectionStore } from '@/components/SectionProvider'
 import { Tag } from '@/components/Tag'
 
 export const baseUrl = process.env.NEXT_PUBLIC_KOI_STUDIO_BASE_URL
-
-function useInitialValue<T>(value: T, condition = true) {
-  let initialValue = useRef(value).current
-  return condition ? initialValue : value
-}
 
 function MobileTopLevelNavItem({
   href,

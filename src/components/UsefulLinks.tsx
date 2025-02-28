@@ -14,7 +14,7 @@ import { RhoLogoIcon } from '@/components/icons/RhoLogoIcon'
 import { CraneLogoIcon } from '@/components/icons/CraneLogoIcon'
 import { KoiLogoIcon } from '@/components/icons/KoiLogoIcon'
 import { ChatBubbleIcon } from '@/components/icons/ChatBubbleIcon'
-import { studioUrl, feedbackUrl } from '@/constants/urls'
+import { studioUrl, feedbackUrl } from '@/shared/urls'
 
 interface UsefulLink {
   href: string
