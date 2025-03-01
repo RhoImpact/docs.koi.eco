@@ -1,40 +1,19 @@
 import PageInformationalData from '@/components/PageInformationalData'
-import ExternalLink from '@/components/ExternalLink'
-import { studioUrl } from '@/shared/urls'
+import { GettingStartedGrid } from './GettingStartedGrid'
+import { NextUpGrid } from './NextUpGrid'
 export const metadata = {
   title: 'Getting Started',
   description:
-    'This guide will get you all set up and ready to use the Koi API. ' +
-    'We\'ll cover how to get started an API client and how to make your first API request.',
+    'Get up and running with Koi.',
 }
+
+{/* Explicitly zero this out for the sake of cleanliness on main page. */}
+export const sections = []
 
 # Getting Started
 
 <PageInformationalData lastModified={lastModified} />
 
-### Let's Begin!
+<GettingStartedGrid />
 
-- Sign up for a <ExternalLink
-    url={`${studioUrl}/sign-up`}
-    utmContent="hero-banner-link"
-    ariaLabel="Sign up for Koi Studio"
-    linkText="free account"
-    rel="noopener noreferrer"
-    target="_blank"
-  />
-- Explore <ExternalLink
-    url={`${studioUrl}/search`}
-    utmContent="hero-banner-link"
-    ariaLabel="Search for starter forecasts"
-    linkText="starter forecasts"
-    rel="noopener noreferrer"
-    target="_blank"
-  /> that include
-  - curated **baseline** data
-  - starter **solution** models
-  - Available and obtainable **market** data
-
-- **Scale climate solutions** with *speed* and *transparency*.
-
-Carve out about 15 minutes to run through our [Quickstart](/docs/getting-started/quickstart) guide,
-which will walk you through some of the core concepts of Koi and share some workflows.
+<NextUpGrid />

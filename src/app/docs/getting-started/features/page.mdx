@@ -1,17 +1,10 @@
 import ExternalLink from '@/components/ExternalLink'
 import PageInformationalData from '@/components/PageInformationalData'
-
+import { changelogUrl } from '@/shared/urls'
 export const metadata = {
   title: 'Features',
   description: 'Key Koi Features',
 }
-
-export const subPages = [
-  { id: 'collections', title: 'Pg-Collections', relativeHref: 'collections' },
-  { id: 'forecasts', title: 'Pg-Forecasts', relativeHref: 'forecasts' },
-  { id: 'search', title: 'Pg-Search', relativeHref: 'search' },
-]
-
 
 # Features
 
@@ -19,17 +12,6 @@ export const subPages = [
 
 ---
 
-Features
-
-## Sec-Collections
-
-foo bar
-
-## Sec-Forecasts
-
-foo bar
-
-## Sec-Search
-
-foo bar
-
+<Tip>
+   Check back soon! In the meantime, take a look at our <ExternalLink url={`${changelogUrl}`} linkText="Changelog" /> for recent updates and features.
+</Tip>

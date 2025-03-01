@@ -11,24 +11,21 @@ import { studioUrl, feedbackUrl, roadmapUrl, changelogUrl } from '@/shared/urls'
 
 export const metadata = {
   title: 'Koi Documentation',
-  description:
-    'Learn about Koi and how to use it.',
+  description: 'Learn about Koi and how to use it.',
 }
 
+{/* Explicitly zero this out for the sake of cleanliness on main page. */}
 export const sections = []
 
 <HeroPattern />
 
-<Image
-  src={koiLogoBanner}
-  alt="Koi Logo Banner"
-  className="w-full mt-0"
-/>
+<Image src={koiLogoBanner} alt="Koi Logo Banner" className="mt-0 w-full" />
 
 # Koi unlocks climate solutions.
+
 <div className="text-sm italic">
-*Last updated: {packageJson.lastUpdated}*<br />
-*Docs Version: {packageJson.version}*
+  *Last updated: {packageJson.lastUpdated}*<br />
+  *Docs Version: {packageJson.version}*
 </div>
 
 <ExternalLink
@@ -36,12 +33,13 @@ export const sections = []
   utmContent="hero-banner-link"
   ariaLabel="Explore Koi Studio"
   linkText="Koi"
-/> represents a paradigm shift in *assessing the potential impact of solutions*, with an
-emphasis on **transparency** and **speed**.
+/> represents a paradigm shift in *assessing the potential impact of solutions*,
+with an emphasis on **transparency** and **speed**.
 
-Compared to traditional climate tools, Koi is intuitive, forward-looking, and the first
-impact forecasting platform that blends the **latest generative AI with decades of hands-on forecasting experience**.
-We exist to help **scale the best climate solutions, faster**.
+Compared to traditional climate tools, Koi is intuitive, forward-looking, and
+the first impact forecasting platform that blends the **latest generative AI
+with decades of hands-on forecasting experience**. We exist to help **scale the
+best climate solutions, faster**.
 
 ## Where to Begin
 
@@ -52,7 +50,8 @@ We exist to help **scale the best climate solutions, faster**.
     linkText="Sign Up"
     rel="noopener noreferrer"
     target="_blank"
-  />: Create a free account to get started.
+  />
+  : Create a free account to get started.
 - [**Getting Started**](/docs/getting-started): Start here to get up and running quickly.
 - [**Key Concepts**](/docs/key-concepts/overview): Learn about the art and science of impact forecasting.
 - <ExternalLink
@@ -62,7 +61,8 @@ We exist to help **scale the best climate solutions, faster**.
     linkText="Roadmap"
     rel="noopener noreferrer"
     target="_blank"
-  />: See what we're building next.
+  />
+  : See what we're building next.
 - <ExternalLink
     url={`${feedbackUrl}`}
     utmContent="hero-banner-link"
@@ -70,7 +70,8 @@ We exist to help **scale the best climate solutions, faster**.
     linkText="Feedback"
     rel="noopener noreferrer"
     target="_blank"
-  />: Share your feedback and influence our roadmap.
+  />
+  : Share your feedback and influence our roadmap.
 - <ExternalLink
     url={`${changelogUrl}`}
     utmContent="hero-banner-link"
@@ -78,13 +79,14 @@ We exist to help **scale the best climate solutions, faster**.
     linkText="Changelog"
     rel="noopener noreferrer"
     target="_blank"
-  />: Keep tabs on recent changes and new features.
+  />
+  : Keep tabs on recent changes and new features.
 
 <div className="not-prose mb-16 mt-6 flex gap-3">
   <Button href="/docs/getting-started" arrow="right">
     <>Getting Started</>
   </Button>
-  <Button href="/docs/key-concepts/overview" variant="outline">
+  <Button href="/docs/key-concepts/summary" variant="outline">
     <>Explore Key Concepts</>
   </Button>
 </div>

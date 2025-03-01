@@ -123,35 +123,7 @@ function NavigationGroup({
                 {link.title}
               </NavLink>
               <AnimatePresence mode="popLayout" initial={false}>
-                {/* Add sections to the navigation (anchor tags based on headings in the page) */}
-                {/* {link.href === pathname && sections.length > 0 && (
-                  <motion.ul
-                    role="list"
-                    initial={{ opacity: 0 }}
-                    animate={{
-                      opacity: 1,
-                      transition: { delay: 0.1 },
-                    }}
-                    exit={{
-                      opacity: 0,
-                      transition: { duration: 0.15 },
-                    }}
-                  >
-                    {sections.map((section) => (
-                      <li key={section.id}>
-                        <NavLink
-                          href={`${link.href}#${section.id}`}
-                          tag={section.tag}
-                          isAnchorLink
-                        >
-                          {section.title}
-                        </NavLink>
-                      </li>
-                    ))}
-                  </motion.ul>
-                )} */}
                 {/* Add subpages to the navigation (subPages are defined in the page.mdx file) */}
-                {/* NOTE: Adjusted logic to show section if on a subpage */}
                 {(link.href === pathname ||
                   (link.links &&
                     link.links.some(
@@ -174,6 +146,7 @@ function NavigationGroup({
                         <NavLink
                           href={subLink.href}
                           tag={subLink.tag}
+                          icon={subLink.icon}
                           isAnchorLink
                           active={subLink.href === pathname}
                         >
