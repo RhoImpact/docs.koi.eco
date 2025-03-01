@@ -1,5 +1,10 @@
 # Changelog
 
+## 2025-02-28 - 0.8.0
+
+- Major refactor to support sub pages (first up will be Features)
+- Updated content for getting started
+
 ## 2025-02-21 - 0.6.0
 
 - Add `lastUpdated` date to all pages
