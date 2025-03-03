@@ -20,3 +20,4 @@
 @tailwind components;
 @tailwind utilities;
 @import './koiDocs.css';
+@import './reactMediumImageZoom.css';

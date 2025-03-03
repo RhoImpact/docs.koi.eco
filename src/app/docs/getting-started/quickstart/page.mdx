@@ -11,7 +11,8 @@ import image10 from './images/image10.png'
 import image11 from './images/image11.png'
 import image12 from './images/image12.png'
 import image13 from './images/image13.png'
-import Image from 'next/image'
+import ImageZoom from "@/components/ImageZoom";
+
 import PageInformationalData from '@/components/PageInformationalData'
 export const metadata = {
   title: 'Quickstart',
@@ -39,7 +40,7 @@ Let's dive in.
    application, or investment portfolio.
 
 <div className="koi-docs-image-container">
-<Image
+<ImageZoom
 src={image1}
 alt="Koi Quickstart Image 1"
 className="koi-docs-image"
@@ -52,7 +53,7 @@ Try searching **keywords** and **even URLs** of company websites. Notice the
 tags under each climate solution name that indicate the availability of associated data.
 
 <div className="koi-docs-image-container">
-<Image
+<ImageZoom
 src={image2}
 alt="Koi Quickstart Image 2"
 className="koi-docs-image"
@@ -63,7 +64,7 @@ Example search results for climate solutions that have associated baseline GHG i
 <br />
 
 <div className="koi-docs-image-container">
-<Image
+<ImageZoom
 src={image3}
 alt="Koi Quickstart Image 3"
 className="koi-docs-image"
@@ -94,7 +95,7 @@ Example search results that have additional data available including solution GH
    </Info>
 
 <div className="koi-docs-image-container">
-<Image
+<ImageZoom
 src={image4}
 alt="Koi Quickstart Image 4"
 className="koi-docs-image"
@@ -105,7 +106,7 @@ Climate solution being added to a collection via the "**Add to Collection**" but
 <br />
 
 <div className="koi-docs-image-container">
-<Image
+<ImageZoom
 src={image5}
 alt="Koi Quickstart Image 5"
 className="koi-docs-image"
@@ -119,7 +120,7 @@ aggregated data by navigating through the various collection tabs, starting with
 **Executive Summary**. Climate solutions within a collection can be added, removed or modified.
 
 <div className="koi-docs-image-container">
-<Image
+<ImageZoom
 src={image6}
 alt="Koi Quickstart Image 6"
 className="koi-docs-image"
@@ -154,7 +155,7 @@ Include additional GHG intensities for comparison in a climate solution model.
 
 
 <div className="koi-docs-image-container">
-<Image
+<ImageZoom
 src={image7}
 alt="Koi Quickstart Image 7"
 className="koi-docs-image"
@@ -165,7 +166,7 @@ Download CSV baseline data from one climate solution.
    Use the *Customize Forecast* feature to clone and edit an existing climate solution model. The custom model will inherit all of the existing model data and the user will supplement with the additional data scraped from the above CSV.
 
 {/* <div className="koi-docs-image-container">
-<Image
+<ImageZoom
 src={image8}
 alt="Koi Quickstart Image 8"
 className="koi-docs-image"
@@ -177,12 +178,12 @@ className="koi-docs-image"
 </Tip>
 
 <div className="koi-docs-image-container">
-<Image
+<ImageZoom
 src={image9}
 alt="Koi Quickstart Image 9"
 className="koi-docs-image"
 />
-{/* <Image
+{/* <ImageZoom
 src={image10}
 alt="Koi Quickstart Image 10"
 className="koi-docs-image"
@@ -195,7 +196,7 @@ Create a new **Solution Scenario** for the GHG intensity studied in the separate
 How to fill in a **data gap** to enable collection-level viewing of model results.
 
 <div className="koi-docs-image-container">
-<Image
+<ImageZoom
 src={image11}
 alt="Koi Quickstart Image 11"
 className="koi-docs-image"
@@ -207,7 +208,7 @@ can't compute the total avoided emissions because the market data are missing.
 <br />
 
 <div className="koi-docs-image-container">
-<Image
+<ImageZoom
 src={image12}
 alt="Koi Quickstart Image 12"
 className="koi-docs-image"
@@ -219,7 +220,7 @@ button to create a new available market.
 
 <br />
 <div className="koi-docs-image-container">
-<Image
+<ImageZoom
 src={image13}
 alt="Koi Quickstart Image 13"
 className="koi-docs-image"

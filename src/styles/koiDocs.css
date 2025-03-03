@@ -6,9 +6,12 @@
   (          _.  <
    '=.____.='  '._|
 */
-.koi-docs-image-container {
+.koi-docs-image-container, .koi-docs-image-zoom-container {
     @apply max-w-[50rem];
     @apply my-0;
+    @apply flex;
+    @apply flex-wrap;
+    @apply justify-center;
 }
 
 .koi-docs-image {
@@ -24,7 +27,7 @@
     margin-bottom: 0 !important;
 }
 
-.koi-docs-image-container p {
+.koi-docs-image-container p, .koi-docs-image-zoom-container p {
     @apply text-sm;
     @apply italic;
     @apply text-gray-500;
@@ -32,4 +35,3 @@
     @apply m-0;
     @apply p-0;
 }
-
