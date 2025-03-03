@@ -1,5 +1,10 @@
 # Changelog
 
+## 2025-03-03 - 0.9.0
+
+- Added Features page for Collections
+- Some streamlined use for <ImageZoom> and new <CodeWithIcon>
+
 ## 2025-02-28 - 0.8.0
 
 - Major refactor to support sub pages (first up will be Features)
