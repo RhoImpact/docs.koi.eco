@@ -6,7 +6,7 @@
   (          _.  <
    '=.____.='  '._|
 */
-.koi-docs-image-container, .koi-docs-image-zoom-container {
+.koi-docs-image-container {
     @apply max-w-[50rem];
     @apply my-0;
     @apply flex;
@@ -27,7 +27,7 @@
     margin-bottom: 0 !important;
 }
 
-.koi-docs-image-container p, .koi-docs-image-zoom-container p {
+.koi-docs-image-caption {
     @apply text-sm;
     @apply italic;
     @apply text-gray-500;

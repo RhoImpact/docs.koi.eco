@@ -91,9 +91,6 @@ function NavigationGroup({
     isInsideNavigationMobile
   )
 
-  let isActiveGroup =
-    group.links.findIndex((link) => link.href === pathname) !== -1
-
   return (
     <li className={clsx('relative mt-6', className)}>
       <motion.h2

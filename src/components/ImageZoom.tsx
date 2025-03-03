@@ -7,9 +7,10 @@ interface ImageZoomProps {
   alt: string
   width: number
   height: number
+  caption?: string
   layout?: 'intrinsic' | 'responsive'
-  containerClassName?: string
   className?: string
+  containerClassName?: string
 }
 
 const ImageZoom: React.FC<ImageZoomProps> = ({
@@ -17,20 +18,22 @@ const ImageZoom: React.FC<ImageZoomProps> = ({
   alt,
   width,
   height,
-  containerClassName,
+  caption,
   className,
+  containerClassName,
 }) => {
   return (
-    <div className={containerClassName}>
+    <div className={`koi-docs-image-container ${containerClassName}`}>
       <Zoom>
         <Image
           src={src}
           alt={alt}
           width={width}
           height={height}
-          className={`cursor-zoom-in ${className}`}
+          className={`koi-docs-image cursor-zoom-in ${className}`}
         />
       </Zoom>
+      {caption && <p className="koi-docs-image-caption">{caption}</p>}
     </div>
   )
 }

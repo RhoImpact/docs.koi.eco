@@ -20,7 +20,6 @@ export const metadata = {
     'This guide will get you all set up and ready to use the Koi API. ' +
     'We\'ll cover how to get started an API client and how to make your first API request.',
 }
-export const baseUrl = process.env.NEXT_PUBLIC_KOI_STUDIO_BASE_URL
 
 # Quickstart
 
@@ -39,38 +38,29 @@ Let's dive in.
    Collections **may represent any grouping of interest** to the Koi user, such as technology type, market
    application, or investment portfolio.
 
-<div className="koi-docs-image-container">
 <ImageZoom
 src={image1}
 alt="Koi Quickstart Image 1"
-className="koi-docs-image"
+caption="Example collection created to explore animal-free meats."
 />
-Example collection created to explore animal-free meats.
-</div>
 
 2. **Explore Koi's Data:** Navigate to the Search section and explore Koi's datasets.
 Try searching **keywords** and **even URLs** of company websites. Notice the
 tags under each climate solution name that indicate the availability of associated data.
 
-<div className="koi-docs-image-container">
 <ImageZoom
 src={image2}
 alt="Koi Quickstart Image 2"
-className="koi-docs-image"
+caption="Example search results for climate solutions that have associated baseline GHG intensity data."
 />
-Example search results for climate solutions that have associated baseline GHG intensity data.
-</div>
 
 <br />
 
-<div className="koi-docs-image-container">
 <ImageZoom
 src={image3}
 alt="Koi Quickstart Image 3"
-className="koi-docs-image"
+caption="Example search results that have additional data available including solution GHG intensity and market size."
 />
-Example search results that have additional data available including solution GHG intensity and market size.
-</div>
 
 3. **Save Climate Solutions**: Begin loading and visualizing climate solution pages.
 
@@ -94,39 +84,30 @@ Example search results that have additional data available including solution GH
       into a different model.
    </Info>
 
-<div className="koi-docs-image-container">
 <ImageZoom
 src={image4}
 alt="Koi Quickstart Image 4"
-className="koi-docs-image"
+caption="Climate solution being added to a collection via the *Add to Collection* button (upper right corner)."
 />
-Climate solution being added to a collection via the "**Add to Collection**" button (upper right corner).
-</div>
 
 <br />
 
-<div className="koi-docs-image-container">
 <ImageZoom
 src={image5}
 alt="Koi Quickstart Image 5"
-className="koi-docs-image"
+caption="Climate solution being saved as a bookmark within a new folder via the *Bookmark* button (upper right corner)"
 />
-Climate solution being saved as a bookmark within a new folder via the "**Bookmark**"
-button (upper right corner)
-</div>
+
 
 4. **Explore your collection**: Access a summary of your collection models and view the
 aggregated data by navigating through the various collection tabs, starting with the
 **Executive Summary**. Climate solutions within a collection can be added, removed or modified.
 
-<div className="koi-docs-image-container">
 <ImageZoom
 src={image6}
 alt="Koi Quickstart Image 6"
-className="koi-docs-image"
+caption="Executive summary view of a collection."
 />
-Executive summary view of a collection.
-</div>
 
 5. **Modify models and refine your collection**: With Koi, the pond is yours to navigate—whether
 you're taking a casual swim with the pre-built models or diving deep to refine every detail.
@@ -153,81 +134,50 @@ you're taking a casual swim with the pre-built models or diving deep to refine e
 
 Include additional GHG intensities for comparison in a climate solution model.
 
-
-<div className="koi-docs-image-container">
 <ImageZoom
 src={image7}
 alt="Koi Quickstart Image 7"
-className="koi-docs-image"
+caption="Download CSV baseline data from one climate solution."
 />
-Download CSV baseline data from one climate solution.
-</div>
 
-   Use the *Customize Forecast* feature to clone and edit an existing climate solution model. The custom model will inherit all of the existing model data and the user will supplement with the additional data scraped from the above CSV.
-
-{/* <div className="koi-docs-image-container">
-<ImageZoom
-src={image8}
-alt="Koi Quickstart Image 8"
-className="koi-docs-image"
-/>
-</div> */}
+Use the *Customize Forecast* feature to clone and edit an existing climate solution model. The custom model will inherit all of the existing model data and the user will supplement with the additional data scraped from the above CSV.
 
 <Tip>
    Add the new solution GHG intensity from the CSV data in the previous step.
 </Tip>
 
-<div className="koi-docs-image-container">
 <ImageZoom
 src={image9}
 alt="Koi Quickstart Image 9"
-className="koi-docs-image"
+caption="Create a new **Solution Scenario** for the GHG intensity studied in the separate dataset."
 />
-{/* <ImageZoom
-src={image10}
-alt="Koi Quickstart Image 10"
-className="koi-docs-image"
-/> */}
-Create a new **Solution Scenario** for the GHG intensity studied in the separate dataset.
-</div>
 
 ## Workflow Example 2
 
 How to fill in a **data gap** to enable collection-level viewing of model results.
 
-<div className="koi-docs-image-container">
 <ImageZoom
 src={image11}
 alt="Koi Quickstart Image 11"
-className="koi-docs-image"
+caption="Collection shows that one of the climate solutions (here it is Cultured Meat Production) can't compute the total avoided emissions because the market data are missing."
 />
-Collection shows that one of the climate solutions (here it is Cultured Meat Production)
-can't compute the total avoided emissions because the market data are missing.
-</div>
 
 <br />
 
-<div className="koi-docs-image-container">
 <ImageZoom
 src={image12}
 alt="Koi Quickstart Image 12"
-className="koi-docs-image"
+caption="Use the *Custom Forecast* functionality to add market data from the market data in a complete model (Fermentation-Based Protein-Rich Meat Alternatives here). Select the blue button to create a new available market."
 />
-Use the **Custom Forecast** functionality to add market data from the market data in a
-complete model (Fermentation-Based Protein-Rich Meat Alternatives here). Select the blue
-button to create a new available market.
-</div>
 
 <br />
-<div className="koi-docs-image-container">
+
 <ImageZoom
 src={image13}
 alt="Koi Quickstart Image 13"
-className="koi-docs-image"
+caption="In this example, bovine meat market data is added to the *Cultured Meat Production* model from the *Fermentation-Based Protein-Rich Meat Alternatives* model."
 />
-In this example, bovine meat market data is added to the *Cultured Meat Production* model
-from the *Fermentation-Based Protein-Rich Meat Alternatives* model.
-</div>
+
 
 <Tip>
 Enter data obtained from other Koi models or anywhere else that has useful information

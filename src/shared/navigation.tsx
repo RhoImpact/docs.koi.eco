@@ -51,10 +51,10 @@ export const navigation: Array<NavGroup> = [
         href: '/docs/getting-started/features',
         icon: 'fa-regular fa-bolt',
         links: [
-          // {
-          //   title: 'Collections',
-          //   href: '/docs/getting-started/features/collections',
-          // },
+          {
+            title: 'Collections',
+            href: '/docs/getting-started/features/collections',
+          },
           // {
           //   title: 'Forecasts',
           //   href: '/docs/getting-started/features/forecasts',
