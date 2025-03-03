@@ -1,17 +1,20 @@
 import ExternalLink from '@/components/ExternalLink'
 import PageInformationalData from '@/components/PageInformationalData'
+import FeaturesGrid from './FeaturesGrid'
 import { changelogUrl } from '@/shared/urls'
 export const metadata = {
   title: 'Features',
   description: 'Key Koi Features',
 }
 
-# Features
+# Product Features
 
 <PageInformationalData lastModified={lastModified} />
 
 ---
+<Info>
+   Be sure to take a look at our <ExternalLink url={`${changelogUrl}`} linkText="Changelog" /> for recent additions, fixes, and updates to features.
+</Info>
 
-<Tip>
-   Check back soon! In the meantime, take a look at our <ExternalLink url={`${changelogUrl}`} linkText="Changelog" /> for recent updates and features.
-</Tip>
+<FeaturesGrid />
+

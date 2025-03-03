@@ -35,6 +35,6 @@ const gettingStartedLinks: Array<GridLink> = [
   },
 ]
 
-export function GettingStartedGrid() {
+export default function GettingStartedGrid() {
   return <LinksGrid title="First Steps" gridLinks={gettingStartedLinks} />
 }

@@ -140,11 +140,13 @@ export function LinksGrid({
   gridLinks: GridLink[]
 }) {
   return (
-    <div className="my-16 xl:max-w-5xl">
-      <Heading level={2} id={title}>
-        {title}
-      </Heading>
-      <div className="not-prose mt-4 grid grid-cols-1 gap-8 border-t border-zinc-900/5 pt-10 sm:grid-cols-2 xl:grid-cols-4 dark:border-white/5">
+    <div className="my-8 xl:max-w-5xl">
+      {title && (
+        <Heading level={2} id={title}>
+          {title}
+        </Heading>
+      )}
+      <div className="not-prose mt-4 grid grid-cols-1 gap-8 border-t border-zinc-900/5 pt-6 sm:grid-cols-2 xl:grid-cols-4 dark:border-white/5">
         {gridLinks.map((gridLink) => (
           <GridLink key={gridLink.href} gridLink={gridLink} />
         ))}

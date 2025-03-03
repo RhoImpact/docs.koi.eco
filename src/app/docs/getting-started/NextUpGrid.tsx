@@ -37,6 +37,6 @@ const nextUpLinks: Array<GridLink> = [
   },
 ]
 
-export function NextUpGrid() {
+export default function NextUpGrid() {
   return <LinksGrid title="Next Up" gridLinks={nextUpLinks} />
 }
