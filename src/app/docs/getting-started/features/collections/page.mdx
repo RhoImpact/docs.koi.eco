@@ -6,6 +6,7 @@ import image5 from './images/image5.webp'
 import ImageZoom from "@/components/ImageZoom";
 import PageInformationalData from '@/components/PageInformationalData'
 import ExternalLink from '@/components/ExternalLink'
+import CodeWithIcon from '@/components/CodeWithIcon'
 
 export const metadata = {
   title: 'Collections',
@@ -19,11 +20,125 @@ export const metadata = {
 
 ---
 
-Collections are a way to group related data. They are useful for organizing data that is related to a specific project or topic.
+<ImageZoom
+src={image1}
+alt="Koi Collections Image 1"
+caption="Example collection showing auto unit conversion and rollup across a small portfolio."
+/>
 
-## Creating a Collection
+## Summary
 
-Collections are created by the user. They are a way to organize data that is related to a specific project or topic.
+**Collections** are a versatile feature in Koi designed to organize, group, and compare various analyses,
+datasets, or sub-collections. Whether you're:
+- assessing a single company with different impact scenarios,
+- managing a portfolio of companies,
+- or even coordinating multiple portfolios,
 
-## Adding Data to a Collection
+collections enables aggregate data views and analysis. Manage analysis complexity with built-in
+comparisons of outcomes from different scenarios or markets and gain a clear perspective on potential impacts.
 
+## Why Is It Important?
+
+In the ever-evolving world of investment and innovation, staying ahead means understanding the ripple
+effects of each technological intervention. Collections offer a structured playground to compare and contrast
+various scenarios and representations of your innovations or investments. Supercharge your decision-making with
+both aggregated and detailed comparisons available within Collections.
+
+## How Do I Use It?
+
+- **Create a Collection**: Navigate to "Collections" and  <CodeWithIcon icon="fa-regular fa-plus">Create New Collection</CodeWithIcon>.
+  - Collections can represent anything from a single company to complex market comparisons to a portfolio of companies (and beyond).
+- **Add Data**: Navigate to a technology model and select <CodeWithIcon icon="fa-regular fa-layer-group">Add to Collection</CodeWithIcon>.
+  - You can incorporate various elements such as technology models, baseline scenarios, solution scenarios, market sizes, and market captures.
+  - It's also possible to add incomplete analyses and update them later.
+- **Compare or View Aggregate Results**: Delve into the aggregated data or explore specific comparisons to tailor insights to your strategic needs.
+
+## Pro Tips
+
+- **Nested Collections**: Utilize the ability to nest Collections within one another to create a multi-layered data hierarchy. This enables portfolio or technology class segmentation, as we have seen requested by some Koi users. For uniformity, we recommend creating a shell collection for each analysis so you can add your own description and allocation factor.
+- **Allocation Factors**: Assign an allocation factor (from 0% to 100%) to each sub-collection within a Collection. This allows you to specify the influence each sub-collection has on the overall avoided emissions calculations of the parent collection.
+- **Automated Unit Conversion**: Combine and view your results in any unit you want with automated unit conversions. "Mixed" units are the default units for each individual analysis. In order to view a rollup of your results, you'll need to select a unit that is not "mixed".
+
+## Frequently Asked Questions
+
+- **Are there any limits to the number of Collections I can create?**
+  - There are currently no limits to the number of Collections or components you can create, allowing you to scale your analysis as needed.
+- **Can I view the aggregate impact of a Collection?**
+  - Yes, you can view the aggregate impact of a Collection by using the  <CodeWithIcon icon="fa-regular fa-toggle-off">Rollup</CodeWithIcon> toggle located in the collection settings toolbar.
+  - **NOTE:** Exercise caution, as this process can lead to potential double-counting of avoided emissions across different technologies. It's important to remember that the summed values within a Collection may not accurately represent the total impact.
+- **Can I share Collections with my team members or other organizations?**
+  - Yes! In any collection, navigate to `Share and Export` for sharing.
+{/*  - See [Sharing](../features/sharing) for more. */}
+
+## Use Case: Sensitivity Analysis
+### Compare Different Baseline Scenarios in a Model for a Sensitivity Analysis
+**Objective**: Compare potential outcomes from displacing different incumbent technologies and evaluate the sensitivity of impact. This analysis will help to understand how variations in baseline assumptions (e.g., GHG intensities, market sizes) influence the projected impacts of proposed technologies.
+
+<ImageZoom
+src={image2}
+alt="Koi Collections Investment Portfolio"
+caption="Example collection showing investments in a portfolio."
+/>
+
+### Step-by-Step Guide:
+
+1. **Create a Top-Level Collection**:
+    * Navigate to your `Collections` through the main navigation.
+    * <CodeWithIcon icon="fa-regular fa-plus">Create New Collection</CodeWithIcon> and provide a descriptive name.
+    <Tip>Collections allow you to organize your data however you want. However, we recommend agreeing to a convention to keep it consistent across your team. For example, the top level Collection may be **Acme Ventures Fund 1**.</Tip>
+1. **Add Company Forecasts to the Collection**:
+    * For each company in your portfolio, find a representative technology model in Koi by searching either by the company domain or technology name.
+      * Of course, you can create your own custom models.
+    * From the `Forecast` page of each representative technology, click on <CodeWithIcon icon="fa-regular fa-layer-group">Add to Collection</CodeWithIcon>.
+        * Koi allows you to create Collections as you go. In this example, we will create a new Collection for each Forecast that represents each Company.
+        * In the Add to Collection dialog, `Select or Add Collection`, type the name of your company, e.g. `Portco A`, then press `+ Add collection: Portco A` to create it.
+            * If you have already created a Collection you want to use, select it from the list.
+1. **Organize and Structure the Collection**:
+    * Back in the main `Collections` view, add each Company collection to your **Acme Ventures Fund 1** Collection.
+        * _Optional_: Within the Collection, organize companies by categories such as technology type, market impact, or investment size. For instance, separate companies into renewable energy, waste management, and sustainable agriculture.
+    * Specify the `allocation percentage` if you want to denote how much of your resources are invested in each company on the details tab of your parent collection.
+1. **Analyze Portfolio Performance**:
+    * Use Collections to compare the performance and impact of different companies or technologies.
+    * Analyze avoided emissions, market reach, and technological impact to assess which investments are performing according to your sustainability goals.
+1. **Adjust**:
+    * Add new companies or technologies to the collection as your investment strategy evolves over time.
+
+## Use Case: Investor Porfolio
+### Create a Collection to Represent Your Current Portfolio of Direct Investments
+**Objective**: Manage and analyze a portfolio of investments in companies that are geared towards developing sustainable solutions.
+
+<ImageZoom
+src={image3}
+alt="Koi Collections Sensitivity 1"
+caption="Example Market Size comparison across fermentation-based proteins."
+/>
+
+<ImageZoom
+src={image4}
+alt="Koi Collections Sensitivity 2"
+caption="Example Baseline GHG Intensity comparison across fermentation-based proteins."
+/>
+
+<ImageZoom
+src={image5}
+alt="Koi Collections Sensitivity 3"
+caption="Example Avoided Emissions comparison across fermentation-based proteins."
+/>
+
+### Step-by-Step Guide:
+
+1. **Initiate a New Collection**:
+* Navigate to your `Collections` through the main navigation.
+    * <CodeWithIcon icon="fa-regular fa-plus">Create New Collection</CodeWithIcon> and name the collection to reflect your current investment portfolio, for instance, *Scenario Comparison*.
+1. **Select a Technology or Initiative**:
+    * Choose the technology or initiative for which you want to perform the sensitivity analysis. This selection should be based on strategic importance or where outcomes are most uncertain. In this example, we’ll compare Fermentation-Based Protein-Rich Meat Alternatives replacing chicken, beef, or poultry meat.
+1. **Set Up Baseline Scenarios**:
+    * Navigate to a technology model.
+    * Select (or create) different baseline scenarios and markets to reflect a range of possible conditions you want to explore. For instance:
+        * Scenarios replacing chicken meat, beef meat, and poultry meat. Or,
+        * A conservative scenario with lower market growth, an optimistic scenario with higher market adoption, and a best-guess scenario.
+    * Once you have a scenario to include in the comparison (by selecting from baseline and market options), click <CodeWithIcon icon="fa-regular fa-layer-group">Add to Collection</CodeWithIcon> and add it to your created Collection.
+1. **Compare Results**:
+    * Navigate to your Collection to view results.
+    * You can use the `Executive Summary` tab for a snapshot of the results or the `Charts` tab to visualize the time varying results.
+    <Tip>You can change the type of results to view avoided emissions, baseline scenario impact, solution scenario impact, or market projections depending on what you want to investigate.</Tip>

@@ -56,8 +56,8 @@ export const navigation: Array<NavGroup> = [
             href: '/docs/getting-started/features/collections',
           },
           // {
-          //   title: 'Forecasts',
-          //   href: '/docs/getting-started/features/forecasts',
+          //   title: 'Sharing',
+          //   href: '/docs/getting-started/features/sharing',
           // },
           // {
           //   title: 'Search',
