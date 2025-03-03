@@ -6,7 +6,10 @@ import koiColors from './src/lib/koiColors'
 import typographyStyles from './typography'
 
 export default {
-  content: ['./src/**/*.{js,mjs,jsx,ts,tsx,mdx}'],
+  content: [
+    './src/**/*.{js,mjs,jsx,ts,tsx,mdx}',
+    './src/styles/**/*.css',
+  ],
   darkMode: 'selector',
   theme: {
     fontSize: {
