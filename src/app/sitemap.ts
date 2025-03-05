@@ -13,10 +13,10 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     url: `${docsUrl}/docs/${doc.slug}`,
     lastModified: new Date(doc.lastModified),
     changeFrequency: 'weekly' as const,
-    priority: 0.6,
+    priority: 0.5,
   }))
 
-  // Static routes
+  // Routes with custom settings (most commonly when setting priority higher than 0.5)
   const staticRoutes = [
     {
       url: docsUrl,
@@ -25,13 +25,22 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       priority: 1,
     },
     {
-      url: `${docsUrl}/docs`,
+      url: `${docsUrl}/docs/getting-started`,
       lastModified: new Date(),
-      changeFrequency: 'daily' as const,
+      changeFrequency: 'weekly' as const,
       priority: 0.8,
     },
-    // Add more static routes as needed
+    {
+      url: `${docsUrl}/docs/key-concepts/avoided-emissions`,
+      lastModified: new Date(),
+      changeFrequency: 'weekly' as const,
+      priority: 0.8,
+    },
   ]
 
-  return [...staticRoutes, ...docRoutes]
+  // Combine and deduplicate, preferring staticRoutes when there's a URL conflict
+  return [...staticRoutes, ...docRoutes].filter(
+    (route, index, self) =>
+      index === self.findIndex((r) => r.url === route.url)
+  )
 }
