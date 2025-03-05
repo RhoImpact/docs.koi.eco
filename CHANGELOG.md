@@ -1,5 +1,9 @@
 # Changelog
 
+## 2025-03-05 - 0.10.0
+
+- Add sitemap and robots.
+
 ## 2025-03-03 - 0.9.0
 
 - Added Features page for Collections
