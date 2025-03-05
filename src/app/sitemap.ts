@@ -2,6 +2,11 @@ import { MetadataRoute } from 'next'
 import { getAllDocs } from '../lib/docs'
 import { docsUrl } from '@/shared/urls'
 
+// Exclude these URLs from the sitemap and robots.txt
+// Use the full URL path including the domain.
+// e.g. `${docsUrl}/docs/key-concepts/an-excluded-page`,
+export const excludedUrls = new Set<string>([])
+
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   if (!docsUrl) return []
   
@@ -38,9 +43,9 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     },
   ]
 
-  // Combine and deduplicate, preferring staticRoutes when there's a URL conflict
-  return [...staticRoutes, ...docRoutes].filter(
-    (route, index, self) =>
+  return [...staticRoutes, ...docRoutes]
+  .filter(route => !excludedUrls.has(route.url))
+    .filter((route, index, self) =>
       index === self.findIndex((r) => r.url === route.url)
-  )
+    )
 }
