@@ -23,6 +23,8 @@ const nextConfig = {
   env: {
     NEXT_PUBLIC_KOI_LANDING_BASE_URL:
       process.env.NEXT_PUBLIC_KOI_LANDING_BASE_URL || 'https://koi.eco',
+    NEXT_PUBLIC_KOI_DOCS_BASE_URL:
+      process.env.NEXT_PUBLIC_KOI_DOCS_BASE_URL || 'https://docs.koi.eco',
     NEXT_PUBLIC_KOI_STUDIO_BASE_URL:
       process.env.NEXT_PUBLIC_KOI_STUDIO_BASE_URL || 'https://app.koi.eco',
     NEXT_PUBLIC_KOI_FEEDBACK_BASE_URL:
