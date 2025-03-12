@@ -65,6 +65,7 @@ export const navigation: Array<NavGroup> = [
         href: '/docs/key-concepts/avoided-emissions',
       },
       { title: 'Methodologies', href: '/docs/key-concepts/methodologies' },
+      { title: 'Koi Engine', href: '/docs/key-concepts/engine-process' },
     ],
   },
   {
