@@ -1,5 +1,9 @@
 # Changelog
 
+## 2025-03-12 - 0.11.0
+
+- New Koi Engine page
+
 ## 2025-03-05 - 0.10.0
 
 - Add sitemap and robots.
