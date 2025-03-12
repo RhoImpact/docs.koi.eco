@@ -1,0 +1,153 @@
+import KoiProcessFlow from './images/KoiProcessFlow.webp'
+import ImageZoom from "@/components/ImageZoom"
+import PageInformationalData from '@/components/PageInformationalData'
+import ExternalLink from '@/components/ExternalLink'
+import CodeWithIcon from '@/components/CodeWithIcon'
+import { studioUrl, landingUrl, roadmapUrl } from '@/shared/urls'
+export const metadata = {
+  title: "Koi's Accelerated Modeling Process",
+  description: 'Discover how Koi delivers on-demand, customized avoided emissions models with unrivaled speed and accuracy.'
+}
+
+# Koi's Accelerated Modeling Process
+
+<PageInformationalData lastModified={lastModified} />
+
+---
+
+## Koi Engine Overview
+
+<ExternalLink
+  url={`${studioUrl}`}
+  utmContent="hero-banner-link"
+  ariaLabel="Explore Koi Studio"
+  linkText="Koi"
+/> offers unrivaled speed and accuracy in model delivery. As the first and only platform to provide on-demand,
+customized emissions forecasts, it is designed to equip innovators and investors with analytics that accommodate
+different use cases, timelines, and technologies. Koi models are built on a validated Data Lake that integrates
+extensively curated, foundational data from reliable sources such as the <ExternalLink
+  url="https://www.iea.org/"
+  utmContent="hero-banner-link"
+  ariaLabel="International Energy Agency"
+  linkText="IEA"
+/>, <ExternalLink
+  url="https://sciencebasedtargets.org/"
+  utmContent="hero-banner-link"
+  ariaLabel="Science Based Targets Initiative"
+  linkText="SBTi"
+/>, and <ExternalLink
+  url="https://ecoinvent.org/"
+  utmContent="hero-banner-link"
+  ariaLabel="Ecoinvent Life Cycle Assessment Database"
+  linkText="Ecoinvent"
+/>.
+
+<Tip>
+**Key Concept**: The world is complex! We believe pre-computing every combination of technology, intervention type,
+conventional system, potential baseline, geography, market, etc. is a fool's errand. Koi takes a different
+approach:
+1. **Rapidly model** a reasonable starting point using a consistent methodology.
+2. **Validate and refine** models if and when appropriate (e.g. when moving through diligence).
+3. Produce **auditable, versioned** models that can contineu to be refined as companies scale.
+</Tip>
+
+Using trustworthy emissions baseline and market data as a foundation, Koi's computational engine instantly
+constructs a climate solution technology model that includes anticipated life cycle intervention points and
+potential market uptake.
+
+<ImageZoom
+  src={KoiProcessFlow}
+  alt="Schematic of the Koi Engine's approach to automated modeling"
+  caption="Schematic of the Koi Engine's approach to automated modeling"
+/>
+
+## Integrating Automation into Commissioned Forecasting Services
+
+Koi's modeling approach is designed to accommodate a wide range of analytical needs and climate strategies.
+All Koi license holders have access to the Data Lake and previously constructed models via the Search Engine.
+Users can customize models in <ExternalLink
+  url={`${studioUrl}`}
+  utmContent="hero-banner-link"
+  ariaLabel="Explore Koi Studio"
+  linkText="Koi Studio"
+/> to incorporate their specific data and modify parameters as desired.
+
+<Info>
+In cases where a solution model does not yet exist, baseline data are missing, or the user has modification requests
+they prefer not to implement themselves, <ExternalLink
+  url="https://koi.eco/pricing"
+  utmContent="hero-banner-link"
+  ariaLabel="Koi model pricing page"
+  linkText="commissioning a new model"
+/> may be of interest.
+</Info>
+
+Koi lowers the barriers to obtaining customized, forward-looking emissions models. The status quo entails analysts maintaining
+bespoke spreadsheets to track reliable data sources (spanning everything from emissions intensities to market sizes).
+These spreadsheets are most often manually maintained, and act as data libraries for constructing analyses on a
+case-by-case basis-—often lacking technology specificity and **requiring weeks of manual research by specialists**.
+This legacy approach is not only time- and cost-intensive but also prone to errors, difficult to maintain, and
+ineffective for collaboration. Nevertheless, expert manual review offers substantial benefits and is why we offer a
+hybrid approach with our expert forecasting services.
+
+### Forecasting Services
+<ExternalLink
+  url={`${landingUrl}/pricing`}
+  utmContent="hero-banner-link"
+  ariaLabel="Forecasting Services"
+  linkText="Forecasting Services"
+/> are offered in multiple tiers for maximum flexibility across use cases. Every new model begins with the auto-generated
+draft, which is then reviewed or modified by a trained scientist.
+
+<Info>
+Despite advancements in AI and our meticulous Data Lake curation, we do not currently offer Koi's
+auto-generated models for purchase without essential quality assurance.
+</Info>
+
+Our fastest option, **rapid models**, follow the above flow process with the addition of having
+key parameters checked and refined for accuracy before delivery on the platform. Every model accessible through
+the Koi search engine for license holders meets this essential quality assurance standard, with some having
+received additional manual refinements that add significant nuance.
+
+<Tip>
+**Versioning** Every Koi model is versioned. Look for a pill with text like, `v1.2: Latest`. This is critical for
+auditing and is particularly helpful for quarterly and annual reporting as *realized* impact is compared to the
+initial *potential* impact that you model.
+</Tip>
+
+## Use Case Considerations
+
+*Each use case requires specific considerations of technology nuance and detail.*
+
+Some Koi users model the potential impact of early-stage ventures, where significant uncertainty surrounds both the
+future product and target market. These users often find that rapid models are well-suited to their needs given the
+inherent uncertainty, the wide range of technologies under consideration, and budget constraints.
+
+Conversely, other users require a deep understanding of potential investment impacts and prefer our higher-tier models,
+which integrate our scientists' technical expertise through stakeholder engagement and discovery, while still leveraging
+the efficiencies of automated modeling. 
+
+Starting with the auto-generated model, our scientists maximize time efficiency by focusing on the details that
+matter—-whether it's regional specificity, incorporating insights from white papers or technical reports, or modeling
+unique lifecycle phases for the solution.
+
+This approach allows for the generation of best-in-class models in a fraction of the traditional time.
+Further, anchoring models to the foundational Data Lake not only saves precious time but also ensures consistency and
+data intercompatibility across analyses both now and in the future as the underlying data are updated.
+
+## Next steps
+
+- For more information about each model tier, check out the <ExternalLink
+  url={`${landingUrl}/pricing`}
+  utmContent="hero-banner-link"
+  ariaLabel="forecasting services pricing table"
+  linkText="forecasting services pricing table"
+/> and the informational popups for each feature. 
+- Allowing users to access autogenerated models and perform their own quality assurance via a guided process is
+on our <ExternalLink
+  url={`${roadmapUrl}`}
+  utmContent="hero-banner-link"
+  ariaLabel="Koi Roadmap"
+  linkText="Koi Roadmap"
+/>  [roadmap](https://product.koi.eco/roadmap). If this is an important feature to you, please consider providing
+feedback within the roadmap.
