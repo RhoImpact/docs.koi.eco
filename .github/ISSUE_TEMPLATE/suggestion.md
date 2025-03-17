@@ -1,8 +1,8 @@
 ---
 name: Suggestion
 about: Suggest an idea for new, improved, or fixed documentation
-title: ''
-labels: ''
+title: "[SUGGESTION]"
+labels: enhancement
 assignees: ''
 
 ---
