@@ -44,6 +44,10 @@ export const navigation: Array<NavGroup> = [
         icon: 'fa-regular fa-bolt',
         links: [
           {
+            title: 'Search',
+            href: '/docs/getting-started/features/search',
+          },
+          {
             title: 'Collections',
             href: '/docs/getting-started/features/collections',
           },
@@ -85,4 +89,4 @@ export const navigation: Array<NavGroup> = [
       { title: 'CRANE', href: 'https://cranetool.org' },
     ],
   },
-] 
+]

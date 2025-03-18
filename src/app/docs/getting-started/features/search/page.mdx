@@ -1,0 +1,129 @@
+import image1 from './images/image1.webp'
+import image2 from './images/image2.webp'
+import image3 from './images/image3.webp'
+import ImageZoom from "@/components/ImageZoom";
+
+import PageInformationalData from '@/components/PageInformationalData'
+import ExternalLink from '@/components/ExternalLink'
+import CodeWithIcon from '@/components/CodeWithIcon'
+
+export const metadata = {
+  title: 'Data Search',
+  description: 'Leverage Koi’s advanced search functionalities, including domain search, vector-based model search, and baseline search, to find relevant technology models and insights quickly and accurately.',
+}
+
+# Search
+
+<PageInformationalData lastModified={lastModified} />
+
+---
+
+<ImageZoom
+src={image1}
+alt="Koi Search Image 1"
+caption="Example search displaying technology model search results."
+/>
+
+## Summary
+
+Koi's **Search** is designed to help you quickly identify the most relevant climate solutions, models, or technologies for any given query or context. We currently support three main search approaches:
+
+1. **Company Search** – Quickly identify the nearest matching Koi model to a company's technology based on the information on a company's website.
+2. **Model Search** – Enter text queries or descriptions, and let our semantic vector search find the closest matches among Koi’s climate solution library.
+3. **Baseline Search** – Easily locate existing baseline scenarios (e.g., incumbent technologies or processes) for comparisons within your climate impact models.
+
+You can switch between the search methods by using the tabs below the search bar.
+
+## Why Is It Important?
+
+Finding the right technology model to represent a solution—or identifying a suitable baseline to compare against—can be time-consuming and complex. Koi’s search leverages state-of-the-art vector embeddings to capture the semantic nuance of your query (whether it’s a simple text query or a full company description). This provides:
+
+- **Faster Discovery & Onboarding**: Quickly identify new climate solutions for your portfolio or find relevant baselines, letting you focus on building impactful analyses.
+- **Relevant Matches**: Returns highly accurate and context-aware results, saving time in your analysis workflow.
+
+## Company Search
+
+<ImageZoom
+src={image2}
+alt="Koi Search 2"
+caption="Example of company search using a domain."
+/>
+
+#### Automated Company Technology Search
+One of the most challenging steps in modeling a company’s impact is finding an appropriate technology model as a starting point. Our **domain search** takes the guesswork out of this process by scraping key information directly from a company’s website. Once you enter a URL in the Koi search bar, we use generative AI models and vector search to compare the extracted data against Koi’s climate solution library. In seconds, you’ll see a curated list of potential matches.
+
+- **Getting Started**
+  Simply go to the search bar, type in the URL (e.g., `rhoimpact.com`), and press **Enter**. Within ~15 seconds, Koi will return a list of solutions most likely to reflect that company’s technology focus. Each potential match will be tagged with either "likely match" or "potential match" to help guide you quickly to the best matches while giving you the option to explore all options.
+
+- **What’s Happening Behind the Scenes?**
+  1. **Web Scraping**: We gather publicly available information about the company from its domain.
+  2. **Semantic Understanding**: Using large language models, we interpret the scraped text to identify relevant keywords and concepts.
+  3. **Vector Comparison**: We measure the semantic distance between this interpreted company profile and Koi’s library of solutions, returning the best matches.
+
+- **Frequently Asked Questions**
+  - **Why does the search take ~15 seconds?**
+    We’re collecting and processing information from the company’s domain in real-time. This includes scraping, summarizing, and comparing it against our solution models.
+  - **Search didn’t find any matches—now what?**
+    This is cutting-edge technology and we’re continuously improving it. Sometimes the scraper doesn't work for protected pages. For now, you can always try describing the company’s technology (a paragraph or so) in the search bar instead. Koi will take that textual input and try to match it to a relevant climate solution.
+
+- **Pro Tip**
+  Once you perform a domain search for the first time, Koi keeps the scraped data. Subsequent searches for the same domain will be much faster. If you want to “start over” or check for updated web content, just append the `?rerun=true` query parameter.
+  ```plaintext
+    https://mycompanydomain.com?rerun=true
+    ```
+
+---
+
+## Model Search
+
+Our **Technology Model Search** is the backbone of Koi’s search functionality—fueled by a powerful vector database and semantic embeddings. When you type in any text-based query (e.g., “Direct air capture for CO₂”, “Bioplastic packaging solutions”, or even a specific technology name), Koi interprets the meaning of the query and compares it across our catalog of climate solutions.
+
+**Key Highlights**:
+
+- **Enter Queries in Natural Language**: You don’t need precise keywords—simply describe the solution or use a short sentence.
+- **Context-Aware Results**: Our vector embeddings capture semantic meaning, so you’ll see results that match your query, even if they don’t share the same keywords.
+- **Iterative Exploration**: If you don’t find the perfect match on the first pass, slightly adjust your query and try again—Koi refines results based on context. You can even add words multiple times to adjust weighting.
+
+- **Pro Tip**
+Vector search weighs all words in your query equally (except for common words). This means that a broad term like "carbon" in **"carbon removal"** may not provide the best results, as most climate technologies are aiming to reduce carbon emissions. Instead, try refining your search with more specific terms like **"direct air capture"** or **"soil carbon sequestration"** to get more relevant matches.
+
+
+---
+
+## Baseline Search
+
+<ImageZoom
+src={image3}
+alt="Koi Search Image 3"
+caption="Example of baseline search resulting in models that use that baseline."
+/>
+
+Baselines are crucial for quantifying the avoided emissions or additional impacts of introducing new climate solutions. Quickly finding the right incumbent model ensures your comparison is valid and transparent. Sometimes you already know the *solution* you want to evaluate, but you need a baseline scenario or “incumbent” technology to compare it against. That’s where **Baseline Search** comes in.
+
+**How It Works**:
+
+1. **Search Existing Baselines**: Type in partial terms like “Internal Combustion Engine Baseline” or “Coal-Fired Power Generation” to see if Koi already has standard baseline scenarios for that technology or market.
+2. **View & Select**: Currently, you can only view baselines in the context of a technology model. As such, you will find a list of all the models that baseline is attached to and you can view the baseline within that model.
+
+- **Pro Tip**
+If you want to view a number of baselines together, you can add multiple baselines to a collection from the technology model page and view them together. See our documentation on Collections for more information.
+
+---
+
+## Frequently Asked Questions
+
+1. **Is domain search the same as model search?**
+   - Not exactly. Domain Search specifically scrapes and interprets a given domain’s content in real time. Model Search uses semantic embeddings to match your text query to relevant climate solutions already in our library. Both use vector-based technology, but Domain Search first collects fresh data from the company’s website.
+
+2. **How do I know if Koi’s recommended model is truly representative of the company’s technology?**
+   - Koi does its best to match semantic meaning, but results may vary depending on the company’s website content and how it describes their technology. Always review the returned models to confirm that they align with your understanding.
+
+3. **What if the baseline I need doesn’t exist in Koi’s library yet?**
+   - You can start with the closest matching Technology Model and customize the forecast to match your specific usecase.
+
+4. **I typed the exact name of a model and it didn't show up at the top-- why?**
+   - Because our search is vector-based rather than a simple keyword lookup, the system looks at the overall meaning of your query and the full model descriptions, not just a direct string match. If your query is identical to a model name but that name also appears contextually in other technology descriptions, the search might rank those as equally or more relevant.
+
+---
+
+With **Domain Search**, **Model Search**, and **Baseline Search** at your disposal, Koi provides a comprehensive toolkit for discovering, comparing, and analyzing climate solutions. Whether you have just a website or a full-blown technical spec in mind, our vector-based search ensures you’ll quickly find the most relevant climate models for your analysis.
