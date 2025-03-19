@@ -5,6 +5,7 @@ import ImageZoom from "@/components/ImageZoom";
 
 import PageInformationalData from '@/components/PageInformationalData'
 import ExternalLink from '@/components/ExternalLink'
+import InternalLink from '@/components/InternalLink'
 import CodeWithIcon from '@/components/CodeWithIcon'
 
 export const metadata = {
@@ -28,9 +29,9 @@ caption="Example search displaying technology model search results."
 
 Koi's **Search** is designed to help you quickly identify the most relevant climate solutions, models, or data for any given query or context. We currently support three main search approaches:
 
-1. **Company Search** – Quickly identify the nearest matching Koi model to a company's technology based on the information on a company's website.
-2. **Model Search** – Enter text queries or descriptions, and let our semantic vector search find the closest matches among Koi’s climate solution library.
-3. **Baseline Search** – Easily locate existing baseline scenarios (e.g., incumbent technologies or processes) for comparisons within your climate impact models.
+1. **[Company Search](#company-search)** – Quickly identify the nearest matching Koi model to a company's technology based on the information on a company's website.
+2. **[Model Search](#model-search)** – Enter text queries or descriptions, and let our semantic vector search find the closest matches among Koi’s climate solution library.
+3. **[Baseline Search](#baseline-search)** – Easily locate existing baseline scenarios (e.g., incumbent technologies or processes) for comparisons within your climate impact models.
 
 You can switch between the search methods by using the tabs below the search bar.
 
@@ -106,14 +107,14 @@ Baselines are crucial for quantifying the avoided emissions or additional impact
 2. **View & Select**: Currently, you can only view baselines in the context of a technology model. As such, you will find a list of all the models that baseline is attached to and you can view the baseline within that model.
 
 - **Pro Tip**
-If you want to view a number of baselines together, you can add multiple baselines to a collection from the technology model page and view them together. See our documentation on Collections for more information.
+If you want to view a number of baselines together, you can add multiple baselines to a collection from the technology model page and view them together. See our documentation on <InternalLink route="collections" linkText="Collections" /> for more information.
 
 ---
 
 ## Frequently Asked Questions
 
-1. **Is domain search the same as model search?**
-   - Not exactly. Domain Search specifically scrapes and interprets a given domain’s content in real time. Model Search uses semantic embeddings to match your text query to relevant climate solutions already in our library. Both use vector-based technology, but Domain Search first collects fresh data from the company’s website.
+1. **Is company search the same as model search?**
+   - Not exactly. Company Search specifically scrapes and interprets a given domain’s content in real time. Model Search uses semantic embeddings to match your text query to relevant climate solutions already in our library. Both use vector-based technology, but Domain Search first collects fresh data from the company’s website.
 
 2. **How do I know if Koi’s recommended model is truly representative of the company’s technology?**
    - Koi does its best to match semantic meaning, but results may vary depending on the company’s website content and how it describes their technology. Always review the returned models to confirm that they align with your understanding.
@@ -126,4 +127,4 @@ If you want to view a number of baselines together, you can add multiple baselin
 
 ---
 
-With **Domain Search**, **Model Search**, and **Baseline Search** at your disposal, Koi provides a comprehensive toolkit for discovering, comparing, and analyzing climate solutions. Whether you have just a website or a full-blown technical spec in mind, our vector-based search ensures you’ll quickly find the most relevant climate models for your analysis.
+With **Company Search**, **Model Search**, and **Baseline Search** at your disposal, Koi provides a comprehensive toolkit for discovering, comparing, and analyzing climate solutions. Whether you have just a website or a full-blown technical spec in mind, our vector-based search ensures you’ll quickly find the most relevant climate models for your analysis.
