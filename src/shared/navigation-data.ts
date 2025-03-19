@@ -1,3 +1,5 @@
+import routes from '@/shared/routes'
+
 export interface NavGroup {
   title: string
   links: Array<{
@@ -45,11 +47,15 @@ export const navigation: Array<NavGroup> = [
         links: [
           {
             title: 'Search',
-            href: '/docs/getting-started/features/search',
+            href: routes.search,
           },
           {
             title: 'Collections',
-            href: '/docs/getting-started/features/collections',
+            href: routes.collections,
+          },
+          {
+            title: 'Sharing',
+            href: routes.sharing,
           },
         ],
       },
