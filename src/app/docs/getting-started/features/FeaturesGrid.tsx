@@ -8,22 +8,32 @@ const featuresLinks: Array<GridLink> = [
   {
     href: routes.search,
     name: 'Search',
-    description: 'Learn about how to find relevant data and models.',
+    description:
+      'Find the right data and models quickly with Koi’s powerful search tools.',
     icon: 'fa-regular fa-magnifying-glass',
     showGrid: false,
   },
   {
     href: routes.collections,
     name: 'Collections',
-    description: 'Learn about collections and what you can do with them.',
+    description:
+      'Organize and compare your analyses with flexible collections.',
     icon: 'fa-regular fa-rectangle-history',
     showGrid: false,
   },
   {
     href: routes.sharing,
     name: 'Sharing',
-    description: 'Learn about how to share your data with others.',
+    description:
+      'Easily share forecasts and collections with your team or external collaborators.',
     icon: 'fa-regular fa-share-nodes',
+    showGrid: false,
+  },
+  {
+    href: routes.organization,
+    name: 'Organization',
+    description: 'Manage your team and collaboration settings in Koi.',
+    icon: 'fa-solid fa-people-group',
     showGrid: false,
   },
 ]

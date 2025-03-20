@@ -57,6 +57,10 @@ export const navigation: Array<NavGroup> = [
             title: 'Sharing',
             href: routes.sharing,
           },
+          {
+            title: 'Organization',
+            href: routes.organization,
+          },
         ],
       },
       {

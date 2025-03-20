@@ -1,5 +1,6 @@
 import image1 from './images/image1.webp'
 import ImageZoom from "@/components/ImageZoom";
+import { studioUrl, feedbackUrl, roadmapUrl, changelogUrl } from '@/shared/urls'
 
 import PageInformationalData from '@/components/PageInformationalData'
 import ExternalLink from '@/components/ExternalLink'
@@ -70,7 +71,7 @@ These roles are designed to facilitate effective collaboration while maintaining
 ## Pro Tips
 
 - **Share with Non-Registered Users**: You can share your forecasts and collections with individuals who don't have a Koi account yet. When they sign up for Koi, they will automatically have access to that data.
-- **Share with Groups**: If you're collaborating with a team, consider creating a group within Koi. Sharing your forecasts or collections with a group ensures all members have immediate access, simplifying management and enhancing teamwork.
+- **Share with Groups**: If you're collaborating with a team, consider creating a <InternalLink route="groups" linkText="Group" /> within Koi. Sharing your forecasts or collections with a group ensures all members have immediate access.
 - **Stay Updated**: Shared items reflect real-time updates and provide access to all versions of the data, so your collaborators always have the latest information.
 
 ---
@@ -89,6 +90,11 @@ These roles are designed to facilitate effective collaboration while maintaining
 
   Yes—but only if you grant them *Manager* permissions. Otherwise, they will not be able to share your data with others directly (but they may be able to make a copy and share that).
 
+- **Can I automatically share with my entire Organization?**
+
+  Not automatically, you will first need to <InternalLink route="groups" linkText="create a Group" /> containing all the members of your Organization. It is important to remember this Group will not automatically be updated as members join or leave your Organization.
+
+
 ---
 
 ## Coming Soon
@@ -99,11 +105,29 @@ These roles are designed to facilitate effective collaboration while maintaining
 - **Transfer Ownership**: Move ownership of a forecast or collection to another user.
 - **Shareable Link**: Open access to anyone with a model or collection link. However, a user will always need a Koi account to view any Koi data for security purposes.
 
-*Want these features faster?* <ExternalLink
-  url={`https://product.koi.eco/`}
+*Want these features faster?*
+<ExternalLink
+  url={`${roadmapUrl}`}
   utmContent="hero-banner-link"
   ariaLabel="Roadmap"
   linkText="Check out our public roadmap"
 /> where you can upvote them or request a feature to let us know what’s most important to you!
 
 ---
+
+## Use Case: Share Data With Your Investors
+### Share a Collection that represents your company with all your investors at once
+**Objective**: Create a Group that contains the primary point of contact for each of your investors and and share a Collection that represents your company. Your investor can then can add your company to a Collection of their **Portfolio Companies** to track their impact.
+
+### Step-by-Step Guide:
+
+1. **Create a Investors Group**:
+    * Navigate to your `Groups` by hovering over <span>Account (<i class="fa-regular fa-user"></i>)</span> → `Organization` → `Groups`.
+    * <CodeWithIcon icon="fa-regular fa-plus">Create New Group</CodeWithIcon> and provide a descriptive name such as *Investors*.
+2. **Create Collection**:
+    * For more information on creating a Collection to represent your company, <InternalLink route="sensitivityAnalysis" linkText="see an example in our docs" />.
+3. **Share Collection With Investors**:
+    * Navigate to the `Share and Export` tab of your `Collection` view, and click `Share`.
+    * Type the group name, specify the permissions you would like to give such as `Viewer`, and click `Share`.
+4. **Nofity Investors**:
+    * Currently, Koi does not send an email to notify a user that a Collection has been shared with them, but that is coming soon!

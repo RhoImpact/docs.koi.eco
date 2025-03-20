@@ -1,0 +1,200 @@
+import ImageZoom from "@/components/ImageZoom";
+import image1 from './images/image1.webp'
+import image2 from './images/image2.webp'
+import image3 from './images/image3.webp'
+import image4 from './images/image4.webp'
+import image5 from './images/image5.webp'
+import image6 from './images/image6.webp'
+
+import { studioUrl, feedbackUrl, roadmapUrl, changelogUrl } from '@/shared/urls'
+import PageInformationalData from '@/components/PageInformationalData'
+import ExternalLink from '@/components/ExternalLink'
+import InternalLink from '@/components/InternalLink'
+import CodeWithIcon from '@/components/CodeWithIcon'
+
+export const metadata = {
+  title: 'Organization',
+  description: 'Manage your organization in Koi, including members, licenses, groups, and permissions.',
+}
+
+# Organization
+
+<PageInformationalData lastModified={lastModified} />
+
+---
+
+<ImageZoom
+src={image1}
+alt="Koi Organization Image 1"
+caption="Example of Organization Details in Settings."
+/>
+
+## Summary
+
+Koi’s **Organization** feature allows you to manage your team, set permissions, and control licenses. Whether you're an investor managing a portfolio or a company analyzing impact, the organization feature helps ensure the right people have access to the right data and tools.
+
+## Why Is It Important?
+
+Managing an organization effectively means having control over **who can access what**. Koi makes it easy to invite team members, assign roles, set up domain-based auto-enrollment, and manage group sharing so collaboration is effortless.
+
+---
+
+## How Do I Use It?
+
+### Accessing Your Organization
+
+<ImageZoom
+src={image2}
+alt="Koi Organization Image 2"
+caption="Navigation to Organization within Settings."
+/>
+
+To access organization settings:
+1. Hover over <span>Account (<i class="fa-regular fa-user"></i>)</span> in the navigation bar.
+2. Click `Settings`.
+3. Under `Organization`, select the section you want to manage.
+
+<Info>An organization is automatically created for you when you sign up (unless you are added to an existing organization through auto-enroll). If you believe you should belong to an existing organization, but are in your own organization, please contact us to move your account.</Info>
+
+Within **Settings**, the following tabs are available to manage your organization and user preferences:
+
+1. **[Organization Details](#organization-details)** – View and edit your organization's name, unique identifier, and verified domain settings. You can also enable auto-enrollment to allow users with a verified email domain to join automatically.
+
+2. **[Members](#managing-members)** – Manage users in your organization. Invite new members, assign roles, and control access levels.
+
+3. **[License](#license-management)** – View your organization's license details, including active seats, expiration dates, and license tiers.
+
+4. **[Groups](#groups)** – Create and manage groups for easier access control. Groups can contain users or subgroups, allowing you to streamline sharing.
+
+---
+
+## Organization Details
+
+You can view and edit information about your organization, including:
+
+- **Organization Name** – This is the human-friendly label for your organization, shown across Koi.
+- **Organization ID** – A unique identifier used in API requests.
+- **Domain** – Your organization’s domain (e.g., `example.com`). If verified, users with matching emails can be auto-enrolled.
+- **Auto-enrollment** - If enabled, any user with a verified email from your domain will automatically join your organization when they create a Koi account.
+- **Notifications** - If disabled, you will not recieve any notifications from Koi.
+
+---
+
+## Managing Members
+
+### Adding Members
+
+<ImageZoom
+src={image3}
+alt="Koi Organization Image 3"
+caption="Inviting users to an Organization."
+/>
+
+1. Navigate to `Organization` → `Members`.
+2. Click the `+ Invite` button.
+3. Enter the user’s email.
+4. Select the appropriate role.
+5. Click `Invite`.
+
+If the email is associated with an existing Koi account that does not belong to another organization, the user will be added immediately. Otherwise, they will be added upon registration.
+
+<Warning>An invited user will not automatically get an invitation to their email. You will need to direct them to sign up to Koi.</Warning>
+
+### Assigning Roles
+
+<ImageZoom
+src={image4}
+alt="Koi Organization Image 4"
+caption="Example of assigning Roles to a user within an Organization."
+/>
+
+When inviting or managing members, you can assign different roles:
+
+- **Org Admin** – Full access, including billing, license management, and user permissions.
+- **Org Manager** – Can manage users but cannot access billing or licenses.
+- **Org Editor** – Can edit and save data but cannot manage licenses or purchase more data.
+- **Org Read-only** – Can view data that has been shared with them or that is public, but cannot edit data.
+
+---
+
+## License Management
+
+Licenses are set at the organization level. The maximum number of users (seats) depends on your license tier.
+
+<Tip>If you need to update your license, please contact Rho Impact.</Tip>
+
+---
+
+## Groups
+
+<ImageZoom
+src={image5}
+alt="Koi Organization Image 5"
+caption="Example of Groups for an Organization."
+/>
+
+**Groups** allow you to manage shared access more efficiently by organizing users into teams. Instead of adding users individually to each Custom Forecast or <InternalLink route="collections" linkText="Collection" />, you can share with an entire group at once. You can add users that are outside your organization.
+
+Groups can also contain **subgroups**, meaning a group can include other groups, inheriting access permissions automatically. This is useful for structuring teams, departments, or role-based access.
+
+<Warning>Groups are visible to the entire organization. Any user with the appropriate role can view and edit groups as needed.</Warning>
+
+
+### Creating a Group
+
+1. **Go to** `Organization` → `Groups`.
+2. **Click** `+ Create New Group`.
+3. **Enter a name** and add users or existing groups.
+4. **Share** a Collection or Custom Forecast with your group.
+
+
+### Managing Groups & Subgroups
+
+<ImageZoom
+src={image6}
+alt="Koi Organization Image 6"
+caption="Example of editing a Group for an Organization."
+/>
+
+To view and edit a group, simply **click the group name**. You can:
+- **Add or remove members**
+- **Nest subgroups** by adding existing groups
+
+When you add a group as a **subgroup**, its members automatically inherit access to anything shared with the parent group.
+
+
+---
+
+## Pro Tips
+
+- **Enable Auto-Enrollment** – If your team frequently adds new members, enabling auto-enrollment for your domain will save time.
+- **Leverage Subgroups for Large Teams** – Create parent groups (e.g., "Portfolio Managers") with nested subgroups for different teams.
+
+---
+
+## Frequently Asked Questions
+
+- **Can I add users outside my domain?**
+
+  Yes, but they will need to be invited manually. Auto-enrollment only works for verified domains.
+
+- **How do I transfer organization ownership?**
+
+  Contact Koi support if you need to transfer ownership to another admin.
+
+- **How do I add a user that is a member of another organization?**
+
+  A user can only belong to one organization at a time. We do not currently have a method to leave your organization as a user, so you will need to contact Koi support if you need to transfer that user into your organization.
+
+## Coming Soon
+
+- **Billing**: Manage payment details, view invoices, and adjust your organization's subscription.
+- **Email Invite**: Koi will send an email invitation automatically, instructing the invited user how to register for a Koi account.
+
+*Want these features faster?*
+<ExternalLink
+  url={`${roadmapUrl}`}
+  utmContent="hero-banner-link"
+  ariaLabel="Roadmap"
+  linkText="Check out our public roadmap"
+/> where you can upvote them or request a feature to let us know what’s most important to you!
