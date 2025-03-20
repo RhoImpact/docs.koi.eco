@@ -12,6 +12,7 @@ import image11 from './images/image11.webp'
 import image12 from './images/image12.webp'
 import image13 from './images/image13.webp'
 import ImageZoom from "@/components/ImageZoom";
+import InternalLink from '@/components/InternalLink'
 
 import PageInformationalData from '@/components/PageInformationalData'
 export const metadata = {
@@ -36,7 +37,7 @@ Let's dive in.
 1. **Set Up a Collection**: Koi Collections act as folders for organizing and grouping different analyses.
    Use the toolbar to navigate to **Collections > Create New Collection** with a name and description.
    Collections **may represent any grouping of interest** to the Koi user, such as technology type, market
-   application, or investment portfolio.
+   application, or investment portfolio. For more information on creating a Collection, <InternalLink route="collections" linkText="view our Collection documentation" />.
 
 <ImageZoom
 src={image1}
@@ -47,6 +48,7 @@ caption="Example collection created to explore animal-free meats."
 2. **Explore Koi's Data:** Navigate to the Search section and explore Koi's datasets.
 Try searching **keywords** and **even URLs** of company websites. Notice the
 tags under each climate solution name that indicate the availability of associated data.
+For more information on searching for climate solutions and other data, <InternalLink route="search" linkText="view our Search documentation" />.
 
 <ImageZoom
 src={image2}
@@ -129,6 +131,12 @@ you're taking a casual swim with the pre-built models or diving deep to refine e
       and are saved to a user's **private Forecasts**. A cloned model will need to be
       re-added to a collection, and the Koi original removed.
    </Warning>
+
+6. **Share your collection**: Collaboration is key in climate impact forecasting, and Koi makes it easy to share your work. You can share your Collections with teammates, investors, or stakeholders—granting them controlled access to view or edit your analyses.
+Use the `Share` button in the `Shared & Export` tab to invite collaborators by email or group, selecting their permission level (Viewer, Editor, or Manager).
+For more information on sharing, <InternalLink route="sharing" linkText="view our Sharing documentation" />.
+
+<Warning> When you share a Collection, all subcollections and custom forecasts within it are automatically shared. If you remove access to a Collection, access to all its child elements will also be revoked unless shared separately </Warning>
 
 ## Workflow Example 1
 
