@@ -69,7 +69,7 @@ npm run dev
 
 ### Additional Notes
 
-Koi Docs are built on top of 
+Koi Docs are built on top of
 a [Tailwind UI](https://tailwindui.com) site template built using [Tailwind CSS](https://tailwindcss.com) and [Next.js](https://nextjs.org).
 
 ## Customizing
@@ -81,6 +81,24 @@ You can start editing this template by modifying the files in the `/src` folder.
 This template includes a global search that's powered by the [FlexSearch](https://github.com/nextapps-de/flexsearch) library. It's available by clicking the search input or by using the `⌘K` shortcut.
 
 This feature requires no configuration, and works out of the box by automatically scanning your documentation pages to build its index. You can adjust the search parameters by editing the `/src/mdx/search.mjs` file.
+
+## Mermaid
+
+We often use [Mermaid](https://mermaid-js.github.io/) to render diagrams in the docs.
+
+To add a diagram to a page, you can use the following syntax:
+
+```mdx
+import Mermaid from '@/components/Mermaid'
+
+export const networkDiagram = `graph LR
+Start[Start] --> DecisionA{Decision A}
+DecisionA --> Outcome1[Outcome 1]
+DecisionA --> Outcome2([Outcome 2])
+`
+
+<Mermaid chart={networkDiagram} />
+```
 
 ## License
 
