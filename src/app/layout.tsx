@@ -25,7 +25,7 @@ export default async function RootLayout({
     pages.map(async (filename) => [
       '/' + filename.replace(/(^|\/)page\.mdx$/, ''),
       (await import(`./${filename}`)).sections,
-    ]),
+    ])
   )) as Array<[string, Array<Section>]>
   let allSections = Object.fromEntries(allSectionsEntries)
 
@@ -37,7 +37,7 @@ export default async function RootLayout({
         strategy="lazyOnload"
       />
       <html lang="en" className="h-full" suppressHydrationWarning>
-        <body className="flex min-h-full bg-white antialiased dark:bg-zinc-900">
+        <body className="flex min-h-full bg-koiGray-800 antialiased">
           <Providers>
             <div className="w-full">
               <Layout allSections={allSections}>{children}</Layout>

@@ -97,7 +97,7 @@ function GridLink({ gridLink }: { gridLink: GridLink }) {
     <div
       key={gridLink.href}
       onMouseMove={onMouseMove}
-      className="group relative flex rounded-2xl bg-zinc-50 transition-shadow hover:shadow-md hover:shadow-zinc-900/5 dark:bg-white/2.5 dark:hover:shadow-black/5"
+      className="group relative flex rounded-2xl bg-koiGray-900/25 transition-shadow hover:shadow-md hover:shadow-black/5"
     >
       {showGrid && (
         <GridLinkPattern
