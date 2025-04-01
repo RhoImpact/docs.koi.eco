@@ -1,0 +1,122 @@
+import image1 from './images/image1.webp'
+import image2 from './images/image2.webp'
+import image3 from './images/image3.webp'
+import image4 from './images/image4.webp'
+import image5 from './images/image5.webp'
+import ImageZoom from "@/components/ImageZoom";
+import InternalLink from '@/components/InternalLink'
+
+import PageInformationalData from '@/components/PageInformationalData'
+export const metadata = {
+  title: 'Use Cases',
+  description:
+    'Example real-world use cases for Koi results' 
+}
+
+# Using Koi Results
+## Harnessing the Value of an Avoided Emissions Forecast
+
+<PageInformationalData lastModified={lastModified} />
+
+There is increasing recognition that forward-looking impact analyses are critical for effective climate action. As such, the concept of **avoided emissions** has emerged as a key metric in measuring the anticipated impacts of climate solutions. 
+<Info>
+Avoided emissions forecasts quantify the greenhouse gas (GHG) emissions that are prevented when a new technology or climate solution displaces an incumbent, counterfactual baseline scenario (e.g., what would happen in the absence of the solution being deployed).
+</Info>
+
+Koi models provide standardized representations of avoided emissions forecasts with all underlying data presented clearly and concisely. Each model comes jam packed with results and data that can be used in a variety of applications from regulatory reporting to impact sales calculators.
+
+## Stakeholder Applications and Use Cases
+
+Koi is built for adaptability to a variety of use cases. Below are some we have seen historically, but history doesn’t predict the future when it comes to climate and we welcome you to test us on how Koi can address your needs! Also, be sure to check out our <ExternalLink
+  url="https://rhoimpact.com/case-studies/"
+  utmContent="hero-banner-link"
+  ariaLabel="Rho Impact Case Studies and Contributions"
+  linkText="Case Studies and Contributions"
+/>page for further examples.
+
+### Driving Innovation
+
+Koi makes it easy to compare the impact of different innovation decisions. Whether it is comparing the effect of different target markets, material inputs, or performance efficiencies, Koi supports data intercompatibility and analysis comparisons. 
+<Tip>
+The platform makes it easy to add multiple scenarios or technologies to use as points of comparison in analysis rollup. 
+</Tip>
+As an example, one innovator in Koi used the results to compare the effect of their automated data collection systems in both copper and steelmaking. Both of these models can be clicked into to reveal the underlying data that ultimately result in the steelmaking market having a greater potential impact.
+
+<ImageZoom
+src={image1}
+alt="Koi Use Cases Image 1"
+caption="Comparison of technology impact in a copper versus steel application"
+/>
+
+### Guiding Investment Decisions
+
+Investors need to quickly cut through any greenwashing and understand the likely impact of an investment decision. We work with investors to provide diligence materials aligned with the deal stakes and timeline. Often this will involve developing multiple scenarios that consider the range of possible futures an investment team is grappling with, and offer insight into the largest areas of uncertainty. See the below example of a forecast we developed to inform diligence.
+
+<ImageZoom
+src={image2}
+alt="Koi Use Cases Image 2"
+caption="Evaluating the impact of a technology in different potential futures"
+/>
+
+In this example, the investors needed to understand the range of potential avoided emissions given the highly uncertain future of AI computing energy demand. Using different sets of assumptions about the future electric grid intensity (derived from IEA scenarios) and AI uptake, four distinct models of impact were developed resulting in a range of plausible impact that encompasses known uncertainties.
+
+### Accelerating Market Adoption
+
+Each Koi model contains a wealth of underlying data that can be harnessed to develop customer sales calculators and auditable marketing materials. 
+<Tip>
+The Unit Impact page of each forecast contains information on the lifecycle phases and GHG intensities for the baseline and solution. Using these data, developing custom reporting metrics is easy. 
+</Tip>
+
+<ImageZoom
+src={image3}
+alt="Koi Use Cases Image 3"
+caption="Extracting Koi results for customized reporting metrics"
+/>
+
+Many innovators are interested in reporting the GHG unit reduction their technology supports. In the above example the improved steelmaking results in a 3.6% reduction in crude steel emissions today. Stakeholders often find that this metric is an intuitive starting point for communicating impact to different audiences.
+
+Going a layer deeper, some Koi users develop impact sales calculators based on the unit impact data. For example, <ExternalLink
+  url="https://grenova.com/impact/sustainability/"
+  utmContent="hero-banner-link"
+  ariaLabel="Grenova Sustainability Collaboration"
+  linkText="we partnered with Grenova"
+/> to develop a calculator for laboratories who adopt their reusable pipette tip washing system to quantify their avoided emissions, waste and water. These types of custom calculators are built to serve specific business verticals where customer acquisition is increasingly requiring insight into value chain sustainability.
+
+### Portfolio Reporting
+
+Investors are often seeking to quantify and communicate the sustainability performance of their assets. With globally increasing regulatory requirements and growing stakeholder demand for impact transparency, investors turn to Koi for reliable measurement and reporting that facilitates meaningful comparisons across diverse investments. Koi’s standardized approach delivers this by providing consistent, auditable data on emissions factors and market sizing, enabling portfolio managers to benchmark each asset against clear, industry-aligned criteria, such as net-zero alignment.
+
+
+<ImageZoom
+src={image4}
+alt="Koi Use Cases Image 4"
+caption="Example investment portfolio in Koi. Models can be clicked into and the portfolio has in-app analytics at each level of nesting (e.g., Fund A can be analyzed separately or in aggregate with Fund B)."
+/>
+
+
+Portfolio analysis varies in depth depending on the firm’s reporting use case, company maturity, and fund size. Many investors are first looking to lay the groundwork for an evergreen impact reporting platform and protocol. Koi is built to serve this need with **model recommendations, collection building and model versioning.**
+ Models tend to get more detailed through time as both the portfolio companies and the portfolio reporting matures. Accelerators have used Koi to broadly understand the potential impact of their startups with rapid models and initial high-level reporting, while VC firms have used our approach to develop fine-tuned planned impact forecasts for each asset. 
+ <br>For an example of a publicly available portfolio analysis report check out the <ExternalLink
+  url="https://ecoreport.eclipse.vc/"
+  utmContent="hero-banner-link"
+  ariaLabel="Eclipse Ventures ECO Report"
+  linkText="ECO Report"
+/> that we developed with Eclipse Ventures. We also plan to have automated PDF reporting available in-app soon. If this feature is a priority for you, please <ExternalLink
+  url="https://product.koi.eco/roadmap"
+  utmContent="hero-banner-link"
+  ariaLabel="Koi Product Roadmap"
+  linkText="submit your feedback"
+/> for our roadmap planning.
+
+### Dataset Curation
+
+Researchers use Koi to do the heavy lifting on dataset curation for bespoke analysis. Koi was built by data scientists who understand the power of uniformly structured and well-referenced data. Koi users take advantage of thousands of hours of manual scientific research time that has been spent developing trusted data for: GHG intensities, market sizes, pathway-aligned baselines, solution mechanisms of impact, solution market diffusion, and more. Within each model a user can explore the Datasheet page to see all model references and export the data into a variety of formats. Further, the charts on the associated forecast pages can be exported for bespoke data workup. Researchers use Koi as a hub for sourcing initial data, and then perform further analysis within a software more suited to their use case (e.g., financial modeling starting with Koi’s SEC-sourced market data).
+
+<ImageZoom
+src={image5}
+alt="Koi Use Cases Image 5"
+caption="Each Koi model contains a datasheet page with references and data export options"
+/>
+### Evaluating Macroscopic Climate Tech Trends
+
+We partner with academic research groups and climate tool developers to further scientific assessment of the climate tech space using the Koi data lake. With API integration and the automated Koi modeling engine, we’re uncovering unique insights into the macroscopic landscape of climate capital. We can’t wait to share more on this publicly, as soon as we are able to!
