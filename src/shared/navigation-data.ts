@@ -41,6 +41,11 @@ export const navigation: Array<NavGroup> = [
         icon: 'fa-regular fa-rocket',
       },
       {
+        title: 'Use Cases',
+        href: '/docs/getting-started/use-cases',
+        icon: 'fa-regular fa-file-chart-column',
+      },
+      {
         title: 'Features',
         href: '/docs/getting-started/features',
         icon: 'fa-regular fa-bolt',
