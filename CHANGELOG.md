@@ -1,5 +1,9 @@
 # Changelog
 
+## 2025-04-02 - 0.12.0
+
+- Use cases initial draft
+
 ## 2025-03-12 - 0.11.0
 
 - New Koi Engine page
