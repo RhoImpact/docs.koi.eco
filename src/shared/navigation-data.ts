@@ -1,4 +1,15 @@
-import routes from '@/shared/routes'
+// Define all routes in one place
+export const routes = {
+  search: '/docs/getting-started/features/search',
+  collections: '/docs/getting-started/features/collections',
+  sensitivityAnalysis:
+    '/docs/getting-started/features/collections#use-case:-sensitivity-analysis',
+  modelSearch: '/docs/getting-started/features/search#model-search',
+  baselineSearch: '/docs/getting-started/features/search#baseline-search',
+  sharing: '/docs/getting-started/features/sharing',
+  organizations: '/docs/getting-started/features/organizations',
+  groups: '/docs/getting-started/features/organizations#groups',
+} as const
 
 export interface NavGroup {
   title: string
@@ -63,8 +74,8 @@ export const navigation: Array<NavGroup> = [
             href: routes.sharing,
           },
           {
-            title: 'Organization',
-            href: routes.organization,
+            title: 'Organizations',
+            href: routes.organizations,
           },
         ],
       },

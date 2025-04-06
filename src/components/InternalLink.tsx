@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import routes from '@/shared/routes'
+import { routes } from '@/shared/navigation-data'
 
 type InternalLinkProps = {
   href?: string
