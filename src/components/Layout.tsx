@@ -53,7 +53,7 @@ export function Layout({
         {/* Left Navigation */}
         <aside className="fixed inset-y-0 left-0 hidden w-72 overflow-y-auto border-r border-white/10 bg-koiGray-900/50 lg:block">
           <nav className="h-full px-6 py-4">
-            <Link href="/" aria-label="Home">
+            <Link href="https://koi.eco" aria-label="Home">
               <Logo className="h-6" />
             </Link>
             <Navigation className="pt-10" id="main-navigation" />

@@ -76,7 +76,7 @@ export const Header = forwardRef<
       <Search />
       <div className="flex items-center gap-5 lg:hidden">
         <NavigationMobile />
-        <Link href="/" aria-label="Home">
+        <Link href="https://koi.eco" aria-label="Home">
           <Logo className="h-6" />
         </Link>
       </div>
