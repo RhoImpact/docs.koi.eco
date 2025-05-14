@@ -13,6 +13,14 @@ const featuresLinks: Array<GridLink> = [
     showGrid: false,
   },
   {
+    href: routes.customForecasts,
+    name: 'Custom Forecasts',
+    description:
+      "Tailor Koi's forecasts to your specific needs.",
+    icon: 'fa-regular fa-pencil',
+    showGrid: false,
+  },
+  {
     href: routes.collections,
     name: 'Collections',
     description:
