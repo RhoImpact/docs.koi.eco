@@ -9,6 +9,7 @@ export const routes = {
   sharing: '/docs/getting-started/features/sharing',
   organizations: '/docs/getting-started/features/organizations',
   groups: '/docs/getting-started/features/organizations#groups',
+  customForecasts: '/docs/getting-started/features/custom-forecasts',
 } as const
 
 export interface NavGroup {
@@ -64,6 +65,10 @@ export const navigation: Array<NavGroup> = [
           {
             title: 'Search',
             href: routes.search,
+          },
+          {
+            title: 'Custom Forecasts',
+            href: routes.customForecasts,
           },
           {
             title: 'Collections',
