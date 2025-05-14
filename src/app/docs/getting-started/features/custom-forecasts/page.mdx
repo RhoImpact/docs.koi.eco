@@ -1,0 +1,53 @@
+import image1 from './images/image1.webp'
+import ImageZoom from "@/components/ImageZoom";
+import PageInformationalData from '@/components/PageInformationalData'
+import ExternalLink from '@/components/ExternalLink'
+import CodeWithIcon from '@/components/CodeWithIcon'
+import InternalLink from '@/components/InternalLink'
+
+
+# Custom Forecasts
+
+<PageInformationalData lastModified={lastModified} />
+
+---
+
+<ImageZoom
+src={image1}
+alt="Custom Forecasts Image 1"
+caption="Dialog that appears when you click Clone (Customize) button."
+/>
+
+## Summary
+
+Use custom forecasts to represent your specific technology implementations. Modify the Koi-provided scenarios and markets or create your own and explore how your changes influence a technology’s impact potential.
+
+## Why Is It Important?
+
+Customizing impact forecasts is important for several reasons:
+
+* Accuracy: By tailoring the forecasts to your specific technology implementations, scenarios, and markets, you can ensure that the results are more accurate and relevant to your organization.  
+* Relevance: The ability to create your own scenarios and markets allows you to focus on the technologies and applications that are most important to you.  
+* Flexibility: Customizing forecasts enables you to explore different possibilities and see how changes in your assumptions affect the potential impact of a technology.  
+* Decision-making: The insights gained from customized forecasts can help you make more informed decisions about which technologies to invest in and how to prioritize your resources.
+
+## How Do I Use It?
+
+- **Select a Forecast**: Navigate to the Climate Solution Detail page of any technology. Select a Solution Scenario and Baseline Scenario in the Per Unit Impact tab. Select an Available Market and Obtainable Market in the Projected Market Uptake tab.  
+  - A Forecast is a combination of a solution scenario, baseline scenario, available market, and obtainable market.  
+- **Clone the Forecast**: Select <CodeWithIcon icon="fa-regular fa-layer-group">Clone (Customize)</CodeWithIcon>.  
+  - Cloning a forecast requires you to unlock the original forecast in order to make a copy and customize it.  
+  - The cloned forecast is saved to your private Forecasts.  
+- **Customize Your Forecast**: Modify or create scenarios and market projections to tailor the forecast for your needs.
+
+### Pro Tips
+
+- View and revisit your custom forecasts from Forecasts  
+- If your data is represented with a different unit than what’s shown in the model, that’s ok\! You can enter your data with the units you have, and they will be converted to the unit selected in the Analysis Options.  
+- Any changes you make to your custom forecast stay within your forecast. They will not appear on the original model from which you cloned your forecast.
+
+### Frequently Asked Questions
+
+- **What actions will apply edits to my data?** Selections made from dropdown menus (e.g. start and end years, units) will not apply edits to your data, but dragging and dropping nodes or editing/adding new values will.  
+- **Can I share my custom forecast with my team members or other organizations?** Yes, you can provide view-only or edit access to your forecast with other Koi users.  
+- **Can I track changes to my custom forecast?** The ability to view a version history of your custom forecast is in our roadmap.
