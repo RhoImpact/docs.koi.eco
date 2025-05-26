@@ -16,6 +16,12 @@ const references = [
   },
   {
     description:
+      'Scientific Advisory Committee member for AEFDi global avoided emissions factors database.',
+    topline: 'AEFDi',
+    link: 'https://www.mirova.com/sites/default/files/2023-05/PR_CEI-global-avoidance-factor-database_EN.pdf',
+  },
+  {
+    description:
       'Contributors to CDPs Emerging Climate Technology (ECT) Framework.',
     topline: 'ECT',
     link: 'https://cdn.cdp.net/cdp-production/comfy/cms/files/files/000/005/163/original/ECT_Framework_v1.1_%284%29.pdf',
@@ -32,12 +38,6 @@ const references = [
     topline: 'CFI',
     link: 'https://corporatefinanceinstitute.com/course/carbon-market-fundamentals/',
   },
-  {
-    description:
-      'Scientific Advisory Committee member for AEFDi global avoided emissions factors database.',
-    topline: 'AEFDi',
-    link: 'https://www.mirova.com/sites/default/files/2023-05/PR_CEI-global-avoidance-factor-database_EN.pdf',
-  },
 ]
 
 export function BuiltOnTrust() {
@@ -47,11 +47,10 @@ export function BuiltOnTrust() {
         Built on Trust
       </Heading>
       <p className="mt-6text-gray-300">
-        Since 2018, the Rho Impact team has been actively contributing to and
-        developing some of the world&apos;s most trusted data, tools, and
-        methodologies for calculating the potential impact of new climate
-        technologies. Koi represents the global state-of-the-art and is designed
-        to evolve as this important field continues to improve.
+        Since 2018, the Rho Impact team has been actively developing the
+        world&apos;s most trusted data, tools, and methodologies for estimating
+        the potential impact of new climate technologies.{' '}
+        <strong>Koi puts the global state-of-the-art to work at scale.</strong>
       </p>
 
       <dl className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
