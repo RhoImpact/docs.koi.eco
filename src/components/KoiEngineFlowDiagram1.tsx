@@ -96,11 +96,9 @@ export default function KoiEngineFlowDiagram1() {
       </div>
 
       {/* Footnote */}
-      <p className="max-w-xl text-center text-sm italic text-gray-500">
-        Note: Automated models are not currently available to standard Koi
-        license holders until they have undergone scientific review and
-        refinement.
-      </p>
+      {/* <p className="max-w-xl text-center text-sm italic text-gray-500">
+        Note: ...
+      </p> */}
     </div>
   )
 }
