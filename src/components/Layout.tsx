@@ -70,10 +70,10 @@ export function Layout({
           {/* Main Content & Right Navigation */}
           <div className="flex h-full flex-row">
             <div
-              className={`mr-0 flex w-full flex-col ${allSections[pathname]?.length > 0 ? 'lg:mr-48' : ''}`}
+              className={`mr-0 flex w-full flex-col ${allSections[pathname]?.length > 0 ? 'xl:mr-48' : ''}`}
             >
               <main
-                className="flex-1 transition-all duration-300"
+                className="mx-auto flex-1 transition-all duration-300"
                 id="main-content"
               >
                 {children}
@@ -85,16 +85,10 @@ export function Layout({
             {/* Right Navigation (Fixed & Positioned After Header) */}
             {allSections[pathname]?.length > 0 && (
               <aside
-                className="fixed right-0 top-14 hidden h-full w-48 border-l border-white/10 lg:block"
+                className="fixed right-0 top-14 hidden h-full w-48 border-l border-white/10 xl:block"
                 id="right-nav"
               >
                 <NavigationSections id="sidebar-navigation" />
-                {/* <NavigationSections className="w-0 overflow-hidden fixed right-0 top-14 h-full transition-all duration-300 lg:w-64 lg:block bg-white dark:bg-gray-900 shadow-lg border-l border-gray-200 dark:border-gray-700" id="sidebar-navigation" /> */}
-                {/* <nav className="h-full p-4">
-          <div className="fixed">
-            nav here
-          </div>
-          </nav> */}
               </aside>
             )}
           </div>

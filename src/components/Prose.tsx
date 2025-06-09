@@ -16,7 +16,7 @@ export function Prose<T extends React.ElementType = 'div'>({
         className,
         'prose dark:prose-invert',
         // `html :where(& > *)` is used to select all direct children without an increase in specificity like you'd get from just `& > *`
-        'px-4 [html_:where(&>*)]:mx-auto [html_:where(&>*)]:max-w-3xl'
+        'px-4 [html_:where(&>*)]:mx-auto [html_:where(&>*)]:max-w-4xl'
       )}
       {...props}
     />
