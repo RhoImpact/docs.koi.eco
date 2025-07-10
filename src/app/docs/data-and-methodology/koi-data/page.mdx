@@ -1,0 +1,152 @@
+import Image from 'next/image'
+import InternalLink from '@/components/InternalLink'
+import PageInformationalData from '@/components/PageInformationalData'
+import { Info } from '@/components/mdx'
+
+export const metadata = {
+  title: 'Koi Data',
+  description:
+    'Data sources and handling in Koi',
+}
+
+# Data Sources and Handling in Koi
+
+<PageInformationalData lastModified={lastModified} />
+
+Below is a non-exhaustive list with representative examples of data sources that are integrated into
+Koi forecasts. The [Koi Engine](/docs/data-and-methodology/koi-engine) leverages these data to automatically
+scaffold novel forecasts given new geographies, physical characteristics, performance considerations, markets, and more.
+
+## Major Data Providers
+<Info>
+These are Government, Commercial, and Non-Profit data sources from which we ingest primarily critical baseline data.
+</Info>
+
+* **International Energy Agency (IEA)** - Global authority on energy statistics, forecasts, and technology roadmaps; used for modeling energy transitions and emissions pathways.
+* **U.S. Energy Information Administration (US EIA)** - Authoritative source for U.S. and international energy production, consumption, and emissions data; often used for baselines and trends.
+* **UN FAO (FAO STAT)** - Global agricultural and food systems data; supports modeling land use, livestock, and crop-related emissions and yields.
+* **U.S. Environmental Protection Agency (US EPA)** - U.S. environmental regulatory body; provides tools and models (eGRID, GREET, WARM, Waste Reduction) for emissions factors and lifecycle assessments.
+* **U.S. Federal Highway Administration** - Transportation sector data, especially for infrastructure use, vehicle miles traveled, and fuel economy baselines.
+* **U.S. Department of Agriculture (USDA)** - Data on U.S. agricultural production, land use, conservation practices, and rural energy systems.
+* **National Renewable Energy Laboratory (NREL)** - Premier U.S. lab for renewable energy data and models, including photovoltaic LCA, wind, and biomass systems.
+* **National Energy Technology Laboratory (NETL)** - U.S. lab providing detailed fossil fuel lifecycle inventories and emissions data for power generation technologies.
+* **European Commission** - Through the JRC and EEA, provides EU-wide data on environmental performance, technology assessments, and emissions inventories.
+* **EU Taxonomy** - Regulatory framework offering historical benchmarks and forward-looking thresholds for sustainable investments.
+* **IPCC (Intergovernmental Panel on Climate Change)** - Global authority on climate science; source of standardized emissions factors, global warming potentials, and scenario modeling.
+* **World Resources Institute (WRI)** - Through the Greenhouse Gas Protocol, provides standards and guidance for corporate and product-level emissions accounting.
+* **Ember** - Independent think tank offering real-time and historical global electricity grid emissions factors and energy transition tracking.
+
+---
+
+## Academic and Industry Journals
+<Info>
+These sources are frequently used to generate both highly specific models for known/well characterized technologies
+and for new and emerging technologies.
+</Info>
+
+* **Journal of Cleaner Production** – Interdisciplinary journal focused on sustainable production systems, circular economy, and cleaner technologies.
+* **Environmental Science & Technology** – Leading journal for environmental chemistry and engineering, with robust data on emissions, pollutants, and mitigation technologies.
+* **Renewable and Sustainable Energy Reviews** – Comprehensive reviews and meta-analyses of renewable energy technologies, lifecycle impacts, and sustainability assessments.
+* **Nature Sustainability** – High-impact research on the intersection of environmental, social, and economic dimensions of sustainability, including climate innovation pathways.
+* **Energy Policy** – In-depth policy analyses and modeling related to global and national energy systems, often covering decarbonization strategies and their implications.
+* **Resources, Conservation & Recycling** – Focused on resource efficiency, materials flow, waste management, and circular economy interventions with quantified impacts.
+* **Agricultural Systems** – Systems-level analyses of agricultural practices and innovations, including their environmental and climate impacts.
+* **Science of the Total Environment** – Broad environmental science journal covering multidisciplinary studies on pollutants, ecosystems, and human-environment interactions.
+* **Environmental Research Letters** – Open-access journal emphasizing high-quality, timely research on global environmental change and sustainability solutions.
+* **Applied Energy** – Engineering and modeling-focused journal on energy systems, technologies, and applications with detailed emissions and efficiency data.
+
+---
+
+## LCA Datasets and Providers
+<Info>
+<InternalLink
+  href="/docs/data-and-methodology/terms-and-concepts#technical-concepts"
+  linkText="Life Cycle Analysis (LCA)" /> data are critical in establishing absolute emissions intensities for
+critical process phases and value chain components.
+</Info>
+
+* **US Federal LCA Commons**
+
+  * Labs and data providers (listed above)
+  * **USEEIO** - U.S.-focused environmentally extended input-output model
+  * **TRACI** - US EPA Tool for the Reduction and Assessment of Chemical and Other Environmental Impacts
+  * **ReCiPe 2016** - Life cycle impact assessment (LCIA) and other methods
+  * **USLCI** - U.S. Life Cycle Inventory Database
+
+### Compatible LCA Datasets that Require Commercial Authorization
+
+<Info>
+The following LCA datasets are fully compatible and able to be ingested into Koi but require separate
+commercial authorization.
+</Info>
+
+* **ecoinvent** – Comprehensive, high-quality life cycle inventory database widely used across industries; known for transparency and global coverage across many sectors.
+* **Agri-Footprint** – Specialized in agricultural and food-related life cycle data, with deep coverage of crop, livestock, and food processing systems.
+* **ELCD** – The European Reference Life Cycle Database, focused on harmonized and high-quality LCI data for key European industrial processes.
+* **Exiobase** – Environmentally extended multiregional input-output (EE-MRIO) database, ideal for macroeconomic and global supply chain footprint analysis.
+* **EVAH** – Focused on animal health and livestock systems, offering LCA data tailored to veterinary interventions and their environmental impacts.
+
+---
+
+## Industry Reports and White Papers
+
+* **American Chemistry Council** - Publishes detailed lifecycle assessments and sustainability reports focused on plastics, petrochemicals, and chemical manufacturing.
+
+* **Aluminum Association** - Provides industry-specific data and LCA studies on aluminum production, recycling, and embodied emissions across supply chains.
+
+* **Concrete Sustainability Hub (MIT CSHub)** - Research center focused on the environmental and economic impact of concrete and cement, offering cutting-edge LCA and durability models.
+
+* **U.S. Department of Energy (DOE)** - Authoritative analyses and modeling tools for energy technologies, efficiency measures, and decarbonization pathways.
+
+* **Vinyl Institute** - Industry group publishing LCAs and technical assessments on vinyl products, especially for construction and manufacturing applications.
+
+---
+
+## Additional Sources
+
+<Info>
+Additional sources include EPDs, proprietary data, and gray literature.
+</Info>
+
+* **Environmental Product Declarations (EPDs)** – asphalt, aluminum, concrete, steel, etc.
+* **Company-generated LCA reports** – e.g., from Tesla, Ball Corporation, Veolia
+* **Consultant-generated LCAs** – Sometimes unnamed but linked to specific product studies
+* **Direct interaction with operators**
+* **Algorithmic/LLM estimates** – where data gaps are filled using modeled or GPT-derived values
+* **Conference proceedings and working papers** – e.g., from SETAC or LCA Food conferences
+* **Science Based Targets Initiative (SBTi)** - normative industry targets
+* **One Earth Climate Model (OECM)** - Normative industry pathways
+
+## Frequently Asked Questions
+
+### How often are your data updated?  
+We have an annual cadence to check the date tags on our data sources, with a mandatory review date of one-year after ingestion into Koi. The frequency of updates of the data providers varies widely (e.g. IEA typically has a 2-year cycle, whereas other providers might update data on an ongoing basis or might only provide one-off analyses).
+
+### What methodologies do you follow? Do you have your own?  
+In addition to following best practices from the life cycle assessment field and GHG Protocol rules, we primarily follow WBCSD, Project Frame, and Mission Innovation’s Avoided Emissions framework, GFANZ, and much of the Mirova/Robeco AEP Methodology. For allocation guidance, we follow Project Frame, WBCSD (although complete formal guidance has yet to be released), and PCAF. We have contributed to most of these methodologies, in some cases co-authoring, in others advising or providing formal structured feedback.
+
+<Warning>
+For practical reasons, all of the leading avoided emissions frameworks and guidance documents lack the specific
+technical precision needed to systematically and comprehensively carry out the wide array of data transformations
+and calculations. Rho Impact has developed its own methodology that allows Koi to both abide by and expand on these
+methodologies at scale. 
+</Warning>
+
+### Why is Koi's methodology better?
+
+Below is a summary of the technical improvements to the <InternalLink
+  href="/docs/data-and-methodology/koi-engine"
+  linkText="Koi Engine"
+/> which have bearing on our technical methodology and where it solves critical problems with other methodologies'
+implementation at scale:
+
+* **Matching to Koi GHG intensities and market database** – Enables use of pre-vetted data both retroactively and on a go-forward basis, leveraging the latest snapshot of Engine.
+* **New module for estimating market capture in a “success” scenario** – Based on comparable data from historical SEC 10-K filings, improving realism in forecasting.
+* **Improved subphase-level savings logic** – Introduces the "template intensity" concept to avoid forcing inappropriate conventional baselines (e.g., oat milk no longer compares to dairy milk value chains). Removes hardcoded subphase-level efficiency gain assumptions.
+* **Simplified linear execution flow on the backend** – Streamlines batch processing for the Rho team and includes robust unique ID handling to improve database interactions.
+* **Integration of the latest OpenLCA data** – Includes US Fed Commons and is structured to support additional datasets such as Ecoinvent, EXIOBASE, and Agri-Footprint once authorized. Features autogenerated, verifiable, and non-overlapping components and subphases for clearer visualization of complex LCA data.
+* **Systematic QA and editing workflows** – Provides model developers at Rho with better tools for quality assurance and targeted intervention during model development.
+* **Extreme ERP flagging** – Automatically flags any forecast projecting less than 0.001 MtCO₂e or more than 10 GtCO₂e annually at 10% market penetration, enabling rapid review of outliers.
+* **Enhanced avoided emissions uncertainty logic** – Applies a simplified Monte Carlo–like approach to derive meaningful uncertainty ranges (error bars) for results.
+* **Improved in-app icon matching** – Reduces repetition and improves visual clarity in component labeling.
+* **Greater transparency in references and caveats** – Expands reference detail and integrates clearer warnings and context where applicable.

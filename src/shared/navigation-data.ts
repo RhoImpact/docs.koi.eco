@@ -92,15 +92,30 @@ export const navigation: Array<NavGroup> = [
     ],
   },
   {
-    title: 'Key Concepts',
+    title: 'Data & Methodology',
     links: [
-      { title: 'Summary', href: '/docs/key-concepts/summary' },
       {
-        title: 'Avoided Emissions',
-        href: '/docs/key-concepts/avoided-emissions',
+        title: 'Koi Data & Methodology',
+        href: '/docs/data-and-methodology/koi-data',
       },
-      { title: 'Methodologies', href: '/docs/key-concepts/methodologies' },
-      { title: 'Koi Engine', href: '/docs/key-concepts/koi-engine' },
+      {
+        title: 'Koi Engine: AI Acceleration',
+        href: '/docs/data-and-methodology/koi-engine',
+      },
+      {
+        title: 'Methodology Alignment',
+        href: '/docs/data-and-methodology/methodology-alignment',
+      },
+      {
+        title: 'Terms & Concepts',
+        href: '/docs/data-and-methodology/terms-and-concepts',
+        links: [
+          {
+            title: 'Avoided Emissions',
+            href: '/docs/data-and-methodology/avoided-emissions',
+          },
+        ],
+      },
     ],
   },
   {

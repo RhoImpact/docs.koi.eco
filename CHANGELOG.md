@@ -1,5 +1,9 @@
 # Changelog
 
+## 2025-07-10 - 0.13.0
+
+- Add more on data and methodologies
+
 ## 2025-04-02 - 0.12.0
 
 - Use cases initial draft
