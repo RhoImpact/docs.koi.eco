@@ -26,27 +26,56 @@ consistent and robust way to evaluate the impact of new and scaling solutions.
 As this field evolves, it is important to understand the distinctions
 among the various frameworks, methodologies, industry perspectives, and issued guidance.
 Below is a summary of the key approaches we are most closely tracking, integrating, and
-aligning with. We are proud to contribute to many of them. Koi is a global standard.
+aligning with. We are proud to contribute to many of them. Koi is a global standard for unifying these approaches.
 </Info>
 
+<p>
+  The landscape for avoided emissions methodologies is still evolving, with standards and best practices from major actors such GHG Protocol under active development. Some of the most widely used methodologies—<strong>Project Frame</strong> and <strong>WBCSD</strong>—are generally methodologically aligned, but differ primarily due to the maturity of solutions they target and their intended audiences. For a detailed comparison, see their <ExternalLink url="https://www.wbcsd.org/resources/avoided-emissions-climate-investing-a-guide-for-investors-and-businesses/" target="_blank" rel="noopener noreferrer" linkText="Guide for Investors and Businesses" />.
+</p>
+<p>
+  Notably, Project Frame and WBCSD's different target audiences result in differences in their approach to market sizing and solution categorization + eligibility. Koi is agnostic to these distinctions: 
+  market data can accommodate both backward-looking product deployment records and forward-looking market forecasts, supporting a wide range of use cases and reporting needs.
+  Due to the lack of convergence in the space, solutions are not classified by intervention point within Koi (e.g., facilitating or end-use), instead the system boundaries are clearly shown and documented within the analysis, along with the component life cycle intensities, leaving categorization and eligibility decisions up to the user.
+</p>
+<p>
+  Koi provides a unified approach that harmonizes these methodologies and others listed below. By offering templated calculations that are agnostic to solution classification and technology maturity, Koi enables interoperability between different audiences and use cases. The platform delivers unparalleled data breadth, while also allowing users to customize calculations with their own data when available. This makes Koi suitable for solutions as they progress through various stages of maturity, supporting both early-stage innovation and large-scale corporate adoption.
+</p>
+
 ---
+
 
 ## Project Frame
 
 <p><ExternalLink url="https://projectframe.how/methodology" target="_blank"
 rel="noopener noreferrer" linkText="Project Frame Methodology" /></p>
-<PageInformationalData lastModified="2025-02-21" lastModifiedLabel="Last Reviewed:" className="my-0" />
+<p><strong>Target group:</strong> Early-stage investors</p>
+<PageInformationalData lastModified="2025-07-15" lastModifiedLabel="Last Reviewed:" className="my-0" />
 
 > Avoided emissions are defined as the "positive" impact on society when comparing the GHG impact of a solution to an alternative
 reference scenario where the solution would not be used. They are sometimes referred to as Scope 4 Emissions, but Project Frame does
 not recommend the use of this term to avoid conflation with Scope 1, Scope 2, and Scope 3 used in carbon accounting.
+
+Koi also quantifies impact relative to an alternative reference scenario.
+
+> Project Frame’s approach to quantifying GHG impact is anchored in
+a core equation; unit impact is multiplied by volume to produce GHG
+impact, which can then be multiplied by optional adjustment factors to
+produce adjusted GHG impact. This equation is used for each of our three types of analyses: potential
+impact, planned impact, and realized impact. Each serves a distinct
+purpose and requires a different amount of information, often depending
+on a solution or company’s stage and the availability of a detailed sales
+forecast or historical data.
+
+Koi employs the same core equation to determine impact, and is flexible to accomodate all three types of analyses.
 
 ---
 
 ## WBCSD
 
 <p><ExternalLink url="https://www.wbcsd.org/resources/guidance-on-avoided-emissions-helping-business-drive-innovations-and-scale-solutions-towards-net-zero/" target="_blank" rel="noopener noreferrer" linkText="WBCSD Guidance" /></p>
-<PageInformationalData lastModified="2025-02-21" lastModifiedLabel="Last Reviewed:" className="my-0" />
+<p><ExternalLink url="https://www.wbcsd.org/avoided-emissions-implementation-hub/" target="_blank" rel="noopener noreferrer" linkText="WBCSD Implementation Hub" /></p>
+<p><strong>Target group:</strong> Large corporates</p>
+<PageInformationalData lastModified="2025-07-15" lastModifiedLabel="Last Reviewed:" className="my-0" />
 
 > Avoided emissions refer to the "positive" impact on society when comparing the GHG
   impact of a solution to an alternative reference scenario. An avoided emission is thus
@@ -59,16 +88,19 @@ not recommend the use of this term to avoid conflation with Scope 1, Scope 2, an
   associated with the solution (the one that will be taking place), and one associated
   with the reference scenario, calculated for a specified time interval.
 
-Koi is highly compatible with WBCSD's guidance and reflects many of the recommended
+Koi is highly compatible with WBCSD's guidance and reflects the recommended
 practices around boundary setting, baseline selection, and transparency in assumptions.
 We see WBCSD's work as particularly relevant for enterprises seeking to quantify product-level
-climate contributions in credible, investment-grade ways.
+climate contributions in credible, investment-grade ways. WBCSD's standardized avoided emissions reporting template (linked in their Implementation Hub) can be readily populated with data and results from a Koi model.
+
+Koi users seeking to follow WBCSD's framework set the solution scale to represent deployed climate solution units and their expected lifetime. The eligbility and classification criteria from WBCSD must also be considered during reporting; Koi is currently agnostic to these considerations and allows for modeling of any intervention. 
 
 ---
 
 ## GFANZ
 
 <p><ExternalLink url="https://assets.bbhub.io/company/sites/63/2024/09/Case-Studies-on-Transition-Finance-and-Decarbonization-Contribution-Methodologies-Sep-2024.pdf" target="_blank" rel="noopener noreferrer" linkText="GFANZ Methodology" /></p>
+<p><strong>Target group:</strong> Medium to large financial institutions</p>
 <PageInformationalData lastModified="2025-02-18" lastModifiedLabel="Last Reviewed:" className="my-0" />
 
 ### Referred to as **Expected Emission Reductions (EER)** this metric expresses the expected "emissions return" on a transition finance decision.
@@ -80,7 +112,7 @@ entity's EER to a financial institution.
 ### Notes Regarding Koi Compatibility
 
 - Koi can be compatible with the allocation setting in **Collections**, however, we do not currently provide other allocation methods.
-- We refer to everything as "avoided emissions" and "solution"s whereas GFANZ draws a distinction between climate solutions
+- We refer to everything as "avoided emissions" and "solutions" whereas GFANZ draws a distinction between climate solutions
 (e.g., wind power) vs. aligned/aligning entities (e.g., use of predictive maintenance robots in O&G) vs. managed phaseout (e.g., elimination of peaker plants).
 They then recommend different metrics for the "solution" GHG intensity in each case. The mathematical transformations are nearly the same,
 however, we cannot automatically model phase outs right now because of differences in how you model the "market capture" for these cases.
@@ -96,17 +128,25 @@ however, we cannot automatically model phase outs right now because of differenc
   using a specific product or service, comparing
 it to a situation had the product or service not been used.
 
+Like the above methodologies, the key to this approach is comparing emissions between a low-carbon scenario and a counterfactual scenario without intervention.
+
 ---
 
 ## AEFDi
 
 <p><ExternalLink url="https://aefdi.io/" target="_blank" rel="noopener noreferrer" linkText="AEFDi's AEP" /></p>
+<p><strong>Target group:</strong> Medium to large financial institutions and companies</p>
 <PageInformationalData lastModified="2025-02-21" lastModifiedLabel="Last Reviewed:" className="my-0" />
 
 > Avoided emissions (AE) is used to determine a project's contribution to the low-carbon
   transition. It represents the delta of CO2e between the induced emission of a project
   and a reference scenario representing what would have happened without the project.
 
-Koi's forecasting methodology is aligned with the AEFDI framework where applicable,
+Koi's forecasting methodology is aligned with the AEFDi framework where applicable,
 and our team is represented on their Scientific Advisory Committee, contributing to
-ecosystem dialogue around avoided emissions adoption and implementation.
+ecosystem dialogue around avoided emissions adoption and implementation. The AEFDi is primarily focused on pre-calculated Avoided Emissions Factors (i.e., Unit Impacts), which Koi also provides within each complete analysis alongside the market data to calculate total avoided emissions.
+
+<Info>
+For a comprehensive list of avoided emissions assessment frameworks and methodologies, see the appendix of <ExternalLink url="https://www.wbcsd.org/resources/avoided-emissions-climate-investing-a-guide-for-investors-and-businesses/" target="_blank" rel="noopener noreferrer" linkText="Avoided Emissions & Climate Investing: A Guide for Investors and Businesses" />.
+</Info>
+
