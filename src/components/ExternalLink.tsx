@@ -3,9 +3,9 @@
 // in a consistent manner.
 // Example usage:
 // <ExternalLink
-//   url={`${studioUrl}`}
+//   url={`${baseUrl}`}
 //   utmContent="hero-banner-link"
-//   ariaLabel="Explore Koi Studio"
+//   ariaLabel="Explore Koi"
 //   linkText="Koi"
 // />
 

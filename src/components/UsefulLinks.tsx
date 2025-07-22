@@ -1,13 +1,13 @@
 'use client'
 
-import { studioUrl, feedbackUrl } from '@/shared/urls'
+import { baseUrl, feedbackUrl } from '@/shared/urls'
 import { GridLink, LinksGrid } from './LinksGrid'
 
 const usefulLinks: Array<GridLink> = [
   {
-    href: `${studioUrl}`,
+    href: `${baseUrl}`,
     external: true,
-    name: 'Koi Studio',
+    name: 'Koi',
     description: 'Use Koi to calculate the impact of new technologies.',
     icon: 'fa-kit fa-koi-icon-flat text-koiOrange-400',
     gridPattern: {

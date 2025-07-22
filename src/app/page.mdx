@@ -7,7 +7,7 @@ import Image from 'next/image'
 import packageJson from '../../package.json'
 import ExternalLink from '@/components/ExternalLink'
 import PageInformationalData from '@/components/PageInformationalData'
-import { studioUrl, feedbackUrl, roadmapUrl, changelogUrl } from '@/shared/urls'
+import { baseUrl, feedbackUrl, roadmapUrl, changelogUrl } from '@/shared/urls'
 
 export const metadata = {
   title: 'Koi Documentation',
@@ -21,8 +21,7 @@ export const sections = []
 
 <Image src={koiLogoBanner} alt="Koi Logo Banner" className="mt-0 w-full" />
 
-# Koi helps your climate solutions win.
-
+# The standard in climate modeling for financial markets
 
 <div className="text-sm italic">
   *Last updated: {packageJson.lastUpdated}*<br />
@@ -30,23 +29,20 @@ export const sections = []
 </div>
 
 <ExternalLink
-  url={`${studioUrl}`}
+  url={`${baseUrl}`}
   utmContent="hero-banner-link"
-  ariaLabel="Explore Koi Studio"
+  ariaLabel="Explore Koi"
   linkText="Koi"
-/> is a paradigm shift for estimating climate impact, built for **transparency**, **speed**,
-and **scale**.
-
-Compared to traditional climate tools, Koi is intuitive, forward-looking, and
-the first impact forecasting platform that blends the **latest generative AI
-with decades of research and hands-on forecasting experience**. We exist to help **climate solutions win**.
+/> is an intuitive, forward-looking data platform that blends the **latest generative AI
+with decades of research**. Experience the world's
+only climate impact platform built for **transparency**, **speed**, and **scale**.
 
 ## Where to Begin
 
 - <ExternalLink
-    url={`${studioUrl}/sign-up`}
+    url={`${baseUrl}/sign-up`}
     utmContent="hero-banner-link"
-    ariaLabel="Sign up for Koi Studio"
+    ariaLabel="Sign up for Koi"
     linkText="Sign Up"
     rel="noopener noreferrer"
     target="_blank"
@@ -54,13 +50,13 @@ with decades of research and hands-on forecasting experience**. We exist to help
   : Create a free account.
 - [**Get Started**](/docs/getting-started): Quickstart guides and pointers.
 - [**Explore Use Cases**](/docs/getting-started/use-cases): Common ways users harness the value of an avoided emissions forecast.
-- [**Learn More**](/docs/key-concepts/summary): Dive into the art and science of impact forecasting.
+- [**Learn More**](/docs/data-and-methodology/koi-data): Dive into the art and science of impact forecasting.
 
 <div className="not-prose mb-16 mt-6 flex gap-3">
   <Button href="/docs/getting-started" arrow="right">
     <>Getting Started</>
   </Button>
-  <Button href="/docs/key-concepts/summary" variant="outline">
+  <Button href="/docs/data-and-methodology/terms-and-concepts" variant="outline">
     <>Explore Key Concepts</>
   </Button>
 </div>

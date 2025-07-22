@@ -3,17 +3,17 @@ import { Heading } from '@/components/Heading'
 
 const guides = [
   {
-    href: '/docs/quickstart',
+    href: '/docs/getting-started/quickstart',
     name: 'Quickstart',
     description: 'Get started with Koi in minutes.',
   },
   {
-    href: '/docs/resources/key-concepts-overview',
+    href: '/docs/data-and-methodology/terms-and-concepts',
     name: 'Key Concepts',
     description: 'Learn about the art and science of impact forecasting.',
   },
   {
-    href: '/docs/resources/avoided-emissions',
+    href: '/docs/data-and-methodology/avoided-emissions',
     name: 'Avoided Emissions',
     description:
       'Learn about determining the amount of avoided emissions that can be attributed to climate solutions.',

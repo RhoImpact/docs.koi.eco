@@ -5,17 +5,16 @@ import { GridLink, LinksGrid } from '@/components/LinksGrid'
 
 const nextUpLinks: Array<GridLink> = [
   {
-    href: '/docs/key-concepts/avoided-emissions',
+    href: '/docs/data-and-methodology/avoided-emissions',
     name: 'Avoided Emissions',
     description: 'Learn about avoided emissions and what to do with them.',
     icon: 'fa-regular fa-chart-line-up-down',
     showGrid: false,
   },
   {
-    href: '/docs/key-concepts/methodologies',
+    href: '/docs/data-and-methodology/koi-data',
     name: 'Methodologies',
-    description:
-      'Keep tabs on the key methodologies we are tracking most closely.',
+    description: "Review Koi's methodology and aligned global methodologies.",
     icon: 'fa-regular fa-notebook',
     showGrid: false,
   },

@@ -1,15 +1,13 @@
 'use client'
 
-import { useRef, useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { usePathname } from 'next/navigation'
 import clsx from 'clsx'
-import { AnimatePresence, motion, useIsPresent } from 'framer-motion'
+import { motion } from 'framer-motion'
 import { useInitialValue, NavSection, navigation } from '@/shared/navigation'
 import { useIsInsideNavigationMobile } from '@/components/NavigationMobile'
 import { useSectionStore } from '@/components/SectionProvider'
 import { NavLink } from '@/components/Navigation'
-
-export const baseUrl = process.env.NEXT_PUBLIC_KOI_STUDIO_BASE_URL
 
 // Find the navigation group (from navigation list out of constants/navigation.tsx) for the current pathname
 // e.g. if pathname is /docs/getting-started/features

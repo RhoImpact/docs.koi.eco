@@ -1,4 +1,4 @@
-export const studioUrl = process.env.NEXT_PUBLIC_KOI_STUDIO_BASE_URL
+export const baseUrl = process.env.NEXT_PUBLIC_KOI_STUDIO_BASE_URL
 export const docsUrl = process.env.NEXT_PUBLIC_KOI_DOCS_BASE_URL
 export const landingUrl = process.env.NEXT_PUBLIC_KOI_LANDING_BASE_URL
 export const feedbackUrl = process.env.NEXT_PUBLIC_KOI_FEEDBACK_BASE_URL

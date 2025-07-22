@@ -8,8 +8,7 @@ import { NavGroup, navigation, useInitialValue } from '@/shared/navigation'
 import { useIsInsideNavigationMobile } from '@/components/NavigationMobile'
 import { useSectionStore } from '@/components/SectionProvider'
 import { Tag } from '@/components/Tag'
-
-export const baseUrl = process.env.NEXT_PUBLIC_KOI_STUDIO_BASE_URL
+import { baseUrl } from '@/shared/urls'
 
 function MobileTopLevelNavItem({
   href,

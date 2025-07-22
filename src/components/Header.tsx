@@ -11,7 +11,7 @@ import {
 } from '@/components/NavigationMobile'
 import { useNavigationMobileStore } from '@/components/NavigationMobile'
 import { MobileSearch, Search } from '@/components/Search'
-import { studioUrl, landingUrl, feedbackUrl } from '@/shared/urls'
+import { baseUrl, landingUrl, feedbackUrl } from '@/shared/urls'
 
 function TopLevelNavItem({
   href,
@@ -83,7 +83,7 @@ export const Header = forwardRef<
       <div className="flex items-center gap-5">
         <nav className="hidden md:block">
           <ul role="list" className="flex items-center gap-8">
-            <TopLevelNavItem target="_blank" href={`${studioUrl}`}>
+            <TopLevelNavItem target="_blank" href={`${baseUrl}`}>
               Open Koi
             </TopLevelNavItem>
             <TopLevelNavItem href="/">Docs</TopLevelNavItem>
@@ -106,7 +106,7 @@ export const Header = forwardRef<
           <MobileSearch />
         </div>
         <div className="hidden min-[416px]:contents">
-          <Button href={`${studioUrl}/login`} target="_blank">
+          <Button href={`${baseUrl}/login`} target="_blank">
             Sign in
           </Button>
         </div>

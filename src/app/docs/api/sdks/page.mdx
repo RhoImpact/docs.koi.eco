@@ -1,6 +1,6 @@
 import { Libraries } from '@/components/Libraries'
 import PageInformationalData from '@/components/PageInformationalData'
-export const baseUrl = process.env.NEXT_PUBLIC_KOI_STUDIO_BASE_URL
+import { baseUrl } from '@/shared/urls'
 export const metadata = {
   title: 'Koi SDKs',
   description:
@@ -17,6 +17,6 @@ export const sections = [
 
 Official SDKs for Koi are <span className="italic text-orange-500">coming soon</span>.
 
-In the meantime, you can use <a href={`${baseUrl}`} target="_blank">Koi Studio</a> to begin modeling instantly. {{ className: 'lead' }}
+In the meantime, you can use <a href={`${baseUrl}`} target="_blank">Koi</a> to begin modeling instantly. {{ className: 'lead' }}
 
 <Libraries />

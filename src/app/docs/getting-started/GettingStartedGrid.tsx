@@ -1,11 +1,11 @@
 'use client'
 
-import { studioUrl, feedbackUrl } from '@/shared/urls'
+import { baseUrl, feedbackUrl } from '@/shared/urls'
 import { GridLink, LinksGrid } from '@/components/LinksGrid'
 
 const gettingStartedLinks: Array<GridLink> = [
   {
-    href: `${studioUrl}/sign-up`,
+    href: `${baseUrl}/sign-up`,
     external: true,
     name: 'Sign Up',
     description: "Create a Koi account to get started. It's quick.",
@@ -27,9 +27,9 @@ const gettingStartedLinks: Array<GridLink> = [
     showGrid: false,
   },
   {
-    href: '/docs/key-concepts/summary',
-    name: 'Learn Key Concepts',
-    description: 'Learn about the key concepts of Koi.',
+    href: '/docs/data-and-methodology/koi-data',
+    name: 'Understand Koi Data',
+    description: 'Learn about the data that powers Koi.',
     icon: 'fa-regular fa-lightbulb text-koiGreen-400',
     showGrid: false,
   },
