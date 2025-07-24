@@ -10,6 +10,7 @@ export const routes = {
   organizations: '/docs/getting-started/features/organizations',
   groups: '/docs/getting-started/features/organizations#groups',
   customForecasts: '/docs/getting-started/features/custom-forecasts',
+  koiCredits: '/docs/getting-started/features/koi-credits',
 } as const
 
 export interface NavGroup {
@@ -63,24 +64,28 @@ export const navigation: Array<NavGroup> = [
         icon: 'fa-regular fa-bolt',
         links: [
           {
-            title: 'Search',
-            href: routes.search,
+            title: 'Collections',
+            href: routes.collections,
           },
           {
             title: 'Custom Forecasts',
             href: routes.customForecasts,
           },
           {
-            title: 'Collections',
-            href: routes.collections,
-          },
-          {
-            title: 'Sharing',
-            href: routes.sharing,
+            title: 'Koi Credits',
+            href: routes.koiCredits,
           },
           {
             title: 'Organizations',
             href: routes.organizations,
+          },
+          {
+            title: 'Search',
+            href: routes.search,
+          },
+          {
+            title: 'Sharing',
+            href: routes.sharing,
           },
         ],
       },

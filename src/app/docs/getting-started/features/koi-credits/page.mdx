@@ -1,0 +1,110 @@
+import ImageZoom from "@/components/ImageZoom";
+import image1 from './images/image1.webp'
+import image2 from './images/image2.webp'
+import image3 from './images/image3.webp'
+import PageInformationalData from "@/components/PageInformationalData";
+import ExternalLink from "@/components/ExternalLink";
+import InternalLink from "@/components/InternalLink";
+import CodeWithIcon from "@/components/CodeWithIcon";
+import { baseUrl, feedbackUrl, roadmapUrl, changelogUrl } from '@/shared/urls'
+
+export const metadata = {
+  title: 'Koi Credits',
+  description:
+    'Unlock deeper access when you need it.',
+};
+
+# Koi Credits
+
+<PageInformationalData lastModified={lastModified} />
+
+---
+<ImageZoom
+src={image1}
+alt="Koi Credits Image 1"
+caption="View of a technology model version that is locked."
+/>
+## Summary
+
+A **Koi Credit** is a flexible currency that can be used to unlock deeper functionality in Koi on an as-needed basis. By spending Koi Credits, you can **unlock a technology model version**, which will **give you access** to: view full references, clone/customize, export, and share and collaborate on models with colleagues outside your organization.
+
+---
+## Why Is It Important?
+
+Wider adoption stalls when impact data is hard to find, slow to parse, or too expensive. So we made the essentials free: fast, trustworthy numbers you can actually use. **Koi Credits** kick in only when you move from **“looking”** to **“doing”**—customizing, exporting, or collaborating in ways that would otherwise cost far more time and money.
+
+---
+## How do I use it?
+
+### Acquiring Koi Credits
+
+Koi Credits are a flexible currency within Koi that can be used to unlock advanced features. You receive Koi Credits as:
+
+- **Signup / upgrade bonuses** *(never expire)*
+- **Monthly allotments with paid plans** *(expire at month’s end)*
+- **One-time / top-up purchases** *(never expire)*
+
+<Warning>**Org-wide pool:** Credits are shared across your Organization. Anyone on your team can spend credits, and anything they unlock becomes available to everyone.</Warning>
+
+Check your balance, expirations, and purchase options on the `Settings` → `Usage` page. See the <ExternalLink
+  url="https://koi.eco/pricing"
+  utmContent="hero-banner-link"
+  ariaLabel="Koi model pricing page"
+  linkText="Pricing"
+/> page for how many credits come with each plan.
+
+<ImageZoom
+src={image2}
+alt="Koi Credits Image 2"
+caption="Navigation to Usage within Settings."
+/>
+
+### Spending Koi Credits
+
+Right now, credits are used to **Unlock a Technology Model**. Additional, credit-based features are coming soon.
+
+Unlocking a technology model Version gives you access to:
+
+- Full reference lists
+- <InternalLink route="customForecasts" linkText="Clone & customize" /> the model
+- Export data to **XLSX** or **JSON**
+- <InternalLink route="sharing" linkText="Share" /> with others
+
+<Warning>Unlocks apply only to the version you’re viewing. Access does not carry to past or future versions of the same model.</Warning>
+
+### How to Unlock a Model
+
+1. Open a technology model forecast
+2. Go to the `Datasheet` tab
+3. Click `Unlock Model`
+4. Done—those features are now available for that **specific version**
+
+<ImageZoom
+src={image3}
+alt="Koi Credits Image 3"
+caption="View of unlocking a technology model version on the Datasheet."
+/>
+---
+## FAQ
+
+**Which credits are used when I unlock a model?**
+Koi automatically applies the credits that expire first. Once those are used, it falls back to your non‑expiring credits.
+
+**Does my team share a pool of credits?**
+Yes. Credits are shared across your Organization. If someone unlocks a model, everyone in your Org sees it as unlocked.
+
+**How does this work with sharing?**
+When you share a private model with someone outside your Organization, it remains locked for them. If you grant **Editor** or **Manager** access, they can view and edit references. Managers can also re-share. However, they can’t clone or export unless they unlock the model with their own credits.
+
+---
+## Coming Soon
+
+- **Koi Engine**: Use our Koi Engine that utilizes state-of-the-art AI technology combined with proprietary modeling techniques and based on verified data to create a custom model just for you.
+
+*Want these features faster?*
+<ExternalLink
+  url={`${roadmapUrl}`}
+  utmContent="hero-banner-link"
+  ariaLabel="Roadmap"
+  linkText="Check out our public roadmap"
+/> where you can upvote them or request a feature to let us know what's most important to you!

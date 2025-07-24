@@ -43,6 +43,13 @@ const featuresLinks: Array<GridLink> = [
     icon: 'fa-solid fa-people-group',
     showGrid: false,
   },
+  {
+    href: routes.koiCredits,
+    name: 'Koi Credits',
+    description: 'Unlock deeper access when you need it.',
+    icon: 'fa-regular fa-unlock',
+    showGrid: false,
+  },
 ]
 
 export default function FeaturesGrid() {
