@@ -7,31 +7,37 @@
    '=.____.='  '._|
 */
 .koi-docs-image-container {
-    @apply max-w-[50rem];
-    @apply my-0;
-    @apply flex;
-    @apply flex-wrap;
-    @apply justify-center;
+  @apply max-w-[50rem];
+  @apply my-0;
+  @apply flex;
+  @apply flex-wrap;
+  @apply justify-center;
 }
 
 .koi-docs-image {
-    @apply w-2/3;
-    @apply border;
-    @apply border-gray-700;
-    @apply p-2;
-    @apply rounded;
-    @apply select-none;
-    @apply mx-auto;
-    @apply shadow-lg;
-    margin-top: 0 !important;
-    margin-bottom: 0 !important;
+  @apply w-2/3;
+  @apply border;
+  @apply border-gray-700;
+  @apply p-2;
+  @apply rounded;
+  @apply select-none;
+  @apply mx-auto;
+  @apply shadow-lg;
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
 }
 
-.koi-docs-image-caption {
-    @apply text-sm;
-    @apply italic;
-    @apply text-gray-500;
-    @apply text-center;
-    @apply m-0;
-    @apply p-0;
+.koi-docs-caption {
+  @apply text-sm;
+  @apply italic;
+  @apply text-gray-500;
+  @apply text-center;
+  @apply m-0;
+  @apply p-0;
+}
+
+/* Table cell vertical alignment */
+.koi-table td,
+.koi-table th {
+  @apply align-middle;
 }

@@ -104,12 +104,12 @@ export const navigation: Array<NavGroup> = [
         href: '/docs/data-and-methodology/koi-data',
       },
       {
-        title: 'Koi Engine: AI Acceleration',
-        href: '/docs/data-and-methodology/koi-engine',
-      },
-      {
         title: 'Methodology Alignment',
         href: '/docs/data-and-methodology/methodology-alignment',
+      },
+      {
+        title: 'Koi Engine: AI Acceleration',
+        href: '/docs/data-and-methodology/koi-engine',
       },
       {
         title: 'Terms & Concepts',

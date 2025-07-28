@@ -33,7 +33,7 @@ const ImageZoom: React.FC<ImageZoomProps> = ({
           className={`koi-docs-image cursor-zoom-in ${className}`}
         />
       </Zoom>
-      {caption && <p className="koi-docs-image-caption">{caption}</p>}
+      {caption && <p className="koi-docs-caption">{caption}</p>}
     </div>
   )
 }
