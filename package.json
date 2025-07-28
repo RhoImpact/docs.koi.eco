@@ -1,7 +1,7 @@
 {
   "name": "koi-docs",
-  "version": "0.13.2",
-  "lastUpdated": "2025-07-26",
+  "version": "0.13.3",
+  "lastUpdated": "2025-07-28",
   "private": true,
   "scripts": {
     "dev": "next dev",
