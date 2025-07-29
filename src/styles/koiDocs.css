@@ -37,7 +37,11 @@
 }
 
 /* Table cell vertical alignment */
-.koi-table td,
-.koi-table th {
+.koi-table td {
   @apply align-middle;
+}
+.koi-table th {
+  @apply align-bottom;
+  @apply font-light;
+  @apply text-koiGray-200;
 }
