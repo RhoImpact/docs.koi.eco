@@ -1,4 +1,7 @@
 import PageInformationalData from '@/components/PageInformationalData'
+import ImageZoom from '@/components/ImageZoom'
+import unitImpactImage from '../methodology_images/math_unitimpact.webp'
+import marketImage from '../methodology_images/math_solnscale.webp'
 
 export const metadata = {
   title: 'Mathematical Foundations',
@@ -10,4 +13,111 @@ export const metadata = {
 
 <PageInformationalData lastModified={lastModified} />
 
-The core math and science underpinning the Koi Methodology
+All Koi models are built on the same fundamental arithmetic, ensuring consistency and comparability across diverse technologies and markets. This consistency is what enables fair comparisons and scalable analysis across entire portfolios.
+
+## Core Avoided Emissions Formula
+
+<div className="bg-zinc-50/50 dark:bg-zinc-800/30 border border-zinc-200 dark:border-zinc-700 rounded-xl p-6 my-8">
+  <div className="text-center">
+    <h3 className="text-lg font-semibold text-zinc-800 dark:text-zinc-200 mb-4">The Universal Formula</h3>
+    <div className="bg-white/80 dark:bg-zinc-900/50 rounded-lg p-4 border border-zinc-300 dark:border-zinc-600">
+      <div className="text-xl font-mono font-semibold">
+        <span className="text-zinc-700 dark:text-zinc-300">Avoided Emissions (Annual Impact)</span>
+        <span className="text-zinc-500 dark:text-zinc-400 mx-2">=</span>
+        <div className="mt-1">
+          <span className="text-zinc-600 dark:text-zinc-300">(Unit Impact)</span>
+          <span className="text-zinc-500 dark:text-zinc-400 mx-2">×</span>
+          <span className="text-zinc-600 dark:text-zinc-300">(Solution Scale)</span>
+        </div>
+      </div>
+    </div>
+    <div className="mt-3 text-sm text-zinc-600 dark:text-zinc-400">
+      <p><strong>Where:</strong></p>
+      <p>• <strong>Unit Impact</strong> = Baseline GHG Intensity - Solution GHG Intensity</p>
+      <p>• <strong>Solution Scale</strong> = Units of functional output deployed</p>
+    </div>
+  </div>
+</div>
+
+<Info>
+This formula is applied consistently across all technology categories, from renewable energy to carbon capture to sustainable agriculture. The mathematical framework ensures that every solution can be evaluated alongside alternatives. See the [classification systems section](/docs/data-and-methodology/classification-overview) for information on how the equation components are determined for different solutions types.
+</Info>
+
+### Breaking Down the Components
+
+#### Unit Impact 
+
+Unit Impact, which can be thought of as the GHG intensity difference, represents the emissions reduction achieved per unit of functional output. This is calculated by comparing:
+
+- **Solution GHG Intensity**: The greenhouse gas emissions per functional unit of the climate solution
+- **Baseline GHG Intensity**: The greenhouse gas emissions per functional unit in a counterfactual scenario where the solution does not exist
+
+<Tip>
+The baseline scenario represents what would happen in the absence of the climate solution - this is crucial for calculating the true impact of the intervention.
+</Tip>
+
+<ImageZoom
+  src={unitImpactImage}
+  alt="Unit Impact Visualization"
+  containerClassName="w-full"
+  className="w-full"
+/>
+
+<p className="text-center text-sm text-zinc-600 dark:text-zinc-400 mt-2 italic">Example Koi Unit Impact Calculation</p>
+
+#### Solution Scale 
+
+Solution Scale represents the size of the solution market, measured in functional units (e.g., megawatt-hours of electricity, miles driven, tons of material processed, dollars of CDR infrastructure).
+
+<ImageZoom
+  src={marketImage}
+  alt="Solution Scale Visualization"
+  containerClassName="w-full"
+  className="w-full"
+/>
+
+<p className="text-center text-sm text-zinc-600 dark:text-zinc-400 mt-2 italic">Example Koi Solution Scale Calculation</p>
+
+## A Flexible Foundation
+
+This mathematical approach aligns with established methodologies used by leading organizations in the field, including Project Frame and other recognized frameworks. We have generalized metrics developed by other framework developers such that this can be generally applied to the portions of climate solutions, or specific contexts, those frameworks cover. This includes having a solution scale that may represent an individual company or technology-level impact, and having market deployment that can be forward or backward looking. The consistency ensures that Koi's results are interoperable with existing climate impact assessment tools and reporting standards.
+
+## Related Pages
+
+<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 my-6">
+  <a href="/docs/data-and-methodology/avoided-emissions" className="group block p-4 rounded-lg border border-zinc-200 dark:border-zinc-700 hover:border-koiGreen-300 dark:hover:border-koiGreen-400 transition-colors">
+    <div className="flex items-center gap-3">
+      <div className="flex h-8 w-8 items-center justify-center rounded-full bg-zinc-900/5 ring-1 ring-zinc-900/25 backdrop-blur-[2px] transition duration-300 group-hover:bg-koiGreen-100 dark:bg-white/7.5 dark:ring-white/15 dark:group-hover:bg-koiGreen-900/30">
+        <i className="fa-regular fa-chart-line-up-down text-koiGreen-600 dark:text-koiGreen-400 text-sm" />
+      </div>
+      <div>
+        <h3 className="font-semibold text-sm text-zinc-900 dark:text-white group-hover:text-koiGreen-600 dark:group-hover:text-koiGreen-400">Avoided Emissions</h3>
+        <p className="text-xs text-zinc-600 dark:text-zinc-400">Deep dive into how data components interact to calculate impact</p>
+      </div>
+    </div>
+  </a>
+  
+  <a href="/docs/data-and-methodology/terms-and-concepts" className="group block p-4 rounded-lg border border-zinc-200 dark:border-zinc-700 hover:border-koiOrange-300 dark:hover:border-koiOrange-400 transition-colors">
+    <div className="flex items-center gap-3">
+      <div className="flex h-8 w-8 items-center justify-center rounded-full bg-zinc-900/5 ring-1 ring-zinc-900/25 backdrop-blur-[2px] transition duration-300 group-hover:bg-koiOrange-100 dark:bg-white/7.5 dark:ring-white/15 dark:group-hover:bg-koiOrange-900/30">
+        <i className="fa-regular fa-book text-koiOrange-600 dark:text-koiOrange-400 text-sm" />
+      </div>
+      <div>
+        <h3 className="font-semibold text-sm text-zinc-900 dark:text-white group-hover:text-koiOrange-600 dark:group-hover:text-koiOrange-400">Key Concepts</h3>
+        <p className="text-xs text-zinc-600 dark:text-zinc-400">Overview of all terms and concepts used in Koi</p>
+      </div>
+    </div>
+  </a>
+  
+  <a href="/docs/data-and-methodology/methodology-alignment" className="group block p-4 rounded-lg border border-zinc-200 dark:border-zinc-700 hover:border-koiBlue-300 dark:hover:border-koiBlue-400 transition-colors">
+    <div className="flex items-center gap-3">
+      <div className="flex h-8 w-8 items-center justify-center rounded-full bg-zinc-900/5 ring-1 ring-zinc-900/25 backdrop-blur-[2px] transition duration-300 group-hover:bg-koiBlue-100 dark:bg-white/7.5 dark:ring-white/15 dark:group-hover:bg-koiBlue-900/30">
+        <i className="fa-regular fa-shapes text-koiBlue-600 dark:text-koiBlue-400 text-sm" />
+      </div>
+      <div>
+        <h3 className="font-semibold text-sm text-zinc-900 dark:text-white group-hover:text-koiBlue-600 dark:group-hover:text-koiBlue-400">Methodology Alignment</h3>
+        <p className="text-xs text-zinc-600 dark:text-zinc-400">Compatibility with existing frameworks and standards</p>
+      </div>
+    </div>
+  </a>
+</div>
