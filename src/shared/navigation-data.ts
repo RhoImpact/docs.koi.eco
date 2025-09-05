@@ -97,29 +97,55 @@ export const navigation: Array<NavGroup> = [
     ],
   },
   {
-    title: 'Data & Methodology',
+    title: 'Koi Methodology',
     links: [
       {
-        title: 'Koi Data & Methodology',
-        href: '/docs/data-and-methodology/koi-data',
+        title: 'Overview',
+        href: '/docs/data-and-methodology/overview',
       },
       {
-        title: 'Methodology Alignment',
-        href: '/docs/data-and-methodology/methodology-alignment',
-      },
-      {
-        title: 'Koi Engine: AI Acceleration',
-        href: '/docs/data-and-methodology/koi-engine',
-      },
-      {
-        title: 'Terms & Concepts',
+        title: 'Key Concepts',
         href: '/docs/data-and-methodology/terms-and-concepts',
         links: [
           {
             title: 'Avoided Emissions',
             href: '/docs/data-and-methodology/avoided-emissions',
           },
+          {
+            title: 'Mathematical Foundations',
+            href: '/docs/data-and-methodology/mathematical-foundations',
+          },
         ],
+      },
+      {
+        title: 'Data Sources & Inputs',
+        href: '/docs/data-and-methodology/koi-data',
+      },
+      {
+        title: 'Automated AI Modeling',
+        href: '/docs/data-and-methodology/koi-engine',
+      },
+      {
+        title: 'Classification Systems',
+        href: '/docs/data-and-methodology/classification-overview',
+        links: [
+          {
+            title: 'Direct',
+            href: '/docs/data-and-methodology/classification-direct',
+          },
+          {
+            title: 'Facilitating',
+            href: '/docs/data-and-methodology/classification-facilitating',
+          },
+          {
+            title: 'Emissions Removal',
+            href: '/docs/data-and-methodology/classification-emissions-removal',
+          },
+        ],
+      },
+      {
+        title: 'Methodology Alignment',
+        href: '/docs/data-and-methodology/methodology-alignment',
       },
     ],
   },

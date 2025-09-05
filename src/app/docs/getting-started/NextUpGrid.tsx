@@ -12,7 +12,7 @@ const nextUpLinks: Array<GridLink> = [
     showGrid: false,
   },
   {
-    href: '/docs/data-and-methodology/koi-data',
+    href: '/docs/data-and-methodology/overview',
     name: 'Methodologies',
     description: "Review Koi's methodology and aligned global methodologies.",
     icon: 'fa-regular fa-notebook',

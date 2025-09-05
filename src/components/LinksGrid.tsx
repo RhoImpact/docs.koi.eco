@@ -97,7 +97,7 @@ function GridLink({ gridLink }: { gridLink: GridLink }) {
     <div
       key={gridLink.href}
       onMouseMove={onMouseMove}
-      className="group relative flex rounded-2xl bg-koiGray-900/25 transition-shadow hover:shadow-md hover:shadow-black/5"
+      className="group relative flex w-full max-w-sm rounded-2xl bg-koiGray-900/25 transition-shadow hover:shadow-md hover:shadow-black/5 sm:w-72 xl:w-56"
     >
       {showGrid && (
         <GridLinkPattern
@@ -140,13 +140,13 @@ export function LinksGrid({
   gridLinks: GridLink[]
 }) {
   return (
-    <div className="my-8 xl:max-w-5xl">
+    <div className="mx-auto my-8 xl:max-w-5xl">
       {title && (
         <Heading level={2} id={title}>
           {title}
         </Heading>
       )}
-      <div className="not-prose mt-4 grid grid-cols-1 gap-8 border-t border-zinc-900/5 pt-6 sm:grid-cols-2 xl:grid-cols-4 dark:border-white/5">
+      <div className="not-prose mt-4 flex flex-wrap justify-center gap-8 border-t border-zinc-900/5 pt-6 dark:border-white/5">
         {gridLinks.map((gridLink) => (
           <GridLink key={gridLink.href} gridLink={gridLink} />
         ))}

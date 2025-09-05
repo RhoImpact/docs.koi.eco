@@ -1,4 +1,5 @@
 import PageInformationalData from '@/components/PageInformationalData'
+import { LinksGrid } from '@/components/LinksGrid'
 
 export const metadata = {
   title: 'Summary',
@@ -10,6 +11,25 @@ export const metadata = {
 <PageInformationalData lastModified={lastModified} />
 
 ---
+
+<LinksGrid 
+  title=""
+  gridLinks={[
+    {
+      href: '/docs/data-and-methodology/avoided-emissions',
+      name: 'Avoided Emissions',
+      description: 'What are Avoided Emissions and why do they matter?',
+      icon: 'fa-regular fa-chart-line-up-down text-koiBlue-400',
+    },
+    {
+      href: '/docs/data-and-methodology/mathematical-foundations',
+      name: 'Mathematical Foundations',
+      description: 'Explore key concepts of the math underlying Koi.',
+      icon: 'fa-regular fa-sigma text-koiGreen-400',
+    },
+  ]}
+/>
+
 
 ## Foundational Concepts {{ className: 'text-cyan-600' }}
 
