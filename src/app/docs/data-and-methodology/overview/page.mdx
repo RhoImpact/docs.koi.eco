@@ -1,4 +1,5 @@
 import PageInformationalData from '@/components/PageInformationalData'
+import { LinksGrid } from '@/components/LinksGrid'
 
 export const metadata = {
   title: 'Koi Methodology Overview',
@@ -10,9 +11,80 @@ export const metadata = {
 
 <PageInformationalData lastModified={lastModified} />
 
-Critical global initiatives over the last several decades have focused on the academic
-and theoretical foundations of forecasting the potential impact of new technologies,
-solutions, and interventions on our climate. Our methodology starts with the
-best and most credible approaches, then applies a decade of real-world experience putting
-these approaches to practice. **Koi is scalable, production-ready software used by
-enterprises, investors, and innovators making real-world decisions**.
+**If the solution scales, what will the emissions impact be?** Koi's methodology answers this question by applying established best practices from the field in a cogent, repeatable, and transparent way. It builds on decades of **critical global initiatives** that defined the foundations of impact assessment, and is developed by a team of PhD scientists who have been putting the field theory into practice for years. This expert-led, software-enabled approach is the only way to forecast climate impact **at scale** across portfolios of technologies, funds, and assets—while preserving comparability, credibility, and auditability. **Koi is production-ready software used by enterprises, investors, and innovators to support real-world decisions.**
+
+## Explore the Methodology
+
+<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 my-6">
+  <a href="/docs/data-and-methodology/terms-and-concepts" className="group block p-4 rounded-lg border border-zinc-200 dark:border-zinc-700 hover:border-koiBlue-300 dark:hover:border-koiBlue-400 transition-colors">
+    <div className="flex items-center gap-3">
+      <div className="flex h-8 w-8 items-center justify-center rounded-full bg-zinc-900/5 ring-1 ring-zinc-900/25 backdrop-blur-[2px] transition duration-300 group-hover:bg-koiBlue-100 dark:bg-white/7.5 dark:ring-white/15 dark:group-hover:bg-koiBlue-900/30">
+        <i className="fa-regular fa-book text-koiBlue-600 dark:text-koiBlue-400 text-sm" />
+      </div>
+      <div>
+        <h3 className="font-semibold text-sm text-zinc-900 dark:text-white group-hover:text-koiBlue-600 dark:group-hover:text-koiBlue-400">Key Concepts</h3>
+        <p className="text-xs text-zinc-600 dark:text-zinc-400">Terminology, metrics and mathematical foundations</p>
+      </div>
+    </div>
+  </a>
+  
+  <a href="/docs/data-and-methodology/koi-data" className="group block p-4 rounded-lg border border-zinc-200 dark:border-zinc-700 hover:border-koiOrange-300 dark:hover:border-koiOrange-400 transition-colors">
+    <div className="flex items-center gap-3">
+      <div className="flex h-8 w-8 items-center justify-center rounded-full bg-zinc-900/5 ring-1 ring-zinc-900/25 backdrop-blur-[2px] transition duration-300 group-hover:bg-koiOrange-100 dark:bg-white/7.5 dark:ring-white/15 dark:group-hover:bg-koiOrange-900/30">
+        <i className="fa-regular fa-database text-koiOrange-600 dark:text-koiOrange-400 text-sm" />
+      </div>
+      <div>
+        <h3 className="font-semibold text-sm text-zinc-900 dark:text-white group-hover:text-koiOrange-600 dark:group-hover:text-koiOrange-400">Data Sources</h3>
+        <p className="text-xs text-zinc-600 dark:text-zinc-400">Data lake references and trusted authorities</p>
+      </div>
+    </div>
+  </a>
+  
+  <a href="/docs/data-and-methodology/koi-engine" className="group block p-4 rounded-lg border border-zinc-200 dark:border-zinc-700 hover:border-koiBlue-300 dark:hover:border-koiBlue-400 transition-colors">
+    <div className="flex items-center gap-3">
+      <div className="flex h-8 w-8 items-center justify-center rounded-full bg-zinc-900/5 ring-1 ring-zinc-900/25 backdrop-blur-[2px] transition duration-300 group-hover:bg-koiBlue-100 dark:bg-white/7.5 dark:ring-white/15 dark:group-hover:bg-koiBlue-900/30">
+        <i className="fa-regular fa-robot text-koiBlue-600 dark:text-koiBlue-400 text-sm" />
+      </div>
+      <div>
+        <h3 className="font-semibold text-sm text-zinc-900 dark:text-white group-hover:text-koiBlue-600 dark:group-hover:text-koiBlue-400">AI Modeling</h3>
+        <p className="text-xs text-zinc-600 dark:text-zinc-400">Koi Engine's AI-assisted automated modeling process</p>
+      </div>
+    </div>
+  </a>
+  
+  <a href="/docs/data-and-methodology/classification-overview" className="group block p-4 rounded-lg border border-zinc-200 dark:border-zinc-700 hover:border-koiGreen-300 dark:hover:border-koiGreen-400 transition-colors">
+    <div className="flex items-center gap-3">
+      <div className="flex h-8 w-8 items-center justify-center rounded-full bg-zinc-900/5 ring-1 ring-zinc-900/25 backdrop-blur-[2px] transition duration-300 group-hover:bg-koiGreen-100 dark:bg-white/7.5 dark:ring-white/15 dark:group-hover:bg-koiGreen-900/30">
+        <i className="fa-regular fa-tags text-koiGreen-600 dark:text-koiGreen-400 text-sm" />
+      </div>
+      <div>
+        <h3 className="font-semibold text-sm text-zinc-900 dark:text-white group-hover:text-koiGreen-600 dark:group-hover:text-koiGreen-400">Classification</h3>
+        <p className="text-xs text-zinc-600 dark:text-zinc-400">Modeling approaches for different classes of solutions</p>
+      </div>
+    </div>
+  </a>
+  
+  <a href="/docs/data-and-methodology/methodology-alignment" className="group block p-4 rounded-lg border border-zinc-200 dark:border-zinc-700 hover:border-koiYellow-300 dark:hover:border-koiYellow-400 transition-colors">
+    <div className="flex items-center gap-3">
+      <div className="flex h-8 w-8 items-center justify-center rounded-full bg-zinc-900/5 ring-1 ring-zinc-900/25 backdrop-blur-[2px] transition duration-300 group-hover:bg-koiYellow-100 dark:bg-white/7.5 dark:ring-white/15 dark:group-hover:bg-koiYellow-900/30">
+        <i className="fa-regular fa-shapes text-koiYellow-600 dark:text-koiYellow-400 text-sm" />
+      </div>
+      <div>
+        <h3 className="font-semibold text-sm text-zinc-900 dark:text-white group-hover:text-koiYellow-600 dark:group-hover:text-koiYellow-400">Alignment</h3>
+        <p className="text-xs text-zinc-600 dark:text-zinc-400"> Compatibility with existing frameworks and standards</p>
+      </div>
+    </div>
+  </a>
+</div>
+
+## Trusted Data & Harmonized Analysis
+
+Koi delivers auditable analyses by combining trusted lifecycle GHG data, industry analysis, and market intelligence from leading sources worldwide. Our harmonized approach applies a consistent methodology across all models, enabling fair comparisons and comprehensive investigations into each solution's climate impact potential.
+
+**Comprehensive Data Integration**: We start with data from peer-reviewed LCA studies, industry reports, and authoritative databases to ensure robust impact calculations.
+
+**Software-Assisted Analysis**: Programmatic methodology application enables models that can be built upon, revisited, and scaled into comprehensive portfolio analyses, unlocking advanced analytical capabilities across diverse technologies and markets.
+
+**Transparent Assumptions**: All modeling assumptions and data sources are clearly documented, enabling stakeholders to understand and validate impact projections.
+
+This integrated approach provides investors and decision-makers with the reliable, comparable data needed to evaluate climate solutions and make informed investment and strategic decisions.
