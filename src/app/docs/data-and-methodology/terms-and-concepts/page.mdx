@@ -10,7 +10,8 @@ export const metadata = {
 
 <PageInformationalData lastModified={lastModified} />
 
----
+This page provides an overview of the key concepts and terminology used throughout Koi's methodology. For deeper exploration of specific topics, see the related pages below.
+
 
 <LinksGrid 
   title=""
@@ -18,13 +19,13 @@ export const metadata = {
     {
       href: '/docs/data-and-methodology/avoided-emissions',
       name: 'Avoided Emissions',
-      description: 'What are Avoided Emissions and why do they matter?',
+      description: 'Avoided Emissions theory and data interdependencies.',
       icon: 'fa-regular fa-chart-line-up-down text-koiBlue-400',
     },
     {
       href: '/docs/data-and-methodology/mathematical-foundations',
       name: 'Mathematical Foundations',
-      description: 'Explore key concepts of the math underlying Koi.',
+      description: 'The universal math behind each Koi model.',
       icon: 'fa-regular fa-sigma text-koiGreen-400',
     },
   ]}
@@ -51,34 +52,10 @@ Solution scale is the term used within Koi to represent the market size being me
 
 ## Technical Concepts {{ className: 'text-cyan-600' }}
 
-### Unit of Measure (UoM)
+### Functional Unit
 
-A Unit of Measure is a standardized metric used to quantify the output or activity associated with a technology, process, or system. By defining the unit of measure for a given solution (e.g., kilowatt-hour of electricity generated, mile driven by an electric vehicle), users can calculate the avoided emissions associated with deploying that solution. Unit of measure data is essential for generating accurate impact forecasts and comparing the climate benefits of different technologies.
+A Functional Unit, also known as a Unit of Measure, is a standardized unit of measurement to quantify the output or activity associated with a solution that can be compared equivalently to a baseline. By defining a model functional unit (e.g., kilowatt-hours of electricity generated, miles driven by a vehicle, dollars invested into CDR), the difference in emissions associated with deploying that solution can be calculated. Functional unit data is essential for generating accurate impact forecasts and comparing the climate benefits of different technologies, where the production units may be different between technologies. For example, a *production unit* may be measured by mass of fuel type, but the *functional unit* for a model comparing the impact of different fuels may be generalized as MJ of energy delivered.
 
 ### Life Cycle Assessment (LCA)
 
-Life Cycle Assessment is a comprehensive methodology for evaluating the environmental impacts of a product, process, or system across its entire life cycle. LCA considers the environmental burdens associated with all stages of a product's life, from raw material extraction and manufacturing to use, disposal, and end-of-life treatment. By quantifying the energy, resources, and emissions associated with each life cycle stage, LCA provides a holistic view of a product's environmental performance and helps identify opportunities for improvement.
-
----
-
-## Platform Features {{ className: 'text-cyan-600' }}
-
-### LCA-based Impact Data
-
-Models incorporate LCA-informed impact data for thousands of direct and enabling climate technologies, including contextualized value chain phase data.
-
-### Comprehensive Ontology
-
-Koi provides a comprehensive ontology that captures the relationships between technologies, processes, and markets, enabling granular insights and scalable forecasting.
-
-### Interoperable Forecasts
-
-Koi delivers interoperable forecasts that can be integrated into existing tools and workflows, enabling seamless access to climate impact data. This allows for rapid comparisons of impact under different assumptions, in different markets, and across different technologies.
-
-### AI-Accelerated Research
-
-Koi leverages advanced AI integration to deliver rapid insights across diverse solutions and markets, enabling data-driven decision-making and accelerating the global transition to a decarbonized economy.
-
-### Data Transparency
-
-Koi provides fully auditable data for clear, accountable net-zero strategies, bridging the gap between ambition and action.
+Life Cycle Assessment is a comprehensive methodology for evaluating the environmental impacts of a product, process, or system across its entire life cycle. LCA considers the environmental burdens associated with all stages of a product's life, from raw material extraction and manufacturing to use, disposal, and end-of-life treatment. By quantifying the energy, resources, and emissions associated with each life cycle stage, LCA provides a holistic view of a product's environmental performance and helps identify opportunities for improvement. LCA data underpins much of Koi's Unit Impact analysis.
