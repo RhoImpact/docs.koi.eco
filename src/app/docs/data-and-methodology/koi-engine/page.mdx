@@ -6,16 +6,13 @@ import KoiEngineFlowDiagram1 from '@/components/KoiEngineFlowDiagram1'
 
 import { baseUrl, landingUrl, roadmapUrl } from '@/shared/urls'
 export const metadata = {
-  title: "Koi Engine: AI-Accelerated Modeling",
+  title: "Impact Modeling",
   description: 'Discover how Koi delivers on-demand, customized avoided emissions models with unrivaled speed and accuracy.'
 }
 
-# <small>Koi Engine:</small><br />AI-Accelerated Modeling
+# Impact Modeling
 
 <PageInformationalData lastModified={lastModified} />
-
----
-
 ## Overview
 
 <ExternalLink
@@ -25,7 +22,7 @@ export const metadata = {
   linkText="Koi"
 /> offers unrivaled speed and accuracy in model delivery. As the first and only platform to provide on-demand,
 customized emissions forecasts, it is designed to equip innovators and investors with analytics that accommodate
-different use cases, timelines, and technologies. Koi models are built on a validated Data Lake that integrates
+different use cases, timelines, and technologies. Models are built on a validated Data Lake that integrates
 extensively curated, foundational data from reliable sources such as the <ExternalLink
   url="https://www.iea.org/"
   utmContent="hero-banner-link"
@@ -43,6 +40,53 @@ extensively curated, foundational data from reliable sources such as the <Extern
   linkText="openLCA"
 />.
 
+<div className="my-6">
+  <p className="text-sm text-zinc-600 dark:text-zinc-400 mb-3">
+    Koi's 5000+ climate solution models progress in quality from <strong>Rapid</strong> → <strong>Refined</strong> → <strong>Diligence</strong>, aligning speed and depth with different use cases. 
+    Koi contains primarily Rapid models, with each model’s Datasheet displaying QA tags stating the level of manual scientist review and data verification.
+    Refined and Diligence models have been developed for a suite of common climate solutions using the latest academic literature, SEC filings, and decarbonization pathways. These models can be found within the search by filtering results according to QA level.   
+  </p>
+
+  <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+    {/* Rapid */}
+    <div className="group relative rounded-lg border border-zinc-200 dark:border-zinc-700 p-4">
+      <div className="flex items-center gap-2">
+        <span className="font-semibold text-zinc-900 dark:text-white">Rapid</span>
+        <span className="text-[0.7rem] font-mono rounded px-1.5 py-0.5 ring-1 ring-inset ring-zinc-300 dark:ring-zinc-600 text-zinc-600 dark:text-zinc-300">Starter</span>
+      </div>
+      <p className="mt-2 text-sm text-zinc-600 dark:text-zinc-400">
+        New model when no suitable Koi match is found. Built automatically with the Koi Engine using trusted data and automatically bounded for plausibility.
+      </p>
+    </div>
+
+    {/* Refined */}
+    <div className="group relative rounded-lg border border-zinc-200 dark:border-zinc-700 p-4">
+      <div className="flex items-center gap-2">
+        <span className="font-semibold text-zinc-900 dark:text-white">Refined</span>
+        <span className="text-[0.7rem] font-mono rounded px-1.5 py-0.5 ring-1 ring-inset ring-zinc-300 dark:ring-zinc-600 text-zinc-600 dark:text-zinc-300">Enhanced</span>
+      </div>
+      <p className="mt-2 text-sm text-zinc-600 dark:text-zinc-400">
+        Model enhanced with client input and deeper review by Rho scientists; includes third‑party verification.
+      </p>
+    </div>
+
+    {/* Diligence */}
+    <div className="group relative rounded-lg border border-zinc-200 dark:border-zinc-700 p-4">
+      <div className="flex items-center gap-2">
+        <span className="font-semibold text-zinc-900 dark:text-white">Diligence</span>
+        <span className="text-[0.7rem] font-mono rounded px-1.5 py-0.5 ring-1 ring-inset ring-zinc-300 dark:ring-zinc-600 text-zinc-600 dark:text-zinc-300">Comprehensive</span>
+      </div>
+      <p className="mt-2 text-sm text-zinc-600 dark:text-zinc-400">
+        Fully customized model tailored to firm‑specific diligence criteria; comprehensive QA and third‑party verification.
+      </p>
+    </div>
+  </div>
+
+  <p className="mt-3 text-xs text-zinc-600 dark:text-zinc-400">
+    Models can easily be upgraded in quality in-app using Edit Mode to manually verify and/or modify inputs. Alternatively, our team can build a model for your specific use case through Koi’s Services—see pricing and tiers at <a href="https://koi.eco/pricing" target="_blank" rel="noopener noreferrer">koi.eco/pricing</a>.
+  </p>
+</div>
+
 <Tip>
 **Key Concept**: The world is complex! We believe pre-computing every combination of technology, intervention type,
 conventional system, potential baseline, geography, market, etc. is a fool's errand. Koi takes a different
@@ -52,7 +96,7 @@ approach:
 3. Produce **auditable, versioned** models that can continue to be refined as companies scale.
 </Tip>
 
-Using trustworthy emissions baseline and market data as a foundation, Koi's computational engine instantly
+Using trustworthy baseline emissions and market data as a foundation, Koi's computational engine instantly
 constructs a climate solution technology model that includes anticipated life cycle intervention points and
 potential market uptake.
 
@@ -60,32 +104,88 @@ potential market uptake.
 
 <KoiEngineFlowDiagram1 />
 
-## Use of AI
+## AI-Accelerated Modeling
 
-The Koi Engine rapidly scaffolds new forecasting models using AI on top of a foundation of deeply curated data.
-Our **Koi Data Lake** is continuously maintained and structured to capture the most relevant
-global, regional, industry, and company-specific data. The result: **rapid models based on reliable data,
-consistent logic, and real-world context**.
+The Koi Engine constructs a model in four stages, starting from a brief solution description (or company website) and progressing to a fully customizable forecast:
 
-Koi uses AI to accelerate the modeling process. We will never compromise on transparency, though, so have gone
-to great lengths to ensure full tracability of data sources and quality.
+1. **Identifies** the relevant baseline and solution **value chains** for comparison
+2. **Matches** those value chains to aligned GHG intensity and market data in the **Koi Data Lake**
+3. **Fills** solution‑specific **data gaps** and replaces irrelevant data with solution‑specific inputs (e.g., modifications to solution performance and future market uptake)
+4. **Produces a fully customizable starting model** with transparent data inputs, references, boundaries, and assumptions
 
-Every model generated by the Koi Engine is tagged with multiple **Quality Assurance (QA)** levels ranging from
-AI-Only (`AI0`) to Human Verified (`FULLVAL`). These QA tags make it clear how much each component of the model
-has been reviewed or refined by experts, ensuring users understand what they’re seeing and how best to apply it.
-Whether you’re screening early-stage startups or performing detailed diligence on an investment opportunity,
-you know exactly how much weight to place on each output.
+These stages ensure a clear handoff from discovery to alignment to tailoring, resulting in a transparent, auditable starting point that can be refined as needed.
+
+### Part 1: Matching Process
+The Engine starts by mapping a climate solution description to representative baseline and solution value chains, then aligns each with comparable GHG intensity and market data from the Data Lake.
+- Benefit: Ensures the right counterfactual, apples‑to‑apples comparisons, and consistency across technologies and markets, while reducing manual bias and speeding analysis.
+
+The Koi Engine works modularly, allowing Rho Impact scientists or Koi users to select their desired underlying data to construct the model with if they want to curate the matching process.
+
+<div className="bg-zinc-50 dark:bg-zinc-800/50 border border-zinc-200 dark:border-zinc-700 rounded-lg p-4 my-4">
+  <h4 className="font-semibold text-zinc-900 dark:text-white mb-3">Example Data Lake Matching</h4>
+  <div className="grid grid-cols-2 gap-4">
+    <div>
+      <h5 className="text-sm font-medium text-zinc-700 dark:text-zinc-300 mb-2">Climate Solution</h5>
+      <div className="bg-white dark:bg-zinc-900 border border-zinc-300 dark:border-zinc-600 rounded px-3 py-2 text-sm">
+        Modular fusion reactor
+      </div>
+    </div>
+    <div>
+      <h5 className="text-sm font-medium text-zinc-700 dark:text-zinc-300 mb-2">Matched Baseline</h5>
+      <div className="bg-white dark:bg-zinc-900 border border-zinc-300 dark:border-zinc-600 rounded px-3 py-2 text-sm">
+        <select className="w-full bg-transparent text-sm">
+          <option selected>Electricity generation from small diesel generators</option>
+          <option>Electricity generation from grid (world avg, STEPS)</option>
+          <option>Electricity generation from solar</option>
+        </select>
+      </div>
+      <p className="text-xs text-zinc-500 dark:text-zinc-400 mt-1">Click to see other baseline options</p>
+    </div>
+  </div>
+</div>
+The matching process also ensures **unit compatibility and conversion** between GHG intensity and market data—a critical aspect of our innovative impact data structuring and processing methods. For the mathematical foundations to work correctly, the units must align so that intensity × market size produces meaningful avoided emissions. This removes the conventional friction analysts face with assembling models from data in misaligned units. For example, baseline data may be expressed in emissions per mass output, solution performance is reported by the company per energetic input, and the market is measured by its value. These incompatibilities are handled by having an extensive data lake to pull from for complete models with aligned units.
+
+<div className="bg-zinc-50 dark:bg-zinc-800/50 border border-zinc-200 dark:border-zinc-700 rounded-lg p-4 my-4">
+  <h4 className="font-semibold text-zinc-900 dark:text-white mb-3">Example: Unit Compatibility for an Energy Model</h4>
+  <div className="space-y-3">
+    <div className="grid grid-cols-2 gap-4">
+      <div>
+        <h5 className="text-sm font-medium text-zinc-700 dark:text-zinc-300 mb-2">Baseline GHG Intensity</h5>
+        <div className="bg-white dark:bg-zinc-900 border border-zinc-300 dark:border-zinc-600 rounded px-3 py-2 text-sm font-mono">
+          0.85 Mt CO₂e/TWh
+        </div>
+      </div>
+      <div>
+        <h5 className="text-sm font-medium text-zinc-700 dark:text-zinc-300 mb-2">Baseline Market Size</h5>
+        <div className="bg-white dark:bg-zinc-900 border border-zinc-300 dark:border-zinc-600 rounded px-3 py-2 text-sm font-mono">
+          400 TWh/year
+        </div>
+      </div>
+    </div>
+    <div className="text-center">
+      <div className="text-sm text-zinc-600 dark:text-zinc-400">↓</div>
+      <div>
+        <h5 className="text-sm font-medium text-zinc-700 dark:text-zinc-300 mb-2">Baseline Emissions</h5>
+        <div className="bg-white dark:bg-zinc-900 border border-zinc-300 dark:border-zinc-600 rounded px-3 py-2 text-sm font-mono">
+          0.85 Mt CO₂e/TWh × 400 TWh/year = 340 Mt CO₂e/year
+        </div>
+      </div>
+    </div>
+    <p className="text-xs text-zinc-500 dark:text-zinc-400">
+      In this example, once the solution is matched with a baseline GHG intensity in units of emissions/energy production, all additional data matches for the baseline market size and solution GHG intensity are constrainted to be expressed in units of energy. Data Lake matches are allowed in any energy unit (Wh, J, BTU, etc.) and Koi handles all conversions automatically.
+    </p>
+  </div>
+</div>
+
+### Part 2: Solution‑Specific Data Filling
+After matching, the Engine resolves missing or non‑transferable inputs by introducing solution‑specific parameters, normalizing units, refining system boundaries, and adjusting value chain phases to reflect the real intervention context.
+
+[IMAGE NEEDED: Example of data gap filling and boundary alignment for a specific technology]
 
 <Info>
-AI-generated data should **always** be verified and validated with care.
-The level of scrutiny should match the significance of the decisions it informs.
+AI‑assisted matching accelerates model creation, but transparency remains paramount. Data sources and assumptions are fully referenced, and users can review and refine the results as needed.
 </Info>
 
-| Model QA Label    | Description |
-|-------------|-------------|
-| `AI0`         |   AI generated data for 1+ baseline parameters. No model quality assurance.          |
-| `BASELINEVAL` |     Baseline GHG intensity and market size are human verified. Solution data are AI generated (in-part or full). Classified as *essential quality assurance* that bounds the model within a plausible range.      |
-| `FULLVAL`     |      All data are human verified.  Classified as *enhanced quality assurance*.     |
 
 ## Integrating Automation into Commissioned Forecasting Services
 

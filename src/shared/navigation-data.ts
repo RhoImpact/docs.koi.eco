@@ -122,7 +122,7 @@ export const navigation: Array<NavGroup> = [
         href: '/docs/data-and-methodology/koi-data',
       },
       {
-        title: 'Automated AI Modeling',
+        title: 'Impact Modeling',
         href: '/docs/data-and-methodology/koi-engine',
       },
       {
