@@ -3,6 +3,7 @@ import PageInformationalData from '@/components/PageInformationalData'
 import ExternalLink from '@/components/ExternalLink'
 import CodeWithIcon from '@/components/CodeWithIcon'
 import KoiEngineFlowDiagram1 from '@/components/KoiEngineFlowDiagram1'
+import editmodeImage from '../methodology_images/editmode.webp'
 
 import { baseUrl, landingUrl, roadmapUrl } from '@/shared/urls'
 export const metadata = {
@@ -83,7 +84,7 @@ extensively curated, foundational data from reliable sources such as the <Extern
   </div>
 
   <p className="mt-3 text-xs text-zinc-600 dark:text-zinc-400">
-    Models can easily be upgraded in quality in-app using Edit Mode to manually verify and/or modify inputs. Alternatively, our team can build a model for your specific use case through Koi’s Services—see pricing and tiers at <a href="https://koi.eco/pricing" target="_blank" rel="noopener noreferrer">koi.eco/pricing</a>.
+    Models can easily be upgraded in quality in-app using **Edit Mode** to manually verify and/or modify inputs. Alternatively, our team can build a model for your specific use case through Koi's Services—see pricing and tiers at <a href="https://koi.eco/pricing" target="_blank" rel="noopener noreferrer">koi.eco/pricing</a>.
   </p>
 </div>
 
@@ -115,7 +116,7 @@ The Koi Engine constructs a model in four stages, starting from a brief solution
 
 These stages ensure a clear handoff from discovery to alignment to tailoring, resulting in a transparent, auditable starting point that can be refined as needed.
 
-### Part 1: Matching Process
+### Part 1: Data Lake Matching
 The Engine starts by mapping a climate solution description to representative baseline and solution value chains, then aligns each with comparable GHG intensity and market data from the Data Lake.
 
 <Tip>
@@ -244,28 +245,64 @@ Modeling the **market capture** (i.e., share of baseline activity that the solut
 - Investors later in the deal process typically use company-specific market-capture estimates that reflect diligence findings.
 - Innovators typically prioritize uptake modeled on near-term deployment forecasts.
 
-<div className="bg-zinc-50 dark:bg-zinc-800/50 border border-zinc-200 dark:border-zinc-700 rounded-lg p-4 my-4">
-  <h4 className="font-semibold text-zinc-900 dark:text-white mb-3">Example: Market Capture Scenarios</h4>
-  <div className="flex items-center gap-6">
-    <div className="relative w-40 h-40 mx-auto">
-      {/* Baseline market (outer circle) */}
-      <div className="absolute inset-0 rounded-full border-4 border-zinc-300 dark:border-zinc-600"></div>
-      <div className="absolute inset-0 flex items-center justify-center text-[0.7rem] font-medium text-zinc-700 dark:text-zinc-300">Baseline Market</div>
-      {/* Optimistic (largest) */}
-      <div className="absolute inset-2 rounded-full bg-koiBlue-200 dark:bg-koiBlue-800/70"></div>
-      {/* Realistic */}
-      <div className="absolute inset-6 rounded-full bg-koiOrange-200 dark:bg-koiOrange-800/70"></div>
-      {/* Conservative (smallest) */}
-      <div className="absolute inset-12 rounded-full bg-koiGreen-200 dark:bg-koiGreen-800/70"></div>
+<div className="bg-gradient-to-br from-zinc-50 to-zinc-100 dark:from-zinc-800/50 dark:to-zinc-900/50 border border-zinc-200 dark:border-zinc-700 rounded-xl p-8 my-6 shadow-sm">
+  <h4 className="font-semibold text-zinc-900 dark:text-white mb-6 text-center text-lg">Example Market Capture Scenarios</h4>
+  <div className="flex items-center justify-center gap-12">
+    <div className="relative w-56 h-56">
+      {/* Pie chart style - baseline market (remaining 60%) */}
+      <div className="absolute inset-0 rounded-full bg-koiGray-300 dark:bg-koiGray-600 shadow-inner"></div>
+      
+      {/* Long-term solution deployment (30%) */}
+      <div className="absolute inset-0 rounded-full shadow-lg" style={{
+        background: `conic-gradient(from 0deg, rgba(60, 142, 168, 0.7) 0deg 108deg, transparent 108deg 360deg)`
+      }}></div>
+      
+      {/* Long-term company deployment (8%) - overlapped */}
+      <div className="absolute inset-0 rounded-full shadow-lg" style={{
+        background: `conic-gradient(from 0deg, rgba(96, 179, 72, 0.8) 0deg 28.8deg, transparent 28.8deg 360deg)`
+      }}></div>
+      
+      {/* Near-term company deployment (2%) - overlapped */}
+      <div className="absolute inset-0 rounded-full shadow-lg" style={{
+        background: `conic-gradient(from 0deg, rgba(139, 195, 74, 0.9) 0deg 7.2deg, transparent 7.2deg 360deg)`
+      }}></div>
+      
     </div>
-    <div className="space-y-2 text-xs text-zinc-600 dark:text-zinc-400">
-      <div className="flex items-center gap-2"><span className="inline-block h-3 w-3 rounded-full bg-koiBlue-400"></span>Optimistic capture (~60%)</div>
-      <div className="flex items-center gap-2"><span className="inline-block h-3 w-3 rounded-full bg-koiOrange-400"></span>Realistic capture (~25%)</div>
-      <div className="flex items-center gap-2"><span className="inline-block h-3 w-3 rounded-full bg-koiGreen-400"></span>Conservative capture (~5%)</div>
+    
+    <div className="space-y-4 text-sm">
+      <div className="flex items-center gap-4">
+        <div className="w-5 h-5 rounded-full bg-koiGray-300 dark:bg-koiGray-600 shadow-sm border border-koiGray-400 dark:border-koiGray-500"></div>
+        <div>
+          <div className="font-semibold text-zinc-900 dark:text-white">Total baseline market</div>
+          <div className="text-xs text-zinc-600 dark:text-zinc-400 font-medium">100% of serviceable market</div>
+        </div>
+      </div>
+      <div className="flex items-center gap-4">
+        <div className="w-5 h-5 rounded-full shadow-sm" style={{background: 'rgba(60, 142, 168, 0.7)'}}></div>
+        <div>
+          <div className="font-semibold text-zinc-900 dark:text-white">Long-term solution deployment</div>
+          <div className="text-xs text-zinc-600 dark:text-zinc-400 font-medium">30% market capture</div>
+        </div>
+      </div>
+      <div className="flex items-center gap-4">
+        <div className="w-5 h-5 rounded-full shadow-sm" style={{background: 'rgba(96, 179, 72, 0.8)'}}></div>
+        <div>
+          <div className="font-semibold text-zinc-900 dark:text-white">Long-term company deployment</div>
+          <div className="text-xs text-zinc-600 dark:text-zinc-400 font-medium">8% market capture</div>
+        </div>
+      </div>
+      <div className="flex items-center gap-4">
+        <div className="w-5 h-5 rounded-full shadow-sm" style={{background: 'rgba(139, 195, 74, 0.9)'}}></div>
+        <div>
+          <div className="font-semibold text-zinc-900 dark:text-white">Near-term company deployment</div>
+          <div className="text-xs text-zinc-600 dark:text-zinc-400 font-medium">2% market capture</div>
+        </div>
+      </div>
     </div>
   </div>
-  <p className="text-xs text-zinc-500 dark:text-zinc-400 text-center mt-2">
-    All circles sit within the total baseline market; inner sizes illustrate capture scenarios.
+  <p className="text-sm text-zinc-600 dark:text-zinc-400 text-center mt-6 font-medium">
+    All market deployment scenarios sit within the total baseline market, showing differences in the modeled baseline displacement. In the most conservative scenario, the solution is modeled according to near-term company deployment with a 2% maximum market capture, while in the most optimistic impact scenario the long-term effect of the solution on the market is modeled with a 30% market capture. 
+    *Note that these pie chart slices are shown overlayed for simplicity but in actuality should be considered in isolation of one another (i.e., they are not additive)*
   </p>
 </div>
 
@@ -286,19 +323,47 @@ Current limitations to Koi's automated market capture modeling:
 While an area for improvement, the automated market capture modeling provides a cogent starting point for rapid assessment of a solution's future impact. As with all components of the automated models, the data should by manually reviewed and refined to accomodate the intended use case.
 
 
-## Integrating Automation into Commissioned Forecasting Services
+## Manual Verification and Model Customization
 
-Koi's modeling approach is designed to accommodate a wide range of analytical needs and climate strategies.
-All Koi license holders have access to the Data Lake and previously constructed models via the Search Engine.
-Users can customize models in <ExternalLink
-  url={`${baseUrl}`}
+While the Koi Engine provides a powerful starting point for impact modeling, manual verification and review remain essential for ensuring model accuracy and relevance to specific use cases. Assuring models requires human oversight to validate automated model assumptions, verify the logic of the utilized data, and tailor parameters to specific contexts.
+
+### Self-Service Model Customization
+
+Koi license holders can customize and verify models directly in the platform using **Edit Mode**. This feature allows users to:
+
+- Review and modify model inputs, assumptions, and parameters
+- Verify data sources and references
+- Adjust market capture scenarios and deployment timelines
+- Incorporate company-specific data and insights
+- Validate baseline comparisons and solution performance metrics
+
+Edit Mode is accessed from a public model by first cloning the model (**Model Actions** → **Clones & Customize**), then opening Edit Mode (**Model Actions** → **Edit Mode**). Once in Edit Mode, users can create tailored versions of existing models with full control over all inputs, documentation, and sharing permissions.
+
+<ImageZoom src={editmodeImage} alt="Edit Mode interface showing customizable GHG intensities for baseline and solution" width={1300} height={850} />
+
+*In Edit Mode, all model inputs can be customized. This figure shows example views for editing the baseline GHG intensity data.*
+
+<Tip>
+**Versioning** Every Koi model is versioned. Navigate to the Datasheet page to see the `Version` being viewed. Prior and future versions of a model can be selected from the dropdown. Customized models allow users to decide when to create new major and minor versions when saving. This is critical for
+auditing and is particularly helpful for quarterly and annual reporting as *realized* impact is compared to the
+initial *potential* impact modeled. 
+</Tip>
+
+### Commissioned Forecasting Services
+
+For users who prefer expert assistance or require comprehensive model development, <ExternalLink
+  url={`${landingUrl}/pricing`}
   utmContent="hero-banner-link"
-  ariaLabel="Explore Koi"
-  linkText="Koi"
-/> to incorporate their specific data and modify parameters as desired.
+  ariaLabel="Forecasting Services"
+  linkText="Forecasting Services"
+/> are offered in multiple tiers. New models typically begin with auto-generating a draft based upon
+relevant data from the Koi Data Lake, then undergo quality assurance by trained scientists via manual review, research and refinement.
+
+Our fastest quality assurance option, **Rapid Models**, use the engine to autogenerate a model draft and then have a scientist perform essential quality assurance (see services page for specific assurances).
+We also offer services for higher-tier models with additional manual refinements that add significant nuance.
 
 <Info>
-In cases where a solution model does not yet exist, baseline data are missing, or the user has modification requests
+In cases where a solution model does not yet exist, or the user has customization or quality assurance requests
 they prefer not to implement themselves, <ExternalLink
   url="https://koi.eco/pricing"
   utmContent="hero-banner-link"
@@ -306,40 +371,6 @@ they prefer not to implement themselves, <ExternalLink
   linkText="commissioning a new model"
 /> may be of interest.
 </Info>
-
-Koi lowers the barriers to obtaining customized, forward-looking emissions models. The status quo entails analysts maintaining
-bespoke spreadsheets to track reliable data sources (spanning everything from emissions intensities to market sizes).
-These spreadsheets are most often manually maintained, and act as data libraries for constructing analyses on a
-case-by-case basis - often lacking technology specificity and **requiring weeks of manual research by specialists**.
-This legacy approach is not only time- and cost-intensive but also prone to errors, difficult to maintain, and
-ineffective for collaboration. Nevertheless, expert manual review offers substantial benefits and is why we offer a
-hybrid approach with our expert forecasting services.
-
-### Forecasting Services
-<ExternalLink
-  url={`${landingUrl}/pricing`}
-  utmContent="hero-banner-link"
-  ariaLabel="Forecasting Services"
-  linkText="Forecasting Services"
-/> are offered in multiple tiers for maximum flexibility across use cases. New models typically begin with auto-generating a draft based upon
-relevant data from the Koi Data Lake. Model drafts are then quality assured by a trained scientist via manual review, research and refinement.
-
-<Info>
-Despite advancements in AI and our meticulous Data Lake curation, we do not recommend using Koi's
-auto-generated models (`AI0`) without essential quality assurance.
-This can either be performed by the user or Rho Impact scientists as part of a Forecasting Service.
-All `AI0` models include warnings for users on the model pages.
-</Info>
-
-Our fastest quality assurance option, **Rapid Models**, use the engine to autogenerate a model draft and then have a scientist perform essential quality assurance 
-(see above criteria for `BASELINEVAL`). Models that have been human-reviewed meet this essential quality assurance standard. 
-We also offer services for higher-tier models with additional manual refinements that add significant nuance (i.e., purchasing a **Refined Model** includes `FULLVAL`).
-
-<Tip>
-**Versioning** Every Koi model is versioned. Look for a pill with text like, `v1.2: Latest`. This is critical for
-auditing and is particularly helpful for quarterly and annual reporting as *realized* impact is compared to the
-initial *potential* impact that you model.
-</Tip>
 
 ## Use Case Considerations
 
@@ -361,19 +392,3 @@ This approach allows for the generation of best-in-class models in a fraction of
 Further, anchoring models to the foundational Data Lake not only saves precious time but also ensures consistency and
 data intercompatibility across analyses both now and in the future as the underlying data are updated.
 
-## Next steps
-
-- For more information about each model tier, check out the <ExternalLink
-  url={`${landingUrl}/pricing`}
-  utmContent="hero-banner-link"
-  ariaLabel="forecasting services pricing table"
-  linkText="forecasting services pricing table"
-/> and the informational popups for each feature. 
-- Allowing users to perform their own quality assurance in-platform **via a guided process** is
-on our <ExternalLink
-  url={`${roadmapUrl}`}
-  utmContent="hero-banner-link"
-  ariaLabel="Koi Roadmap"
-  linkText="Koi Roadmap"
-/>. If this is an important feature to you, please consider providing
-feedback within the roadmap.
