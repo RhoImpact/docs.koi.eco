@@ -14,9 +14,9 @@ export const metadata = {
 # Data Sources and Inputs
 
 <PageInformationalData lastModified={lastModified} />
-Access to relevant, trusted data is often the hardest part of impact assessment. Koi aggregates and derives lifecycle and market data from authoritative sources, removing a substantial share of the manual work that has slowed the field. We've modeled thousands of proposed climate solutions and provide both the off-the-shelf models and data in-app.
+Obtaining relevant and trusted data is a common barrier to conducting impact assessments. Koi consolidates and derives lifecycle and market data from authoritative sources, removing a substantial share of the manual work that has slowed the field. We've modeled thousands of proposed climate solutions and provide both the off-the-shelf models and data in-app.
 
-**Data sourcing:** This page contains a representative overview of the data sources used in Koi models, organized by category and use case. We prioritize open-access, trusted datasets, such as IEA and government databases, and often supplement them with bottom-up lifecycle GHG data for solution modeling, value chain segmentation, and boundary definition. Because sources vary by technology, industry, and region, the complete model-specific citations are documented on each model’s Datasheet page (see screenshot below).
+**Data sourcing:** This page contains a representative overview of the data sources used in Koi models, organized by reference category. We prioritize open-access, trusted, structured, and recent datasets, such as those provided by the IEA and government databases. This is often supplemented with bottom-up lifecycle GHG data for solution modeling, value chain segmentation, and boundary definition. Because sources vary by technology, industry, and region, the complete model-specific references are documented on each model’s Datasheet page (see screenshot below).
 
 ## Koi's Data Lake
 
@@ -52,10 +52,11 @@ These are Government, Commercial, and Non-Profit data sources from which we inge
 * **IPCC (Intergovernmental Panel on Climate Change)** - Global authority on climate science; source of standardized emissions factors, global warming potentials, and scenario modeling.
 * **World Resources Institute (WRI)** - Through the Greenhouse Gas Protocol, provides standards and guidance for corporate and product-level emissions accounting.
 * **Ember** - Independent think tank offering real-time and historical global electricity grid emissions factors and energy transition tracking.
+* **EDGAR** - U.S. Securities and Exchange Commission (SEC) Electronic Data Gathering, Analysis, and Retrieval (EDGAR) system; primarily used for market uptake data.
 
 ## Academic and Industry Journals
 
-These sources underpin both high-resolution models for well-characterized technologies and early-stage assessments for emerging ones. Academic and industry journals supply the depth needed for sensitivity analyses across plausible performance ranges and provide otherwise hard-to-obtain evidence on new technologies. Together they offer technical specifications, performance parameters, and emissions factors that enable comprehensive impact modeling.
+These sources are often used to develop value chain GHG intensities and inform            performance for emerging technologies or solutions. Academic and industry journals supply the depth needed for sensitivity analyses across plausible performance ranges and provide otherwise hard-to-obtain evidence on new technologies.
 
 * **Journal of Cleaner Production** – Interdisciplinary journal focused on sustainable production systems, circular economy, and cleaner technologies.
 * **Environmental Science & Technology** – Leading journal for environmental chemistry and engineering, with robust data on emissions, pollutants, and mitigation technologies.
@@ -70,11 +71,12 @@ These sources underpin both high-resolution models for well-characterized techno
 
 ## LCA Datasets and Providers
 
-<Info>
 <InternalLink
   href="/docs/data-and-methodology/terms-and-concepts#technical-concepts"
-  linkText="Life Cycle Analysis (LCA)" /> data are critical in establishing absolute emissions intensities for critical process phases and value chain components.
-</Info>
+  linkText="Life Cycle Analysis (LCA)" /> datasets are often used for modeling baseline and/or solution GHG intensities by lifecycle phase. In the <InternalLink
+  href="/docs/data-and-methodology/koi-engine"
+  linkText="Koi Engine"
+/>, LCA data are frequently used as templates for constructing solution GHG intensities and comparing solutions against established value chains.
 
 * **US Federal LCA Commons**
   * Labs and data providers (listed above)
@@ -85,9 +87,9 @@ These sources underpin both high-resolution models for well-characterized techno
 
 ### Compatible LCA Datasets that Require Commercial Authorization
 
-<Info>
+<Warning>
 The following LCA datasets are fully compatible and able to be ingested into Koi but require separate commercial authorization.
-</Info>
+</Warning>
 
 * **ecoinvent** – Comprehensive, high-quality life cycle inventory database widely used across industries; known for transparency and global coverage across many sectors.
 * **Agri-Footprint** – Specialized in agricultural and food-related life cycle data, with deep coverage of crop, livestock, and food processing systems.
@@ -105,9 +107,7 @@ The following LCA datasets are fully compatible and able to be ingested into Koi
 
 ## Additional Sources
 
-<Info>
-Additional sources include EPDs, proprietary data, and gray literature.
-</Info>
+Additional sources include EPDs, proprietary data, and LLM estimates.
 
 * **Environmental Product Declarations (EPDs)** – asphalt, aluminum, concrete, steel, etc.
 * **Company-generated LCA reports** – e.g., from Tesla, Ball Corporation, Veolia
@@ -118,32 +118,3 @@ Additional sources include EPDs, proprietary data, and gray literature.
 * **Science Based Targets Initiative (SBTi)** - normative industry targets
 * **One Earth Climate Model (OECM)** - Normative industry pathways
 
-## Frequently Asked Questions
-
-### How often are your data updated?  
-We have an annual cadence to check the date tags on our data sources, with a mandatory review date of one-year after ingestion into Koi. The frequency of updates of the data providers varies widely (e.g. IEA typically has a 2-year cycle, whereas other providers might update data on an ongoing basis or might only provide one-off analyses).
-
-### What methodologies do you follow? Do you have your own?  
-In addition to following best practices from the life cycle assessment field and GHG Protocol rules, we primarily follow WBCSD, Project Frame, and Mission Innovation's Avoided Emissions framework, GFANZ, and much of the Mirova/Robeco AEP Methodology. For allocation guidance, we follow Project Frame, WBCSD (although complete formal guidance has yet to be released), and PCAF. We have contributed to most of these methodologies, in some cases co-authoring, in others advising or providing formal structured feedback.
-
-<Warning>
-For practical reasons, all of the leading avoided emissions frameworks and guidance documents lack the specific technical precision needed to systematically and comprehensively carry out the wide array of data transformations and calculations. Rho Impact has developed its own methodology that allows Koi to both abide by and expand on these methodologies at scale. 
-</Warning>
-
-### Why is Koi's methodology better?
-
-Below is a summary of the technical improvements to the <InternalLink
-  href="/docs/data-and-methodology/koi-engine"
-  linkText="Koi Engine"
-/> which have bearing on our technical methodology and where it solves critical problems with other methodologies' implementation at scale:
-
-* **Matching to Koi GHG intensities and market database** – Enables use of pre-vetted data both retroactively and on a go-forward basis, leveraging the latest snapshot of Engine.
-* **New module for estimating market capture in a "success" scenario** – Based on comparable data from historical SEC 10-K filings, improving realism in forecasting.
-* **Improved subphase-level savings logic** – Introduces the "template intensity" concept to avoid forcing inappropriate conventional baselines (e.g., oat milk no longer compares to dairy milk value chains). Removes hardcoded subphase-level efficiency gain assumptions.
-* **Simplified linear execution flow on the backend** – Streamlines batch processing for the Rho team and includes robust unique ID handling to improve database interactions.
-* **Integration of the latest OpenLCA data** – Includes US Fed Commons and is structured to support additional datasets such as Ecoinvent, EXIOBASE, and Agri-Footprint once authorized. Features autogenerated, verifiable, and non-overlapping components and subphases for clearer visualization of complex LCA data.
-* **Systematic QA and editing workflows** – Provides model developers at Rho with better tools for quality assurance and targeted intervention during model development.
-* **Extreme ERP flagging** – Automatically flags any forecast projecting less than 0.001 MtCO₂e or more than 10 GtCO₂e annually at 10% market penetration, enabling rapid review of outliers.
-* **Enhanced avoided emissions uncertainty logic** – Applies a simplified Monte Carlo–like approach to derive meaningful uncertainty ranges (error bars) for results.
-* **Improved in-app icon matching** – Reduces repetition and improves visual clarity in component labeling.
-* **Greater transparency in references and caveats** – Expands reference detail and integrates clearer warnings and context where applicable.
