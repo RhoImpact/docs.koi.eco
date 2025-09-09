@@ -117,12 +117,15 @@ These stages ensure a clear handoff from discovery to alignment to tailoring, re
 
 ### Part 1: Matching Process
 The Engine starts by mapping a climate solution description to representative baseline and solution value chains, then aligns each with comparable GHG intensity and market data from the Data Lake.
-- Benefit: Ensures the right counterfactual, apples‑to‑apples comparisons, and consistency across technologies and markets, while reducing manual bias and speeding analysis.
+
+<Tip>
+Building models with the Data Lake ensures accurate underlying data, evergreen models that are automatically updated when the underlying data are, and consistency across technologies and markets, while exponentially speeding up analysis.
+</Tip>
 
 The Koi Engine works modularly, allowing Rho Impact scientists or Koi users to select their desired underlying data to construct the model with if they want to curate the matching process.
 
 <div className="bg-zinc-50 dark:bg-zinc-800/50 border border-zinc-200 dark:border-zinc-700 rounded-lg p-4 my-4">
-  <h4 className="font-semibold text-zinc-900 dark:text-white mb-3">Example Data Lake Matching</h4>
+  <h4 className="font-semibold text-zinc-900 dark:text-white mb-3">Example Data Lake Matching (Automated or Manual)</h4>
   <div className="grid grid-cols-2 gap-4">
     <div>
       <h5 className="text-sm font-medium text-zinc-700 dark:text-zinc-300 mb-2">Climate Solution</h5>
@@ -146,7 +149,7 @@ The Koi Engine works modularly, allowing Rho Impact scientists or Koi users to s
 The matching process also ensures **unit compatibility and conversion** between GHG intensity and market data—a critical aspect of our innovative impact data structuring and processing methods. For the mathematical foundations to work correctly, the units must align so that intensity × market size produces meaningful avoided emissions. This removes the conventional friction analysts face with assembling models from data in misaligned units. For example, baseline data may be expressed in emissions per mass output, solution performance is reported by the company per energetic input, and the market is measured by its value. These incompatibilities are handled by having an extensive data lake to pull from for complete models with aligned units.
 
 <div className="bg-zinc-50 dark:bg-zinc-800/50 border border-zinc-200 dark:border-zinc-700 rounded-lg p-4 my-4">
-  <h4 className="font-semibold text-zinc-900 dark:text-white mb-3">Example: Unit Compatibility for an Energy Model</h4>
+  <h4 className="font-semibold text-zinc-900 dark:text-white mb-3">Example Unit Compatibility for an Energy Model</h4>
   <div className="space-y-3">
     <div className="grid grid-cols-2 gap-4">
       <div>
@@ -176,15 +179,111 @@ The matching process also ensures **unit compatibility and conversion** between 
     </p>
   </div>
 </div>
-
-### Part 2: Solution‑Specific Data Filling
-After matching, the Engine resolves missing or non‑transferable inputs by introducing solution‑specific parameters, normalizing units, refining system boundaries, and adjusting value chain phases to reflect the real intervention context.
-
-[IMAGE NEEDED: Example of data gap filling and boundary alignment for a specific technology]
-
 <Info>
 AI‑assisted matching accelerates model creation, but transparency remains paramount. Data sources and assumptions are fully referenced, and users can review and refine the results as needed.
 </Info>
+### Part 2: Solution‑Specific Data Filling
+
+After matching, the Engine models the solution's performance relative to established value chains. Using existing GHG lifecycle data as a template, the solution's performance is grounded in reliable input data with clear assumptions around lifecycle intervention points and efficiencies.
+
+<div className="bg-zinc-50 dark:bg-zinc-800/50 border border-zinc-200 dark:border-zinc-700 rounded-lg p-4 my-4">
+  <h4 className="font-semibold text-zinc-900 dark:text-white mb-3">Example Value Chain Intervention Points</h4>
+  <div className="space-y-3">
+    <div className="flex items-center justify-between text-sm">
+      <div className="flex-1 text-center">
+        <div className="bg-white dark:bg-zinc-900 border border-zinc-300 dark:border-zinc-600 rounded px-3 py-2 mb-1 flex items-center justify-center gap-2">
+          <i className="fa-solid fa-box text-koiBrown-500"></i>
+          Raw Materials
+        </div>
+        <div className="text-xs text-zinc-500">Solution: -20%</div>
+      </div>
+      <div className="text-zinc-400">→</div>
+      <div className="flex-1 text-center">
+        <div className="bg-white dark:bg-zinc-900 border border-zinc-300 dark:border-zinc-600 rounded px-3 py-2 mb-1 flex items-center justify-center gap-2">
+          <i className="fa-solid fa-gear text-koiOrange-500"></i>
+          Processing
+        </div>
+        <div className="text-xs text-zinc-500">Unchanged</div>
+      </div>
+      <div className="text-zinc-400">→</div>
+      <div className="flex-1 text-center">
+        <div className="bg-white dark:bg-zinc-900 border border-zinc-300 dark:border-zinc-600 rounded px-3 py-2 mb-1 flex items-center justify-center gap-2">
+          <i className="fa-solid fa-truck text-koiBlue-500"></i>
+          Transport
+        </div>
+        <div className="text-xs text-zinc-500">Unchanged</div>
+      </div>
+      <div className="text-zinc-400">→</div>
+      <div className="flex-1 text-center">
+        <div className="bg-white dark:bg-zinc-900 border border-zinc-300 dark:border-zinc-600 rounded px-3 py-2 mb-1 flex items-center justify-center gap-2">
+          <i className="fa-solid fa-bolt text-koiYellow-500"></i>
+          Use Phase
+        </div>
+        <div className="text-xs text-zinc-500">Solution: -10%</div>
+      </div>
+      <div className="text-zinc-400">→</div>
+      <div className="flex-1 text-center">
+        <div className="bg-white dark:bg-zinc-900 border border-zinc-300 dark:border-zinc-600 rounded px-3 py-2 mb-1 flex items-center justify-center gap-2">
+          <i className="fa-solid fa-recycle text-koiGreen-500"></i>
+          End-of-Life
+        </div>
+        <div className="text-xs text-zinc-500">Unchanged</div>
+      </div>
+    </div>
+    <p className="text-xs text-zinc-500 dark:text-zinc-400 text-center">
+      Solution targets specific intervention points with material sourcing and efficiency improvements
+    </p>
+  </div>
+</div>
+
+Any missing data is filled using AI to summarize related literature. For example, if the Data Lake doesn't have an appropriate market size in compatible units, a new one will be automatically generated with public reports and AI. All/any AI generated data are clearly reported on the Datasheet page of each model.
+
+Modeling the **market capture** (i.e., share of baseline activity that the solution can reasonably address) remains an area with wide variation in approach amongst practitioners and stakeholders:
+
+- For early-stage screening, impact is often estimated by the solution's maximum plausible market capture (company agnostic).
+- Investors later in the deal process typically use company-specific market-capture estimates that reflect diligence findings.
+- Innovators typically prioritize uptake modeled on near-term deployment forecasts.
+
+<div className="bg-zinc-50 dark:bg-zinc-800/50 border border-zinc-200 dark:border-zinc-700 rounded-lg p-4 my-4">
+  <h4 className="font-semibold text-zinc-900 dark:text-white mb-3">Example: Market Capture Scenarios</h4>
+  <div className="flex items-center gap-6">
+    <div className="relative w-40 h-40 mx-auto">
+      {/* Baseline market (outer circle) */}
+      <div className="absolute inset-0 rounded-full border-4 border-zinc-300 dark:border-zinc-600"></div>
+      <div className="absolute inset-0 flex items-center justify-center text-[0.7rem] font-medium text-zinc-700 dark:text-zinc-300">Baseline Market</div>
+      {/* Optimistic (largest) */}
+      <div className="absolute inset-2 rounded-full bg-koiBlue-200 dark:bg-koiBlue-800/70"></div>
+      {/* Realistic */}
+      <div className="absolute inset-6 rounded-full bg-koiOrange-200 dark:bg-koiOrange-800/70"></div>
+      {/* Conservative (smallest) */}
+      <div className="absolute inset-12 rounded-full bg-koiGreen-200 dark:bg-koiGreen-800/70"></div>
+    </div>
+    <div className="space-y-2 text-xs text-zinc-600 dark:text-zinc-400">
+      <div className="flex items-center gap-2"><span className="inline-block h-3 w-3 rounded-full bg-koiBlue-400"></span>Optimistic capture (~60%)</div>
+      <div className="flex items-center gap-2"><span className="inline-block h-3 w-3 rounded-full bg-koiOrange-400"></span>Realistic capture (~25%)</div>
+      <div className="flex items-center gap-2"><span className="inline-block h-3 w-3 rounded-full bg-koiGreen-400"></span>Conservative capture (~5%)</div>
+    </div>
+  </div>
+  <p className="text-xs text-zinc-500 dark:text-zinc-400 text-center mt-2">
+    All circles sit within the total baseline market; inner sizes illustrate capture scenarios.
+  </p>
+</div>
+
+Because the choice of how to model market diffusion is use case and solution specific, there was a need for a scalable approach that combines the most common criteria and leaves room for easy user modification.
+
+The Engine offers the first automated method of estimating future solution deployment, while Koi's Edit Mode enables quick addition or editing of modeled market uptake. Each solution has its market capture automatically estimated using a novel process that identifies competitors in SEC filings and uses their sales data to approximate a successful future maximum market capture and deployment timeline for the solution being modeled.
+While this approach offers the first automated way of estimating future solution impact that does not make a blanket assumption around market uptake (e.g., just assuming 100% plausible displacement by 2050), it is an area of planned improvement due to recognized limitations.
+
+Current limitations to Koi's automated market capture modeling:
+
+1. **S-curve approximation**: S-curve diffusion is used by default, but S-curves are most appropriate for technology diffusion, not single-company diffusion. Using company data to inform an S-curve is therefore a rough approximation.
+
+2. **Private company exclusion**: Companies not on public exchanges don't file with the SEC and therefore aren't considered within the pool of competitor data.
+
+3. **Novel technology gaps**: Technologies not well represented by current competitor activities—either because of technology novelty or the suite of technologies offered by a company—may not be related to competitor earnings.
+
+
+While an area for improvement, the automated market capture modeling provides a cogent starting point for rapid assessment of a solution's future impact. As with all components of the automated models, the data should by manually reviewed and refined to accomodate the intended use case.
 
 
 ## Integrating Automation into Commissioned Forecasting Services
