@@ -1,5 +1,7 @@
 import PageInformationalData from '@/components/PageInformationalData'
 import { LinksGrid } from '@/components/LinksGrid'
+import InternalLink from '@/components/InternalLink'
+import ExternalLink from '@/components/ExternalLink'
 
 export const metadata = {
   title: 'Classification Systems',
@@ -11,7 +13,10 @@ export const metadata = {
 
 <PageInformationalData lastModified={lastModified} />
 
-Processes and approaches to classifying real-world climate solutions.
+Systematic classification enables repeatable impact assessment mechanics. Koi's structured approach allows the <InternalLink
+  href="/docs/data-and-methodology/koi-engine"
+  linkText="Koi Engine"
+/> to quantify emissions across diverse solutions.
 
 <LinksGrid 
   title=""
@@ -19,21 +24,48 @@ Processes and approaches to classifying real-world climate solutions.
     {
       href: '/docs/data-and-methodology/classification-direct',
       name: 'Direct',
-      description: 'Direct lorem ipsum ...',
-      icon: 'fa-regular fa-down-from-line text-koiBlue-400',
+      description: 'Solutions that avoid emissions by replacing higher-emitting incumbents.',
+      icon: 'fa-regular fa-box text-koiBlue-400',
     },
     {
       href: '/docs/data-and-methodology/classification-facilitating',
       name: 'Facilitating',
-      description: 'Facilitating lorem ipsum ...',
+      description: 'Solutions that enable systems to reduce emissions indirectly.',
       icon: 'fa-regular fa-chart-network text-koiOrange-400',
     },
     {
       href: '/docs/data-and-methodology/classification-emissions-removal',
       name: 'Emissions Removal',
-      description: 'Emissions Remmoval lorem ipsum ...',
+      description: 'Solutions that remove carbon from the atmosphere.',
       icon: 'fa-regular fa-arrows-down-to-line text-koiGreen-400',
     },
   ]}
 />
 
+## Framework Overview
+
+Koi generally adopts the classification system developed by <ExternalLink
+  url="https://projectframe.how/publications/project-frame-methodology-exec-summary"
+  utmContent="classification-overview-link"
+  ariaLabel="Project Frame Methodology"
+  linkText="Project Frame"
+/>. In practice, we have found that the most critical classifications for appropriate automated modeling are:
+
+### Direct Solutions that Avoid Emissions
+
+Solutions that avoid future emissions by replacing or taking market share from incumbents responsible for higher emissions. These include:
+- **Products**: Complete solutions that can be purchased and used to directly achieve GHG impact (e.g., EVs, heat pumps, sustainably produced food)
+- **Components**: Critical parts of an overall solution that contribute significantly to its GHG impact (e.g., EV batteries, efficient motors, recycled materials)
+
+### Facilitating Solutions that Avoid Emissions
+
+Solutions that do not directly achieve GHG impact themselves but enable a system to reduce emissions. While Project Frame defines facilitating solutions as those that specifically enhance direct *solutions*, Koi takes a broader approach to facilitating classification. We consider both solutions that enable other solutions *and* solutions that improve the emissions performance of an existing system (not limited to solutions). These include:
+- Improving the efficiency or emissions performance of existing processes (e.g., software that optimizes human behavior to yield more efficient building operations)
+- Enabling or accelerating the deployment of direct solutions (e.g., green marketplaces that accelerate EV deployment)
+- Providing infrastructure or services that reduce emissions across multiple systems (e.g., green startup accelerators)
+
+### Emissions Removal Solutions
+
+Solutions that remove carbon from the atmosphere. These solutions may not have a direct incumbent to compare against, but all new sources of emissions should be considered, as well as potential systemic consequences and permanence factors. Examples include:
+- **Direct Air Capture**: Technologies that extract CO₂ directly from ambient air
+- **Carbon Dioxide Removal**: Various methods for removing CO₂ from the atmosphere, including nature-based and technological approaches
