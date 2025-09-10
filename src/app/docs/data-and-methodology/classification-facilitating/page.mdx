@@ -11,64 +11,45 @@ export const metadata = {
 
 <PageInformationalData lastModified={lastModified} />
 
-Lorem ipsum
+Facilitating solutions do not directly achieve GHG impact themselves but enable systems to reduce emissions. Koi considers facilitating solutions to be composed of both solutions that enable direct solutions *and* solutions that improve the emissions performance of existing systems (that may themselves not be solutions). 
 
-## Placeholder old text to integrate throughout methodology
----
+## Modeling Approach
 
-## Platform Features
-
-### LCA-based Impact Data
-
-Models incorporate LCA-informed impact data for thousands of direct and enabling climate technologies, including contextualized value chain phase data.
-
-### Comprehensive Ontology
-
-Koi provides a comprehensive ontology that captures the relationships between technologies, processes, and markets, enabling granular insights and scalable forecasting.
-
-### Interoperable Forecasts
-
-Koi delivers interoperable forecasts that can be integrated into existing tools and workflows, enabling seamless access to climate impact data. This allows for rapid comparisons of impact under different assumptions, in different markets, and across different technologies.
-
-### AI-Accelerated Research
-
-Koi leverages advanced AI integration to deliver rapid insights across diverse solutions and markets, enabling data-driven decision-making and accelerating the global transition to a decarbonized economy.
-
-### Data Transparency
-
-Koi provides fully auditable data for clear, accountable net-zero strategies, bridging the gap between ambition and action.
-
-
-
-Koi lowers the barriers to obtaining customized, forward-looking emissions models. **Without Koi, this work is done by hand:** analysts curate datasets, build and audit formulas, and execute every calculation case by case in bespoke spreadsheets. This manual workflow gives experts full command of all underlying data, assumptions, and methods, but it often requires weeks of specialist effort, is hard to keep current, prone to errors, and difficult to reproduce or collaborate on. Most importantly though, it is impractical for evaluations large suites of technologies and prevents apples-to-apples comparisons of climate solutions. Koi automates the heavy lifting while preserving transparency and analyst control over inputs and assumptions. Because expert judgment remains essential for many use cases, we offer a hybrid approach in which our team provides targeted manual review and forecasting services where deeper, bespoke analysis is needed.
-
-
-## Frequently Asked Questions
-
-### How often are your data updated?  
-We have an annual cadence to check the date tags on our data sources, with a mandatory review date of one-year after ingestion into Koi. The frequency of updates of the data providers varies widely (e.g. IEA typically has a 2-year cycle, whereas other providers might update data on an ongoing basis or might only provide one-off analyses).
-
-### What methodologies do you follow? Do you have your own?  
-In addition to following best practices from the life cycle assessment field and GHG Protocol rules, we primarily follow WBCSD, Project Frame, and Mission Innovation's Avoided Emissions framework, GFANZ, and much of the Mirova/Robeco AEP Methodology. For allocation guidance, we follow Project Frame, WBCSD (although complete formal guidance has yet to be released), and PCAF. We have contributed to most of these methodologies, in some cases co-authoring, in others advising or providing formal structured feedback.
-
-<Warning>
-For practical reasons, all of the leading avoided emissions frameworks and guidance documents lack the specific technical precision needed to systematically and comprehensively carry out the wide array of data transformations and calculations. Rho Impact has developed its own methodology that allows Koi to both abide by and expand on these methodologies at scale. 
-</Warning>
-
-### Why is Koi's methodology better?
-
-Below is a summary of the technical improvements to the <InternalLink
+As a general approach, **we only model facilitating solutions that have a measurable physical change in the system**. We do this by forcing the <InternalLink
   href="/docs/data-and-methodology/koi-engine"
   linkText="Koi Engine"
-/> which have bearing on our technical methodology and where it solves critical problems with other methodologies' implementation at scale:
+/> to find an appropriate baseline to match. If no baseline can be reasonably matched, the model won't be made. This requirement exists because there must be sufficient specificity to a facilitating solution to model its effects with real-world systems.
 
-* **Matching to Koi GHG intensities and market database** – Enables use of pre-vetted data both retroactively and on a go-forward basis, leveraging the latest snapshot of Engine.
-* **New module for estimating market capture in a "success" scenario** – Based on comparable data from historical SEC 10-K filings, improving realism in forecasting.
-* **Improved subphase-level savings logic** – Introduces the "template intensity" concept to avoid forcing inappropriate conventional baselines (e.g., oat milk no longer compares to dairy milk value chains). Removes hardcoded subphase-level efficiency gain assumptions.
-* **Simplified linear execution flow on the backend** – Streamlines batch processing for the Rho team and includes robust unique ID handling to improve database interactions.
-* **Integration of the latest OpenLCA data** – Includes US Fed Commons and is structured to support additional datasets such as Ecoinvent, EXIOBASE, and Agri-Footprint once authorized. Features autogenerated, verifiable, and non-overlapping components and subphases for clearer visualization of complex LCA data.
-* **Systematic QA and editing workflows** – Provides model developers at Rho with better tools for quality assurance and targeted intervention during model development.
-* **Extreme ERP flagging** – Automatically flags any forecast projecting less than 0.001 MtCO₂e or more than 10 GtCO₂e annually at 10% market penetration, enabling rapid review of outliers.
-* **Enhanced avoided emissions uncertainty logic** – Applies a simplified Monte Carlo–like approach to derive meaningful uncertainty ranges (error bars) for results.
-* **Improved in-app icon matching** – Reduces repetition and improves visual clarity in component labeling.
-* **Greater transparency in references and caveats** – Expands reference detail and integrates clearer warnings and context where applicable.
+The key dividing line for modeling is: Does the software achieve sector-specific, direct and measurable emissions reductions through targeted technical workflows? Or is it generalized, financial, or enabling broad sustainability action? Only solutions that can demonstrate the former are suitable for reliable modeling.
+
+For example, a solution that uses software to change consumer behavior may be modeled if there is specificity to the expected behavioral change, such as reducing food waste with product discounting. However, if the software is broadly claiming more sustainable consumer behavior without a clear mechanism of impact and/or industry application, such as with a general claim of *enabling consumers to make sustainable decisions*, a model will not be generated. 
+
+<Tip>
+A solution may be classified as facilitating but not proceed through the Koi Engine because it doesn't meet the specificity requirements for reliable modeling.
+</Tip>
+
+Note that even with well-defined mechanisms of impact, facilitating solutions typically require more assumptions around their downstream effects than direct solutions. All assumptions should be documented and amenable to modifications (e.g., what share of users will change their behavior and by how much). Therefore, human review and customization is especially critical for trustworthy faciliting solution models.
+## Classification Criteria
+
+### Facilitating Solutions Well-Suited for Koi Modeling
+
+These types of solutions are classified as facilitating and generally have sufficient specificity to be reliably modeled:
+
+- **Industry-specific solutions**: Software designed for clearly defined physical industries (steelmaking, cement, manufacturing, logistics) that enable direct, quantifiable emissions reductions attributable to changes in that specific sector
+- **Targeted technical workflows**: Solutions with narrowly targeted, well-defined mechanisms focused on emissions reductions in tangible, sector-specific ways (e.g., predictive maintenance software for industrial equipment)
+- **Enabling components**: Physical infrastructure that enables direct solutions, such as fast EV chargers
+
+### Difficult-to-Measure Facilitating Solutions
+
+<Warning>
+These solutions are classified as facilitating but can only be modeled if they meet the specificity requirements outlined in the Modeling Approach section above.
+</Warning>
+
+- **Financial and carbon/sustainability platforms**: Software focused on finance, carbon credits, carbon trading, ESG investing, sustainability-linked lending, environmental finance, insurance, accounting, analytics, management, sustainability incentives, or general sustainability enablement
+- **Generic technological solutions**: Platforms providing general-purpose technological solutions for carbon or sustainability improvements, often broadly applied across value chains
+- **Information and market solutions**: Solutions whose main benefits are "better information," "unlocking markets," or broad sustainability tracking not linked to specific physical process changes
+- **Monitoring and measurement tools**: Software whose primary function is observation, monitoring, or measurement of carbon, GHGs, or sustainability indicators
+
+## Baseline Matching Requirement
+
+For any facilitating solution to be modeled, there must be an appropriate baseline activity in the Koi Data Lake to match upon. This baseline represents the conventional system or process that the facilitating solution is designed to improve or replace, providing the foundation for quantifying the measurable physical change in emissions.
