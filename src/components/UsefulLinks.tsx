@@ -23,7 +23,7 @@ const usefulLinks: Array<GridLink> = [
     external: true,
     name: 'Product Feedback',
     description: 'Share your feedback and influence our roadmap.',
-    icon: 'fa-regular fa-comment-dots',
+    icon: 'fa-regular fa-comment-dots text-koiYellow-400',
     gridPattern: {
       y: 16,
       squares: [

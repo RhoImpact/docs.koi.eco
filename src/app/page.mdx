@@ -50,14 +50,20 @@ only climate impact platform built for **transparency**, **speed**, and **scale*
   : Create a free account.
 - [**Get Started**](/docs/getting-started): Quickstart guides and pointers.
 - [**Explore Use Cases**](/docs/getting-started/use-cases): Common ways users harness the value of an avoided emissions forecast.
-- [**Learn More**](/docs/data-and-methodology/overview): Dive into the art and science of impact forecasting.
+- [**Review Methodology**](/docs/data-and-methodology/overview): Dive into the art and science of impact forecasting.
 
 <div className="not-prose mb-16 mt-6 flex gap-3">
-  <Button href="/docs/getting-started" arrow="right">
-    <>Getting Started</>
-  </Button>
-  <Button href="/docs/data-and-methodology/terms-and-concepts" variant="outline">
-    <>Explore Key Concepts</>
+  <ExternalLink
+    url={`${baseUrl}/sign-up`}
+    utmContent="hero-signup-button"
+    ariaLabel="Sign up for Koi"
+    linkText="Sign Up &rarr;"
+    rel="noopener noreferrer"
+    target="_blank"
+    className="inline-flex gap-0.5 justify-center overflow-hidden text-sm font-medium transition rounded-full bg-zinc-900 py-1 px-3 text-white hover:bg-zinc-700 dark:bg-cyan-400/10 dark:text-cyan-400 dark:ring-1 dark:ring-inset dark:ring-cyan-400/20 dark:hover:bg-cyan-400/10 dark:hover:text-cyan-300 dark:hover:ring-cyan-300"
+  />
+  <Button href="/docs/getting-started" variant="outline">
+    <>Get Started</>
   </Button>
 </div>
 
