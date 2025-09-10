@@ -5,7 +5,7 @@ import React from 'react'
 export default function MarketCaptureScenariosExample() {
   return (
     <div className="my-6 rounded-xl border border-zinc-200 bg-gradient-to-br from-zinc-50 to-zinc-100 p-8 shadow-sm dark:border-zinc-700 dark:from-zinc-800/50 dark:to-zinc-900/50">
-      <h4 className="mb-6 text-center text-lg font-semibold text-zinc-900 dark:text-white">
+      <h4 className="mb-6 mt-2 text-center text-lg font-semibold text-zinc-900 dark:text-white">
         Example Market Capture Scenarios
       </h4>
       <div className="flex flex-col items-center justify-center gap-8 lg:flex-row lg:gap-12">
@@ -94,7 +94,7 @@ export default function MarketCaptureScenariosExample() {
           </div>
         </div>
       </div>
-      <div className="mt-6 break-words text-center text-sm font-medium text-zinc-600 dark:text-zinc-400">
+      <div className="mt-6 break-words text-center text-sm text-zinc-600 dark:text-zinc-400">
         All market deployment scenarios sit within the total baseline market,
         showing differences in the modeled baseline displacement. In the most
         conservative scenario, the solution is modeled according to near-term

@@ -45,3 +45,18 @@
   @apply font-light;
   @apply text-koiGray-200;
 }
+
+/* Mobile-responsive table improvements */
+.koi-table {
+  @apply text-xs sm:text-sm;
+  @apply table-fixed;
+  @apply w-full;
+  @apply max-w-full;
+}
+
+.koi-table th,
+.koi-table td {
+  @apply px-0.5 sm:px-2;
+  @apply py-1 sm:py-2;
+  @apply break-words;
+}

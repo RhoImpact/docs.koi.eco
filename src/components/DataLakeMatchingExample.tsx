@@ -5,10 +5,10 @@ import React from 'react'
 export default function DataLakeMatchingExample() {
   return (
     <div className="my-4 rounded-lg border border-zinc-200 bg-zinc-50 p-4 dark:border-zinc-700 dark:bg-zinc-800/50">
-      <h4 className="mb-3 font-semibold text-zinc-900 dark:text-white">
+      <h4 className="mb-3 mt-2 font-semibold text-zinc-900 dark:text-white">
         Example Data Lake Matching (Automated or Manual)
       </h4>
-      <div className="grid grid-cols-2 gap-4">
+      <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
         <div>
           <h5 className="mb-2 text-sm font-medium text-zinc-700 dark:text-zinc-300">
             Climate Solution

@@ -51,7 +51,9 @@ caption="Example of company search using a domain."
 />
 
 #### Automated Company Technology Search
-One of the most challenging steps in modeling a company’s impact is finding an appropriate technology model as a starting point. Our **domain search** takes the guesswork out of this process by scraping key information directly from a company’s website. Once you enter a URL in the Koi search bar, we use generative AI models and vector search to compare the extracted data against Koi’s climate solution library. In seconds, you’ll see a curated list of potential matches.
+One of the most challenging steps in modeling a company's impact is finding an appropriate technology model as a starting point. Our **domain search** takes the guesswork out of this process by scraping key information directly from a company's website. 
+
+Once you enter a URL in the Koi search bar, we use generative AI models and vector search to compare the extracted data against Koi's climate solution library. In seconds, you'll see a curated list of potential matches.
 
 - **Getting Started**
   Simply go to the search bar, type in the URL (e.g., `rhoimpact.com`), and press **Enter**. Within ~15 seconds, Koi will return a list of solutions most likely to reflect that company’s technology focus. Each potential match will be tagged with either "likely match" or "potential match" to help guide you quickly to the best matches while giving you the option to explore all options.
@@ -69,15 +71,18 @@ One of the most challenging steps in modeling a company’s impact is finding an
 
 - **Pro Tip**
   Once you perform a domain search for the first time, Koi keeps the scraped data. Subsequent searches for the same domain will be much faster. If you want to “start over” or check for updated web content, just append the `?rerun=true` query parameter.
-  ```plaintext
-    https://mycompanydomain.com?rerun=true
-    ```
+  
+```plaintext
+https://mycompanydomain.com?rerun=true
+```
 
 ---
 
 ## Model Search
 
-Our **Technology Model Search** is the backbone of Koi’s search functionality—fueled by a powerful vector database and semantic embeddings. When you type in any text-based query (e.g., “Direct air capture for CO₂”, “Bioplastic packaging solutions”, or even a specific technology name), Koi interprets the meaning of the query and compares it across our catalog of climate solutions.
+Our **Technology Model Search** is the backbone of Koi's search functionality—fueled by a powerful vector database and semantic embeddings. 
+
+When you type in any text-based query (e.g., "Direct air capture for CO₂", "Bioplastic packaging solutions", or even a specific technology name), Koi interprets the meaning of the query and compares it across our catalog of climate solutions.
 
 **Key Highlights**:
 
@@ -86,7 +91,9 @@ Our **Technology Model Search** is the backbone of Koi’s search functionality�
 - **Iterative Exploration**: If you don’t find the perfect match on the first pass, slightly adjust your query and try again—Koi refines results based on context. You can even add words multiple times to adjust weighting.
 
 - **Pro Tip**
-Vector search weighs all words in your query equally (except for common words). This means that a broad term like "carbon" in **"carbon removal"** may not provide the best results, as most climate technologies are aiming to reduce carbon emissions. Instead, try refining your search with more specific terms like **"direct air capture"** or **"soil carbon sequestration"** to get more relevant matches.
+Vector search weighs all words in your query equally (except for common words). This means that a broad term like "carbon" in **"carbon removal"** may not provide the best results, as most climate technologies are aiming to reduce carbon emissions. 
+
+Instead, try refining your search with more specific terms like **"direct air capture"** or **"soil carbon sequestration"** to get more relevant matches.
 
 
 ---

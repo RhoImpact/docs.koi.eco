@@ -5,7 +5,7 @@ import React from 'react'
 export default function UnitCompatibilityExample() {
   return (
     <div className="my-4 rounded-lg border border-zinc-200 bg-zinc-50 p-4 dark:border-zinc-700 dark:bg-zinc-800/50">
-      <h4 className="mb-3 font-semibold text-zinc-900 dark:text-white">
+      <h4 className="mb-3 mt-2 font-semibold text-zinc-900 dark:text-white">
         Example Unit Compatibility for an Energy Model
       </h4>
       <div className="space-y-3">

@@ -122,7 +122,7 @@ export const navigation: Array<NavGroup> = [
         href: '/docs/data-and-methodology/koi-data',
       },
       {
-        title: 'Impact Modeling',
+        title: 'Koi Engine',
         href: '/docs/data-and-methodology/koi-engine',
       },
       // {
@@ -154,8 +154,8 @@ export const navigation: Array<NavGroup> = [
     links: [
       { title: 'API Reference', href: '/docs/api/reference' },
       { title: 'SDKs', href: '/docs/api/sdks' },
-      { title: 'API Endpoints', href: '/docs/api/endpoints' },
-      { title: 'Errors', href: '/docs/api/errors' },
+      // { title: 'API Endpoints', href: '/docs/api/endpoints' },
+      // { title: 'Errors', href: '/docs/api/errors' },
     ],
   },
   {
