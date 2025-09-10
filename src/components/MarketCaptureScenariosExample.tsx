@@ -94,7 +94,7 @@ export default function MarketCaptureScenariosExample() {
           </div>
         </div>
       </div>
-      <div className="mt-6 text-center text-sm font-medium text-zinc-600 dark:text-zinc-400">
+      <div className="mt-6 break-words text-center text-sm font-medium text-zinc-600 dark:text-zinc-400">
         All market deployment scenarios sit within the total baseline market,
         showing differences in the modeled baseline displacement. In the most
         conservative scenario, the solution is modeled according to near-term

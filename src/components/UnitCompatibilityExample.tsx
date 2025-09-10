@@ -33,7 +33,7 @@ export default function UnitCompatibilityExample() {
             <h5 className="mb-2 text-sm font-medium text-zinc-700 dark:text-zinc-300">
               Baseline Emissions
             </h5>
-            <div className="rounded border border-zinc-300 bg-white px-3 py-2 font-mono text-sm dark:border-zinc-600 dark:bg-zinc-900">
+            <div className="break-all rounded border border-zinc-300 bg-white px-3 py-2 font-mono text-sm dark:border-zinc-600 dark:bg-zinc-900">
               0.85 Mt CO₂e/TWh × 400 TWh/year = 340 Mt CO₂e/year
             </div>
           </div>
