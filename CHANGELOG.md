@@ -1,5 +1,9 @@
 # Changelog
 
+## 2025-09-09 - 0.14.0
+
+- Updated content for methodologies pages
+
 ## 2025-07-10 - 0.13.0
 
 - Add more on data and methodologies
