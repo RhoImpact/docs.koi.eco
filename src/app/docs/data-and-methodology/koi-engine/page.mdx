@@ -43,9 +43,9 @@ extensively curated, foundational data from reliable sources such as the <Extern
 
 <div className="my-6">
   <p className="text-sm text-zinc-600 dark:text-zinc-400 mb-3">
-    Koi's 5000+ climate solution models progress in quality from <strong>Rapid</strong> → <strong>Refined</strong> → <strong>Diligence</strong>, aligning speed and depth with different use cases. 
+    Koi's 5000+ climate solution models progress in quality from <strong>Rapid</strong> → <strong>Refined</strong> → <strong>Diligence</strong>, aligning speed and depth with different use cases.
     Koi contains primarily Rapid models, with each model’s Datasheet displaying QA tags stating the level of manual scientist review and data verification.
-    Refined and Diligence models have been developed for a suite of common climate solutions using the latest academic literature, SEC filings, and decarbonization pathways. These models can be found within the search by filtering results according to QA level.   
+    Refined and Diligence models have been developed for a suite of common climate solutions using the latest academic literature, SEC filings, and decarbonization pathways. These models can be found within the search by filtering results according to QA level.
   </p>
 
   <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
@@ -176,7 +176,7 @@ The matching process also ensures **unit compatibility and conversion** between 
       </div>
     </div>
     <p className="text-xs text-zinc-500 dark:text-zinc-400">
-      In this example, once the solution is matched with a baseline GHG intensity in units of emissions/energy production, all additional data matches for the baseline market size and solution GHG intensity are constrainted to be expressed in units of energy. Data Lake matches are allowed in any energy unit (Wh, J, BTU, etc.) and Koi handles all conversions automatically.
+      In this example, once the solution is matched with a baseline GHG intensity in units of emissions/energy production, all additional data matches for the baseline market size and solution GHG intensity are constrained to be expressed in units of energy. Data Lake matches are allowed in any energy unit (Wh, J, BTU, etc.) and Koi handles all conversions automatically.
     </p>
   </div>
 </div>
@@ -237,7 +237,7 @@ After matching, the Engine models the solution's performance relative to establi
   </div>
 </div>
 
-Any missing data is filled using AI to summarize related literature. For example, if the Data Lake doesn't have an appropriate market size in compatible units, a new one will be automatically generated with public reports and AI. All/any AI generated data are clearly reported on the Datasheet page of each model.
+Any missing data is filled using AI to summarize related literature. For example, if the Data Lake doesn't have an appropriate market size in compatible units, a new one will be automatically generated with public reports and AI. All AI-generated data are clearly reported on the Datasheet page of each model.
 
 Modeling the **market capture** (i.e., share of baseline activity that the solution can reasonably address) remains an area with wide variation in approach amongst practitioners and stakeholders:
 
@@ -251,24 +251,24 @@ Modeling the **market capture** (i.e., share of baseline activity that the solut
     <div className="relative w-56 h-56">
       {/* Pie chart style - baseline market (remaining 60%) */}
       <div className="absolute inset-0 rounded-full bg-koiGray-300 dark:bg-koiGray-600 shadow-inner"></div>
-      
+
       {/* Long-term solution deployment (30%) */}
       <div className="absolute inset-0 rounded-full shadow-lg" style={{
         background: `conic-gradient(from 0deg, rgba(60, 142, 168, 0.7) 0deg 108deg, transparent 108deg 360deg)`
       }}></div>
-      
+
       {/* Long-term company deployment (8%) - overlapped */}
       <div className="absolute inset-0 rounded-full shadow-lg" style={{
         background: `conic-gradient(from 0deg, rgba(96, 179, 72, 0.8) 0deg 28.8deg, transparent 28.8deg 360deg)`
       }}></div>
-      
+
       {/* Near-term company deployment (2%) - overlapped */}
       <div className="absolute inset-0 rounded-full shadow-lg" style={{
         background: `conic-gradient(from 0deg, rgba(139, 195, 74, 0.9) 0deg 7.2deg, transparent 7.2deg 360deg)`
       }}></div>
-      
+
     </div>
-    
+
     <div className="space-y-4 text-sm">
       <div className="flex items-center gap-4">
         <div className="w-5 h-5 rounded-full bg-koiGray-300 dark:bg-koiGray-600 shadow-sm border border-koiGray-400 dark:border-koiGray-500"></div>
@@ -301,7 +301,7 @@ Modeling the **market capture** (i.e., share of baseline activity that the solut
     </div>
   </div>
   <p className="text-sm text-zinc-600 dark:text-zinc-400 text-center mt-6 font-medium">
-    All market deployment scenarios sit within the total baseline market, showing differences in the modeled baseline displacement. In the most conservative scenario, the solution is modeled according to near-term company deployment with a 2% maximum market capture, while in the most optimistic impact scenario the long-term effect of the solution on the market is modeled with a 30% market capture. 
+    All market deployment scenarios sit within the total baseline market, showing differences in the modeled baseline displacement. In the most conservative scenario, the solution is modeled according to near-term company deployment with a 2% maximum market capture, while in the most optimistic impact scenario the long-term effect of the solution on the market is modeled with a 30% market capture.
     *Note that these pie chart slices are shown overlayed for simplicity but in actuality should be considered in isolation of one another (i.e., they are not additive)*
   </p>
 </div>
@@ -320,7 +320,7 @@ Current limitations to Koi's automated market capture modeling:
 3. **Novel technology gaps**: Technologies not well represented by current competitor activities—either because of technology novelty or the suite of technologies offered by a company—may not be related to competitor earnings.
 
 
-While an area for improvement, the automated market capture modeling provides a cogent starting point for rapid assessment of a solution's future impact. As with all components of the automated models, the data should by manually reviewed and refined to accomodate the intended use case.
+While an area for improvement, the automated market capture modeling provides a cogent starting point for rapid assessment of a solution's future impact. As with all components of the automated models, the data should be manually reviewed and refined to accommodate the intended use case.
 
 
 ## Manual Verification and Model Customization
@@ -346,7 +346,7 @@ Edit Mode is accessed from a public model by first cloning the model (**Model Ac
 <Tip>
 **Versioning** Every Koi model is versioned. Navigate to the Datasheet page to see the `Version` being viewed. Prior and future versions of a model can be selected from the dropdown. Customized models allow users to decide when to create new major and minor versions when saving. This is critical for
 auditing and is particularly helpful for quarterly and annual reporting as *realized* impact is compared to the
-initial *potential* impact modeled. 
+initial *potential* impact modeled.
 </Tip>
 
 ### Commissioned Forecasting Services
@@ -382,7 +382,7 @@ inherent uncertainty, the wide range of technologies under consideration, and bu
 
 Conversely, other users require a deep understanding of potential investment impacts and prefer our higher-tier models,
 which integrate our scientists' technical expertise through stakeholder engagement and discovery, while still leveraging
-the efficiencies of automated modeling. 
+the efficiencies of automated modeling.
 
 Starting with the auto-generated model, our scientists maximize time efficiency by focusing on the details that
 matter—whether it's regional specificity, incorporating insights from white papers or technical reports, or modeling

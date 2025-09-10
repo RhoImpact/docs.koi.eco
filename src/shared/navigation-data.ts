@@ -125,24 +125,24 @@ export const navigation: Array<NavGroup> = [
         title: 'Impact Modeling',
         href: '/docs/data-and-methodology/koi-engine',
       },
-      {
-        title: 'Classification Systems',
-        href: '/docs/data-and-methodology/classification-overview',
-        links: [
-          {
-            title: 'Direct',
-            href: '/docs/data-and-methodology/classification-direct',
-          },
-          {
-            title: 'Facilitating',
-            href: '/docs/data-and-methodology/classification-facilitating',
-          },
-          {
-            title: 'Emissions Removal',
-            href: '/docs/data-and-methodology/classification-emissions-removal',
-          },
-        ],
-      },
+      // {
+      //   title: 'Classification Systems',
+      //   href: '/docs/data-and-methodology/classification-overview',
+      //   links: [
+      //     {
+      //       title: 'Direct',
+      //       href: '/docs/data-and-methodology/classification-direct',
+      //     },
+      //     {
+      //       title: 'Facilitating',
+      //       href: '/docs/data-and-methodology/classification-facilitating',
+      //     },
+      //     {
+      //       title: 'Emissions Removal',
+      //       href: '/docs/data-and-methodology/classification-emissions-removal',
+      //     },
+      //   ],
+      // },
       {
         title: 'Methodology Alignment',
         href: '/docs/data-and-methodology/methodology-alignment',
