@@ -126,7 +126,7 @@ export const navigation: Array<NavGroup> = [
         href: '/docs/data-and-methodology/koi-engine',
       },
       {
-        title: 'Classification Systems',
+        title: 'Solution Classification',
         href: '/docs/data-and-methodology/classification-overview',
         links: [
           {
