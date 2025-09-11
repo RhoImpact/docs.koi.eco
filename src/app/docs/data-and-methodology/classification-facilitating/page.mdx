@@ -1,5 +1,6 @@
 import PageInformationalData from '@/components/PageInformationalData'
 import InternalLink from '@/components/InternalLink'
+import { Danger } from '@/components/mdx'
 
 export const metadata = {
   title: 'Solution Classification: Facilitating',
@@ -28,21 +29,24 @@ For example, a solution that uses software to change consumer behavior may be mo
 A solution may be classified as facilitating but not proceed through the Koi Engine because it doesn't meet the specificity requirements for reliable modeling.
 </Tip>
 
-Note that even with well-defined mechanisms of impact, facilitating solutions typically require more assumptions around their downstream effects than direct solutions. All assumptions should be documented and amenable to modifications (e.g., what share of users will change their behavior and by how much). Therefore, human review and customization is especially critical for trustworthy faciliting solution models.
+Note that even with well-defined mechanisms of impact, facilitating solutions typically require more assumptions around their downstream effects than direct solutions. All assumptions should be documented and amenable to modifications (e.g., what share of customers will change their purchasing behavior and by how much). Therefore, <InternalLink
+  href="/docs/data-and-methodology/koi-engine#manual-verification-and-model-customization"
+  linkText="expert review and customization"
+/> is especially critical for trustworthy faciliting solution models.
 ## Classification Criteria
 
 ### Facilitating Solutions Well-Suited for Koi Modeling
 
-These types of solutions are classified as facilitating and generally have sufficient specificity to be reliably modeled:
+These types of solutions are classified as facilitating and generally have sufficient specificity to be reliably modeled. This is not an exhaustive list but is intended to represent the types of facilitating solutions commonly modeled:
 
-- **Industry-specific solutions**: Software designed for clearly defined physical industries (steelmaking, cement, manufacturing, logistics) that enable direct, quantifiable emissions reductions attributable to changes in that specific sector
-- **Targeted technical workflows**: Solutions with narrowly targeted, well-defined mechanisms focused on emissions reductions in tangible, sector-specific ways (e.g., predictive maintenance software for industrial equipment)
+- **Industry-specific solutions**: Solutions designed for clearly defined physical industries (e.g., steelmaking, cement, manufacturing, logistics) that enables measurable emissions reductions (e.g., remote energy monitoring and optimization for factory machinery, platforms for building waste prevention)
+- **Targeted technical workflows**: Solutions with narrowly targeted, well-defined intervention mechanisms focused on specific areas for optimization across sectors (e.g., predictive maintenance software for industrial equipment)
 - **Enabling components**: Physical infrastructure that enables direct solutions, such as fast EV chargers
 
 ### Difficult-to-Measure Facilitating Solutions
 
 <Warning>
-These solutions are classified as facilitating but can only be modeled if they meet the specificity requirements outlined in the Modeling Approach section above.
+These solutions are classified as facilitating but can only be modeled if they meet the specificity requirements outlined in the Modeling Approach section above. In many cases, these solutions are too vague, varied or unestablished in their mechanism of impact to meet these requirements.
 </Warning>
 
 - **Financial and carbon/sustainability platforms**: Software focused on finance, carbon credits, carbon trading, ESG investing, sustainability-linked lending, environmental finance, insurance, accounting, analytics, management, sustainability incentives, or general sustainability enablement
@@ -50,6 +54,20 @@ These solutions are classified as facilitating but can only be modeled if they m
 - **Information and market solutions**: Solutions whose main benefits are "better information," "unlocking markets," or broad sustainability tracking not linked to specific physical process changes
 - **Monitoring and measurement tools**: Software whose primary function is observation, monitoring, or measurement of carbon, GHGs, or sustainability indicators
 
+<Danger>
+**Multi-System Services or Infrastructure**: Facilitating solutions providing infrastructure or services that reduce emissions across multiple systems (e.g., green startup accelerators) are not currently amenable to automated Koi Engine modeling. Instead, each solution for modeling would need to be input individually. For example, the Engine could generate models for each portfolio company at an accelerator and those models can be assembled by the user into a <InternalLink
+  href="/docs/getting-started/features/collections"
+  linkText="Portfolio Collection"
+/>. The Engine cannot currently accept an aggregate of solutions as a single input for modeling.
+</Danger>
+
 ## Baseline Matching Requirement
 
 For any facilitating solution to be modeled, there must be an appropriate baseline activity in the Koi Data Lake to match upon. This baseline represents the conventional system or process that the facilitating solution is designed to improve or replace, providing the foundation for quantifying the measurable physical change in emissions.
+
+## Allocation Considerations
+
+How to approriately allocate avoided emissions for facilitating solutions is an unsettled science. Koi does not pre-segment any analysis data and instead provides the entire system savings as a model. Users can apply an adjustment factor using their allocation method of choice within a <InternalLink
+  href="/docs/getting-started/features/collections"
+  linkText="Collection"
+/>.
