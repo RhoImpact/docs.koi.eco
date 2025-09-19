@@ -13,9 +13,9 @@ const featuresLinks: Array<GridLink> = [
     showGrid: false,
   },
   {
-    href: routes.customForecasts,
-    name: 'Custom Forecasts',
-    description: "Tailor Koi's forecasts to your specific needs.",
+    href: routes.customModels,
+    name: 'Custom Models',
+    description: "Tailor Koi's models to your specific needs.",
     icon: 'fa-regular fa-pencil text-koiPurple-200',
     showGrid: false,
   },

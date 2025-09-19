@@ -1,0 +1,59 @@
+import image1 from './images/image1.webp'
+import ImageZoom from "@/components/ImageZoom";
+import PageInformationalData from '@/components/PageInformationalData'
+import ExternalLink from '@/components/ExternalLink'
+import CodeWithIcon from '@/components/CodeWithIcon'
+import InternalLink from '@/components/InternalLink'
+
+
+# Custom Models
+
+<PageInformationalData lastModified={lastModified} />
+
+---
+
+## Summary
+
+Use custom models to represent your specific technology implementations. Modify the Koi-provided scenarios and markets or create your own and explore how your changes influence a technology’s impact potential.
+
+## Why Is It Important?
+
+Customizing impact models is important for several reasons:
+
+* **Accuracy**: By tailoring the models to your specific technology implementations, scenarios, and markets, you can ensure that the results are more accurate and relevant to your organization.  
+* **Relevance**: The ability to create your own scenarios and markets allows you to focus on the technologies and applications that are most important to you.  
+* **Flexibility**: Customizing models enables you to explore different possibilities and see how changes in your assumptions affect the potential impact of a technology.  
+* **Decision-making**: The insights gained from customized models can help you make more informed decisions about which technologies to invest in and how to prioritize your resources.
+
+## How Do I Make A Custom Model?
+
+- **Select a Model**: Navigate to the page of any technology.
+- **Clone the Model**: Under <CodeWithIcon icon="fa-regular fa-angle-down">Actions</CodeWithIcon>, select <CodeWithIcon icon="fa-regular fa-layer-group">Clone & Customize</CodeWithIcon>.  
+  - Cloning a model requires you to unlock the original model in order to make a copy and customize it.  
+  - The cloned model is saved to your private Models.  
+
+<ImageZoom
+src={image1}
+alt="Custom Models Image 1"
+caption="Dialog that appears when you click Clone & Customize button."
+/>
+
+- **Customize Your Model**: Modify or create scenarios and market projections to tailor the model for your needs.
+
+### Pro Tips
+
+- View and revisit your custom model from the _Models page_.
+- If your data are represented with a different unit than what's shown in the model,
+that's ok\! You can enter your data with the units you have, and they will be converted
+to the unit selected in the Analysis Options.
+- Any changes you make to your custom model, and any data you enter, are protected
+and stay within your private forecast. They will not appear on the original model
+from which you cloned your model and will only be visible to others if you _Share_.
+
+### Frequently Asked Questions
+
+- **Can I share my custom model with my team members or other organizations?**
+  - Yes, you can provide view-only or edit access to your model with other Koi users.
+  See <InternalLink route="sharing" linkText="Sharing" /> for more information.
+- **Can I track changes to my custom model?** 
+    - Yes, every time you make a change to your model, a new version is created. You can select which version you want to view from the <CodeWithIcon icon="fa-regular fa-asterisk">Datasheet</CodeWithIcon> tab.
