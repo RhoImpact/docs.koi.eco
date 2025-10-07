@@ -1,5 +1,10 @@
 # Changelog
 
+## 2025-10-06 - 0.15.0
+
+- New Solution Classification pages
+- Updated Methodology Alignment page
+
 ## 2025-09-09 - 0.14.0
 
 - Updated content for methodologies pages
