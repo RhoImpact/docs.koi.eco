@@ -53,25 +53,16 @@ export default function HeatPumpDataLakeExample() {
     },
   }
 
+  // ✅ Limited to two options
   const marketCaptureOptions = {
-    conservative: {
-      text: 'Conservative Scenario',
+    ieaNetZero: {
+      text: 'IEA Net Zero Aligned (55% by 2050) - 35% in 2035',
       value: 35,
       units: '%',
     },
-    netZero: {
-      text: 'IEA Net Zero Scenario, 2050',
-      value: 55,
-      units: '%',
-    },
-    aggressive: {
-      text: 'Aggressive Deployment',
-      value: 75,
-      units: '%',
-    },
-    maximum: {
-      text: 'Maximum Feasible',
-      value: 90,
+    conservative: {
+      text: 'Conservative deployment - 15% in 2035',
+      value: 15,
       units: '%',
     },
   }
@@ -82,7 +73,7 @@ export default function HeatPumpDataLakeExample() {
     'naturalGasBuildings'
   )
   const [solutionIntensityKey, setSolutionIntensityKey] = useState('averageSPF')
-  const [marketCaptureKey, setMarketCaptureKey] = useState('netZero')
+  const [marketCaptureKey, setMarketCaptureKey] = useState('ieaNetZero')
 
   // Get current values
   const currentBaselineIntensity =
@@ -100,13 +91,15 @@ export default function HeatPumpDataLakeExample() {
   const currentMarketCapture =
     marketCaptureOptions[marketCaptureKey as keyof typeof marketCaptureOptions]
 
-  // Calculate final result
+  // ✅ Adjusted math remains the same but now uses only the two defined options
   const annualImpact = useMemo(() => {
     const avoidedEmissionsPerEJ =
-      currentBaselineIntensity.value - currentSolutionIntensity.value
-    const deploymentRate = currentMarketCapture.value / 100
+      currentBaselineIntensity.value - currentSolutionIntensity.value // g CO2e/MJ difference
+    const deploymentRate = currentMarketCapture.value / 100 // convert % to fraction
     const totalImpact =
-      avoidedEmissionsPerEJ * currentBaselineMarketSize.value * deploymentRate
+      avoidedEmissionsPerEJ *
+      currentBaselineMarketSize.value *
+      deploymentRate // g CO2e/MJ * EJ * fraction
     return Math.round(totalImpact)
   }, [
     currentBaselineIntensity.value,
@@ -114,9 +107,11 @@ export default function HeatPumpDataLakeExample() {
     currentBaselineMarketSize.value,
     currentMarketCapture.value,
   ])
+
   return (
     <div className="rounded-lg border border-zinc-200 bg-zinc-50 px-4 pb-4 dark:border-zinc-700 dark:bg-zinc-800/50">
       <div className="space-y-4">
+        {/* Baseline GHG Intensity */}
         <div>
           <h5 className="mt-6 text-sm font-medium text-zinc-700 dark:text-zinc-300">
             Baseline GHG Intensity
@@ -139,6 +134,7 @@ export default function HeatPumpDataLakeExample() {
           </div>
         </div>
 
+        {/* Baseline Market Size */}
         <div>
           <h5 className="mt-6 text-sm font-medium text-zinc-700 dark:text-zinc-300">
             Baseline Market Size
@@ -163,6 +159,7 @@ export default function HeatPumpDataLakeExample() {
           </div>
         </div>
 
+        {/* Solution GHG Intensity */}
         <div>
           <h5 className="mt-6 text-sm font-medium text-zinc-700 dark:text-zinc-300">
             Solution GHG Intensity
@@ -185,12 +182,13 @@ export default function HeatPumpDataLakeExample() {
           </div>
         </div>
 
+        {/* Market Capture */}
         <div>
           <h5 className="mt-6 text-sm font-medium text-zinc-700 dark:text-zinc-300">
             Market Capture
           </h5>
           <p className="mb-2 mt-0 text-xs italic text-zinc-500 dark:text-zinc-400">
-            Based on IEA Net Zero goals for heat pump deployment
+            Heat pump deployment scenario, click dropdown to see others
           </p>
           <div className="rounded border border-zinc-300 bg-white px-3 py-2 text-sm dark:border-zinc-600 dark:bg-zinc-900">
             <select
@@ -200,7 +198,7 @@ export default function HeatPumpDataLakeExample() {
             >
               {Object.entries(marketCaptureOptions).map(([key, option]) => (
                 <option key={key} value={key}>
-                  {option.value}% ({option.text})
+                  {option.text}
                 </option>
               ))}
             </select>
@@ -208,6 +206,7 @@ export default function HeatPumpDataLakeExample() {
         </div>
       </div>
 
+      {/* Annual Impact */}
       <div className="mt-4 rounded border border-green-200 bg-green-50 p-3 dark:border-green-800 dark:bg-green-900/20">
         <div className="mb-1 text-sm font-medium text-green-800 dark:text-green-200">
           Annual Impact Calculation (2035)
@@ -220,10 +219,10 @@ export default function HeatPumpDataLakeExample() {
         </div>
       </div>
 
+      {/* Note */}
       <div className="mt-3 text-sm text-zinc-600 dark:text-zinc-400">
-        <strong>Note:</strong> Koi takes care of all year and unit alignment to
-        make data inputs compatible. Trends between known data points for each
-        input are used to interpolate and project values for all years in the
+        <strong>Note:</strong> Koi aligns years and units automatically. Trends
+        between known data points are interpolated to project all years in the
         analysis.
       </div>
     </div>
