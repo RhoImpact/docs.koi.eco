@@ -14,7 +14,7 @@ export const metadata = {
 # Data Sources and Inputs
 
 <PageInformationalData lastModified={lastModified} />
-Obtaining relevant and trusted data is a common barrier to conducting impact assessments. Koi consolidates and derives lifecycle and market data from authoritative sources, removing a substantial share of the manual work that has slowed the field. We've modeled thousands of proposed climate solutions and provide both the off-the-shelf models and data in-app.
+Obtaining relevant and trusted data is a common barrier to conducting impact assessments. Koi consolidates and derives lifecycle and market data from authoritative sources, removing a substantial share of the manual work that has slowed the field. We've modeled thousands of proposed climate solutions and provide both the off-the-shelf models and data in the application itself.
 
 **Data sourcing:** This page contains a representative overview of the data sources used in Koi models, organized by reference category. We prioritize open-access, trusted, structured, and recent datasets, such as those provided by the IEA and government databases. This is often supplemented with bottom-up lifecycle GHG data for solution modeling, value chain segmentation, and boundary definition. Because sources vary by technology, industry, and region, the complete model-specific references are documented on each model’s Datasheet page (see screenshot below).
 
@@ -22,7 +22,8 @@ Obtaining relevant and trusted data is a common barrier to conducting impact ass
 
 Koi maintains a comprehensive data lake containing baseline GHG intensity, solution GHG intensity, market size, and market diffusion data that can be accessed through a variety of interfaces. These data may be primary or derived but are always transparently referenced, ensuring full traceability and auditability. Every model draws on at least one of each component type, and all references can be viewed on the Datasheet tab within each model.
 
-This data lake powers automated modeling capabilities and has enabled our database to contain 5,000+ models built on trusted underlying input data. The centralized, curated nature of this data repository ensures consistency across models while providing the flexibility to accommodate diverse climate solutions and assessment needs.
+This data lake powers automated modeling capabilities and has enabled our database to contain 9,000+ models built on trusted underlying input data. The centralized, curated nature of this data repository ensures consistency across models while providing the flexibility to accommodate diverse climate solutions and assessment needs. Standardization of input data and outputs, as well as quality assurance and control are paramount to our data pipeline and model generation processes.
+
 
 <ImageZoom
   src={dataImage}
@@ -37,7 +38,7 @@ Learn more about data processing and impact model generation in the [Modeling](/
 
 ## Major Data Providers
 
-These are Government, Commercial, and Non-Profit data sources from which we ingest primarily baseline data. Baseline data characterizes the emissions of the reference/counterfactual scenario and is comprised of a baseline GHG intensity and a baseline market size.
+These are Government, Commercial, and Non-Profit data sources from which we ingest primarily baseline data. Baseline data characterizes the emissions of the reference/counterfactual scenario and consists of a baseline GHG intensity and a baseline market size.
 
 * **International Energy Agency (IEA)** - Global authority on energy statistics, forecasts, and technology roadmaps; used for modeling energy transitions and emissions pathways.
 * **U.S. Energy Information Administration (US EIA)** - Authoritative source for U.S. and international energy production, consumption, and emissions data; often used for baselines and trends.

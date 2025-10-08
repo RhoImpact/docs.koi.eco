@@ -6,11 +6,11 @@ export const metadata = {
   description: 'Summary of Key Concepts and Terminology',
 }
 
-# Key Concepts & Terminology
+# Key Concepts
 
 <PageInformationalData lastModified={lastModified} />
 
-This page provides an overview of the key concepts and terminology used throughout Koi's methodology. For deeper exploration of specific topics, see the related pages below.
+This page provides an overview of the key concepts and terminology used throughout Koi and this methodology. For deeper exploration of specific topics, please see the related pages below.
 
 
 <LinksGrid
@@ -36,13 +36,14 @@ This page provides an overview of the key concepts and terminology used througho
 
 ### Avoided Emissions
 
-[Avoided emissions](avoided-emissions) refer to the reduction in greenhouse gas (GHG) emissions achieved by replacing a higher-emitting activity, technology, or process with a lower-emitting alternative. They quantify the emissions that would have occurred under a business-as-usual scenario, providing a forward-looking metric to evaluate the climate impact of innovative solutions. They can also be used to measure the realized emissions avoided due to an intervention that already occurred. Different methodologies use a variety of terms to describe avoided emissions, reflecting differences in audience, use case, and reporting needs. Koi is agnostic to these distinctions and uses the terms **annual impact** and **cumulative impact** to flexibly represent avoided emissions in both backward- and forward-looking contexts, at either the technology or company scale.
+[Avoided emissions](avoided-emissions) refer to the reduction in greenhouse gas (GHG) emissions achieved by replacing a higher-emitting activity, technology, or process with a lower-emitting alternative. They quantify the emissions that would have occurred under a business-as-usual or most likely alternative scenario, providing a forward-looking metric to evaluate the climate impact of innovative solutions beyond their own footprint. With a stable modeling approach, this metric can be used to measure the real or “realized” avoided emissions due to an intentional intervention that has occurred. Different methodologies use a variety of terms to describe avoided emissions, reflecting differences in audience perspectives, use cases, scope and reporting needs. Koi is agnostic to these distinctions and uses the terms annual impact and cumulative impact to flexibly represent avoided emissions in both backward- and forward-looking contexts.
+
 
 ### Unit Impact
 
-Unit Impact refers to the avoided emissions associated with a single unit of a technology, process, or activity. By quantifying the emissions reduction achieved by deploying a specific solution, unit impacts provide a standardized metric for comparing the climate benefits of diverse technologies. Unit impacts are typically expressed in terms of greenhouse gas emissions avoided per unit of output or activity (e.g., tons of CO2 equivalent per megawatt-hour of electricity generated).
+Unit Impact refers to the avoided emissions associated with a single unit of a technology, process, or activity. By quantifying the emissions reduction achieved by deploying a specific solution, unit impacts provide a standardized metric for comparing the climate benefits of diverse technologies. Unit impacts are typically expressed in terms of greenhouse gas emissions avoided per unit of output or activity (e.g., metric tons of CO2 equivalent per megawatt-hour of electricity generated). In this way, the “unit” in unit impact is synonymous with the more technically precise term “functional unit” used by LCA practitioners, and described in more detail below.
 
-Avoided Emissions Factors (AEFs) are another way of expressing the same underlying metric as Unit Impact. While "Unit Impact" is often used in technical or methodological contexts (for example, by Project Frame), "AEFs" may be referenced by organizations for standardized reporting and comparison (primarily within the AEFDi). Both terms quantify the emissions avoided per unit of activity or output, but may be preferred by different audiences or target groups depending on context and familiarity. For more details on these methodologies, see the [Methodology Alignment](/docs/data-and-methodology/methodology-alignment) page.
+Avoided Emissions Factors (AEFs) are another way of expressing the same underlying metric as Unit Impact. While "Unit Impact" is often used in technical or methodological contexts (for example, by Project Frame), "AEFs" may be referenced by organizations for standardized reporting and comparison. Both terms quantify the emissions avoided per unit of activity or output, but may be preferred by different audiences or target groups depending on context and familiarity. For more details on these methodologies, please see the [Methodology Alignment](/docs/data-and-methodology/methodology-alignment) page.
 
 ### Solution Scale
 
@@ -54,8 +55,11 @@ Solution scale is the term used within Koi to represent the market size being me
 
 ### Functional Unit
 
-A Functional Unit, also known as a Unit of Measure, is a standardized unit of measurement to quantify the output or activity associated with a solution that can be compared equivalently to a baseline. By defining a model functional unit (e.g., kilowatt-hours of electricity generated, miles driven by a vehicle, dollars invested into CDR), the difference in emissions associated with deploying that solution can be calculated. Functional unit data is essential for generating accurate impact forecasts and comparing the climate benefits of different technologies, where the production units may be different between technologies. For example, a *production unit* may be measured by mass of fuel type, but the *functional unit* for a model comparing the impact of different fuels may be generalized as MJ of energy delivered.
+A Functional Unit is a standardized unit of measurement to quantify the output or activity associated with a solution that can be compared equivalently to a baseline. By defining a model functional unit (e.g., kilowatt-hours of electricity generated, miles driven by a vehicle, or possibly dollars), the difference in emissions associated with deploying that solution can be calculated. Functional unit data is essential for generating accurate impact forecasts and comparing the climate benefits of different technologies, where the production units may be different between technologies. For example, a *production unit* may be measured by mass of fuel type, but the *functional unit* for a model comparing the impact of different fuels may be generalized as MJ of energy delivered. 
+
+In some cases there is no easy way to compare activities or effects without using an equivalency (a familiar example is CO₂e, where the “e” stands for equivalent. This way of measuring the global warming potential (GWP) of various greenhouse gases allows us to put them on more equal footing. Likewise, one might compare and aggregate categories of chemicals based not on their final mass, which can hide the effort (energy and feedstocks) it took to make them, but instead based on a “PJ-eq” or petajoule-equivent unit of measure to put various chemicals on more equal footing. Dairy products are another category in which, for the purposes of fair climate impact comparisons, products may be measured using a normalized unit called “fat- and protein corrected milk” or FPCM. Koi relies on conventional functional units.
+
 
 ### Life Cycle Assessment (LCA)
 
-Life Cycle Assessment is a comprehensive methodology for evaluating the environmental impacts of a product, process, or system across its entire life cycle. LCA considers the environmental burdens associated with all stages of a product's life, from raw material extraction and manufacturing to use, disposal, and end-of-life treatment. By quantifying the energy, resources, and emissions associated with each life cycle stage, LCA provides a holistic view of a product's environmental performance and helps identify opportunities for improvement. LCA data underpins much of Koi's Unit Impact analysis.
+Life Cycle Assessment is a comprehensive methodology for evaluating the environmental impacts of a product, process, or system across its entire life cycle. LCA considers the environmental burdens associated with all stages of a product's life, from raw material extraction and manufacturing to use, disposal, and end-of-life treatment. By quantifying the energy, resources, and emissions associated with each life cycle stage, LCA provides a holistic view of a product's environmental performance and helps identify opportunities for improvement. LCA data and thinking underpins much of Koi's Unit Impact analysis. For example, when we use data from LCA databases, we segment the product system data into non-overlapping areas, so that we can represent the value chain in a way that is more stylized and intuitive to Koi customers, while preserving important quantitative information. 
