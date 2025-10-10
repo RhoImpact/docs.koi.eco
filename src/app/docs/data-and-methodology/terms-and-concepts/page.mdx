@@ -1,5 +1,9 @@
 import PageInformationalData from '@/components/PageInformationalData'
 import { LinksGrid } from '@/components/LinksGrid'
+import ImageZoom from '@/components/ImageZoom'
+import counterfactualImage from '../methodology_images/counterfactualemissions.webp'
+import solnScenarioImage from '../methodology_images/solnscenarioemissions-v1.webp'
+
 
 export const metadata = {
   title: 'Summary',
@@ -11,6 +15,8 @@ export const metadata = {
 <PageInformationalData lastModified={lastModified} />
 
 This page provides an overview of the key concepts and terminology used throughout Koi and this methodology. For deeper exploration of specific topics, please see the related pages below.
+
+
 
 
 <LinksGrid
@@ -38,6 +44,42 @@ This page provides an overview of the key concepts and terminology used througho
 
 [Avoided emissions](avoided-emissions) refer to the reduction in greenhouse gas (GHG) emissions achieved by replacing a higher-emitting activity, technology, or process with a lower-emitting alternative. They quantify the emissions that would have occurred under a business-as-usual or most likely alternative scenario, providing a forward-looking metric to evaluate the climate impact of innovative solutions beyond their own footprint. With a stable modeling approach, this metric can be used to measure the real or “realized” avoided emissions due to an intentional intervention that has occurred. Different methodologies use a variety of terms to describe avoided emissions, reflecting differences in audience perspectives, use cases, scope and reporting needs. Koi is agnostic to these distinctions and uses the terms annual impact and cumulative impact to flexibly represent avoided emissions in both backward- and forward-looking contexts.
 
+
+<div className="my-10 space-y-8">
+
+  <p className="text-center text-base text-zinc-700 dark:text-zinc-300 max-w-2xl mx-auto">
+    The baseline (counterfactual) emissions that can be displaced by the solution result in avoided emissions.
+  </p>
+
+  <div className="flex flex-col sm:flex-row justify-center items-start sm:space-x-8 space-y-8 sm:space-y-0">
+
+    <div className="mx-auto w-full max-w-[550px]">
+      <ImageZoom
+        src={counterfactualImage}
+        alt="Counterfactual Emissions Visualization"
+        containerClassName="w-full"
+        className="w-full rounded-lg"
+      />
+      <p className="text-center text-sm text-zinc-600 dark:text-zinc-400 mt-1 italic">
+        Counterfactual (Baseline) Emissions Scenario
+      </p>
+    </div>
+
+    <div className="mx-auto w-full max-w-[550px]">
+      <ImageZoom
+        src={solnScenarioImage}
+        alt="Solution Scenario Emissions Visualization"
+        containerClassName="w-full"
+        className="w-full rounded-lg"
+      />
+      <p className="text-center text-sm text-zinc-600 dark:text-zinc-400 mt-1 italic">
+        Solution Scenario Emissions
+      </p>
+    </div>
+
+  </div>
+
+</div>
 
 ### Unit Impact
 
