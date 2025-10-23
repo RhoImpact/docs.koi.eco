@@ -138,7 +138,7 @@ export const navigation: Array<NavGroup> = [
             href: '/docs/data-and-methodology/classification-facilitating',
           },
           {
-            title: 'Emissions Removal',
+            title: 'Carbon Dioxide Removal',
             href: '/docs/data-and-methodology/classification-emissions-removal',
           },
         ],
