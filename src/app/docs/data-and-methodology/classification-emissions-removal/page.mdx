@@ -1,4 +1,6 @@
 import PageInformationalData from '@/components/PageInformationalData'
+import InternalLink from '@/components/InternalLink'
+import ExternalLink from '@/components/ExternalLink'
 
 export const metadata = {
   title: 'Solution Classification: Emissions Removal',
@@ -6,8 +8,114 @@ export const metadata = {
     'Processes and approaches to classifying real-world climate solutions.',
 }
 
-# Emissions Removal
+# Carbon Dioxide Removal
 
 <PageInformationalData lastModified={lastModified} />
 
-Coming soon.
+## Modeling CDR as Avoided Emissions
+
+To date, there are no commonly used frameworks that bridge carbon dioxide removal (CDR) assessments and avoided emissions assessments. While both types of assessments are relevant to forecasting the impact of emissions interventions, they are typically treated as entirely separate categories of investment during impact evaluation.
+
+Given Koi's <InternalLink href="/docs/data-and-methodology/mathematical-foundations" linkText="fundamental approach" /> — one which aligns with all major avoided emissions frameworks — we have extended the avoided emissions framework to include strategies for modeling CDR. CDR presents a unique opportunity to build standardized datasets from the extensive scientific literature and high-quality verification protocols that exist. We've developed novel CDR datasets and methods that bring CDR assessments into concordance with avoided emissions perspectives and metrics.
+
+The two assessment types are compatible but require translation, including breaking down the most studied CDR processes into their foundational elements: carbon footprints, value chain phases, materials, energy conversion, and costs. Our main goal is to present Koi's users and the wider avoided emissions forecasting community with a logical and practical method for handling CDR as though it is any other mitigation-focused climate technology.
+
+Apples-to-apples comparisons are what we're all after. Any approach offered must be intuitive and stand up to scrutiny of a variety of practitioners while the standards setters (GHG Protocol, ISO) catch up. Most of all, it needs to be useful and lead to better decisions for the climate and society.
+
+We expect the approach offered here to change over time, and we invite feedback on what works, where it falls short, and what we can do to improve it. Feedback can be sent via email at hello@koi.eco or through our <ExternalLink url="https://product.koi.eco/roadmap" linkText="public roadmap" />.
+
+## Implementation in Koi
+
+Koi's CDR models follow the same fundamental arithmetic as all other scenario models in Koi, ensuring consistency and comparability across diverse technologies and markets. For a given year, the core formula remains:
+
+<div className="bg-zinc-50/50 dark:bg-zinc-800/30 border border-zinc-200 dark:border-zinc-700 rounded-xl p-6 my-8">
+  <div className="text-center">
+    <h3 className="text-lg font-semibold text-zinc-800 dark:text-zinc-200 mb-4">CDR Impact Formula</h3>
+    <div className="bg-white/80 dark:bg-zinc-900/50 rounded-lg p-4 border border-zinc-300 dark:border-zinc-600">
+      <div className="text-xl font-mono font-semibold">
+        <span className="text-zinc-700 dark:text-zinc-300">Annual Emissions Reduction</span>
+        <span className="text-zinc-500 dark:text-zinc-400 mx-2">=</span>
+        <div className="mt-1">
+          <span className="text-zinc-600 dark:text-zinc-300">Unit Impact</span>
+          <span className="text-zinc-500 dark:text-zinc-400 mx-2">×</span>
+          <span className="text-zinc-600 dark:text-zinc-300">Scale</span>
+        </div>
+      </div>
+    </div>
+    <div className="mt-3 text-sm text-zinc-600 dark:text-zinc-400">
+      <p><strong>Where:</strong></p>
+      <p>• <strong>Unit Impact</strong> = Baseline Emissions Intensity − Solution Emissions Intensity</p>
+      <p>• <strong>Scale</strong> = Units of functional output deployed</p>
+      <p>• <strong>Emissions Intensities</strong> = Net mass of CO₂e emitted per functional unit</p>
+    </div>
+  </div>
+</div>
+
+### Breaking Down CDR Components
+
+For CDR solutions, the **Unit Impact** represents the net carbon removal achieved per functional unit. This is calculated by comparing:
+
+- **Solution Emissions Intensity**: The net CO₂e emissions per functional unit of the CDR solution (accounting for both removal and any associated emissions)
+- **Baseline Emissions Intensity**: The CO₂e emissions per functional unit in a counterfactual scenario (typically zero for atmospheric CO₂)
+
+#### Solution Scale
+
+Solution Scale represents the size of the CDR market, measured in functional units (e.g., tonnes of CO₂ removed, USD<sub>rce</sub> deployed, facility capacity).
+
+This mathematical approach ensures that CDR solutions can be evaluated alongside traditional avoided emissions technologies using the same consistent framework, enabling fair comparisons and scalable analysis across entire portfolios.
+
+## Functional Units and Market Analysis
+
+### Understanding Functional Units
+
+The phrase "functional unit" is LCA jargon, representing a mandatory methodological decision in any life cycle footprint study. The functional unit establishes a fair point of comparison between conventional activities and new approaches — they must "do the same thing." It is also an important consideration for having parameters in units where the arithmetic is compatible with Koi's fundamental approach discussed above. 
+
+Functional units can be simple (tons of beef), esoteric (lumen-hours, revenue passenger kilometers), or abstract (PJ-equivalent of chemicals, as used by the International Energy Agency to normalize across thousands of chemicals based on energy requirements rather than final mass).
+
+### CDR Functional Unit Selection
+
+For CDR solutions, we face unique challenges in functional unit selection wherein the market size must be expressed in units that cancel with the GHG performance functional unit to arrive at avoided emissions. Here are the primary options and the implications within an avoided emissions analysis:
+
+| CDR Functional Unit | Market for Assessment | Total Market Size Options (based on relevant, measurable data) | Key Limitations | Used in Koi |
+|-------------------|------------------------|-------------------|-----------------|-------------|
+| **Total sequestered CO₂e** | Mass of CO₂e that can be sequestered | Planetary CO₂, anthropogenic emissions, suitable geographic areas | Sequestration potential becomes unrealistically large, due to the unconstrained total market size, unless the available market is highly geographically constrained | ❌ |
+| **Net sequestered CO₂e** | Net mass of CO₂e that can be sequestered | Carbon markets | Always results in GHG intensity = -1 due to numerator being set to the inverse (see Unit Impact formula)| ❌ |
+| **USD<sub>rce</sub> (removal cost equivalent)** | Future purchases for that type of CDR | CCUS financial market size (broadly or technology-specific) | Contains implicit assumption that removal cost is same for implementer and buyer | ✅ |
+
+### Why We Avoid Mass-Based Functional Units for CDR
+
+We avoid using CO₂ sequestered (total or net) as functional units for two key reasons:
+
+1. **Ill-defined market limits**: Total potential ranges from total recoverable atmospheric CO₂ (extremely large) to suitable geologic formations (more constrained but still problematic)
+
+2. **Logical dead ends**: As a result of all Koi GHG intensities being measured with a numerator in units of CO₂e emitted (net), using net CO₂e sequestered as the denominator results in an uninformative ratio of -1 tCO₂e/tCO₂e net removal (one equals one). This prevents the comparison of CDR effectivity between solutions which vary widely in their net sequestration performance. 
+
+### The Financial Approach: USD<sub>rce</sub>
+
+The financial approach unlocks high-quality data sources and enables measurement of industrial activity in USD<sub>rce</sub> (removal cost equivalent) terms. This approach:
+
+- **Leverages existing data**: Cost of removal and CCUS market forecasts are readily available
+- **Enables comparisons**: Allows comparison across different CDR technologies and industrial activities
+- **Provides practical utility**: Aligns with how markets actually function and value CDR services
+
+<Info>
+The numerator is always net CO₂e emitted, thereby normalizing all models against one another for equal comparisons across different CDR technologies and approaches.
+</Info>
+
+## Example from Conventional Industries
+
+*Content coming soon.*
+
+## Koi CDR Models
+
+### Default Baseline Modeling
+
+*Content coming soon.*
+
+### Available CDR Templates
+
+*Content coming soon.*
+
+### Company-Specific GHG Performance
+
+*Content coming soon.*
