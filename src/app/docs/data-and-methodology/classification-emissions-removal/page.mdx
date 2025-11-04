@@ -10,7 +10,7 @@ export const metadata = {
     'Processes and approaches to classifying real-world climate solutions.',
 }
 
-# Carbon Dioxide Removal
+# Carbon Dioxide Removal (CDR)
 
 <PageInformationalData lastModified={lastModified} />
 
@@ -109,9 +109,9 @@ To express production in units equivalent to the cost of removal, we calculate:
         </div>
       </div>
     </div>
-    <p className="text-sm text-zinc-600 dark:text-zinc-400 mt-3">
+    <div className="text-sm text-zinc-600 dark:text-zinc-400 mt-3">
       <strong>Result:</strong> Each widget requires $20 in removal cost equivalent to achieve carbon neutrality
-    </p>
+    </div>
   </div>
 </div>
 
@@ -216,11 +216,10 @@ Genuinely unique CDR pathways/technologies are uncommon, and we have found that 
 The baseline represents a counterfactual future scenario, and its selection is crucial for accurate impact assessment. This is inherently a subjective decision that can be modified in Koi as needed for any scenario model, allowing users to explore different assumptions and scenarios.
 Koi's CDR models use different baseline approaches depending on the carbon source:
 
-<div className="ml-4 space-y-6">
-  <div className="flex items-start">
-    <i className="fa-light fa-cloud text-blue-600 text-xl mr-3 mt-1"></i>
+<div className="space-y-6">
+  <div className="flex items-start">    
     <div>
-      <h4 className="text-lg font-semibold text-zinc-800 dark:text-zinc-200 mb-2">Atmospheric and Oceanic Carbon Removal</h4>
+      <h4 className="text-lg font-semibold text-zinc-800 dark:text-zinc-200 mb-2"><i className="fa-light fa-cloud text-blue-600 text-xl mr-3 mt-1 flex-shrink-0"></i>Atmospheric and Oceanic Carbon Removal</h4>
       <div className="mb-4">For technologies that remove carbon from atmospheric or oceanic sources, the default baseline is <strong>No Activity</strong> — representing zero emissions. This reflects the counterfactual scenario where no CDR technology exists to remove carbon from these natural reservoirs.</div>
       <div className="bg-zinc-100 dark:bg-zinc-800 border-l-4 border-zinc-400 dark:border-zinc-500 p-3 text-sm text-zinc-600 dark:text-zinc-400">
         <strong>Note:</strong> So what does it mean for the baseline intensity to be 0 tCO₂e/USD<sub>rce</sub>? Not much — this is an expedient for our calculation given current functionality in our platform.
@@ -229,17 +228,14 @@ Koi's CDR models use different baseline approaches depending on the carbon sourc
   </div>
 
   <div className="flex items-start">
-    <i className="fa-light fa-industry text-orange-600 text-xl mr-3 mt-1"></i>
     <div>
-      <h4 className="text-lg font-semibold text-zinc-800 dark:text-zinc-200 mb-2">Fossil Fuel Carbon Removal</h4>
+      <h4 className="text-lg font-semibold text-zinc-800 dark:text-zinc-200 mb-2"><i className="fa-light fa-industry text-orange-600 text-xl mr-3 mt-1 flex-shrink-0"></i>Fossil Fuel Carbon Removal</h4>
       <div className="mb-2">For CDR technologies that capture carbon from fossil fuel sources (coal, oil, natural gas), the baseline represents the emissions of conventional industrial activities without CDR implementation. This baseline is derived by:</div>
-      
       <ol className="list-decimal list-inside mb-4 space-y-1">
         <li><strong>Analyzing CDR-enabled value chains</strong> from peer-reviewed LCA literature</li>
         <li><strong>Removing CDR-specific components</strong> including additional energy requirements, material inputs, and sequestration phases **for the baseline**</li>
         <li><strong>Calculating a conventional baseline emissions intensity</strong> normalized to the USD<sub>rce</sub> functional unit</li>
       </ol>
-      
       <div className="mb-4">This approach allows measurement of baseline industrial "production" in removal cost equivalent terms.</div>
     </div>
   </div>
@@ -252,46 +248,46 @@ Koi currently provides CDR templates for 14 carbon removal technologies, organiz
 <div className="grid grid-cols-1 md:grid-cols-2 gap-4 my-6">
   <div className="space-y-3">
     <h4 className="font-semibold text-zinc-800 dark:text-zinc-200 border-b border-zinc-200 dark:border-zinc-700 pb-2">Point-Source CCS</h4>
-    <div className="space-y-2 text-sm">
-      <div>• [Absorption-based post-combustion carbon capture using amines](https://app.koi.eco/forecast/1006701/1-1?baselineId=108893&solutionId=108891&marketSizeId=20646&marketCaptureId=13448&numUnitId=1404&denUnitId=1665&tab=es)</div>
-      <div>• [Pre-combustion capture via syngas](https://app.koi.eco/forecast/1001375/1-1?baselineId=108923&solutionId=108921&marketSizeId=20655&marketCaptureId=13464&numUnitId=1404&denUnitId=1665&tab=es)</div>
-      <div>• [Oxy-fuel combustion](https://app.koi.eco/forecast/1005092/1-0?baselineId=110485&solutionId=110483&marketSizeId=21183&marketCaptureId=14113&numUnitId=1404&denUnitId=1665&tab=es)</div>
-      <div>• [Natural gas processing with capture](https://app.koi.eco/forecast/1006594/1-0?baselineId=97076&solutionId=97073&marketSizeId=16507&marketCaptureId=9464&numUnitId=1404&denUnitId=1665&tab=es)</div>
-    </div>
+    <ul className="space-y-2 text-sm list-disc list-outside pl-4">
+      <li>[Absorption-based post-combustion carbon capture using amines](https://app.koi.eco/forecast/1006701/1-1?baselineId=108893&solutionId=108891&marketSizeId=20646&marketCaptureId=13448&numUnitId=1404&denUnitId=1665&tab=es)</li>
+      <li>[Pre-combustion capture via syngas](https://app.koi.eco/forecast/1001375/1-1?baselineId=108923&solutionId=108921&marketSizeId=20655&marketCaptureId=13464&numUnitId=1404&denUnitId=1665&tab=es)</li>
+      <li>[Oxy-fuel combustion](https://app.koi.eco/forecast/1005092/1-0?baselineId=110485&solutionId=110483&marketSizeId=21183&marketCaptureId=14113&numUnitId=1404&denUnitId=1665&tab=es)</li>
+      <li>[Natural gas processing with capture](https://app.koi.eco/forecast/1006594/1-0?baselineId=97076&solutionId=97073&marketSizeId=16507&marketCaptureId=9464&numUnitId=1404&denUnitId=1665&tab=es)</li>
+    </ul>
   </div>
   
   <div className="space-y-3">
     <h4 className="font-semibold text-zinc-800 dark:text-zinc-200 border-b border-zinc-200 dark:border-zinc-700 pb-2">Membrane-Based Capture</h4>
-    <div className="space-y-2 text-sm">
-      <div>• [Polymeric membrane capture](https://app.koi.eco/forecast/1009827/1-0?baselineId=122477&solutionId=122475&marketSizeId=25262&marketCaptureId=18352&numUnitId=1404&denUnitId=1665&tab=es)</div>
-      <div>• [Electrochemical separation-based carbon capture](https://app.koi.eco/forecast/1005428/1-0?baselineId=98273&solutionId=98271&marketSizeId=16923&marketCaptureId=9860&numUnitId=1404&denUnitId=1665&tab=es)</div>
-    </div>
+    <ul className="space-y-2 text-sm list-disc list-outside pl-4">
+      <li>[Polymeric membrane capture](https://app.koi.eco/forecast/1009827/1-0?baselineId=122477&solutionId=122475&marketSizeId=25262&marketCaptureId=18352&numUnitId=1404&denUnitId=1665&tab=es)</li>
+      <li>[Electrochemical separation-based carbon capture](https://app.koi.eco/forecast/1005428/1-0?baselineId=98273&solutionId=98271&marketSizeId=16923&marketCaptureId=9860&numUnitId=1404&denUnitId=1665&tab=es)</li>
+    </ul>
   </div>
   
   <div className="space-y-3">
     <h4 className="font-semibold text-zinc-800 dark:text-zinc-200 border-b border-zinc-200 dark:border-zinc-700 pb-2">Calcium Looping & Mineralization</h4>
-    <div className="space-y-2 text-sm">
-      <div>• [Fluidized-bed calcium looping reactor (CCS)](https://app.koi.eco/forecast/1005373/1-1?baselineId=109240&solutionId=109238&marketSizeId=20758&marketCaptureId=13629&numUnitId=1404&denUnitId=1665&tab=es)</div>
-      <div>• [Cement kiln integration of calcium looping-based carbon capture](https://app.koi.eco/forecast/1000378/1-1?baselineId=109226&solutionId=109224&marketSizeId=20754&marketCaptureId=13622&numUnitId=1404&denUnitId=1665&tab=es)</div>
-      <div>• [Accelerated rock weathering (enhanced mineralization)](https://app.koi.eco/forecast/1001378/1-1?baselineId=109243&solutionId=109242&marketSizeId=20759&marketCaptureId=13631&numUnitId=1404&denUnitId=1665&tab=es)</div>
-    </div>
+    <ul className="space-y-2 text-sm list-disc list-outside pl-4">
+      <li>[Fluidized-bed calcium looping reactor (CCS)](https://app.koi.eco/forecast/1005373/1-1?baselineId=109240&solutionId=109238&marketSizeId=20758&marketCaptureId=13629&numUnitId=1404&denUnitId=1665&tab=es)</li>
+      <li>[Cement kiln integration of calcium looping-based carbon capture](https://app.koi.eco/forecast/1000378/1-1?baselineId=109226&solutionId=109224&marketSizeId=20754&marketCaptureId=13622&numUnitId=1404&denUnitId=1665&tab=es)</li>
+      <li>[Accelerated rock weathering (enhanced mineralization)](https://app.koi.eco/forecast/1001378/1-1?baselineId=109243&solutionId=109242&marketSizeId=20759&marketCaptureId=13631&numUnitId=1404&denUnitId=1665&tab=es)</li>
+    </ul>
   </div>
   
   <div className="space-y-3">
     <h4 className="font-semibold text-zinc-800 dark:text-zinc-200 border-b border-zinc-200 dark:border-zinc-700 pb-2">Direct Air Capture & Bio-Based</h4>
-    <div className="space-y-2 text-sm">
-      <div>• [Bioethanol fermentation with CCS (BECCS pathway)](https://app.koi.eco/forecast/1005364/1-0?baselineId=107899&solutionId=107897&marketSizeId=20295&marketCaptureId=13114&numUnitId=1404&denUnitId=1665&tab=es)</div>
-      <div>• [Solid sorbent (TVSA) DAC with in-situ injection (basalt carbonation)](https://app.koi.eco/forecast/1000389/1-0?baselineId=102083&solutionId=102082&marketSizeId=18264&marketCaptureId=11152&numUnitId=1404&denUnitId=1665&tab=es)</div>
-      <div>• [Liquid solvent DAC with storage](https://app.koi.eco/forecast/1001338/1-0?baselineId=108716&solutionId=108715&marketSizeId=20576&marketCaptureId=13388&numUnitId=1404&denUnitId=1665&tab=es)</div>
-      <div>• [Afforestation and reforestation](https://app.koi.eco/forecast/1005270/1-0?baselineId=109376&solutionId=109375&marketSizeId=20802&marketCaptureId=13684&numUnitId=1404&denUnitId=1665&tab=es)</div>
-      <div>• [Mangroves, marshes, wetland and seagrass restoration (blue carbon ecosystems)](https://app.koi.eco/forecast/1001355/1-0?baselineId=110086&solutionId=110085&marketSizeId=21046&marketCaptureId=13960&numUnitId=1404&denUnitId=1665&tab=es)</div>
-    </div>
+    <ul className="space-y-2 text-sm list-disc list-outside pl-4">
+      <li>[Bioethanol fermentation with CCS (BECCS pathway)](https://app.koi.eco/forecast/1005364/1-0?baselineId=107899&solutionId=107897&marketSizeId=20295&marketCaptureId=13114&numUnitId=1404&denUnitId=1665&tab=es)</li>
+      <li>[Solid sorbent (TVSA) DAC with in-situ injection (basalt carbonation)](https://app.koi.eco/forecast/1000389/1-0?baselineId=102083&solutionId=102082&marketSizeId=18264&marketCaptureId=11152&numUnitId=1404&denUnitId=1665&tab=es)</li>
+      <li>[Liquid solvent DAC with storage](https://app.koi.eco/forecast/1001338/1-0?baselineId=108716&solutionId=108715&marketSizeId=20576&marketCaptureId=13388&numUnitId=1404&denUnitId=1665&tab=es)</li>
+      <li>[Afforestation and reforestation](https://app.koi.eco/forecast/1005270/1-0?baselineId=109376&solutionId=109375&marketSizeId=20802&marketCaptureId=13684&numUnitId=1404&denUnitId=1665&tab=es)</li>
+      <li>[Mangroves, marshes, wetland and seagrass restoration (blue carbon ecosystems)](https://app.koi.eco/forecast/1001355/1-0?baselineId=110086&solutionId=110085&marketSizeId=21046&marketCaptureId=13960&numUnitId=1404&denUnitId=1665&tab=es)</li>
+    </ul>
   </div>
 </div>
 
 ## References
 
-<details className="bg-zinc-50 dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-700 rounded-lg p-4 my-6">
+<details open className="bg-zinc-50 dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-700 rounded-lg p-4 my-6">
   <summary className="cursor-pointer font-semibold text-zinc-800 dark:text-zinc-200 hover:text-zinc-600 dark:hover:text-zinc-400 flex items-center">
     <i className="fa-light fa-book mr-2"></i>
     <span>Koi's approach to CDR modeling builds on work from the following sources:</span>
@@ -302,148 +298,148 @@ Koi currently provides CDR templates for 14 carbon removal technologies, organiz
     <div>
       <h4 className="font-semibold text-zinc-800 dark:text-zinc-200 mb-3">Market Forecast References</h4>
       <div className="text-sm space-y-2 text-zinc-700 dark:text-zinc-300">
-        <p>Astute Analytica. (2024, October 9). Carbon capture, Utilization and Storage (CCUS) Market to Reach Skyrocketing Valuation of US$ 51.80 Billion By 2050. GlobeNewswire News Room. <a href="https://www.globenewswire.com/news-release/2024/10/09/2960497/0/en/Carbon-capture-Utilization-and-Storage-CCUS-Market-to-Reach-Skyrocketing-Valuation-of-US-51-80-Billion-By-2050-Astute-Analytica.html" className="text-blue-600 dark:text-blue-400 hover:underline" target="_blank" rel="noopener noreferrer">https://www.globenewswire.com/news-release/2024/10/09/2960497/0/en/Carbon-capture-Utilization-and-Storage-CCUS-Market-to-Reach-Skyrocketing-Valuation-of-US-51-80-Billion-By-2050-Astute-Analytica.html</a></p>
+        <p>Astute Analytica. (2024, October 9). Carbon capture, Utilization and Storage (CCUS) Market to Reach Skyrocketing Valuation of US$ 51.80 Billion By 2050. GlobeNewswire News Room. <a href="https://www.globenewswire.com/news-release/2024/10/09/2960497/0/en/Carbon-capture-Utilization-and-Storage-CCUS-Market-to-Reach-Skyrocketing-Valuation-of-US-51-80-Billion-By-2050-Astute-Analytica.html" className="text-blue-600 dark:text-blue-400 hover:underline" target="_blank" rel="noopener noreferrer">View source</a></p>
         
-        <p>Khutal, H., Kirchner-Ortiz, K. M., Blackhurst, M., Willems, N., Matthews, H. S., Rai, S., Yanai, G., Chivukula, K., Jamieson, M. B., & Skone, T. J. (2020). Life Cycle Analysis of Natural Gas Extraction and Power Generation: U.S. 2020 Emissions Profile Life. NETL. <a href="https://www.netl.doe.gov/projects/files/LifeCycleAnalysisofNaturalGasExtractionandPowerGenerationUS2020EmissionsProfile_121724.pdf" className="text-blue-600 dark:text-blue-400 hover:underline" target="_blank" rel="noopener noreferrer">https://www.netl.doe.gov/projects/files/LifeCycleAnalysisofNaturalGasExtractionandPowerGenerationUS2020EmissionsProfile_121724.pdf</a></p>
+        <p>Khutal, H., Kirchner-Ortiz, K. M., Blackhurst, M., Willems, N., Matthews, H. S., Rai, S., Yanai, G., Chivukula, K., Jamieson, M. B., & Skone, T. J. (2020). Life Cycle Analysis of Natural Gas Extraction and Power Generation: U.S. 2020 Emissions Profile Life. NETL. <a href="https://www.netl.doe.gov/projects/files/LifeCycleAnalysisofNaturalGasExtractionandPowerGenerationUS2020EmissionsProfile_121724.pdf" className="text-blue-600 dark:text-blue-400 hover:underline" target="_blank" rel="noopener noreferrer">View source</a></p>
         
-        <p>StartUs Insights, & R., A. (2025, February 3). Carbon Capture Technology: Key Trends & Business Impact. StartUs Insights. <a href="https://www.startus-insights.com/innovators-guide/carbon-capture-technology/" className="text-blue-600 dark:text-blue-400 hover:underline" target="_blank" rel="noopener noreferrer">https://www.startus-insights.com/innovators-guide/carbon-capture-technology/</a></p>
+        <p>StartUs Insights, & R., A. (2025, February 3). Carbon Capture Technology: Key Trends & Business Impact. StartUs Insights. <a href="https://www.startus-insights.com/innovators-guide/carbon-capture-technology/" className="text-blue-600 dark:text-blue-400 hover:underline" target="_blank" rel="noopener noreferrer">View source</a></p>
         
-        <p>Spherical Insights. (2025, February). Global CO2 Mineralization Technology Market Size, Research. Spherical Insights. <a href="https://www.sphericalinsights.com/press-release/co2-mineralization-technology-market" className="text-blue-600 dark:text-blue-400 hover:underline" target="_blank" rel="noopener noreferrer">https://www.sphericalinsights.com/press-release/co2-mineralization-technology-market</a></p>
+        <p>Spherical Insights. (2025, February). Global CO2 Mineralization Technology Market Size, Research. Spherical Insights. <a href="https://www.sphericalinsights.com/press-release/co2-mineralization-technology-market" className="text-blue-600 dark:text-blue-400 hover:underline" target="_blank" rel="noopener noreferrer">View source</a></p>
         
-        <p>Grand View Research. (n.d.). Bioenergy With CCS Market Size And Share Report, 2030. Retrieved August 15, 2025, from <a href="https://www.grandviewresearch.com/industry-analysis/bioenergy-ccs-market-report" className="text-blue-600 dark:text-blue-400 hover:underline" target="_blank" rel="noopener noreferrer">https://www.grandviewresearch.com/industry-analysis/bioenergy-ccs-market-report</a></p>
+        <p>Grand View Research. (n.d.). Bioenergy With CCS Market Size And Share Report, 2030. Retrieved August 15, 2025, from <a href="https://www.grandviewresearch.com/industry-analysis/bioenergy-ccs-market-report" className="text-blue-600 dark:text-blue-400 hover:underline" target="_blank" rel="noopener noreferrer">View source</a></p>
         
-        <p>IEA. (2024, April 25). Direct Air Capture – Energy System. IEA. <a href="https://www.iea.org/energy-system/carbon-capture-utilisation-and-storage/direct-air-capture" className="text-blue-600 dark:text-blue-400 hover:underline" target="_blank" rel="noopener noreferrer">https://www.iea.org/energy-system/carbon-capture-utilisation-and-storage/direct-air-capture</a></p>
+        <p>IEA. (2024, April 25). Direct Air Capture – Energy System. IEA. <a href="https://www.iea.org/energy-system/carbon-capture-utilisation-and-storage/direct-air-capture" className="text-blue-600 dark:text-blue-400 hover:underline" target="_blank" rel="noopener noreferrer">View source</a></p>
         
-        <p>Jones, W., O'Rear, E., Kolus, H., Gaffney, M., Adeyemo, M., Dasari, N., King, B., & Jaspreet, S. (2024, March 7). Direct Air Capture Deployment and Economic Opportunity: State-by-State. Rhodium Group. <a href="https://rhg.com/research/direct-air-capture-deployment-and-economic-opportunity-state-by-state/" className="text-blue-600 dark:text-blue-400 hover:underline" target="_blank" rel="noopener noreferrer">https://rhg.com/research/direct-air-capture-deployment-and-economic-opportunity-state-by-state/</a></p>
+        <p>Jones, W., O'Rear, E., Kolus, H., Gaffney, M., Adeyemo, M., Dasari, N., King, B., & Jaspreet, S. (2024, March 7). Direct Air Capture Deployment and Economic Opportunity: State-by-State. Rhodium Group. <a href="https://rhg.com/research/direct-air-capture-deployment-and-economic-opportunity-state-by-state/" className="text-blue-600 dark:text-blue-400 hover:underline" target="_blank" rel="noopener noreferrer">View source</a></p>
         
-        <p>Goto, G. M., Goñi, C. S., Braun, R., Cifuentes-Jara, M., Friess, D. A., Howard, J., Klinger, D. H., Teav, S., Worthington, T. A., & Busch, J. (2025). Implementation costs of restoring global mangrove forests. One Earth, 8(7). <a href="https://doi.org/10.1016/j.oneear.2025.101342" className="text-blue-600 dark:text-blue-400 hover:underline" target="_blank" rel="noopener noreferrer">https://doi.org/10.1016/j.oneear.2025.101342</a></p>
+        <p>Goto, G. M., Goñi, C. S., Braun, R., Cifuentes-Jara, M., Friess, D. A., Howard, J., Klinger, D. H., Teav, S., Worthington, T. A., & Busch, J. (2025). Implementation costs of restoring global mangrove forests. One Earth, 8(7). <a href="https://doi.org/10.1016/j.oneear.2025.101342" className="text-blue-600 dark:text-blue-400 hover:underline" target="_blank" rel="noopener noreferrer">View source</a></p>
         
-        <p>FAO. (2023, July 26). Global effort to safeguard mangroves steps up. Newsroom. <a href="https://www.fao.org/newsroom/detail/global-effort-to-safeguard-mangroves-steps-up/en?utm_medium=planeta+mauna+loa&utm_campaign=202300803&utm_source=newsletter" className="text-blue-600 dark:text-blue-400 hover:underline" target="_blank" rel="noopener noreferrer">https://www.fao.org/newsroom/detail/global-effort-to-safeguard-mangroves-steps-up/en?utm_medium=planeta+mauna+loa&utm_campaign=202300803&utm_source=newsletter</a></p>
+        <p>FAO. (2023, July 26). Global effort to safeguard mangroves steps up. Newsroom. <a href="https://www.fao.org/newsroom/detail/global-effort-to-safeguard-mangroves-steps-up/en?utm_medium=planeta+mauna+loa&utm_campaign=202300803&utm_source=newsletter" className="text-blue-600 dark:text-blue-400 hover:underline" target="_blank" rel="noopener noreferrer">View source</a></p>
       </div>
     </div>
     
     <div>
       <h4 className="font-semibold text-zinc-800 dark:text-zinc-200 mb-3">Solutions References</h4>
       <div className="text-sm space-y-2 text-zinc-700 dark:text-zinc-300">
-        <p>Anantharaman, R., Blom, R., Grande, C., Lindqvist, K., & Roussanaly, S. (2017). IEAGHG Technical Report 2017-04: CO₂ Capture in Natural Gas Production by Adsorption Processes for CO₂ Storage, EOR and EGR. IEAGHG. <a href="https://publications.ieaghg.org/technicalreports/2017-04" className="text-blue-600 dark:text-blue-400 hover:underline" target="_blank" rel="noopener noreferrer">https://publications.ieaghg.org/technicalreports/2017-04</a></p>
+        <p>Anantharaman, R., Blom, R., Grande, C., Lindqvist, K., & Roussanaly, S. (2017). IEAGHG Technical Report 2017-04: CO₂ Capture in Natural Gas Production by Adsorption Processes for CO₂ Storage, EOR and EGR. IEAGHG. <a href="https://publications.ieaghg.org/technicalreports/2017-04" className="text-blue-600 dark:text-blue-400 hover:underline" target="_blank" rel="noopener noreferrer">View source</a></p>
         
-        <p>Astute Analytica. (2024, October 9). Carbon capture, Utilization and Storage (CCUS) Market to Reach Skyrocketing Valuation of US$ 51.80 Billion By 2050. GlobeNewswire. <a href="https://www.globenewswire.com/news-release/2024/10/09/2960497/0/en/Carbon-capture-Utilization-and-Storage-CCUS-Market-to-Reach-Skyrocketing-Valuation-of-US-51-80-Billion-By-2050-Astute-Analytica.html" className="text-blue-600 dark:text-blue-400 hover:underline" target="_blank" rel="noopener noreferrer">https://www.globenewswire.com/news-release/2024/10/09/2960497/0/en/Carbon-capture-Utilization-and-Storage-CCUS-Market-to-Reach-Skyrocketing-Valuation-of-US-51-80-Billion-By-2050-Astute-Analytica.html</a></p>
+        <p>Astute Analytica. (2024, October 9). Carbon capture, Utilization and Storage (CCUS) Market to Reach Skyrocketing Valuation of US$ 51.80 Billion By 2050. GlobeNewswire. <a href="https://www.globenewswire.com/news-release/2024/10/09/2960497/0/en/Carbon-capture-Utilization-and-Storage-CCUS-Market-to-Reach-Skyrocketing-Valuation-of-US-51-80-Billion-By-2050-Astute-Analytica.html" className="text-blue-600 dark:text-blue-400 hover:underline" target="_blank" rel="noopener noreferrer">View source</a></p>
         
-        <p>Beerling, D. J., Kantzas, E. P., Lomas, M. R., Taylor, L. L., Zhang, S., et al. (2025). Transforming US agriculture for carbon removal with enhanced weathering. Nature, 638(8050), 425–434. <a href="https://doi.org/10.1038/s41586-024-08429-2" className="text-blue-600 dark:text-blue-400 hover:underline" target="_blank" rel="noopener noreferrer">https://doi.org/10.1038/s41586-024-08429-2</a></p>
+        <p>Beerling, D. J., Kantzas, E. P., Lomas, M. R., Taylor, L. L., Zhang, S., et al. (2025). Transforming US agriculture for carbon removal with enhanced weathering. Nature, 638(8050), 425–434. <a href="https://doi.org/10.1038/s41586-024-08429-2" className="text-blue-600 dark:text-blue-400 hover:underline" target="_blank" rel="noopener noreferrer">View source</a></p>
         
         <p>Bothast, R., & Schlicher, M. (2005). Biotechnological processes for conversion of corn into ethanol. Applied Microbiology and Biotechnology, 67(1), 19–25.</p>
         
-        <p>Butler, R. A. (2025, July 22). How much does it cost to restore a mangrove forest? Mongabay. <a href="https://news.mongabay.com/short-article/2025/07/how-much-does-it-cost-to-restore-a-mangrove-forest/" className="text-blue-600 dark:text-blue-400 hover:underline" target="_blank" rel="noopener noreferrer">https://news.mongabay.com/short-article/2025/07/how-much-does-it-cost-to-restore-a-mangrove-forest/</a></p>
+        <p>Butler, R. A. (2025, July 22). How much does it cost to restore a mangrove forest? Mongabay. <a href="https://news.mongabay.com/short-article/2025/07/how-much-does-it-cost-to-restore-a-mangrove-forest/" className="text-blue-600 dark:text-blue-400 hover:underline" target="_blank" rel="noopener noreferrer">View source</a></p>
         
-        <p>Carbone, C., Ferrario, D., Lanzini, A., Stendardo, S., & Agostini, A. (2022). Evaluating the carbon footprint of cement plants integrated with the calcium looping CO₂ capture process. Frontiers in Sustainability, 3. <a href="https://doi.org/10.3389/frsus.2022.809231" className="text-blue-600 dark:text-blue-400 hover:underline" target="_blank" rel="noopener noreferrer">https://doi.org/10.3389/frsus.2022.809231</a></p>
+        <p>Carbone, C., Ferrario, D., Lanzini, A., Stendardo, S., & Agostini, A. (2022). Evaluating the carbon footprint of cement plants integrated with the calcium looping CO₂ capture process. Frontiers in Sustainability, 3. <a href="https://doi.org/10.3389/frsus.2022.809231" className="text-blue-600 dark:text-blue-400 hover:underline" target="_blank" rel="noopener noreferrer">View source</a></p>
         
-        <p>Carbon Capture and Storage. (2025). Wikipedia. <a href="https://en.wikipedia.org/w/index.php?title=Carbon_capture_and_storage&oldid=1304891101" className="text-blue-600 dark:text-blue-400 hover:underline" target="_blank" rel="noopener noreferrer">https://en.wikipedia.org/w/index.php?title=Carbon_capture_and_storage&oldid=1304891101</a></p>
+        <p>Carbon Capture and Storage. (2025). Wikipedia. <a href="https://en.wikipedia.org/w/index.php?title=Carbon_capture_and_storage&oldid=1304891101" className="text-blue-600 dark:text-blue-400 hover:underline" target="_blank" rel="noopener noreferrer">View source</a></p>
         
-        <p>Carbonfuture. (2025). Carbon Dioxide Removal Technology | Direct Air Carbon Capture and Storage. <a href="https://www.carbonfuture.earth/cdr-technology/direct-air-carbon-capture-and-storage" className="text-blue-600 dark:text-blue-400 hover:underline" target="_blank" rel="noopener noreferrer">https://www.carbonfuture.earth/cdr-technology/direct-air-carbon-capture-and-storage</a></p>
+        <p>Carbonfuture. (2025). Carbon Dioxide Removal Technology | Direct Air Carbon Capture and Storage. <a href="https://www.carbonfuture.earth/cdr-technology/direct-air-carbon-capture-and-storage" className="text-blue-600 dark:text-blue-400 hover:underline" target="_blank" rel="noopener noreferrer">View source</a></p>
         
-        <p>Chay, F., & Martin, K. (2023, December 4). Ethanol carbon capture and storage isn't carbon removal. CarbonPlan. <a href="https://carbonplan.org/research/ethanol-cdr-claims" className="text-blue-600 dark:text-blue-400 hover:underline" target="_blank" rel="noopener noreferrer">https://carbonplan.org/research/ethanol-cdr-claims</a></p>
+        <p>Chay, F., & Martin, K. (2023, December 4). Ethanol carbon capture and storage isn't carbon removal. CarbonPlan. <a href="https://carbonplan.org/research/ethanol-cdr-claims" className="text-blue-600 dark:text-blue-400 hover:underline" target="_blank" rel="noopener noreferrer">View source</a></p>
         
-        <p>Cipher News. (2025, August 13). Biofuels offer low-hanging fruit in nascent carbon capture industry. Cipher News. <a href="https://www.ciphernews.com/articles/biofuels-offer-low-hanging-fruit-in-nascent-carbon-capture-industry/" className="text-blue-600 dark:text-blue-400 hover:underline" target="_blank" rel="noopener noreferrer">https://www.ciphernews.com/articles/biofuels-offer-low-hanging-fruit-in-nascent-carbon-capture-industry/</a></p>
+        <p>Cipher News. (2025, August 13). Biofuels offer low-hanging fruit in nascent carbon capture industry. Cipher News. <a href="https://www.ciphernews.com/articles/biofuels-offer-low-hanging-fruit-in-nascent-carbon-capture-industry/" className="text-blue-600 dark:text-blue-400 hover:underline" target="_blank" rel="noopener noreferrer">View source</a></p>
         
-        <p>Climeworks. (2021, September 8). Climeworks launches Orca, the world's largest DAC and storage plant. Climeworks. <a href="https://climeworks.com/press-release/climeworks-launches-orca" className="text-blue-600 dark:text-blue-400 hover:underline" target="_blank" rel="noopener noreferrer">https://climeworks.com/press-release/climeworks-launches-orca</a></p>
+        <p>Climeworks. (2021, September 8). Climeworks launches Orca, the world's largest DAC and storage plant. Climeworks. <a href="https://climeworks.com/press-release/climeworks-launches-orca" className="text-blue-600 dark:text-blue-400 hover:underline" target="_blank" rel="noopener noreferrer">View source</a></p>
         
-        <p>Cooper, J., Dubey, L., & Hawkes, A. (2022). The life cycle environmental impacts of negative emission technologies in North America. Sustainable Production and Consumption, 32, 880–894. <a href="https://doi.org/10.1016/j.spc.2022.06.010" className="text-blue-600 dark:text-blue-400 hover:underline" target="_blank" rel="noopener noreferrer">https://doi.org/10.1016/j.spc.2022.06.010</a></p>
+        <p>Cooper, J., Dubey, L., & Hawkes, A. (2022). The life cycle environmental impacts of negative emission technologies in North America. Sustainable Production and Consumption, 32, 880–894. <a href="https://doi.org/10.1016/j.spc.2022.06.010" className="text-blue-600 dark:text-blue-400 hover:underline" target="_blank" rel="noopener noreferrer">View source</a></p>
         
-        <p>Cotovicz, L. C., Abril, G., Sanders, C. J., Tait, D. R., Maher, D. T., et al. (2024). Methane oxidation minimizes emissions and offsets to carbon burial in mangroves. Nature Climate Change, 14(3), 275–281. <a href="https://doi.org/10.1038/s41558-024-01927-1" className="text-blue-600 dark:text-blue-400 hover:underline" target="_blank" rel="noopener noreferrer">https://doi.org/10.1038/s41558-024-01927-1</a></p>
+        <p>Cotovicz, L. C., Abril, G., Sanders, C. J., Tait, D. R., Maher, D. T., et al. (2024). Methane oxidation minimizes emissions and offsets to carbon burial in mangroves. Nature Climate Change, 14(3), 275–281. <a href="https://doi.org/10.1038/s41558-024-01927-1" className="text-blue-600 dark:text-blue-400 hover:underline" target="_blank" rel="noopener noreferrer">View source</a></p>
         
-        <p>Dees, J., Oke, K., Goldstein, H., McCoy, S. T., Sanchez, D. L., et al. (2023). Cost and life cycle emissions of ethanol produced with an oxyfuel boiler and carbon capture and storage. Environmental Science & Technology, 57(13), 5391–5403. <a href="https://doi.org/10.1021/acs.est.2c04784" className="text-blue-600 dark:text-blue-400 hover:underline" target="_blank" rel="noopener noreferrer">https://doi.org/10.1021/acs.est.2c04784</a></p>
+        <p>Dees, J., Oke, K., Goldstein, H., McCoy, S. T., Sanchez, D. L., et al. (2023). Cost and life cycle emissions of ethanol produced with an oxyfuel boiler and carbon capture and storage. Environmental Science & Technology, 57(13), 5391–5403. <a href="https://doi.org/10.1021/acs.est.2c04784" className="text-blue-600 dark:text-blue-400 hover:underline" target="_blank" rel="noopener noreferrer">View source</a></p>
         
         <p>Delval, M. H., Thonemann, N., Henriksson, P. J. G., Tanzer, S. E., & Behrens, P. (2025). Life cycle assessment of ocean-based carbon dioxide removal approaches: A systematic literature review. Renewable and Sustainable Energy Reviews, 224, 116091.</p>
         
-        <p>Deutz, S., & Bardow, A. (2021). Life-cycle assessment of an industrial direct air capture process based on temperature–vacuum swing adsorption. Nature Energy, 6(2), 203–213. <a href="https://doi.org/10.1038/s41560-020-00771-9" className="text-blue-600 dark:text-blue-400 hover:underline" target="_blank" rel="noopener noreferrer">https://doi.org/10.1038/s41560-020-00771-9</a></p>
+        <p>Deutz, S., & Bardow, A. (2021). Life-cycle assessment of an industrial direct air capture process based on temperature–vacuum swing adsorption. Nature Energy, 6(2), 203–213. <a href="https://doi.org/10.1038/s41560-020-00771-9" className="text-blue-600 dark:text-blue-400 hover:underline" target="_blank" rel="noopener noreferrer">View source</a></p>
         
-        <p>Eke, V., Sahu, T., Ghuman, K. K., Freire-Gormaly, M., & O'Brien, P. G. (2025). A comprehensive review of life cycle assessments of direct air capture and carbon dioxide storage. Sustainable Production and Consumption, 55, 217–241. <a href="https://doi.org/10.1016/j.spc.2025.02.017" className="text-blue-600 dark:text-blue-400 hover:underline" target="_blank" rel="noopener noreferrer">https://doi.org/10.1016/j.spc.2025.02.017</a></p>
+        <p>Eke, V., Sahu, T., Ghuman, K. K., Freire-Gormaly, M., & O'Brien, P. G. (2025). A comprehensive review of life cycle assessments of direct air capture and carbon dioxide storage. Sustainable Production and Consumption, 55, 217–241. <a href="https://doi.org/10.1016/j.spc.2025.02.017" className="text-blue-600 dark:text-blue-400 hover:underline" target="_blank" rel="noopener noreferrer">View source</a></p>
         
-        <p>FAO. (2023, July 26). Global effort to safeguard mangroves steps up. <a href="https://www.fao.org/newsroom/detail/global-effort-to-safeguard-mangroves-steps-up/en" className="text-blue-600 dark:text-blue-400 hover:underline" target="_blank" rel="noopener noreferrer">https://www.fao.org/newsroom/detail/global-effort-to-safeguard-mangroves-steps-up/en</a></p>
+        <p>FAO. (2023, July 26). Global effort to safeguard mangroves steps up. <a href="https://www.fao.org/newsroom/detail/global-effort-to-safeguard-mangroves-steps-up/en" className="text-blue-600 dark:text-blue-400 hover:underline" target="_blank" rel="noopener noreferrer">View source</a></p>
         
-        <p>Fuss, S., Lamb, W. F., Callaghan, M. W., Hilaire, J., Creutzig, F., et al. (2018). Negative emissions—Part 2: Costs, potentials and side effects. Environmental Research Letters, 13(6), 063002. <a href="https://doi.org/10.1088/1748-9326/aabf9f" className="text-blue-600 dark:text-blue-400 hover:underline" target="_blank" rel="noopener noreferrer">https://doi.org/10.1088/1748-9326/aabf9f</a></p>
+        <p>Fuss, S., Lamb, W. F., Callaghan, M. W., Hilaire, J., Creutzig, F., et al. (2018). Negative emissions—Part 2: Costs, potentials and side effects. Environmental Research Letters, 13(6), 063002. <a href="https://doi.org/10.1088/1748-9326/aabf9f" className="text-blue-600 dark:text-blue-400 hover:underline" target="_blank" rel="noopener noreferrer">View source</a></p>
         
-        <p>Gaboury, S., Boucher, J.-F., Villeneuve, C., Lord, D., & Gagnon, R. (2009). Estimating the net carbon balance of boreal open woodland afforestation: A case-study in Québec's closed-crown boreal forest. Forest Ecology and Management, 257(2), 483–494. <a href="https://doi.org/10.1016/j.foreco.2008.09.037" className="text-blue-600 dark:text-blue-400 hover:underline" target="_blank" rel="noopener noreferrer">https://doi.org/10.1016/j.foreco.2008.09.037</a></p>
+        <p>Gaboury, S., Boucher, J.-F., Villeneuve, C., Lord, D., & Gagnon, R. (2009). Estimating the net carbon balance of boreal open woodland afforestation: A case-study in Québec's closed-crown boreal forest. Forest Ecology and Management, 257(2), 483–494. <a href="https://doi.org/10.1016/j.foreco.2008.09.037" className="text-blue-600 dark:text-blue-400 hover:underline" target="_blank" rel="noopener noreferrer">View source</a></p>
         
-        <p>Gardarsdottir, S. O., De Lena, E., Romano, M., Roussanaly, S., Voldsund, M., et al. (2019). Comparison of technologies for CO₂ capture from cement production—Part 2: Cost analysis. Energies, 12(3), 542. <a href="https://doi.org/10.3390/en12030542" className="text-blue-600 dark:text-blue-400 hover:underline" target="_blank" rel="noopener noreferrer">https://doi.org/10.3390/en12030542</a></p>
+        <p>Gardarsdottir, S. O., De Lena, E., Romano, M., Roussanaly, S., Voldsund, M., et al. (2019). Comparison of technologies for CO₂ capture from cement production—Part 2: Cost analysis. Energies, 12(3), 542. <a href="https://doi.org/10.3390/en12030542" className="text-blue-600 dark:text-blue-400 hover:underline" target="_blank" rel="noopener noreferrer">View source</a></p>
         
-        <p>Global CCS Institute. (2021). Global Status of CCS 2021: Ethanol CO₂ Capture. <a href="https://www.globalccsinstitute.com" className="text-blue-600 dark:text-blue-400 hover:underline" target="_blank" rel="noopener noreferrer">https://www.globalccsinstitute.com</a></p>
+        <p>Global CCS Institute. (2021). Global Status of CCS 2021: Ethanol CO₂ Capture. <a href="https://www.globalccsinstitute.com" className="text-blue-600 dark:text-blue-400 hover:underline" target="_blank" rel="noopener noreferrer">View source</a></p>
         
-        <p>Globe Advisors. (2014). British Columbia LNG Greenhouse Gas (GHG) Life Cycle Analysis: Discussion Draft. BC Ministry of Environment. <a href="https://www2.gov.bc.ca/assets/gov/environment/climate-change/ind/lng/british_columbia_lng_greenhouse_gas_ghg_life_cycle_analysis.pdf" className="text-blue-600 dark:text-blue-400 hover:underline" target="_blank" rel="noopener noreferrer">https://www2.gov.bc.ca/assets/gov/environment/climate-change/ind/lng/british_columbia_lng_greenhouse_gas_ghg_life_cycle_analysis.pdf</a></p>
+        <p>Globe Advisors. (2014). British Columbia LNG Greenhouse Gas (GHG) Life Cycle Analysis: Discussion Draft. BC Ministry of Environment. <a href="https://www2.gov.bc.ca/assets/gov/environment/climate-change/ind/lng/british_columbia_lng_greenhouse_gas_ghg_life_cycle_analysis.pdf" className="text-blue-600 dark:text-blue-400 hover:underline" target="_blank" rel="noopener noreferrer">View source</a></p>
         
-        <p>Goto, G. M., Goñi, C. S., Braun, R., Cifuentes-Jara, M., Friess, D. A., et al. (2025). Implementation costs of restoring global mangrove forests. One Earth, 8(7). <a href="https://doi.org/10.1016/j.oneear.2025.101342" className="text-blue-600 dark:text-blue-400 hover:underline" target="_blank" rel="noopener noreferrer">https://doi.org/10.1016/j.oneear.2025.101342</a></p>
+        <p>Goto, G. M., Goñi, C. S., Braun, R., Cifuentes-Jara, M., Friess, D. A., et al. (2025). Implementation costs of restoring global mangrove forests. One Earth, 8(7). <a href="https://doi.org/10.1016/j.oneear.2025.101342" className="text-blue-600 dark:text-blue-400 hover:underline" target="_blank" rel="noopener noreferrer">View source</a></p>
         
         <p>Hanifa, M., Agarwal, R., Sharma, U., Thapliyal, P. C., & Singh, L. P. (2023). A review on CO₂ capture and sequestration in the construction industry: Emerging approaches and commercialised technologies. Journal of CO₂ Utilization, 67, 102292.</p>
         
-        <p>International Atomic Energy Agency. (2025, June 3). Scientists identify how mangroves contribute to 'blue carbon' storage in Asia and the Pacific. IAEA. <a href="https://www.iaea.org/newscenter/news/scientists-identify-how-mangroves-contribute-to-blue-carbon-storage-in-asia-and-the-pacific" className="text-blue-600 dark:text-blue-400 hover:underline" target="_blank" rel="noopener noreferrer">https://www.iaea.org/newscenter/news/scientists-identify-how-mangroves-contribute-to-blue-carbon-storage-in-asia-and-the-pacific</a></p>
+        <p>International Atomic Energy Agency. (2025, June 3). Scientists identify how mangroves contribute to 'blue carbon' storage in Asia and the Pacific. IAEA. <a href="https://www.iaea.org/newscenter/news/scientists-identify-how-mangroves-contribute-to-blue-carbon-storage-in-asia-and-the-pacific" className="text-blue-600 dark:text-blue-400 hover:underline" target="_blank" rel="noopener noreferrer">View source</a></p>
         
-        <p>International Energy Agency (IEA). (2020). CCUS in Clean Energy Transitions. <a href="https://www.iea.org/reports/ccus-in-clean-energy-transitions" className="text-blue-600 dark:text-blue-400 hover:underline" target="_blank" rel="noopener noreferrer">https://www.iea.org/reports/ccus-in-clean-energy-transitions</a></p>
+        <p>International Energy Agency (IEA). (2020). CCUS in Clean Energy Transitions. <a href="https://www.iea.org/reports/ccus-in-clean-energy-transitions" className="text-blue-600 dark:text-blue-400 hover:underline" target="_blank" rel="noopener noreferrer">View source</a></p>
         
-        <p>International Energy Agency (IEA). (2021, February 17). Is carbon capture too expensive? <a href="https://www.iea.org/commentaries/is-carbon-capture-too-expensive" className="text-blue-600 dark:text-blue-400 hover:underline" target="_blank" rel="noopener noreferrer">https://www.iea.org/commentaries/is-carbon-capture-too-expensive</a></p>
+        <p>International Energy Agency (IEA). (2021, February 17). Is carbon capture too expensive? <a href="https://www.iea.org/commentaries/is-carbon-capture-too-expensive" className="text-blue-600 dark:text-blue-400 hover:underline" target="_blank" rel="noopener noreferrer">View source</a></p>
         
-        <p>International Energy Agency (IEA). (2022). Direct air capture: A key technology for net zero. <a href="https://iea.blob.core.windows.net/assets/78633715-15c0-44e1-81df-41123c556d57/DirectAirCapture_Akeytechnologyfornetzero.pdf" className="text-blue-600 dark:text-blue-400 hover:underline" target="_blank" rel="noopener noreferrer">https://iea.blob.core.windows.net/assets/78633715-15c0-44e1-81df-41123c556d57/DirectAirCapture_Akeytechnologyfornetzero.pdf</a></p>
+        <p>International Energy Agency (IEA). (2022). Direct air capture: A key technology for net zero. <a href="https://iea.blob.core.windows.net/assets/78633715-15c0-44e1-81df-41123c556d57/DirectAirCapture_Akeytechnologyfornetzero.pdf" className="text-blue-600 dark:text-blue-400 hover:underline" target="_blank" rel="noopener noreferrer">View source</a></p>
         
-        <p>Karayil, A., Elseragy, A., & Aliyu, A. M. (2024). An assessment of CO₂ capture technologies towards global carbon net neutrality. Energies, 17(6), 1460. <a href="https://doi.org/10.3390/en17061460" className="text-blue-600 dark:text-blue-400 hover:underline" target="_blank" rel="noopener noreferrer">https://doi.org/10.3390/en17061460</a></p>
+        <p>Karayil, A., Elseragy, A., & Aliyu, A. M. (2024). An assessment of CO₂ capture technologies towards global carbon net neutrality. Energies, 17(6), 1460. <a href="https://doi.org/10.3390/en17061460" className="text-blue-600 dark:text-blue-400 hover:underline" target="_blank" rel="noopener noreferrer">View source</a></p>
         
-        <p>Kelemen, P., Benson, S. M., Pilorgé, H., Psarras, P., & Wilcox, J. (2019). An overview of the status and challenges of CO₂ storage in minerals and geological formations. Frontiers in Climate, 1. <a href="https://doi.org/10.3389/fclim.2019.00009" className="text-blue-600 dark:text-blue-400 hover:underline" target="_blank" rel="noopener noreferrer">https://doi.org/10.3389/fclim.2019.00009</a></p>
+        <p>Kelemen, P., Benson, S. M., Pilorgé, H., Psarras, P., & Wilcox, J. (2019). An overview of the status and challenges of CO₂ storage in minerals and geological formations. Frontiers in Climate, 1. <a href="https://doi.org/10.3389/fclim.2019.00009" className="text-blue-600 dark:text-blue-400 hover:underline" target="_blank" rel="noopener noreferrer">View source</a></p>
         
-        <p>Khan, M. N., Chiesa, P., Cloete, S., & Amini, S. (2020). Integration of chemical looping combustion for cost-effective CO₂ capture from state-of-the-art natural gas combined cycles. Energy Conversion and Management: X, 7, 100044. <a href="https://doi.org/10.1016/j.ecmx.2020.100044" className="text-blue-600 dark:text-blue-400 hover:underline" target="_blank" rel="noopener noreferrer">https://doi.org/10.1016/j.ecmx.2020.100044</a></p>
+        <p>Khan, M. N., Chiesa, P., Cloete, S., & Amini, S. (2020). Integration of chemical looping combustion for cost-effective CO₂ capture from state-of-the-art natural gas combined cycles. Energy Conversion and Management: X, 7, 100044. <a href="https://doi.org/10.1016/j.ecmx.2020.100044" className="text-blue-600 dark:text-blue-400 hover:underline" target="_blank" rel="noopener noreferrer">View source</a></p>
         
-        <p>Madhu, K., Pauliuk, S., Dhathri, S., & Creutzig, F. (2021). Understanding environmental trade-offs and resource demand of direct air capture technologies through comparative life-cycle assessment. Nature Energy, 6(11), 1035–1044. <a href="https://doi.org/10.1038/s41560-021-00922-6" className="text-blue-600 dark:text-blue-400 hover:underline" target="_blank" rel="noopener noreferrer">https://doi.org/10.1038/s41560-021-00922-6</a></p>
+        <p>Madhu, K., Pauliuk, S., Dhathri, S., & Creutzig, F. (2021). Understanding environmental trade-offs and resource demand of direct air capture technologies through comparative life-cycle assessment. Nature Energy, 6(11), 1035–1044. <a href="https://doi.org/10.1038/s41560-021-00922-6" className="text-blue-600 dark:text-blue-400 hover:underline" target="_blank" rel="noopener noreferrer">View source</a></p>
         
-        <p>Moldenhauer, P., Linderholm, C., Rydén, M., & Lyngfelt, A. (2019). Avoiding CO₂ capture effort and cost for negative CO₂ emissions using industrial waste in chemical-looping combustion/gasification of biomass. Mitigation and Adaptation Strategies for Global Change, 25(1), 1–24. <a href="https://doi.org/10.1007/s11027-019-9843-2" className="text-blue-600 dark:text-blue-400 hover:underline" target="_blank" rel="noopener noreferrer">https://doi.org/10.1007/s11027-019-9843-2</a></p>
+        <p>Moldenhauer, P., Linderholm, C., Rydén, M., & Lyngfelt, A. (2019). Avoiding CO₂ capture effort and cost for negative CO₂ emissions using industrial waste in chemical-looping combustion/gasification of biomass. Mitigation and Adaptation Strategies for Global Change, 25(1), 1–24. <a href="https://doi.org/10.1007/s11027-019-9843-2" className="text-blue-600 dark:text-blue-400 hover:underline" target="_blank" rel="noopener noreferrer">View source</a></p>
         
-        <p>Mohammed, R. K., & Farzaneh, H. (2023). Life cycle environmental impacts assessment of post-combustion carbon capture for natural gas combined cycle power plant in Iraq, considering grassroots and retrofit design. Energies, 16(3), Article 3. <a href="https://doi.org/10.3390/en16031545" className="text-blue-600 dark:text-blue-400 hover:underline" target="_blank" rel="noopener noreferrer">https://doi.org/10.3390/en16031545</a></p>
+        <p>Mohammed, R. K., & Farzaneh, H. (2023). Life cycle environmental impacts assessment of post-combustion carbon capture for natural gas combined cycle power plant in Iraq, considering grassroots and retrofit design. Energies, 16(3), Article 3. <a href="https://doi.org/10.3390/en16031545" className="text-blue-600 dark:text-blue-400 hover:underline" target="_blank" rel="noopener noreferrer">View source</a></p>
         
-        <p>Moriizumi, Y., Matsui, N., & Hondo, H. (2010). Simplified life cycle sustainability assessment of mangrove management: A case of plantation on wastelands in Thailand. Journal of Cleaner Production, 18(16), 1629–1638. <a href="https://doi.org/10.1016/j.jclepro.2010.07.017" className="text-blue-600 dark:text-blue-400 hover:underline" target="_blank" rel="noopener noreferrer">https://doi.org/10.1016/j.jclepro.2010.07.017</a></p>
+        <p>Moriizumi, Y., Matsui, N., & Hondo, H. (2010). Simplified life cycle sustainability assessment of mangrove management: A case of plantation on wastelands in Thailand. Journal of Cleaner Production, 18(16), 1629–1638. <a href="https://doi.org/10.1016/j.jclepro.2010.07.017" className="text-blue-600 dark:text-blue-400 hover:underline" target="_blank" rel="noopener noreferrer">View source</a></p>
         
-        <p>Narindri Rara Winayu, B., Tseng, T.-K., & Chu, H. (2023). Chemical looping strategy in various types of carbon capture technologies. Processes, 11(11), 3164. <a href="https://doi.org/10.3390/pr11113164" className="text-blue-600 dark:text-blue-400 hover:underline" target="_blank" rel="noopener noreferrer">https://doi.org/10.3390/pr11113164</a></p>
+        <p>Narindri Rara Winayu, B., Tseng, T.-K., & Chu, H. (2023). Chemical looping strategy in various types of carbon capture technologies. Processes, 11(11), 3164. <a href="https://doi.org/10.3390/pr11113164" className="text-blue-600 dark:text-blue-400 hover:underline" target="_blank" rel="noopener noreferrer">View source</a></p>
         
-        <p>NETL (National Energy Technology Laboratory). (2020). Chemical looping combustion. <a href="https://netl.doe.gov/node/7478" className="text-blue-600 dark:text-blue-400 hover:underline" target="_blank" rel="noopener noreferrer">https://netl.doe.gov/node/7478</a></p>
+        <p>NETL (National Energy Technology Laboratory). (2020). Chemical looping combustion. <a href="https://netl.doe.gov/node/7478" className="text-blue-600 dark:text-blue-400 hover:underline" target="_blank" rel="noopener noreferrer">View source</a></p>
         
-        <p>NETL (National Energy Technology Laboratory). (2020). Electrochemical membrane for carbon dioxide capture and power generation. <a href="https://www.netl.doe.gov/node/1609" className="text-blue-600 dark:text-blue-400 hover:underline" target="_blank" rel="noopener noreferrer">https://www.netl.doe.gov/node/1609</a></p>
+        <p>NETL (National Energy Technology Laboratory). (2020). Electrochemical membrane for carbon dioxide capture and power generation. <a href="https://www.netl.doe.gov/node/1609" className="text-blue-600 dark:text-blue-400 hover:underline" target="_blank" rel="noopener noreferrer">View source</a></p>
         
-        <p>Nie, Z., Korre, A., & Durucan, S. (2011). Life cycle modelling and comparative assessment of the environmental impacts of oxy-fuel and post-combustion CO₂ capture, transport and injection processes. Energy Procedia, 4, 2510–2517. <a href="https://doi.org/10.1016/j.egypro.2011.02.147" className="text-blue-600 dark:text-blue-400 hover:underline" target="_blank" rel="noopener noreferrer">https://doi.org/10.1016/j.egypro.2011.02.147</a></p>
+        <p>Nie, Z., Korre, A., & Durucan, S. (2011). Life cycle modelling and comparative assessment of the environmental impacts of oxy-fuel and post-combustion CO₂ capture, transport and injection processes. Energy Procedia, 4, 2510–2517. <a href="https://doi.org/10.1016/j.egypro.2011.02.147" className="text-blue-600 dark:text-blue-400 hover:underline" target="_blank" rel="noopener noreferrer">View source</a></p>
         
-        <p>Nilkar, A. S. (2023). Life cycle assessment of carbon capture membrane separation technologies [Master's thesis, University of Idaho]. <a href="https://search.proquest.com/openview/0a8a0ada7a86ae1ebe330eea5fe9f853/" className="text-blue-600 dark:text-blue-400 hover:underline" target="_blank" rel="noopener noreferrer">https://search.proquest.com/openview/0a8a0ada7a86ae1ebe330eea5fe9f853/</a></p>
+        <p>Nilkar, A. S. (2023). Life cycle assessment of carbon capture membrane separation technologies [Master's thesis, University of Idaho]. <a href="https://search.proquest.com/openview/0a8a0ada7a86ae1ebe330eea5fe9f853/" className="text-blue-600 dark:text-blue-400 hover:underline" target="_blank" rel="noopener noreferrer">View source</a></p>
         
-        <p>Ogidiama, O. V., Abu Zahra, M., & Shamim, T. (2018). Techno-economic analysis of a carbon capture chemical looping combustion power plant. Journal of Energy Resources Technology, 140(112004). <a href="https://doi.org/10.1115/1.4040193" className="text-blue-600 dark:text-blue-400 hover:underline" target="_blank" rel="noopener noreferrer">https://doi.org/10.1115/1.4040193</a></p>
+        <p>Ogidiama, O. V., Abu Zahra, M., & Shamim, T. (2018). Techno-economic analysis of a carbon capture chemical looping combustion power plant. Journal of Energy Resources Technology, 140(112004). <a href="https://doi.org/10.1115/1.4040193" className="text-blue-600 dark:text-blue-400 hover:underline" target="_blank" rel="noopener noreferrer">View source</a></p>
         
-        <p>Ozden, A. (2025). CO₂ capture via electrochemical pH-mediated systems. ACS Energy Letters, 10(4), 1550–1576. <a href="https://doi.org/10.1021/acsenergylett.5c00200" className="text-blue-600 dark:text-blue-400 hover:underline" target="_blank" rel="noopener noreferrer">https://doi.org/10.1021/acsenergylett.5c00200</a></p>
+        <p>Ozden, A. (2025). CO₂ capture via electrochemical pH-mediated systems. ACS Energy Letters, 10(4), 1550–1576. <a href="https://doi.org/10.1021/acsenergylett.5c00200" className="text-blue-600 dark:text-blue-400 hover:underline" target="_blank" rel="noopener noreferrer">View source</a></p>
         
-        <p>Piewkhaow, L., Manuilova, A., Chan, C. W., Wilson, M., & Tontiwachwuthikul, P. (2016). Environmental performance of hypothetical Canadian pre-combustion CO₂ capture processes using life-cycle techniques. Technologies, 4(1), 9. <a href="https://doi.org/10.3390/technologies4010009" className="text-blue-600 dark:text-blue-400 hover:underline" target="_blank" rel="noopener noreferrer">https://doi.org/10.3390/technologies4010009</a></p>
+        <p>Piewkhaow, L., Manuilova, A., Chan, C. W., Wilson, M., & Tontiwachwuthikul, P. (2016). Environmental performance of hypothetical Canadian pre-combustion CO₂ capture processes using life-cycle techniques. Technologies, 4(1), 9. <a href="https://doi.org/10.3390/technologies4010009" className="text-blue-600 dark:text-blue-400 hover:underline" target="_blank" rel="noopener noreferrer">View source</a></p>
         
-        <p>Rubin, E. S., Davison, J. E., & Herzog, H. J. (2015). The cost of CO₂ capture and storage. International Journal of Greenhouse Gas Control, 40, 378–400. <a href="https://doi.org/10.1016/j.ijggc.2015.05.018" className="text-blue-600 dark:text-blue-400 hover:underline" target="_blank" rel="noopener noreferrer">https://doi.org/10.1016/j.ijggc.2015.05.018</a></p>
+        <p>Rubin, E. S., Davison, J. E., & Herzog, H. J. (2015). The cost of CO₂ capture and storage. International Journal of Greenhouse Gas Control, 40, 378–400. <a href="https://doi.org/10.1016/j.ijggc.2015.05.018" className="text-blue-600 dark:text-blue-400 hover:underline" target="_blank" rel="noopener noreferrer">View source</a></p>
         
-        <p>Rufford, T. E., Smart, S., Watson, G. C. Y., Graham, B. F., Boxall, J., Diniz da Costa, J. C., & May, E. F. (2012). The removal of CO₂ and N₂ from natural gas: A review of conventional and emerging process technologies. Journal of Petroleum Science and Engineering, 94–95, 123–154. <a href="https://doi.org/10.1016/j.petrol.2012.06.016" className="text-blue-600 dark:text-blue-400 hover:underline" target="_blank" rel="noopener noreferrer">https://doi.org/10.1016/j.petrol.2012.06.016</a></p>
+        <p>Rufford, T. E., Smart, S., Watson, G. C. Y., Graham, B. F., Boxall, J., Diniz da Costa, J. C., & May, E. F. (2012). The removal of CO₂ and N₂ from natural gas: A review of conventional and emerging process technologies. Journal of Petroleum Science and Engineering, 94–95, 123–154. <a href="https://doi.org/10.1016/j.petrol.2012.06.016" className="text-blue-600 dark:text-blue-400 hover:underline" target="_blank" rel="noopener noreferrer">View source</a></p>
         
-        <p>Scholes, C. A., Ho, M. T., & Wiley, D. E. (2016). Membrane-cryogenic post-combustion carbon capture of flue gases from NGCC. Technologies, 4(2), 14. <a href="https://doi.org/10.3390/technologies4020014" className="text-blue-600 dark:text-blue-400 hover:underline" target="_blank" rel="noopener noreferrer">https://doi.org/10.3390/technologies4020014</a></p>
+        <p>Scholes, C. A., Ho, M. T., & Wiley, D. E. (2016). Membrane-cryogenic post-combustion carbon capture of flue gases from NGCC. Technologies, 4(2), 14. <a href="https://doi.org/10.3390/technologies4020014" className="text-blue-600 dark:text-blue-400 hover:underline" target="_blank" rel="noopener noreferrer">View source</a></p>
         
-        <p>Scott, M. (2023, October 24). The innovators trying to bring down the sky-high cost of direct air capture. Reuters. <a href="https://www.reuters.com/sustainability/climate-energy/innovators-trying-bring-down-sky-high-cost-direct-air-capture-2023-10-24/" className="text-blue-600 dark:text-blue-400 hover:underline" target="_blank" rel="noopener noreferrer">https://www.reuters.com/sustainability/climate-energy/innovators-trying-bring-down-sky-high-cost-direct-air-capture-2023-10-24/</a></p>
+        <p>Scott, M. (2023, October 24). The innovators trying to bring down the sky-high cost of direct air capture. Reuters. <a href="https://www.reuters.com/sustainability/climate-energy/innovators-trying-bring-down-sky-high-cost-direct-air-capture-2023-10-24/" className="text-blue-600 dark:text-blue-400 hover:underline" target="_blank" rel="noopener noreferrer">View source</a></p>
         
-        <p>Sher, F., Hameed, S., Omerbegović, N. S., Wang, B., Hai, I. U., Rashid, T., Teoh, Y. H., & Yildiz, M. J. (2025). Bioenergy with carbon capture and storage technology to achieve net zero emissions – A review. Renewable and Sustainable Energy Reviews, 210, 115229. <a href="https://doi.org/10.1016/j.rser.2024.115229" className="text-blue-600 dark:text-blue-400 hover:underline" target="_blank" rel="noopener noreferrer">https://doi.org/10.1016/j.rser.2024.115229</a></p>
+        <p>Sher, F., Hameed, S., Omerbegović, N. S., Wang, B., Hai, I. U., Rashid, T., Teoh, Y. H., & Yildiz, M. J. (2025). Bioenergy with carbon capture and storage technology to achieve net zero emissions – A review. Renewable and Sustainable Energy Reviews, 210, 115229. <a href="https://doi.org/10.1016/j.rser.2024.115229" className="text-blue-600 dark:text-blue-400 hover:underline" target="_blank" rel="noopener noreferrer">View source</a></p>
         
-        <p>Shorey, P., & Abdulla, A. (2024). Liquid solvent direct air capture's cost and carbon dioxide removal vary with ambient environmental conditions. Communications Earth & Environment, 5(1), 607. <a href="https://doi.org/10.1038/s43247-024-01773-1" className="text-blue-600 dark:text-blue-400 hover:underline" target="_blank" rel="noopener noreferrer">https://doi.org/10.1038/s43247-024-01773-1</a></p>
+        <p>Shorey, P., & Abdulla, A. (2024). Liquid solvent direct air capture's cost and carbon dioxide removal vary with ambient environmental conditions. Communications Earth & Environment, 5(1), 607. <a href="https://doi.org/10.1038/s43247-024-01773-1" className="text-blue-600 dark:text-blue-400 hover:underline" target="_blank" rel="noopener noreferrer">View source</a></p>
         
-        <p>StartUs Insights. (2025, February 3). Carbon capture technology: Key trends & business impact. <a href="https://www.startus-insights.com/innovators-guide/carbon-capture-technology/" className="text-blue-600 dark:text-blue-400 hover:underline" target="_blank" rel="noopener noreferrer">https://www.startus-insights.com/innovators-guide/carbon-capture-technology/</a></p>
+        <p>StartUs Insights. (2025, February 3). Carbon capture technology: Key trends & business impact. <a href="https://www.startus-insights.com/innovators-guide/carbon-capture-technology/" className="text-blue-600 dark:text-blue-400 hover:underline" target="_blank" rel="noopener noreferrer">View source</a></p>
         
-        <p>Terlouw, T., Bauer, C., Rosa, L., & Mazzotti, M. (2021). Life cycle assessment of carbon dioxide removal technologies: A critical review. Energy & Environmental Science, 14(4), 1701–1721. <a href="https://doi.org/10.1039/D0EE03757E" className="text-blue-600 dark:text-blue-400 hover:underline" target="_blank" rel="noopener noreferrer">https://doi.org/10.1039/D0EE03757E</a></p>
+        <p>Terlouw, T., Bauer, C., Rosa, L., & Mazzotti, M. (2021). Life cycle assessment of carbon dioxide removal technologies: A critical review. Energy & Environmental Science, 14(4), 1701–1721. <a href="https://doi.org/10.1039/D0EE03757E" className="text-blue-600 dark:text-blue-400 hover:underline" target="_blank" rel="noopener noreferrer">View source</a></p>
         
-        <p>Thiedemann, T. M., & Wark, M. (2025). A compact review of current technologies for carbon capture as well as storing and utilizing the captured CO₂. Processes, 13(1), 283. <a href="https://doi.org/10.3390/pr13010283" className="text-blue-600 dark:text-blue-400 hover:underline" target="_blank" rel="noopener noreferrer">https://doi.org/10.3390/pr13010283</a></p>
+        <p>Thiedemann, T. M., & Wark, M. (2025). A compact review of current technologies for carbon capture as well as storing and utilizing the captured CO₂. Processes, 13(1), 283. <a href="https://doi.org/10.3390/pr13010283" className="text-blue-600 dark:text-blue-400 hover:underline" target="_blank" rel="noopener noreferrer">View source</a></p>
         
-        <p>University of Pittsburgh. (2019, January 8). Engineers identify improved membranes to capture CO₂ at coal-fired power plants. <a href="https://phys.org/news/2019-01-membranes-capture-co2-coal-fired-power.html" className="text-blue-600 dark:text-blue-400 hover:underline" target="_blank" rel="noopener noreferrer">https://phys.org/news/2019-01-membranes-capture-co2-coal-fired-power.html</a></p>
+        <p>University of Pittsburgh. (2019, January 8). Engineers identify improved membranes to capture CO₂ at coal-fired power plants. <a href="https://phys.org/news/2019-01-membranes-capture-co2-coal-fired-power.html" className="text-blue-600 dark:text-blue-400 hover:underline" target="_blank" rel="noopener noreferrer">View source</a></p>
         
-        <p>UArctic Climate Interventions. (2025). Afforestation, reforestation and forest management. <a href="https://climateinterventions.org/interventions/afforestation-reforestation-and-forest-management/#" className="text-blue-600 dark:text-blue-400 hover:underline" target="_blank" rel="noopener noreferrer">https://climateinterventions.org/interventions/afforestation-reforestation-and-forest-management/#</a></p>
+        <p>UArctic Climate Interventions. (2025). Afforestation, reforestation and forest management. <a href="https://climateinterventions.org/interventions/afforestation-reforestation-and-forest-management/#" className="text-blue-600 dark:text-blue-400 hover:underline" target="_blank" rel="noopener noreferrer">View source</a></p>
         
-        <p>Watson, J. C., Pennisi, K. J., Parrish, C., & Majumdar, S. (2024). Techno-economic process optimization for a range of membrane performances: What provides real value for point-source carbon capture? Carbon Capture Science & Technology, 11, 100182. <a href="https://doi.org/10.1016/j.ccst.2023.100182" className="text-blue-600 dark:text-blue-400 hover:underline" target="_blank" rel="noopener noreferrer">https://doi.org/10.1016/j.ccst.2023.100182</a></p>
+        <p>Watson, J. C., Pennisi, K. J., Parrish, C., & Majumdar, S. (2024). Techno-economic process optimization for a range of membrane performances: What provides real value for point-source carbon capture? Carbon Capture Science & Technology, 11, 100182. <a href="https://doi.org/10.1016/j.ccst.2023.100182" className="text-blue-600 dark:text-blue-400 hover:underline" target="_blank" rel="noopener noreferrer">View source</a></p>
         
-        <p>World Economic Forum. (2023, July 3). 5 things to know about carbon mineralization, a new approach to carbon removal. <a href="https://www.weforum.org/stories/2023/07/carbon-mineralization-things-to-know/" className="text-blue-600 dark:text-blue-400 hover:underline" target="_blank" rel="noopener noreferrer">https://www.weforum.org/stories/2023/07/carbon-mineralization-things-to-know/</a></p>
+        <p>World Economic Forum. (2023, July 3). 5 things to know about carbon mineralization, a new approach to carbon removal. <a href="https://www.weforum.org/stories/2023/07/carbon-mineralization-things-to-know/" className="text-blue-600 dark:text-blue-400 hover:underline" target="_blank" rel="noopener noreferrer">View source</a></p>
         
-        <p>Young, J., McQueen, N., Charalambous, C., Foteinis, S., Hawrot, O., Ojeda, M., Pilorgé, H., Andresen, J., Psarras, P., Renforth, P., Garcia, S., & van der Spek, M. (2023). The cost of direct air capture and storage can be reduced via strategic deployment but is unlikely to fall below stated cost targets. One Earth, 6(7), 899–917. <a href="https://doi.org/10.1016/j.oneear.2023.06.004" className="text-blue-600 dark:text-blue-400 hover:underline" target="_blank" rel="noopener noreferrer">https://doi.org/10.1016/j.oneear.2023.06.004</a></p>
+        <p>Young, J., McQueen, N., Charalambous, C., Foteinis, S., Hawrot, O., Ojeda, M., Pilorgé, H., Andresen, J., Psarras, P., Renforth, P., Garcia, S., & van der Spek, M. (2023). The cost of direct air capture and storage can be reduced via strategic deployment but is unlikely to fall below stated cost targets. One Earth, 6(7), 899–917. <a href="https://doi.org/10.1016/j.oneear.2023.06.004" className="text-blue-600 dark:text-blue-400 hover:underline" target="_blank" rel="noopener noreferrer">View source</a></p>
         
-        <p>Zaabout, A., Bouaboula, H., & Belmabkhout, Y. (2025). Life cycle assessment of electrochemical pH-swing direct air capture (SSRN Scholarly Paper No. 5192763). Social Science Research Network. <a href="https://doi.org/10.2139/ssrn.5192763" className="text-blue-600 dark:text-blue-400 hover:underline" target="_blank" rel="noopener noreferrer">https://doi.org/10.2139/ssrn.5192763</a></p>
+        <p>Zaabout, A., Bouaboula, H., & Belmabkhout, Y. (2025). Life cycle assessment of electrochemical pH-swing direct air capture (SSRN Scholarly Paper No. 5192763). Social Science Research Network. <a href="https://doi.org/10.2139/ssrn.5192763" className="text-blue-600 dark:text-blue-400 hover:underline" target="_blank" rel="noopener noreferrer">View source</a></p>
         
-        <p>Zhang, B., Kroeger, J., Planavsky, N., & Yao, Y. (2023). Techno-economic and life cycle assessment of enhanced rock weathering: A case study from the Midwestern United States. Environmental Science & Technology, 57(37), 13828–13837. <a href="https://doi.org/10.1021/acs.est.3c01658" className="text-blue-600 dark:text-blue-400 hover:underline" target="_blank" rel="noopener noreferrer">https://doi.org/10.1021/acs.est.3c01658</a></p>
+        <p>Zhang, B., Kroeger, J., Planavsky, N., & Yao, Y. (2023). Techno-economic and life cycle assessment of enhanced rock weathering: A case study from the Midwestern United States. Environmental Science & Technology, 57(37), 13828–13837. <a href="https://doi.org/10.1021/acs.est.3c01658" className="text-blue-600 dark:text-blue-400 hover:underline" target="_blank" rel="noopener noreferrer">View source</a></p>
       </div>
     </div>
   </div>
