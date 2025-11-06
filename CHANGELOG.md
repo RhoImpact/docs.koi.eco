@@ -1,5 +1,9 @@
 # Changelog
 
+## 2025-10-06 - 0.16.0
+
+- New CDR classification docs
+
 ## 2025-10-06 - 0.15.0
 
 - New Solution Classification pages
