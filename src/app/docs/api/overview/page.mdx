@@ -1,0 +1,31 @@
+import PageInformationalData from '@/components/PageInformationalData'
+import { baseUrl } from '@/shared/urls'
+export const metadata = {
+  title: 'RESTful API',
+  description:
+    'Integrate our robust climate forecasting data and engine into your workflows with a developer-friendly interface.',
+}
+
+# RESTful API Reference
+
+<PageInformationalData lastModified={lastModified} />
+
+Integrate our robust climate forecasting data and engine into your workflows with a developer-friendly interface. {{ className: 'text-xl text-koiGray-100' }}
+
+<Tip>
+  The Koi API is currently in Beta. Please contact us if you are interested in using it.
+</Tip>
+
+## Get your API key
+
+Before you can make requests to the Koi API, you will need to grab your API key from your dashboard.
+
+If you are participating in the Beta, you can find it in <a href={`${baseUrl}?utm_source=docs&utm_content=api-key-link`} aria-label="Your Account Settings" rel="noopener noreferrer" target="_blank">Your Account Settings</a>
+
+## Explore the API Reference
+
+The Koi API Reference is a comprehensive documentation of the in-development Koi API.
+
+<Button className="text-xl" href="/docs/api/reference" variant="text" arrow="right">
+  <>Explore the API Reference</>
+</Button>

@@ -150,12 +150,10 @@ export const navigation: Array<NavGroup> = [
     ],
   },
   {
-    title: 'API',
+    title: 'RESTful API',
     links: [
+      { title: 'API Overview', href: '/docs/api/overview' },
       { title: 'API Reference', href: '/docs/api/reference' },
-      { title: 'SDKs', href: '/docs/api/sdks' },
-      // { title: 'API Endpoints', href: '/docs/api/endpoints' },
-      // { title: 'Errors', href: '/docs/api/errors' },
     ],
   },
   {
