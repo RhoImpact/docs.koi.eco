@@ -15,9 +15,7 @@ export default function ApiReferencePage() {
 
         if (ref.current) {
           createApiReference(ref.current, {
-            spec: {
-              url: 'https://rhoimpact.github.io/Koi/openapi.json',
-            },
+            url: 'https://rhoimpact.github.io/Koi/openapi.json',
             darkMode: true,
             layout: 'modern',
             theme: 'default',
