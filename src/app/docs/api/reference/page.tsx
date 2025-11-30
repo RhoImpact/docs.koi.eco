@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from 'react'
 import '@scalar/api-reference/style.css'
+import './apiReference.css'
 
 export default function ApiReferencePage() {
   const ref = useRef<HTMLDivElement>(null)
@@ -21,6 +22,9 @@ export default function ApiReferencePage() {
             theme: 'default',
             showSidebar: true,
             hideClientButton: true,
+            hideDarkModeToggle: true, // Disable theme toggle in production
+            forceDarkModeState: 'dark', // Force dark mode
+            // showDeveloperTools: 'never', // Hide developer tools
           })
         }
       } catch (err) {
@@ -46,7 +50,7 @@ export default function ApiReferencePage() {
   }
 
   return (
-    <div className="not-prose fixed inset-0 top-14 z-50 overflow-auto bg-white dark:bg-zinc-900 lg:left-72">
+    <div className="not-prose fixed inset-0 top-14 z-50 overflow-auto bg-white lg:left-72 dark:bg-zinc-900">
       <div ref={ref} className="min-h-full w-full" />
     </div>
   )

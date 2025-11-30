@@ -1,0 +1,109 @@
+/* Scalar API Reference Styles */
+.scalar-container {
+  @apply -mx-4 sm:-mx-6 lg:-mx-8;
+  min-height: 100vh;
+}
+
+/* Ensure Scalar component takes full width and integrates with dark theme */
+.scalar-container .references-classic,
+.scalar-container .references-layout {
+  @apply w-full;
+}
+
+/* Fix Scalar left sidebar height to account for header */
+aside[class*='sidebar'],
+nav[class*='sidebar'],
+div[class*='references-navigation'],
+div[class*='sidebar-container'] {
+  max-height: calc(100vh - 3.5rem) !important;
+  height: calc(100vh - 3.5rem) !important;
+}
+
+/*
+ * Scalar Theme Customization - Koi Brand Colors
+ *
+ * Best Practice: Override Scalar's CSS variables to customize theme colors.
+ * This approach is preferred because:
+ * 1. It doesn't require modifying Scalar's source code
+ * 2. It's maintainable and won't break with Scalar updates
+ * 3. It allows fine-grained control over all theme aspects
+ * 4. It works with Scalar's built-in dark mode support
+ *
+ * Scalar uses these main CSS variables:
+ * - --scalar-color-1: Primary text color
+ * - --scalar-color-2: Secondary text color
+ * - --scalar-color-3: Tertiary/muted text color
+ * - --scalar-color-accent: Accent color for links, buttons, highlights
+ * - --scalar-background-1: Primary background
+ * - --scalar-background-2: Secondary background (cards, panels)
+ * - --scalar-background-3: Tertiary background (hover states, subtle areas)
+ * - --scalar-border-color: Border color
+ *
+ * Additional color variables for specific elements:
+ * - --scalar-color-blue, --scalar-color-green, --scalar-color-red, etc.
+ */
+
+/*
+ * IMPORTANT: Scalar applies CSS variables to .dark-mode and .light-mode classes,
+ * not just :root. We need to target these classes with higher specificity.
+ */
+
+/* Dark Theme - Target Scalar's .dark-mode class */
+.dark-mode,
+:root .dark-mode,
+div[class*='references'] .dark-mode,
+div[class*='scalar'] .dark-mode {
+  /* Text Colors - Koi Gray Palette */
+  --scalar-color-1: #e5e6eb !important; /* koiGray-100 - Primary text */
+  --scalar-color-2: #9ba0a8 !important; /* koiGray-200 - Secondary text */
+  --scalar-color-3: #57606b !important; /* koiGray-300 - Tertiary/muted text */
+
+  /* Accent Color - Koi Blue */
+  --scalar-color-accent: #5aafcc !important; /* koiBlue-400 - Links, buttons, highlights */
+
+  /* Background Colors - Koi Gray Dark Palette */
+  --scalar-background-1: #161c25 !important; /* koiGray-800 - Primary background */
+  --scalar-background-2: #1b212c !important; /* koiGray-700 - Secondary background (cards) */
+  --scalar-background-3: #242a34 !important; /* koiGray-600 - Tertiary background (hover) */
+  --scalar-background-accent: rgba(
+    90,
+    175,
+    204,
+    0.1
+  ) !important; /* Accent background with transparency */
+
+  /* Border Color */
+  --scalar-border-color: rgba(
+    87,
+    96,
+    107,
+    0.3
+  ) !important; /* koiGray-300 with opacity */
+
+  /* HTTP Method Colors - Using Koi brand colors */
+  --scalar-color-blue: #5aafcc !important; /* koiBlue-400 - GET requests */
+  --scalar-color-green: #85e360 !important; /* koiGreen-400 - POST requests, success */
+  --scalar-color-orange: #f2755b !important; /* koiOrange-400 - PUT requests */
+  --scalar-color-red: #e85f5f !important; /* koiRed-400 - DELETE requests, errors */
+  --scalar-color-yellow: #ffe650 !important; /* koiYellow-300 - PATCH requests */
+  --scalar-color-purple: #b55ae0 !important; /* koiPurple-400 - Custom methods */
+}
+
+/* Also set on :root as fallback */
+:root {
+  --scalar-color-1: #e5e6eb;
+  --scalar-color-2: #9ba0a8;
+  --scalar-color-3: #57606b;
+  --scalar-color-accent: #5aafcc;
+  --scalar-background-1: #161c25;
+  --scalar-background-2: #1b212c;
+  --scalar-background-3: #242a34;
+  --scalar-background-accent: rgba(90, 175, 204, 0.1);
+  --scalar-border-color: rgba(87, 96, 107, 0.3);
+  --scalar-color-blue: #5aafcc;
+  --scalar-color-green: #85e360;
+  --scalar-color-orange: #f2755b;
+  --scalar-color-red: #e85f5f;
+  --scalar-color-yellow: #ffe650;
+  --scalar-color-purple: #b55ae0;
+}

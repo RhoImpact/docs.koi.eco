@@ -60,24 +60,3 @@
   @apply py-1 sm:py-2;
   @apply break-words;
 }
-
-/* Scalar API Reference Styles */
-.scalar-container {
-  @apply -mx-4 sm:-mx-6 lg:-mx-8;
-  min-height: 100vh;
-}
-
-/* Ensure Scalar component takes full width and integrates with dark theme */
-.scalar-container .references-classic,
-.scalar-container .references-layout {
-  @apply w-full;
-}
-
-/* Fix Scalar left sidebar height to account for header */
-aside[class*="sidebar"],
-nav[class*="sidebar"],
-div[class*="references-navigation"],
-div[class*="sidebar-container"] {
-  max-height: calc(100vh - 3.5rem) !important;
-  height: calc(100vh - 3.5rem) !important;
-}
