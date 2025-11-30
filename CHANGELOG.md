@@ -1,5 +1,9 @@
 # Changelog
 
+## 2025-11-29 - 0.17.0
+
+- New Scalar API reference section with new Public API OpenAPI Spec.
+
 ## 2025-10-06 - 0.16.0
 
 - New CDR classification docs
