@@ -16,7 +16,10 @@ export default function ApiReferencePage() {
 
         if (ref.current) {
           createApiReference(ref.current, {
-            url: 'https://rhoimpact.github.io/Koi/openapi.json',
+            url:
+              process.env.NODE_ENV === 'production'
+                ? 'https://rhoimpact.github.io/Koi/openapi.json'
+                : 'https://rhoimpact.github.io/Koi/openapi-dev.json',
             darkMode: true,
             layout: 'modern',
             theme: 'default',
