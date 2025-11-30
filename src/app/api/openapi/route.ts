@@ -1,5 +1,19 @@
 import { NextResponse } from 'next/server'
 
+// Force dynamic rendering for this route
+export const dynamic = 'force-dynamic'
+export const runtime = 'nodejs'
+
+const corsHeaders = {
+  'Access-Control-Allow-Origin': '*',
+  'Access-Control-Allow-Methods': 'GET, OPTIONS',
+  'Access-Control-Allow-Headers': 'Content-Type',
+}
+
+export async function OPTIONS() {
+  return NextResponse.json({}, { headers: corsHeaders })
+}
+
 export async function GET() {
   try {
     const url =
@@ -16,7 +30,7 @@ export async function GET() {
     if (!response.ok) {
       return NextResponse.json(
         { error: 'Failed to fetch OpenAPI specification' },
-        { status: response.status }
+        { status: response.status, headers: corsHeaders }
       )
     }
 
@@ -24,9 +38,7 @@ export async function GET() {
 
     return NextResponse.json(data, {
       headers: {
-        'Access-Control-Allow-Origin': '*',
-        'Access-Control-Allow-Methods': 'GET',
-        'Access-Control-Allow-Headers': 'Content-Type',
+        ...corsHeaders,
         'Content-Type': 'application/json',
         'Cache-Control': 'public, s-maxage=3600, stale-while-revalidate=86400',
       },
@@ -35,7 +47,7 @@ export async function GET() {
     console.error('Error fetching OpenAPI spec:', error)
     return NextResponse.json(
       { error: 'Internal server error' },
-      { status: 500 }
+      { status: 500, headers: corsHeaders }
     )
   }
 }
