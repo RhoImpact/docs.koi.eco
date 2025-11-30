@@ -16,10 +16,7 @@ export default function ApiReferencePage() {
 
         if (ref.current) {
           createApiReference(ref.current, {
-            url:
-              process.env.NODE_ENV === 'production'
-                ? 'https://rhoimpact-bucket-public.s3.us-east-1.amazonaws.com/koi/openapi/openapi.json'
-                : 'https://rhoimpact-bucket-public.s3.us-east-1.amazonaws.com/koi/openapi/openapi-dev.json',
+            url: '/api/openapi',
             darkMode: true,
             layout: 'modern',
             theme: 'default',
