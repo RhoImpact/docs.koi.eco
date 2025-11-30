@@ -2,7 +2,7 @@ import { NextResponse } from 'next/server'
 
 // Force dynamic rendering for this route
 export const dynamic = 'force-dynamic'
-export const runtime = 'nodejs'
+export const runtime = 'edge' // Use edge runtime for better Netlify compatibility
 
 const corsHeaders = {
   'Access-Control-Allow-Origin': '*',
