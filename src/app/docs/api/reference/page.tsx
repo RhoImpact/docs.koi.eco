@@ -15,8 +15,13 @@ export default function ApiReferencePage() {
         const { createApiReference } = await import('@scalar/api-reference')
 
         if (ref.current) {
+          const openApiUrl =
+            process.env.NODE_ENV === 'production'
+              ? 'https://rhoimpact-bucket-public.s3.us-east-1.amazonaws.com/koi/openapi/openapi.json'
+              : 'https://rhoimpact-bucket-public.s3.us-east-1.amazonaws.com/koi/openapi/openapi-dev.json'
+
           createApiReference(ref.current, {
-            url: '/api/openapi',
+            url: openApiUrl,
             darkMode: true,
             layout: 'modern',
             theme: 'default',
