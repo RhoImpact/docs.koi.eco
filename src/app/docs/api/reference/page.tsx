@@ -15,10 +15,12 @@ export default function ApiReferencePage() {
         const { createApiReference } = await import('@scalar/api-reference')
 
         if (ref.current) {
-          const openApiUrl =
-            process.env.NODE_ENV === 'production'
-              ? 'https://rhoimpact-bucket-public.s3.us-east-1.amazonaws.com/koi/openapi/openapi.json'
-              : 'https://rhoimpact-bucket-public.s3.us-east-1.amazonaws.com/koi/openapi/openapi-dev.json'
+          // Use custom env var to distinguish production from staging
+          // NEXT_PUBLIC_KOI_DOCS_BASE_URL will be 'https://docs.koi.eco' in production
+          const isProduction = process.env.NEXT_PUBLIC_KOI_DOCS_BASE_URL === 'https://docs.koi.eco'
+          const openApiUrl = isProduction
+            ? 'https://rhoimpact-bucket-public.s3.us-east-1.amazonaws.com/koi/openapi/openapi.json'
+            : 'https://rhoimpact-bucket-public.s3.us-east-1.amazonaws.com/koi/openapi/openapi-dev.json'
 
           createApiReference(ref.current, {
             url: openApiUrl,
