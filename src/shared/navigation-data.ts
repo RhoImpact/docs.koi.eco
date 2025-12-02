@@ -9,7 +9,7 @@ export const routes = {
   sharing: '/docs/getting-started/features/sharing',
   organizations: '/docs/getting-started/features/organizations',
   groups: '/docs/getting-started/features/organizations#groups',
-  customModels: '/docs/getting-started/features/custom-models',
+  privateModels: '/docs/getting-started/features/private-models',
   koiCredits: '/docs/getting-started/features/koi-credits',
 } as const
 
@@ -68,8 +68,8 @@ export const navigation: Array<NavGroup> = [
             href: routes.collections,
           },
           {
-            title: 'Custom Models',
-            href: routes.customModels,
+            title: 'Private Models',
+            href: routes.privateModels,
           },
           {
             title: 'Koi Credits',

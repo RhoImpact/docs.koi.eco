@@ -13,9 +13,10 @@ const featuresLinks: Array<GridLink> = [
     showGrid: false,
   },
   {
-    href: routes.customModels,
-    name: 'Custom Models',
-    description: "Tailor Koi's models to your specific needs.",
+    href: routes.privateModels,
+    name: 'Private Models',
+    description:
+      'Tailor forecasts to your specific technologies, markets, or scenarios.',
     icon: 'fa-regular fa-pencil text-koiPurple-200',
     showGrid: false,
   },
