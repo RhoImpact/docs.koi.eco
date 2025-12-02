@@ -1,5 +1,10 @@
 # Changelog
 
+## 2025-12-02 - 0.18.0
+
+- New YouTubeEmbed component
+- Added initial youtube series throughout docs
+
 ## 2025-11-29 - 0.17.0
 
 - New Scalar API reference section with new Public API OpenAPI Spec.
