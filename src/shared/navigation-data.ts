@@ -11,6 +11,12 @@ export const routes = {
   groups: '/docs/getting-started/features/organizations#groups',
   privateModels: '/docs/getting-started/features/private-models',
   koiCredits: '/docs/getting-started/features/koi-credits',
+  assetOwners: '/docs/getting-started/use-cases/asset-owners',
+  assetManagers: '/docs/getting-started/use-cases/asset-managers',
+  innovators: '/docs/getting-started/use-cases/innovators',
+  serviceProviders: '/docs/getting-started/use-cases/service-providers',
+  dataProviders: '/docs/getting-started/use-cases/data-providers',
+  enterprises: '/docs/getting-started/use-cases/enterprises',
 } as const
 
 export interface NavGroup {
@@ -57,6 +63,32 @@ export const navigation: Array<NavGroup> = [
         title: 'Use Cases',
         href: '/docs/getting-started/use-cases',
         icon: 'fa-regular fa-file-chart-column',
+        links: [
+          {
+            title: 'Asset Owners',
+            href: routes.assetOwners,
+          },
+          {
+            title: 'Asset Managers',
+            href: routes.assetManagers,
+          },
+          {
+            title: 'Innovators',
+            href: routes.innovators,
+          },
+          {
+            title: 'Service Providers',
+            href: routes.serviceProviders,
+          },
+          {
+            title: 'Data Providers',
+            href: routes.dataProviders,
+          },
+          {
+            title: 'Enterprises',
+            href: routes.enterprises,
+          },
+        ],
       },
       {
         title: 'Features',

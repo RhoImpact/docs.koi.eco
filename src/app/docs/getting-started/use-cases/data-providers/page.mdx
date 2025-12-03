@@ -1,0 +1,55 @@
+import image5 from '../images/image5.webp'
+import ImageZoom from '@/components/ImageZoom'
+import ExternalLink from '@/components/ExternalLink'
+import { CustomerTypes } from '@/components/CustomerTypes'
+import PageInformationalData from '@/components/PageInformationalData'
+
+export const metadata = {
+  title: 'Data Providers',
+  description: 'How financial metrics providers, academic researchers, data scientists, and tool developers use Koi for climate tech datasets and analysis'
+}
+
+# Data Providers
+
+<PageInformationalData lastModified={lastModified} />
+
+<CustomerTypes types={[
+  {
+    label: 'Financial Metrics Providers',
+    subtext: 'Integrate standardized climate impact data into broader datasets.'
+  },
+  {
+    label: 'Academic Researchers',
+    subtext: 'Foundational datas for climate tech research and impact modeling.'
+  },
+  {
+    label: 'Data Scientists',
+    subtext: 'Structured, referenced data ready for bespoke analysis and modeling.'
+  },
+  {
+    label: 'Tool Developers',
+    subtext: 'Integrate Koi data and AI into your platforms via API.'
+  }
+]} />
+
+## How Koi Helps:
+
+**Dataset Curation & Research Foundation**: Leverage Koi's meticulously curated datasets as a foundation for bespoke analysis. Researchers access thousands of hours of scientific research—GHG intensities, market sizes, pathway-aligned baselines, solution mechanisms, and adoption forecasts—all structured, referenced, and exportable.
+
+<ImageZoom
+src={image5}
+alt="Koi datasheet and export options"
+caption="Every Koi model includes a detailed datasheet with full references and flexible data export options"
+/>
+
+**Academic Research**: Use Koi as a starting point for climate tech research, impact modeling, and scenario analysis. The platform's transparency and scientific rigor support academic research standards, while data export capabilities enable further analysis in specialized tools.
+
+**Model Validation**: Validate your own impact models or datasets against Koi's methodology and results. Compare assumptions, identify gaps, and benchmark your approaches against industry-standard practices.
+
+**Climate Tech Landscape Analysis**: Access Koi's climate solution database and data lake to analyze macroscopic trends in climate technology development, capital flows, and impact potential. API access enables programmatic analysis at scale.
+
+<Info>
+We partner with academic research groups and climate analytics organizations to enable scientific assessment of the climate tech landscape. If you're interested in research collaborations or API access, <ExternalLink url="https://www.koi.eco/contact" linkText="get in touch" />.
+</Info>
+
+**Tool Development**: Integrate Koi data into your own climate tools, calculators, or platforms via API. Build on our data infrastructure rather than starting from scratch.

@@ -1,0 +1,70 @@
+import image2 from '../images/image2.webp'
+import image4 from '../images/image4.webp'
+import ImageZoom from '@/components/ImageZoom'
+import ExternalLink from '@/components/ExternalLink'
+import { CustomerTypes } from '@/components/CustomerTypes'
+import PageInformationalData from '@/components/PageInformationalData'
+
+export const metadata = {
+  title: 'Asset Managers',
+  description: 'How asset managers use Koi for investment diligence, portfolio impact reporting, fundraising support, and regulatory compliance'
+}
+
+# Asset Managers
+
+<PageInformationalData lastModified={lastModified} />
+
+<CustomerTypes types={[
+  {
+    label: 'Venture Capital',
+    subtext: 'Rapid dealflow screening, standardized LP reporting.'
+  },
+  {
+    label: 'Private Equity',
+    subtext: 'Market-leading due diligence to support high-dollar investments.'
+  },
+  {
+    label: 'Public Markets',
+    subtext: 'Coming soon, contact us to discuss your use case.',
+    color: 'gray'
+  },
+  {
+    label: 'Climate-Focused Multi-Asset',
+    subtext: 'Single pane of glass for future impact of your full portfolio.'
+  }
+]} />
+
+## How Koi Helps:
+
+**Investment Diligence**: Cut through greenwashing with rapid, scenario-based impact forecasts that reveal the range of potential outcomes for prospective investments. Koi helps you understand key uncertainties—from market adoption to grid decarbonization—so you can make informed investment decisions.
+
+<ImageZoom
+src={image2}
+alt="Investment diligence scenario analysis"
+caption="Example scenario analysis evaluating a technology's impact across different market and grid decarbonization assumptions"
+/>
+
+**Portfolio Impact Reporting**: Quantify and communicate the avoided emissions across your entire portfolio with standardized, comparable metrics. Koi enables portfolio managers to benchmark individual assets, track performance over time, and report at fund, vintage, or sector levels.
+
+<ImageZoom
+src={image4}
+alt="Portfolio collection example"
+caption="Investment portfolio organized in Koi. Collections support nested analytics—analyze individual funds or aggregate across the entire portfolio."
+/>
+
+Portfolio analysis can be tailored to your firm's stage and reporting maturity. Accelerators use Koi for rapid, high-level impact assessment of early-stage startups, while growth-stage investors develop detailed, company-specific forecasts that evolve alongside portfolio company development.
+
+For a real-world example, see the <ExternalLink
+  url="https://ecoreport.eclipse.vc/"
+  utmContent="use-cases-link"
+  ariaLabel="Eclipse Ventures ECO Report"
+  linkText="ECO Report"
+/> we developed with Eclipse Ventures.
+
+**Fundraising Support**: Demonstrate your climate impact thesis to LPs with credible, data-backed impact projections. Koi provides the analytical rigor and transparency institutional LPs expect.
+
+**Regulatory Compliance**: Meet evolving reporting requirements (SFDR, TCFD, SEC climate disclosure) with auditable data on portfolio emissions impacts.
+
+<Tip>
+Koi supports **model versioning** and **collection building**, enabling evergreen impact reporting that evolves as portfolio companies mature and as new data becomes available.
+</Tip>

@@ -1,15 +1,8 @@
-import image1 from './images/image1.webp'
-import image2 from './images/image2.webp'
-import image3 from './images/image3.webp'
-import image4 from './images/image4.webp'
-import image5 from './images/image5.webp'
-import ImageZoom from '@/components/ImageZoom'
 import YouTubeEmbed from '@/components/YouTubeEmbed'
-import InternalLink from '@/components/InternalLink'
 import ExternalLink from '@/components/ExternalLink'
-import { CustomerTypes } from '@/components/CustomerTypes'
-
 import PageInformationalData from '@/components/PageInformationalData'
+import UseCasesGrid from './UseCasesGrid'
+
 export const metadata = {
   title: 'Use Cases',
   description:
@@ -22,308 +15,23 @@ export const metadata = {
 
 How Diverse Teams Use Koi to Drive Climate Impact {{ className: 'text-cyan-600' }}
 
+---
+
 Koi delivers **standardized, transparent, and scientifically-grounded avoided emissions analyses** to help organizations make informed decisions about climate solutions. Whether you're evaluating investments, developing new technologies, advising clients, or reporting on portfolio performance, Koi provides the data infrastructure and analytical tools you need.
 
-<Info>
-**Avoided emissions** measure the greenhouse gas emissions prevented or removed when a climate solution replaces a conventional alternative. This forward-looking metric is essential for assessing the real-world impact of climate technologies and interventions.
-</Info>
-
-Koi serves diverse stakeholders across the climate ecosystem. Below are specific use cases tailored to each customer profile. For additional examples and case studies, visit our <ExternalLink
+Koi serves diverse stakeholders across the climate ecosystem. Below you'll find specific use cases tailored to each customer profile. For additional examples and case studies, visit our <ExternalLink
   url="https://rhoimpact.com/case-studies/"
   utmContent="use-cases-link"
   ariaLabel="Rho Impact Case Studies"
   linkText="Case Studies and Contributions"
 /> page.
 
----
-
-## Asset Owners
-
-<CustomerTypes types={[
-  {
-    label: 'Pension Funds',
-    subtext: 'ESG mandate fulfillment and net-zero alignment reporting for beneficiaries.'
-  },
-  {
-    label: 'Sovereign Wealth Funds',
-    subtext: 'Strategic capital allocation into high-impact climate solutions and sectors.'
-  },
-  {
-    label: 'Family Offices',
-    subtext: 'Develop and ensure alignment with your unique investment thesis.'
-  },
-  {
-    label: 'Endowments & Foundations',
-    subtext: 'Mission-aligned investment tracking and transparent portfolio reporting.'
-  }
-]} />
-
-### How Koi Helps:
-<hr />
-
-- **ESG Mandate Fulfillment**: Track and report on climate-aligned investments across your entire portfolio using standardized avoided emissions metrics that satisfy regulatory requirements and stakeholder expectations.
-- **Capital Allocation Strategy**: Identify high-impact climate solutions and sectors for direct investment or manager selection, with transparent data on market size, technology maturity, and projected impact.
-- **Net-Zero Alignment**: Assess whether portfolio holdings are aligned with net-zero pathways using Koi's scenario-based forecasting and pathway alignment tools.
-- **Stakeholder Reporting**: Generate credible, auditable impact reports for boards, beneficiaries, and regulators with clear provenance of all underlying data and assumptions.
-
-<Tip>
-Koi's <InternalLink route="collections" linkText="Collections feature" /> allows asset owners to organize climate solutions by asset class, geography, or strategic theme, making it easy to report on climate allocations at any level of granularity.
-</Tip>
-
----
-
-## Asset Managers
-
-<CustomerTypes types={[
-  {
-    label: 'Venture Capital',
-    subtext: 'Rapid dealflow screening, standardized LP reporting.'
-  },
-  {
-    label: 'Private Equity',
-    subtext: 'Market-leading due diligence to support high-dollar investments.'
-  },
-  {
-    label: 'Public Markets',
-    subtext: 'Coming soon, contact us to discuss your use case.',
-    color: 'gray'
-  },
-  {
-    label: 'Climate-Focused Multi-Asset',
-    subtext: 'Single pane of glass for future impact of your portfolio across asset classes.'
-  }
-]} />
-
-### How Koi Helps:
-<hr />
-
-**Investment Diligence**: Cut through greenwashing with rapid, scenario-based impact forecasts that reveal the range of potential outcomes for prospective investments. Koi helps you understand key uncertainties—from market adoption to grid decarbonization—so you can make informed investment decisions.
-
-<ImageZoom
-src={image2}
-alt="Investment diligence scenario analysis"
-caption="Example scenario analysis evaluating a technology's impact across different market and grid decarbonization assumptions"
-/>
-
-**Portfolio Impact Reporting**: Quantify and communicate the avoided emissions across your entire portfolio with standardized, comparable metrics. Koi enables portfolio managers to benchmark individual assets, track performance over time, and report at fund, vintage, or sector levels.
-
-<ImageZoom
-src={image4}
-alt="Portfolio collection example"
-caption="Investment portfolio organized in Koi. Collections support nested analytics—analyze individual funds or aggregate across the entire portfolio."
-/>
-
-Portfolio analysis can be tailored to your firm's stage and reporting maturity. Accelerators use Koi for rapid, high-level impact assessment of early-stage startups, while growth-stage investors develop detailed, company-specific forecasts that evolve alongside portfolio company development.
-
-For a real-world example, see the <ExternalLink
-  url="https://ecoreport.eclipse.vc/"
-  utmContent="use-cases-link"
-  ariaLabel="Eclipse Ventures ECO Report"
-  linkText="ECO Report"
-/> we developed with Eclipse Ventures.
-
-**Fundraising Support**: Demonstrate your climate impact thesis to LPs with credible, data-backed impact projections. Koi provides the analytical rigor and transparency institutional LPs expect.
-
-**Regulatory Compliance**: Meet evolving reporting requirements (SFDR, TCFD, SEC climate disclosure) with auditable data on portfolio emissions impacts.
-
-<Tip>
-Koi supports **model versioning** and **collection building**, enabling evergreen impact reporting that evolves as portfolio companies mature and as new data becomes available.
-</Tip>
-
----
-
-## Innovators
-
-<CustomerTypes types={[
-  {
-    label: 'Climate Tech Startups',
-    subtext: 'Investor- and sales-ready impact narratives and impact validation.'
-  },
-  {
-    label: 'R&D Teams',
-    subtext: 'Compare innovation pathways to accelerate and focus development.'
-  },
-  {
-    label: 'Product Developers',
-    subtext: 'Market prioritization and customer impact reporting for go-to-market.'
-  },
-  {
-    label: 'Corporate Innovation Labs',
-    subtext: 'Rapid impact assessment of emerging technologies and solutions.'
-  }
-]} />
-
-### How Koi Helps:
-<hr />
-
-**Product Development & Market Prioritization**: Compare the potential impact of different innovation pathways—whether targeting different markets, material inputs, or performance specifications—to focus your development efforts where they'll have the greatest climate benefit.
-
-<ImageZoom
-src={image1}
-alt="Technology comparison across applications"
-caption="Example comparison of the same technology deployed in copper vs. steel applications, revealing which market offers greater impact potential"
-/>
-
-<Tip>
-Koi's scenario modeling capabilities let you test multiple product configurations side-by-side within a single analysis, helping you identify the highest-impact development path.
-</Tip>
-
-**Investor Communication**: Build compelling, data-backed impact narratives for fundraising. Koi's transparent methodology and clear visualizations help you articulate your climate value proposition with the rigor investors expect.
-
-**Customer Impact Reporting**: Extract unit impact data from Koi models to build custom sales calculators and customer-facing impact reports. Show customers exactly how your solution reduces their carbon footprint.
-
-<ImageZoom
-src={image3}
-alt="Unit impact data extraction"
-caption="Koi's Unit Impact page reveals the GHG intensity reduction achieved by a solution—in this example, a 3.6% reduction in crude steel emissions"
-/>
-
-Many innovators use Koi's underlying data to develop **impact sales calculators** for their customers. For example, <ExternalLink
-  url="https://grenova.com/impact/sustainability/"
-  utmContent="use-cases-link"
-  ariaLabel="Grenova Sustainability Partnership"
-  linkText="we partnered with Grenova"
-/> to build a calculator helping laboratories quantify the avoided emissions, waste, and water consumption from adopting reusable pipette tips.
-
-**Market Validation**: Access validated market size data and adoption forecasts to understand the commercial potential of your solution and inform go-to-market strategy.
-
----
-
-## Service Providers & Consultants
-
-<CustomerTypes types={[
-  {
-    label: 'Sustainability Consultants',
-    subtext: '10x your client impact assessments quality and throughput.'
-  },
-  {
-    label: 'Climate Advisors',
-    subtext: 'Evidence-based strategy development and benchmarking for clients.'
-  },
-  {
-    label: 'ESG Rating Agencies',
-    subtext: 'Standardized avoided emissions data for credible climate ratings.'
-  },
-  {
-    label: 'Professional Services Firms',
-    subtext: 'Accelerate proposal development and client reporting capabilities.'
-  }
-]} />
-
-### How Koi Helps:
-<hr />
-
-**Client Impact Analysis**: Deliver high-quality, scientifically-grounded impact assessments for clients without investing months in custom LCA studies. Koi's standardized methodology ensures consistency and comparability across client engagements.
-
-**Climate Strategy Development**: Help clients identify the highest-impact interventions within their value chains or investment portfolios. Koi's comprehensive climate solution database enables rapid opportunity screening and prioritization.
-
-**ESG Reporting & Ratings Support**: Support clients in meeting disclosure requirements with transparent, auditable avoided emissions data. Koi's clear data provenance and methodology alignment with leading frameworks (WBCSD, Project Frame, PCAF, CDP) ensures credibility.
-
-**Proposal Development**: Quickly generate impact projections and scenario analyses to support client proposals and scoping discussions. Koi enables consultants to showcase potential outcomes before committing to full engagement work.
-
-**Benchmarking**: Compare client climate solutions or portfolios against industry peers using Koi's standardized metrics and extensive climate solution database.
-
-<Info>
-Service providers can leverage Koi's <InternalLink route="search" linkText="powerful search capabilities" />—including keyword and URL-based searches—to rapidly identify comparable climate solutions and best-practice examples.
-</Info>
-
----
-
-## Data Providers
-
-<CustomerTypes types={[
-  {
-    label: 'Financial Metrics Providers',
-    subtext: 'Integrate standardized climate impact data into broader ESG datasets.'
-  },
-  {
-    label: 'Academic Researchers',
-    subtext: 'Foundational datasets for climate tech research and impact modeling.'
-  },
-  {
-    label: 'Data Scientists',
-    subtext: 'Structured, referenced datasets ready for bespoke analysis and modeling.'
-  },
-  {
-    label: 'Tool Developers',
-    subtext: 'Integrate Koi data and AI into your platforms via API.'
-  },
-  {
-    label: 'Climate Analytics Organizations',
-    subtext: 'API access for macroscopic climate tech landscape analysis at scale.'
-  }
-]} />
-
-### How Koi Helps:
-<hr />
-
-**Dataset Curation & Research Foundation**: Leverage Koi's meticulously curated datasets as a foundation for bespoke analysis. Researchers access thousands of hours of scientific research—GHG intensities, market sizes, pathway-aligned baselines, solution mechanisms, and adoption forecasts—all structured, referenced, and exportable.
-
-<ImageZoom
-src={image5}
-alt="Koi datasheet and export options"
-caption="Every Koi model includes a detailed datasheet with full references and flexible data export options"
-/>
-
-**Academic Research**: Use Koi as a starting point for climate tech research, impact modeling, and scenario analysis. The platform's transparency and scientific rigor support academic research standards, while data export capabilities enable further analysis in specialized tools.
-
-**Model Validation**: Validate your own impact models or datasets against Koi's methodology and results. Compare assumptions, identify gaps, and benchmark your approaches against industry-standard practices.
-
-**Climate Tech Landscape Analysis**: Access Koi's climate solution database and data lake to analyze macroscopic trends in climate technology development, capital flows, and impact potential. API access enables programmatic analysis at scale.
-
-<Info>
-We partner with academic research groups and climate analytics organizations to enable scientific assessment of the climate tech landscape. If you're interested in research collaborations or API access, <ExternalLink url="https://www.koi.eco/contact" linkText="get in touch" />.
-</Info>
-
-**Tool Development**: Integrate Koi data into your own climate tools, calculators, or platforms via API. Build on our data infrastructure rather than starting from scratch.
-
----
-
-## Enterprises
-
-<CustomerTypes types={[
-  {
-    label: 'Corporate Sustainability Teams',
-    subtext: 'Meet disclosure requirements with auditable avoided emissions reporting.'
-  },
-  {
-    label: 'Product Development',
-    subtext: 'Credible impact claims for products and marketing materials.'
-  },
-  {
-    label: 'Corporate Venture Arms',
-    subtext: 'Diligence and portfolio reporting for climate investments and partnerships.'
-  },
-  {
-    label: 'Supply Chain & Procurement',
-    subtext: 'Evaluate future technologies for value-chain decarbonization.'
-  }
-]} />
-
-### How Koi Helps:
-<hr />
-
-**Supply Chain Decarbonization**: Evaluate climate solutions that could reduce value chain emissions. Assess the impact potential of alternative materials, processes, or technologies before making procurement or capital investment decisions.
-
-**Corporate Climate Strategy**: Identify and prioritize decarbonization interventions across your operations. Koi helps you understand which solutions offer the greatest emissions reduction per dollar invested.
-
-**Product Development**: For companies developing or marketing climate-friendly products, Koi provides the data foundation for credible impact claims. Build customer-facing impact calculators, marketing materials, and sustainability reports backed by transparent data.
-
-**Green Procurement**: Assess the climate credentials of potential suppliers and technology providers. Koi's standardized impact metrics enable apples-to-apples comparison of competing solutions.
-
-**Regulatory Reporting**: Meet corporate sustainability disclosure requirements (CDP, TCFD, GRI) with auditable avoided emissions data for your decarbonization initiatives.
-
-**Sustainability Communications**: Develop credible, substantiated climate impact narratives for annual reports, investor relations, and stakeholder engagement—reducing greenwashing risk.
-
-**Innovation Investment**: For corporates investing in climate tech (venture arms, accelerators, innovation partnerships), Koi provides the same diligence and portfolio reporting capabilities used by dedicated climate investors.
-
-<Tip>
-Enterprises can use Koi to model their own proprietary technologies or processes in addition to exploring the broader climate solution database.
-</Tip>
+<UseCasesGrid />
 
 ---
 
 ## Koi in Action
+
 Watch how Koi enables rapid, deep analysis of complex climate solutions—this example walks through an assessment of Microbial Nitrogen-Fixing Biofertilizer, demonstrating how users can quickly understand technology mechanisms, market potential, and impact projections.
 
 <YouTubeEmbed
@@ -331,7 +39,6 @@ Watch how Koi enables rapid, deep analysis of complex climate solutions—this e
   title="Koi Platform Analysis Walkthrough - Microbial Nitrogen-Fixing Biofertilizer"
   caption="Example analysis demonstrating how Koi helps users rapidly understand complex climate solutions"
 />
-
 
 ## Why Koi Works Across Use Cases
 

@@ -1,0 +1,67 @@
+import image1 from '../images/image1.webp'
+import image3 from '../images/image3.webp'
+import ImageZoom from '@/components/ImageZoom'
+import ExternalLink from '@/components/ExternalLink'
+import { CustomerTypes } from '@/components/CustomerTypes'
+import PageInformationalData from '@/components/PageInformationalData'
+
+export const metadata = {
+  title: 'Innovators',
+  description: 'How climate tech startups, R&D teams, product developers, and corporate innovation labs use Koi to develop and communicate their climate impact'
+}
+
+# Innovators
+
+<PageInformationalData lastModified={lastModified} />
+
+<CustomerTypes types={[
+  {
+    label: 'Climate Tech Startups',
+    subtext: 'Investor- and sales-ready impact narratives and impact validation.'
+  },
+  {
+    label: 'R&D Teams',
+    subtext: 'Compare innovation pathways to accelerate and focus development.'
+  },
+  {
+    label: 'Product Developers',
+    subtext: 'Market prioritization and customer impact reporting for go-to-market.'
+  },
+  {
+    label: 'Corporate Innovation Labs',
+    subtext: 'Rapid impact assessment of emerging technologies and solutions.'
+  }
+]} />
+
+## How Koi Helps:
+
+**Product Development & Market Prioritization**: Compare the potential impact of different innovation pathways—whether targeting different markets, material inputs, or performance specifications—to focus your development efforts where they'll have the greatest climate benefit.
+
+<ImageZoom
+src={image1}
+alt="Technology comparison across applications"
+caption="Example comparison of the same technology deployed in copper vs. steel applications, revealing which market offers greater impact potential"
+/>
+
+<Tip>
+Koi's scenario modeling capabilities let you test multiple product configurations side-by-side within a single analysis, helping you identify the highest-impact development path.
+</Tip>
+
+**Investor Communication**: Build compelling, data-backed impact narratives for fundraising. Koi's transparent methodology and clear visualizations help you articulate your climate value proposition with the rigor investors expect.
+
+**Customer Impact Reporting**: Extract unit impact data from Koi models to build custom sales calculators and customer-facing impact reports. Show customers exactly how your solution reduces their carbon footprint.
+
+<ImageZoom
+src={image3}
+alt="Unit impact data extraction"
+caption="Koi's Unit Impact page reveals the GHG intensity reduction achieved by a solution—in this example, a 3.6% reduction in crude steel emissions"
+/>
+
+Many innovators use Koi's underlying data to develop **impact sales calculators** for their customers. For example, <ExternalLink
+  url="https://grenova.com/impact/sustainability/"
+  utmContent="use-cases-link"
+  ariaLabel="Grenova Sustainability Partnership"
+  linkText="we partnered with Grenova"
+/> to build a calculator helping laboratories quantify the avoided emissions, waste, and water consumption from adopting reusable pipette tips.
+
+**Market Validation**: Access validated market size data and adoption forecasts to understand the commercial potential of your solution and inform go-to-market strategy.

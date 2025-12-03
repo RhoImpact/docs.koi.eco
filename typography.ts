@@ -180,7 +180,7 @@ export default function typographyStyles({ theme }: PluginUtils) {
             ...theme('fontSize.4xl')[1],
           },
           marginTop: theme('spacing.16'),
-          marginBottom: theme('spacing.2'),
+          marginBottom: theme('spacing.6'),
         },
         h3: {
           color: 'var(--tw-prose-headings)',
@@ -192,7 +192,7 @@ export default function typographyStyles({ theme }: PluginUtils) {
           },
           fontWeight: '600',
           marginTop: theme('spacing.10'),
-          marginBottom: theme('spacing.2'),
+          marginBottom: theme('spacing.4'),
         },
         h4: {
           color: 'var(--tw-prose-headings)',

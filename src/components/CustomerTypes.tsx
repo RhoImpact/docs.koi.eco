@@ -13,13 +13,11 @@ interface CustomerTypesProps {
 }
 
 const colorStyles: Record<CustomerTypeColor, string> = {
-  blue: 'bg-cyan-400/10 text-cyan-600 ring-cyan-400/30 dark:bg-cyan-400/10 dark:text-cyan-400 dark:ring-cyan-400/30',
-  green:
-    'bg-emerald-400/10 text-emerald-600 ring-emerald-400/30 dark:bg-emerald-400/10 dark:text-emerald-400 dark:ring-emerald-400/30',
-  gray: 'bg-zinc-400/10 text-zinc-600 ring-zinc-400/30 dark:bg-zinc-400/10 dark:text-zinc-400 dark:ring-zinc-400/30',
-  yellow:
-    'bg-amber-400/10 text-amber-600 ring-amber-400/30 dark:bg-amber-400/10 dark:text-amber-400 dark:ring-amber-400/30',
-  red: 'bg-rose-400/10 text-rose-600 ring-rose-400/30 dark:bg-rose-400/10 dark:text-rose-400 dark:ring-rose-400/30',
+  blue: 'bg-cyan-400/10 text-cyan-300 ring-cyan-400/30',
+  green: 'bg-emerald-400/10 text-emerald-300 ring-emerald-400/30',
+  gray: 'bg-zinc-400/10 text-zinc-300 ring-zinc-400/30',
+  yellow: 'bg-amber-400/10 text-amber-300 ring-amber-400/30',
+  red: 'bg-rose-400/10 text-rose-300 ring-rose-400/30',
 }
 
 export function CustomerTypes({ types }: CustomerTypesProps) {
@@ -58,11 +56,9 @@ export function CustomerTypes({ types }: CustomerTypesProps) {
                   />
                 </svg>
                 <div className="flex-1">
-                  <div className="text-sm font-semibold leading-snug">
-                    {label}
-                  </div>
+                  <div className="font-bold leading-snug">{label}</div>
                   {subtext && (
-                    <div className="mt-1 text-xs font-normal leading-snug opacity-80">
+                    <div className="mt-1 text-sm font-normal leading-snug opacity-80">
                       {subtext}
                     </div>
                   )}
