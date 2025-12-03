@@ -1,5 +1,9 @@
 # Changelog
 
+## 2025-12-03 - 0.18.1
+
+- Revamp use case page
+
 ## 2025-12-02 - 0.18.0
 
 - New YouTubeEmbed component
