@@ -1,5 +1,9 @@
 # Changelog
 
+## 2026-01-17 - 0.18.2
+
+- Update API ref docs and messaging
+
 ## 2025-12-03 - 0.18.1
 
 - Revamp use case page
