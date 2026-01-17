@@ -1,31 +1,129 @@
 import PageInformationalData from '@/components/PageInformationalData'
 import { baseUrl } from '@/shared/urls'
 export const metadata = {
-  title: 'RESTful API',
+  title: 'Climate Strategy API',
   description:
     'Integrate Koi\'s data and climate strategy engine directly into your product and workflows.',
 }
 
-# RESTful API Reference
+# Climate Strategy API Reference
 
 <PageInformationalData lastModified={lastModified} />
 
-Integrate Koi's data and climate strategy engine directly into your product and workflows. {{ className: 'text-xl text-koiGray-100' }}
+Integrate Koi's comprehensive climate data and AI-powered strategy engine directly into your applications and workflows. {{ className: 'text-xl text-koiGray-100' }}
 
-<Tip>
-  The Koi API is currently in Beta. Please contact us if you are interested in using it.
-</Tip>
+## Overview
 
-## Get your API key
+The Koi API provides programmatic access to the same powerful semantic search and climate data infrastructure that powers the Koi platform. The API enables you to:
+
+- **Search thousands of climate technologies** using natural language queries to find the most relevant solutions, baselines, and conventional technologies
+- **Query market size data** across industries and geographies to understand addressable markets for climate solutions
+- **Access GHG intensity data** for both baseline and solution technologies, with comprehensive unit compatibility and lifecycle data
+- **Retrieve detailed analysis data** including unit impact calculations, market projections, and emissions forecasts
+
+Whether you're building climate intelligence into your investment platform, automating impact assessments, or integrating climate data into your product, the Koi API delivers the same trusted data and AI-powered matching that Koi users rely on.
+
+## Key Features
+
+### Adaptable Semantic Search
+
+Unlike traditional keyword-based APIs, Koi's vector search understands the meaning and context of your queries. Describe what you're looking for in natural language, and the API returns semantically similar matches ranked by relevance.
+
+- **Context-aware matching**: Finds relevant results even when they don't share exact keywords
+- **Natural language queries**: No need for precise technical terms or structured query languages
+- **Similarity scoring**: Every result includes a similarity score to help you evaluate match quality
+
+### Comprehensive Climate Data
+
+Access the same extensively curated Koi Data Lake that powers platform models, including:
+
+- **9,000+ climate technology models** spanning solutions across energy, transportation, industry, agriculture, and more
+- **Baseline and solution GHG intensities** with full lifecycle data and geographic specificity
+- **Market size data** across industries and geographies with proper unit categorization
+- **Industry classifications** mapped to SASB and other standard taxonomies
+
+### Advanced Filtering and Scoping
+
+Fine-tune your queries with powerful filtering options:
+
+- **QA status filtering**: Control data quality by filtering for validated, in-review, or draft records
+- **Data scope control**: Query public data only, or include organization-specific and shared private data
+- **Geographic filtering**: Narrow results to specific regions or countries
+- **Unit category filtering**: Find data in compatible units (energy, mass, distance, etc.)
+- **Technology type filtering**: Distinguish between baseline, solution, or dual-purpose technologies
+
+### Production-Ready Infrastructure
+
+The API is built on enterprise-grade infrastructure with:
+
+- **Comprehensive documentation**: Interactive API documentation for rapid development
+- **Role-based access control**: Separate read and edit permissions for team management
+- **Request tracking**: Every request includes a unique ID for debugging and correlation
+
+## Authentication and Access
+
+### Get your API key
 
 Before you can make requests to the Koi API, you will need to grab your API key from your dashboard.
 
 If you are participating in the Beta, you can find it in <a href={`${baseUrl}?utm_source=docs&utm_content=api-key-link`} aria-label="Your Account Settings" rel="noopener noreferrer" target="_blank">Your Account Settings</a>
 
-## Explore the API Reference
+### API Key Permissions
 
-The Koi API Reference is a comprehensive documentation of the in-development Koi API.
+API keys are assigned one of two roles:
+
+- **api-read**: Query all endpoints and retrieve data (recommended for most integrations)
+- **api-edit**: Read access plus ability to create and modify data (for advanced integrations)
+
+<Info>
+API keys are organization-scoped and respect data sharing permissions. Keys can access public data plus any private data shared with your organization.
+</Info>
+
+## Data Quality and Versioning
+
+The API returns data from the same versioned, QA-controlled Data Lake that powers Koi platform models:
+
+- **QA status tags** indicate the level of manual review (Validated, In-Progress, Draft, etc.)
+- **Version numbers** ensure reproducibility and auditability
+- **Data provenance** traces back to original sources (IEA, SBTi, Federal LCA Commons, etc.)
+- **Transparent assumptions** with references and methodology documentation
+
+All responses include metadata with API version and Koi platform version for compatibility tracking.
+
+## Getting Started
+
+Ready to integrate Koi's climate intelligence into your application?
 
 <Button className="text-xl" href="/docs/api/reference" variant="text" arrow="right">
   <>Explore the API Reference</>
 </Button>
+
+The interactive API reference includes:
+- Detailed endpoint documentation with request/response schemas
+- Example queries and responses
+- Authentication setup instructions
+- Parameter descriptions and validation rules
+
+## Use Cases
+
+### Investment Platforms
+
+Automate climate impact screening by searching for technologies that match portfolio company descriptions, then retrieving relevant market and emissions data for impact calculations.
+
+### Climate Analytics Tools
+
+Build custom dashboards and analysis tools that leverage Koi's semantic search to match user-described technologies with validated climate data.
+
+### Impact Reporting Systems
+
+Programmatically access GHG intensities and market data to power emissions calculations and impact forecasts for recurring reports.
+
+### Research and Data Enrichment
+
+Augment your climate datasets with Koi's curated market sizes, technology classifications, and emissions factors.
+
+---
+
+<Info>
+The Koi API is continuously evolving. Check the API reference for the latest endpoints, parameters, and capabilities.
+</Info>

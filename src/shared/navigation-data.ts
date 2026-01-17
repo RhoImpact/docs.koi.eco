@@ -182,10 +182,10 @@ export const navigation: Array<NavGroup> = [
     ],
   },
   {
-    title: 'RESTful API',
+    title: 'Climate Strategy API',
     links: [
-      { title: 'API Overview', href: '/docs/api/overview' },
-      { title: 'API Reference', href: '/docs/api/reference' },
+      { title: 'API Getting Started', href: '/docs/api/overview' },
+      { title: 'API Reference Docs', href: '/docs/api/reference' },
     ],
   },
   {
