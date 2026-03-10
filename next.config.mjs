@@ -14,12 +14,9 @@ const withMDX = nextMDX({
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  output: 'export',
+  images: { unoptimized: true },
   pageExtensions: ['js', 'jsx', 'ts', 'tsx', 'mdx'],
-  experimental: {
-    outputFileTracingIncludes: {
-      '/**/*': ['./src/app/**/*.mdx'],
-    },
-  },
   env: {
     NEXT_PUBLIC_KOI_LANDING_BASE_URL:
       process.env.NEXT_PUBLIC_KOI_LANDING_BASE_URL || 'https://koi.eco',
@@ -31,7 +28,6 @@ const nextConfig = {
       process.env.NEXT_PUBLIC_KOI_FEEDBACK_BASE_URL || 'https://product.koi.eco',
     NEXT_PUBLIC_POSTHOG_HOST: process.env.NEXT_PUBLIC_POSTHOG_HOST,
     NEXT_PUBLIC_POSTHOG_KEY: process.env.NEXT_PUBLIC_POSTHOG_KEY,
-    SLACK_WEBHOOK_URL: process.env.SLACK_WEBHOOK_URL,
   },
 }
 
