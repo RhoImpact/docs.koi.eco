@@ -63,7 +63,7 @@ jobs:
         id: deploy
         run: |
           DEPLOY_OUTPUT=$(sops exec-env "${{ steps.secrets.outputs.file }}" \
-            "pnpm exec wrangler pages deploy out --project-name=koi-docs --branch=${{ github.head_ref || github.ref_name }}" 2>&1)
+            "pnpm dlx wrangler pages deploy out --project-name=koi-docs --branch=${{ github.head_ref || github.ref_name }}" 2>&1)
           echo "$DEPLOY_OUTPUT"
           DEPLOY_URL=$(echo "$DEPLOY_OUTPUT" | grep -oP 'https://[a-z0-9-]+\.koi-docs\.pages\.dev' | tail -1)
           if [ -z "$DEPLOY_URL" ]; then
