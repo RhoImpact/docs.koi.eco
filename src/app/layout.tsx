@@ -1,12 +1,18 @@
 import { type Metadata } from 'next'
 import glob from 'fast-glob'
 import Script from 'next/script'
+import { Open_Sans } from 'next/font/google'
 
 import { Providers } from '@/app/providers'
 import { Layout } from '@/components/Layout'
 import { type Section } from '@/components/SectionProvider'
 
 import '@/styles/tailwind.css'
+
+const openSans = Open_Sans({
+  subsets: ['latin'],
+  variable: '--font-open-sans',
+})
 
 export const metadata: Metadata = {
   title: {
@@ -36,7 +42,7 @@ export default async function RootLayout({
         crossOrigin="anonymous"
         strategy="lazyOnload"
       />
-      <html lang="en" className="h-full" suppressHydrationWarning>
+      <html lang="en" className={`h-full ${openSans.variable}`} suppressHydrationWarning>
         <body className="flex min-h-full bg-koiGray-800 antialiased">
           <Providers>
             <div className="w-full">

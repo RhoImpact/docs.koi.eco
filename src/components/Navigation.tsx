@@ -21,7 +21,7 @@ function MobileTopLevelNavItem({
     <li className="md:hidden">
       <Link
         href={href}
-        className="block py-1 text-sm text-zinc-600 transition hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-white"
+        className="block py-1 text-sm text-koiGray-300 transition hover:text-koiGray-700 dark:text-koiGray-200 dark:hover:text-koiGray-100"
       >
         {children}
       </Link>
@@ -55,8 +55,8 @@ export function NavLink({
         'flex justify-start gap-2 py-1 pr-3 text-sm transition',
         isAnchorLink ? 'pl-7' : 'pl-4',
         active
-          ? 'rounded-r-md border-l-2 border-cyan-500 bg-white/5 text-zinc-900 dark:text-white'
-          : 'text-zinc-600 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-white'
+          ? 'rounded-r-md border-l-2 border-koiBlue-400 bg-white/5 text-koiGray-700 dark:text-koiGray-100'
+          : 'text-koiGray-300 hover:text-koiGray-700 dark:text-koiGray-200 dark:hover:text-koiGray-100'
       )}
     >
       {icon && (
@@ -94,14 +94,14 @@ function NavigationGroup({
     <li className={clsx('relative mt-6', className)}>
       <motion.h2
         layout="position"
-        className="text-xs font-semibold text-zinc-900 dark:text-white"
+        className="text-xs font-semibold text-koiGray-700 dark:text-koiGray-100"
       >
         {group.title}
       </motion.h2>
       <div className="relative mt-3 pl-2">
         <motion.div
           layout
-          className="absolute inset-y-0 left-2 w-px bg-zinc-900/10 dark:bg-white/5"
+          className="absolute inset-y-0 left-2 w-px bg-koiGray-900/10 dark:bg-white/5"
         />
         <ul role="list" className="border-l border-transparent">
           {group.links.map((link, idx) => (
