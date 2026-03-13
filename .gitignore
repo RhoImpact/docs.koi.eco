@@ -24,17 +24,13 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
-# all env files
+# env files (but allow SOPS-encrypted secrets)
 .env*
-
-# vercel
-.vercel
+!secrets/*.env
 
 # typescript
 *.tsbuildinfo
 next-env.d.ts
 
-# Local Netlify folder
-.netlify
 
 .claude/settings.local.json

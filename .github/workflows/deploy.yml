@@ -1,0 +1,154 @@
+name: Deploy to Cloudflare Pages
+
+on:
+  push:
+    branches: [main, staging, dev]
+  pull_request:
+    branches: [main]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      deployments: write
+    env:
+      AWS_PROFILE: sops-ri
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 10
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: pnpm
+
+      - run: pnpm install --frozen-lockfile
+
+      - name: Install SOPS
+        run: |
+          SOPS_VERSION="v3.9.4"
+          curl -L -o /tmp/sops "https://github.com/getsops/sops/releases/download/${SOPS_VERSION}/sops-${SOPS_VERSION}.linux.amd64"
+          chmod +x /tmp/sops
+          sudo mv /tmp/sops /usr/local/bin/sops
+          sops --version
+
+      - name: Configure AWS credentials for SOPS
+        run: |
+          mkdir -p ~/.aws
+          echo "[sops-ri]" >> ~/.aws/credentials
+          echo "aws_access_key_id = ${{ vars.SOPS_AWS_ACCESS_KEY_ID }}" >> ~/.aws/credentials
+          echo "aws_secret_access_key = ${{ secrets.SOPS_AWS_SECRET_ACCESS_KEY }}" >> ~/.aws/credentials
+          echo "[profile sops-ri]" >> ~/.aws/config
+          echo "region = us-east-1" >> ~/.aws/config
+
+      - name: Determine secrets file
+        id: secrets
+        run: |
+          if [ "${{ github.ref_name }}" = "main" ]; then
+            echo "file=secrets/github.env" >> $GITHUB_OUTPUT
+          else
+            echo "file=secrets/github-preview.env" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Build
+        run: |
+          sops exec-env "${{ steps.secrets.outputs.file }}" \
+            "pnpm build"
+
+      - name: Deploy to Cloudflare Pages
+        id: deploy
+        run: |
+          DEPLOY_OUTPUT=$(sops exec-env "${{ steps.secrets.outputs.file }}" \
+            "pnpm exec wrangler pages deploy out --project-name=koi-docs --branch=${{ github.head_ref || github.ref_name }}" 2>&1)
+          echo "$DEPLOY_OUTPUT"
+          DEPLOY_URL=$(echo "$DEPLOY_OUTPUT" | grep -oP 'https://[a-z0-9-]+\.koi-docs\.pages\.dev' | tail -1)
+          if [ -z "$DEPLOY_URL" ]; then
+            DEPLOY_URL=$(echo "$DEPLOY_OUTPUT" | grep -oP 'https://[^\s]+\.pages\.dev' | tail -1)
+          fi
+          echo "url=$DEPLOY_URL" >> $GITHUB_OUTPUT
+
+      - name: Notify Slack (success)
+        if: success()
+        run: |
+          BRANCH="${{ github.head_ref || github.ref_name }}"
+          COMMIT_MSG=$(git log -1 --pretty=%s)
+          COMMIT_SHA="${{ github.sha }}"
+          SHORT_SHA="${COMMIT_SHA:0:7}"
+          DEPLOY_URL="${{ steps.deploy.outputs.url }}"
+          REPO_URL="https://github.com/${{ github.repository }}"
+          RUN_URL="${REPO_URL}/actions/runs/${{ github.run_id }}"
+
+          if [ "$BRANCH" = "main" ]; then
+            SITE_URL="https://docs.koi.eco"
+            ENV_LABEL="production"
+          else
+            SITE_URL="$DEPLOY_URL"
+            ENV_LABEL="preview"
+          fi
+
+          sops exec-env "${{ steps.secrets.outputs.file }}" "curl -s -X POST \${SLACK_WEBHOOK_URL} \
+            -H 'Content-type: application/json' \
+            -d '{
+              \"blocks\": [
+                {
+                  \"type\": \"section\",
+                  \"text\": {
+                    \"type\": \"mrkdwn\",
+                    \"text\": \":white_check_mark: *koi-docs* deployed to *${ENV_LABEL}*\n\n*Branch:* \`${BRANCH}\`\n*Commit:* <${REPO_URL}/commit/${COMMIT_SHA}|${SHORT_SHA}> ${COMMIT_MSG}\"
+                  }
+                },
+                {
+                  \"type\": \"actions\",
+                  \"elements\": [
+                    {
+                      \"type\": \"button\",
+                      \"text\": { \"type\": \"plain_text\", \"text\": \":globe_with_meridians: View Site\" },
+                      \"url\": \"${SITE_URL}\"
+                    },
+                    {
+                      \"type\": \"button\",
+                      \"text\": { \"type\": \"plain_text\", \"text\": \":github: Build Log\" },
+                      \"url\": \"${RUN_URL}\"
+                    }
+                  ]
+                }
+              ]
+            }'"
+
+      - name: Notify Slack (failure)
+        if: failure()
+        run: |
+          BRANCH="${{ github.head_ref || github.ref_name }}"
+          COMMIT_MSG=$(git log -1 --pretty=%s)
+          COMMIT_SHA="${{ github.sha }}"
+          SHORT_SHA="${COMMIT_SHA:0:7}"
+          REPO_URL="https://github.com/${{ github.repository }}"
+          RUN_URL="${REPO_URL}/actions/runs/${{ github.run_id }}"
+
+          sops exec-env "${{ steps.secrets.outputs.file }}" "curl -s -X POST \${SLACK_WEBHOOK_URL} \
+            -H 'Content-type: application/json' \
+            -d '{
+              \"blocks\": [
+                {
+                  \"type\": \"section\",
+                  \"text\": {
+                    \"type\": \"mrkdwn\",
+                    \"text\": \":x: *koi-docs* deploy *failed*\n\n*Branch:* \`${BRANCH}\`\n*Commit:* <${REPO_URL}/commit/${COMMIT_SHA}|${SHORT_SHA}> ${COMMIT_MSG}\"
+                  }
+                },
+                {
+                  \"type\": \"actions\",
+                  \"elements\": [
+                    {
+                      \"type\": \"button\",
+                      \"text\": { \"type\": \"plain_text\", \"text\": \":github: Build Log\" },
+                      \"url\": \"${RUN_URL}\"
+                    }
+                  ]
+                }
+              ]
+            }'"
