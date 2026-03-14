@@ -9,7 +9,7 @@ const useCasesLinks: Array<GridLink> = [
     name: 'Asset Owners',
     description:
       'Pension funds, sovereign wealth funds, family offices, and endowments using Koi for ESG mandates and net-zero alignment.',
-    icon: 'fa-regular fa-building-columns text-cyan-600',
+    icon: 'fa-regular fa-building-columns text-koiBlue-400',
     showGrid: false,
   },
   {
@@ -17,7 +17,7 @@ const useCasesLinks: Array<GridLink> = [
     name: 'Asset Managers',
     description:
       'VC, PE, and multi-asset managers using Koi for investment diligence and portfolio impact reporting.',
-    icon: 'fa-regular fa-chart-line text-cyan-600',
+    icon: 'fa-regular fa-chart-line text-koiBlue-400',
     showGrid: false,
   },
   {
@@ -25,7 +25,7 @@ const useCasesLinks: Array<GridLink> = [
     name: 'Innovators',
     description:
       'Climate tech startups, R&D teams, and product developers using Koi for market prioritization and investor communication.',
-    icon: 'fa-regular fa-lightbulb text-cyan-600',
+    icon: 'fa-regular fa-lightbulb text-koiBlue-400',
     showGrid: false,
   },
   {
@@ -33,7 +33,7 @@ const useCasesLinks: Array<GridLink> = [
     name: 'Service Providers',
     description:
       'Sustainability consultants, climate advisors, and ESG rating agencies using Koi for client impact analysis.',
-    icon: 'fa-regular fa-handshake text-cyan-600',
+    icon: 'fa-regular fa-handshake text-koiBlue-400',
     showGrid: false,
   },
   {
@@ -41,7 +41,7 @@ const useCasesLinks: Array<GridLink> = [
     name: 'Data Providers',
     description:
       'Researchers, data scientists, and tool developers using Koi for climate tech datasets and analysis.',
-    icon: 'fa-regular fa-database text-cyan-600',
+    icon: 'fa-regular fa-database text-koiBlue-400',
     showGrid: false,
   },
   {
@@ -49,7 +49,7 @@ const useCasesLinks: Array<GridLink> = [
     name: 'Enterprises',
     description:
       'Corporate sustainability teams, product development, and supply chain professionals using Koi for decarbonization.',
-    icon: 'fa-regular fa-industry text-cyan-600',
+    icon: 'fa-regular fa-industry text-koiBlue-400',
     showGrid: false,
   },
 ]

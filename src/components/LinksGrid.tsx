@@ -26,9 +26,9 @@ export interface GridLink {
 
 function GridLinkIcon({ icon }: { icon: string }) {
   return (
-    <div className="flex h-7 w-7 items-center justify-center rounded-full bg-zinc-900/5 ring-1 ring-zinc-900/25 backdrop-blur-[2px] transition duration-300 group-hover:bg-white/50 group-hover:ring-zinc-900/25 dark:bg-white/7.5 dark:ring-white/15 dark:group-hover:bg-cyan-300/10 dark:group-hover:ring-cyan-400">
+    <div className="flex h-7 w-7 items-center justify-center rounded-full bg-koiGray-700/5 ring-1 ring-koiGray-400/25 backdrop-blur-[2px] transition duration-300 group-hover:bg-white/50 group-hover:ring-koiGray-400/25 dark:bg-white/7.5 dark:ring-white/15 dark:group-hover:bg-koiBlue-300/10 dark:group-hover:ring-koiBlue-400">
       <i
-        className={`h-5 w-5 fill-zinc-700/10 stroke-zinc-700 transition-colors duration-300 group-hover:stroke-zinc-900 dark:fill-white/10 dark:stroke-zinc-400 dark:group-hover:fill-cyan-300/10 dark:group-hover:stroke-cyan-400 ${icon}`}
+        className={`h-5 w-5 fill-koiGray-300/10 stroke-koiGray-300 transition-colors duration-300 group-hover:stroke-koiGray-100 dark:fill-white/10 dark:stroke-koiGray-200 dark:group-hover:fill-koiBlue-300/10 dark:group-hover:stroke-koiBlue-400 ${icon}`}
       />
     </div>
   )
@@ -59,7 +59,7 @@ function GridLinkPattern({
         />
       </div>
       <motion.div
-        className="absolute inset-0 rounded-2xl bg-gradient-to-r from-[#d7e4ed] to-[#dffbf4] opacity-0 transition duration-300 group-hover:opacity-100 dark:from-[#202D2E] dark:to-[#283434]"
+        className="absolute inset-0 rounded-2xl bg-gradient-to-r from-[#d7e4ed] to-[#dffbf4] opacity-0 transition duration-300 group-hover:opacity-100 dark:from-[#1B1E23] dark:to-[#1a2a2e]"
         style={style}
       />
       <motion.div

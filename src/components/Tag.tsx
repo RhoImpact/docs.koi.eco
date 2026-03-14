@@ -7,14 +7,14 @@ const variantStyles = {
 
 const colorStyles = {
   cyan: {
-    small: 'text-cyan-500 dark:text-cyan-400',
+    small: 'text-koiBlue-400 dark:text-koiBlue-400',
     medium:
-      'ring-cyan-300 dark:ring-cyan-400/30 bg-cyan-400/10 text-cyan-500 dark:text-cyan-400',
+      'ring-koiBlue-500 dark:ring-koiBlue-400/30 bg-koiBlue-400/10 text-koiBlue-500 dark:text-koiBlue-400',
   },
   sky: {
-    small: 'text-sky-500',
+    small: 'text-koiBlue-300',
     medium:
-      'ring-sky-300 bg-sky-400/10 text-sky-500 dark:ring-sky-400/30 dark:bg-sky-400/10 dark:text-sky-400',
+      'ring-koiBlue-300 bg-koiBlue-400/10 text-koiBlue-400 dark:ring-koiBlue-400/30 dark:bg-koiBlue-400/10 dark:text-koiBlue-300',
   },
   amber: {
     small: 'text-amber-500',
