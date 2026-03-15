@@ -33,7 +33,7 @@ export function FaqItem({
       {({ open }) => (
         <>
           <DisclosureButton className="group flex w-full items-start justify-between text-left">
-            <span className="text-sm font-medium text-zinc-200 group-hover:text-white transition-colors">
+            <span className="text-base font-medium text-zinc-200 group-hover:text-white transition-colors">
               {question}
             </span>
             <span className="ml-4 mt-0.5 flex-none">
@@ -54,7 +54,7 @@ export function FaqItem({
           </DisclosureButton>
           <DisclosurePanel
             transition
-            className="origin-top transition duration-200 ease-out data-[closed]:scale-y-95 data-[closed]:opacity-0 pt-3 pb-1 text-sm text-zinc-400 [&>:first-child]:mt-0 [&>:last-child]:mb-0 [&_a]:text-koiBlue-400 [&_a:hover]:text-koiBlue-300 [&_strong]:text-zinc-300 [&_code]:text-zinc-300"
+            className="origin-top transition duration-200 ease-out data-[closed]:scale-y-95 data-[closed]:opacity-0 pt-3 pb-1 text-[0.938rem] leading-relaxed text-zinc-400 [&>:first-child]:mt-0 [&>:last-child]:mb-0 [&_a]:text-koiBlue-400 [&_a:hover]:text-koiBlue-300 [&_strong]:text-zinc-300 [&_code]:text-zinc-300"
           >
             {children}
           </DisclosurePanel>
