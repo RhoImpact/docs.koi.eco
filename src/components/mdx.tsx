@@ -11,6 +11,7 @@ import { Prose } from '@/components/Prose'
 export const a = Link
 export { Button } from '@/components/Button'
 export { CodeGroup, Code as code, Pre as pre } from '@/components/Code'
+export { FaqSection, FaqItem } from '@/components/FaqAccordion'
 
 export function wrapper({ children }: { children: React.ReactNode }) {
   return (
