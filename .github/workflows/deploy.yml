@@ -6,9 +6,14 @@ on:
   pull_request:
     branches: [main]
 
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    outputs:
+      deploy-url: ${{ steps.deploy.outputs.url }}
     permissions:
       contents: read
       deployments: write
@@ -147,6 +152,201 @@ jobs:
                       \"url\": \"${RUN_URL}\"
                     }
                   ]
+                }
+              ]
+            }'"
+
+  lighthouse:
+    needs: deploy
+    if: success()
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pull-requests: write
+    env:
+      AWS_PROFILE: sops-ri
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install SOPS
+        run: |
+          SOPS_VERSION="v3.9.4"
+          curl -L -o /tmp/sops "https://github.com/getsops/sops/releases/download/${SOPS_VERSION}/sops-${SOPS_VERSION}.linux.amd64"
+          chmod +x /tmp/sops
+          sudo mv /tmp/sops /usr/local/bin/sops
+
+      - name: Configure AWS credentials for SOPS
+        run: |
+          mkdir -p ~/.aws
+          echo "[sops-ri]" >> ~/.aws/credentials
+          echo "aws_access_key_id = ${{ vars.SOPS_AWS_ACCESS_KEY_ID }}" >> ~/.aws/credentials
+          echo "aws_secret_access_key = ${{ secrets.SOPS_AWS_SECRET_ACCESS_KEY }}" >> ~/.aws/credentials
+          echo "[profile sops-ri]" >> ~/.aws/config
+          echo "region = us-east-1" >> ~/.aws/config
+
+      - name: Determine secrets file
+        id: secrets
+        run: |
+          if [ "${{ github.ref_name }}" = "main" ]; then
+            echo "file=secrets/github.env" >> $GITHUB_OUTPUT
+          else
+            echo "file=secrets/github-preview.env" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Determine audit URL
+        id: url
+        run: |
+          DEPLOY_URL="${{ needs.deploy.outputs.deploy-url }}"
+          if [ "${{ github.ref_name }}" = "main" ]; then
+            AUDIT_URL="https://docs.koi.eco"
+          elif [ -n "$DEPLOY_URL" ]; then
+            AUDIT_URL="$DEPLOY_URL"
+          else
+            AUDIT_URL="https://staging.koi-docs.pages.dev"
+          fi
+          echo "audit_url=$AUDIT_URL" >> $GITHUB_OUTPUT
+          echo "Auditing: $AUDIT_URL"
+
+      - name: Lighthouse (desktop)
+        id: lh-desktop
+        uses: treosh/lighthouse-ci-action@v12
+        with:
+          urls: |
+            ${{ steps.url.outputs.audit_url }}
+            ${{ steps.url.outputs.audit_url }}/docs/getting-started
+            ${{ steps.url.outputs.audit_url }}/docs/getting-started/quickstart
+          configPath: ./lighthouserc-desktop.json
+          uploadArtifacts: true
+          artifactName: lighthouse-desktop
+          temporaryPublicStorage: true
+
+      - name: Save desktop results
+        run: cp .lighthouseci/manifest.json /tmp/manifest-desktop.json
+
+      - name: Lighthouse (mobile)
+        id: lh-mobile
+        uses: treosh/lighthouse-ci-action@v12
+        with:
+          urls: |
+            ${{ steps.url.outputs.audit_url }}
+            ${{ steps.url.outputs.audit_url }}/docs/getting-started
+            ${{ steps.url.outputs.audit_url }}/docs/getting-started/quickstart
+          configPath: ./lighthouserc-mobile.json
+          uploadArtifacts: true
+          artifactName: lighthouse-mobile
+          temporaryPublicStorage: true
+
+      - name: Comment on PR
+        if: github.event_name == 'pull_request'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            const desktop = JSON.parse(fs.readFileSync('/tmp/manifest-desktop.json', 'utf8'));
+            const mobile = JSON.parse(fs.readFileSync('.lighthouseci/manifest.json', 'utf8'));
+
+            const score = (v) => Math.round((v || 0) * 100);
+            const icon = (v) => v >= 0.9 ? '\u{1F7E2}' : v >= 0.5 ? '\u{1F7E0}' : '\u{1F534}';
+            const fmt = (v) => `${icon(v)} ${score(v)}`;
+            const pagePath = (url) => {
+              try { const p = new URL(url).pathname; return p === '/' ? '/' : p; }
+              catch { return url; }
+            };
+
+            let body = '## Lighthouse Results\n\n';
+            body += '| Preset | Page | Perf | A11y | Best Practices | SEO |\n';
+            body += '| --- | --- | --- | --- | --- | --- |\n';
+
+            for (const e of desktop) {
+              const s = e.summary;
+              body += `| Desktop | \`${pagePath(e.url)}\` | ${fmt(s.performance)} | ${fmt(s.accessibility)} | ${fmt(s['best-practices'])} | ${fmt(s.seo)} |\n`;
+            }
+            for (const e of mobile) {
+              const s = e.summary;
+              body += `| Mobile | \`${pagePath(e.url)}\` | ${fmt(s.performance)} | ${fmt(s.accessibility)} | ${fmt(s['best-practices'])} | ${fmt(s.seo)} |\n`;
+            }
+
+            body += '\n_Full HTML reports available in the workflow run artifacts._';
+
+            const { data: comments } = await github.rest.issues.listComments({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.issue.number,
+            });
+            const existing = comments.find(c => c.body && c.body.includes('## Lighthouse Results'));
+            if (existing) {
+              await github.rest.issues.updateComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                comment_id: existing.id,
+                body,
+              });
+            } else {
+              await github.rest.issues.createComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: context.issue.number,
+                body,
+              });
+            }
+
+      - name: Notify Slack (Lighthouse)
+        if: always()
+        run: |
+          BRANCH="${{ github.head_ref || github.ref_name }}"
+          REPO_URL="https://github.com/${{ github.repository }}"
+          RUN_URL="${REPO_URL}/actions/runs/${{ github.run_id }}"
+          AUDIT_URL="${{ steps.url.outputs.audit_url }}"
+          DESKTOP_LINKS='${{ steps.lh-desktop.outputs.links }}'
+          MOBILE_LINKS='${{ steps.lh-mobile.outputs.links }}'
+
+          format_scores() {
+            local file="$1" label="$2"
+            if [ ! -f "$file" ]; then
+              echo "*${label}:* _no results_"
+              return
+            fi
+            jq -r --arg label "$label" '
+              [.[] | {
+                path: (.url | split("//") | .[1] | split("/") | .[1:] | join("/") | if . == "" then "/" else "/\(.)" end),
+                perf: ((.summary.performance // 0) * 100 | floor),
+                a11y: ((.summary.accessibility // 0) * 100 | floor),
+                bp: ((.summary."best-practices" // 0) * 100 | floor),
+                seo: ((.summary.seo // 0) * 100 | floor)
+              }] | map("\(.path): P \(.perf) / A11y \(.a11y) / BP \(.bp) / SEO \(.seo)") | "*\($label):*\n" + (join("\n"))
+            ' "$file"
+          }
+
+          DESKTOP_SCORES=$(format_scores /tmp/manifest-desktop.json "Desktop")
+          MOBILE_SCORES=$(format_scores .lighthouseci/manifest.json "Mobile")
+
+          DESKTOP_REPORT=$(echo "$DESKTOP_LINKS" | jq -r 'to_entries[0].value // empty' 2>/dev/null || echo "")
+          MOBILE_REPORT=$(echo "$MOBILE_LINKS" | jq -r 'to_entries[0].value // empty' 2>/dev/null || echo "")
+
+          BUTTONS="["
+          if [ -n "$DESKTOP_REPORT" ]; then
+            BUTTONS+="{\"type\":\"button\",\"text\":{\"type\":\"plain_text\",\"text\":\"Desktop Report\"},\"url\":\"${DESKTOP_REPORT}\"},"
+          fi
+          if [ -n "$MOBILE_REPORT" ]; then
+            BUTTONS+="{\"type\":\"button\",\"text\":{\"type\":\"plain_text\",\"text\":\"Mobile Report\"},\"url\":\"${MOBILE_REPORT}\"},"
+          fi
+          BUTTONS+="{\"type\":\"button\",\"text\":{\"type\":\"plain_text\",\"text\":\"Build Log\"},\"url\":\"${RUN_URL}\"}"
+          BUTTONS+="]"
+
+          sops exec-env "${{ steps.secrets.outputs.file }}" "curl -s -X POST \${SLACK_WEBHOOK_URL} \
+            -H 'Content-type: application/json' \
+            -d '{
+              \"blocks\": [
+                {
+                  \"type\": \"section\",
+                  \"text\": {
+                    \"type\": \"mrkdwn\",
+                    \"text\": \":lighthouse: *koi-docs* Lighthouse audit complete\n\n*Branch:* \`${BRANCH}\` | *Target:* ${AUDIT_URL}\n\n${DESKTOP_SCORES}\n\n${MOBILE_SCORES}\"
+                  }
+                },
+                {
+                  \"type\": \"actions\",
+                  \"elements\": ${BUTTONS}
                 }
               ]
             }'"
