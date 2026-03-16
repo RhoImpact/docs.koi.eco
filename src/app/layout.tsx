@@ -61,6 +61,8 @@ export default async function RootLayout({
       />
       <html lang="en" className={`h-full ${openSans.variable}`} suppressHydrationWarning>
         <head>
+          <link rel="service-desc" href="https://rhoimpact-bucket-public.s3.us-east-1.amazonaws.com/koi/openapi/openapi.json" type="application/json" />
+          <link rel="service-doc" href="https://docs.koi.eco/docs/api/reference" />
           <script
             type="application/ld+json"
             dangerouslySetInnerHTML={{ __html: JSON.stringify({

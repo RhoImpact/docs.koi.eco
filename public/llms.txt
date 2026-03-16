@@ -1,0 +1,40 @@
+# Koi by Rho Impact
+
+> Koi delivers decision-grade avoided emissions forecasts and asset-level climate analytics for institutional investors and financial platforms. Built by Rho Impact, a research and modeling company that translates climate science into investment-ready data.
+
+## What Koi provides
+
+- Avoided emissions forecasts for 10,000+ climate technology models across 50+ geographies and 20+ industries
+- Asset-level climate impact data (not industry averages) built from physics-based modeling, LCA databases, and technology diffusion curves
+- The CRANE Tier: the de facto market standard for avoided emissions methodology, developed with Prime Coalition
+- A public API for programmatic access to climate data (semantic search, GHG intensities, market data, emissions forecasting)
+
+## Key pages
+
+- Documentation home: https://docs.koi.eco
+- Methodology overview: https://docs.koi.eco/docs/data-and-methodology/overview
+- Avoided emissions: https://docs.koi.eco/docs/data-and-methodology/avoided-emissions
+- Mathematical foundations: https://docs.koi.eco/docs/data-and-methodology/mathematical-foundations
+- Classification system: https://docs.koi.eco/docs/data-and-methodology/classification-overview
+- Terms and concepts: https://docs.koi.eco/docs/data-and-methodology/terms-and-concepts
+- Koi data sources: https://docs.koi.eco/docs/data-and-methodology/koi-data
+- Koi engine (AI acceleration): https://docs.koi.eco/docs/data-and-methodology/koi-engine
+- Methodology alignment (WBCSD, Project Frame, GFANZ, CDP ECT): https://docs.koi.eco/docs/data-and-methodology/methodology-alignment
+- API overview: https://docs.koi.eco/docs/api/overview
+- API reference: https://docs.koi.eco/docs/api/reference
+- Use cases: https://docs.koi.eco/docs/getting-started/use-cases
+- FAQs: https://docs.koi.eco/docs/getting-started/faqs
+
+## API access
+
+- OpenAPI spec: https://rhoimpact-bucket-public.s3.us-east-1.amazonaws.com/koi/openapi/openapi.json
+- Authentication: API key with role-based permissions
+- Capabilities: semantic search across climate technologies, market sizing, GHG intensity data, emissions forecasting
+
+## About Rho Impact
+
+Rho Impact is a research and modeling company. Koi is our flagship data product. We are co-creators of CRANE (with Prime Coalition), contributing authors to Project Frame methodology, members of the AEFDi Scientific Advisory Committee, and contributors to CDP's Emerging Climate Technology Framework.
+
+- Company: https://rhoimpact.com
+- Product: https://koi.eco
+- Documentation: https://docs.koi.eco
