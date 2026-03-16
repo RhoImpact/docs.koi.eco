@@ -1,6 +1,10 @@
 # Cloudflare Pages custom headers
 # https://developers.cloudflare.com/pages/configuration/headers/
 
+# Cache static assets aggressively (hashed filenames enable long TTL)
+/_next/static/*
+  Cache-Control: public, max-age=31536000, immutable
+
 # OpenAPI spec discoverability on API pages
 /docs/api/*
   Link: <https://rhoimpact-bucket-public.s3.us-east-1.amazonaws.com/koi/openapi/openapi.json>; rel="service-desc", <https://docs.koi.eco/docs/api/reference>; rel="service-doc"

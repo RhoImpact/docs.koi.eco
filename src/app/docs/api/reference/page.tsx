@@ -1,8 +1,26 @@
 'use client'
 
 import { useEffect, useRef, useState } from 'react'
-import '@scalar/api-reference/style.css'
-import './apiReference.css'
+
+/**
+ * Inject a stylesheet link into <head> at runtime. Returns a promise that
+ * resolves when the sheet has loaded (or rejects on error). Prevents
+ * duplicates by checking for an existing link with the same href.
+ */
+function loadStylesheet(href: string): Promise<void> {
+  return new Promise((resolve, reject) => {
+    if (document.querySelector(`link[href="${href}"]`)) {
+      resolve()
+      return
+    }
+    const link = document.createElement('link')
+    link.rel = 'stylesheet'
+    link.href = href
+    link.onload = () => resolve()
+    link.onerror = () => reject(new Error(`Failed to load stylesheet: ${href}`))
+    document.head.appendChild(link)
+  })
+}
 
 export default function ApiReferencePage() {
   const ref = useRef<HTMLDivElement>(null)
@@ -11,7 +29,11 @@ export default function ApiReferencePage() {
   useEffect(() => {
     const loadScalar = async () => {
       try {
-        // Dynamically import Scalar to ensure it runs client-side only
+        // Load Scalar CSS at runtime only on this route. The static import
+        // that was here before leaked ~289KB of Scalar styles into the
+        // global CSS bundle, blocking first paint on every page.
+        await loadStylesheet('/scalar-api-reference.css')
+
         const { createApiReference } = await import('@scalar/api-reference')
 
         if (ref.current) {

@@ -60,7 +60,7 @@ export function NavLink({
       )}
     >
       {icon && (
-        <span className="truncate">
+        <span className="inline-flex h-4 w-4 shrink-0 items-center justify-center">
           <i className={`${icon}`}></i>
         </span>
       )}
