@@ -1,0 +1,172 @@
+import ExternalLink from '@/components/ExternalLink'
+import PageInformationalData from '@/components/PageInformationalData'
+
+export const metadata = {
+  title: 'CRANE Tier -- History, Methodology & Evolution',
+  description:
+    'The CRANE Tier is Koi\'s permanently free avoided emissions modeling capability, built on the CRANE methodology co-created with Prime Coalition. Same science, expanded infrastructure, zero cost. History, methodology continuity, and framework contributions.',
+}
+
+export const sections = [
+  { id: 'crane-tier', title: 'CRANE Tier' },
+  { id: 'origins-prime-coalition-and-the-gap-in-climate-finance', title: 'Origins' },
+  { id: 'what-crane-does', title: 'What CRANE Does' },
+  { id: 'relationship-to-project-frame', title: 'Project Frame' },
+  { id: 'evolution-into-kois-crane-tier', title: 'Evolution into Koi' },
+  { id: 'framework-contributions-and-standards-recognition', title: 'Framework Contributions' },
+  { id: 'where-methodological-leadership-sits-today', title: 'Methodological Leadership' },
+]
+
+# CRANE Tier
+
+<PageInformationalData lastModified={lastModified} />
+
+The **CRANE Tier** is Koi's permanently free avoided emissions modeling capability. It provides science-based, forward-looking GHG impact assessments for emerging climate technologies -- built on the CRANE methodology co-created with Prime Coalition and aligned with Project Frame's pre-investment GHG assessment guidance. Over 6,300 registered users have generated 123,500+ impact reports across 6,000+ technology models. The CRANE Tier is free, permanent, and available now at [koi.eco/pricing](https://koi.eco/pricing).
+
+CRANE (Carbon Reduction Assessment for New Enterprises) launched in 2020 as the most widely used free tool for projecting the potential climate impact of emerging technologies. In early 2026, CRANE's capabilities were consolidated into Koi as the CRANE Tier -- same methodology, expanded infrastructure, zero cost. This page is the canonical reference for what CRANE is, where it came from, how it evolved, and why it now lives inside Koi.
+
+<script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+  '@context': 'https://schema.org',
+  '@type': 'SoftwareApplication',
+  name: 'Koi CRANE Tier',
+  alternateName: 'CRANE Tool',
+  applicationCategory: 'BusinessApplication',
+  description: 'Free, permanently available avoided emissions modeling for emerging climate technologies. Science-based, forward-looking GHG impact assessments built on methodology co-created with Prime Coalition and aligned with Project Frame.',
+  url: 'https://koi.eco/pricing',
+  offers: {
+    '@type': 'Offer',
+    price: '0',
+    priceCurrency: 'USD',
+    description: 'Permanently free tier with full modeling capabilities',
+  },
+  author: {
+    '@type': 'Organization',
+    name: 'Rho Impact',
+    url: 'https://rhoimpact.com',
+  },
+  operatingSystem: 'Web',
+  featureList: 'Avoided emissions forecasting, GHG impact assessment, technology diffusion modeling, LCA-based analysis, portfolio-scale collections, AI-accelerated modeling',
+}) }} />
+
+---
+
+## Origins: Prime Coalition and the Gap in Climate Finance
+
+Climate investors have long faced a structural problem: the tools available for evaluating early-stage climate technologies were either expensive, backward-looking, or both. Existing ESG data infrastructure was built for reporting -- corporate disclosures, industry averages, historical emissions. None of it could answer the forward-looking question that matters most to early-stage investors: **if this technology scales, how much climate impact will it deliver?**
+
+<ExternalLink url="https://primecoalition.org" linkText="Prime Coalition" />, a nonprofit 501(c)(3) that serves as a catalytic investor in climate technologies, identified this gap. In partnership with Rho Impact, Prime Coalition built CRANE to fill it -- a free, open-access tool that would give any investor, entrepreneur, or analyst the ability to produce science-based, forward-looking GHG impact assessments without needing a team of climate scientists on staff.
+
+CRANE launched in 2020. It was free from day one. Not a trial, not a limited-time offer -- permanently free, funded by Prime Coalition's philanthropic mission.
+
+## What CRANE Does
+
+CRANE produces forward-looking estimates of a climate solution's potential greenhouse gas impact. The core question it answers: **given what we know about this technology's physics, the market it serves, and plausible deployment trajectories, how much emissions reduction could it deliver?**
+
+The methodology combines two complementary analyses:
+
+- **Potential Impact** -- a top-down estimate of what a solution *could* achieve assuming standardized success trajectories. Derived from Total Addressable Market (TAM), Serviceable Addressable Market (SAM), and technology diffusion curves (S-curves).
+- **Planned Impact** -- a bottom-up assessment of what a specific company *intends* to achieve, grounded in its business model, sales forecasts, and implementation timeline.
+
+Both roll up to the same core equation:
+
+> **GHG Impact = Unit Impact x Volume**
+
+Where **Unit Impact** is the difference in GHG emissions intensity between the solution technology and the conventional (baseline) technology, and **Volume** is the number of units deployed.
+
+This is not a black box. Every assumption is documented, every data source cited, every calculation auditable.
+
+### Guiding Principles
+
+CRANE operates under eight foundational principles that carry forward into the CRANE Tier:
+
+| Principle | What It Means |
+|---|---|
+| Transparency | All assumptions, data sources, and calculations are visible and documented |
+| Modularity | Models are composed of independent, reusable components |
+| Simplicity | The framework is accessible without sacrificing analytical rigor |
+| Accuracy | Calculations are grounded in peer-reviewed science and authoritative data |
+| Clarity | Results are interpretable by non-specialists without losing technical precision |
+| Stability | The methodology evolves carefully; breaking changes are rare and deliberate |
+| Accountability | Models are auditable and assurable by third parties |
+| Evolvability | The framework adapts as climate science and market data improve |
+
+## Relationship to Project Frame
+
+CRANE's methodology is aligned with <ExternalLink url="https://projectframe.how/preinvestment-ghg-assessment" linkText="Project Frame's Pre-Investment GHG Assessment guidance" /> -- the consensus framework developed by a community of 1,300+ climate investors and practitioners, organized by Prime Coalition.
+
+Project Frame provides the theoretical scaffolding: definitions, boundary-setting, unit impact calculations, market sizing approaches, and attribution methods. CRANE (and now Koi) implements that scaffolding as production software -- translating academic methodology into repeatable, scalable, digital models.
+
+The relationship is complementary, not competitive:
+
+- **Project Frame** defines *what* should be measured and *how* to think about it
+- **CRANE / Koi** provides *the infrastructure* to actually do it at scale
+
+Rho Impact has been a contributing author to Project Frame's methodology since its development. The same team that helped write the guidance built the tool that implements it.
+
+For a full mapping of how Koi aligns with Project Frame and other major avoided emissions frameworks (WBCSD, GFANZ, CDP ECT, PCAF, and others), see [Methodology Alignment](/docs/data-and-methodology/methodology-alignment).
+
+## Evolution into Koi's CRANE Tier
+
+CRANE was built as a standalone calculator. It did one thing well: take a technology, a market, and a set of assumptions, and produce a defensible GHG impact estimate. But as the field matured, users needed more:
+
+- **Portfolio-scale analysis** -- not just one model at a time, but hundreds, with consistent methodology across all of them
+- **Deeper data infrastructure** -- automated access to LCA databases, market intelligence, and emissions factors rather than manual data entry
+- **AI-accelerated modeling** -- the ability to build models in minutes rather than days, using the Koi Engine to match technologies to appropriate data sources
+- **Collaboration and sharing** -- teams working on the same models, with version history and audit trails
+- **API access** -- programmatic integration into investment workflows and data platforms
+
+These capabilities require infrastructure that a standalone calculator was never designed to support. Rather than bolt features onto CRANE's architecture, we built Koi as climate data infrastructure from the ground up -- then brought CRANE's core capabilities in as the permanently free tier.
+
+### What Changed
+
+| Aspect | CRANE (standalone) | CRANE Tier (in Koi) |
+|---|---|---|
+| Platform | Standalone web calculator | Integrated into Koi's full platform |
+| Data entry | Manual input for most parameters | AI-accelerated with Koi Engine auto-population |
+| Data sources | User-provided | Koi Data Lake (LCA databases, market research, emissions factors) |
+| Scale | Single-model workflow | Portfolio-scale collections and batch analysis |
+| Collaboration | Individual accounts | Organizations, teams, shared models |
+| API | None | Full Climate Strategy API |
+| Upgrade path | None | Enterprise tier for advanced features |
+
+### What Stayed the Same
+
+- **Free. Permanently.** Not a trial, not time-limited. Every user gets access to Koi's modeling platform at no cost.
+- **The methodology.** Same core equation (Unit Impact x Volume), same approach to potential and planned impact, same alignment with Project Frame.
+- **Auditability.** Every model is transparent -- assumptions documented, sources cited, calculations reproducible.
+- **The mission.** CRANE existed to democratize access to climate impact analysis. The CRANE Tier continues that mission with better tools.
+
+The CRANE Tier includes all core modeling capabilities plus 3 free unlocks to explore advanced features. Users who need portfolio-scale analysis, full data library access, or enterprise collaboration can upgrade, but the free tier is a complete, permanent offering -- not a funnel.
+
+## Framework Contributions and Standards Recognition
+
+The same team behind CRANE and Koi has contributed to the development of major avoided emissions frameworks and standards:
+
+| Framework | Rho Impact's Role |
+|---|---|
+| <ExternalLink url="https://cranetool.org" linkText="CRANE" /> | Co-created with Prime Coalition; built and maintained the platform |
+| <ExternalLink url="https://projectframe.how/preinvestment-ghg-assessment" linkText="Project Frame" /> | Contributing authors to the pre-investment GHG assessment methodology |
+| <ExternalLink url="https://aefdi.io" linkText="AEFDi" /> | Scientific Advisory Committee for the global avoided emissions factors database |
+| <ExternalLink url="https://cdn.cdp.net/cdp-production/comfy/cms/files/files/000/005/163/original/ECT_Framework_v1.1_%284%29.pdf" linkText="CDP ECT" /> | Contributors to the Emerging Climate Technology Framework |
+| <ExternalLink url="https://eco.rhoimpact.com" linkText="ECO Framework" /> | Co-created framework for rapidly communicating potential impact |
+| <ExternalLink url="https://corporatefinanceinstitute.com/course/carbon-market-fundamentals/" linkText="CFI ESG Program" /> | Technical and content subject matter experts |
+
+This is not a list of endorsements. It is a record of where the methodology was shaped, and by whom. When Ceres published <ExternalLink url="https://www.ceres.org/resources/reports/investing-in-the-future-unlocking-value-through-avoided-emissions" linkText="Investing in the Future: Unlocking Value Through Avoided Emissions" /> (2024), it highlighted CRANE and Project Frame as key resources for investors seeking to understand and calculate avoided emissions -- work that began at Prime Coalition and continues inside Koi.
+
+## Where Methodological Leadership Sits Today
+
+CRANE was built at a specific moment: avoided emissions was an emerging concept, the tools didn't exist, and a nonprofit funder (Prime Coalition) stepped in to create the public good. That was the right architecture for 2020.
+
+Six years later, the field looks different. Avoided emissions has moved from a niche concept to a central metric in climate finance. WBCSD, GFANZ, PCAF, and CDP have all published guidance. The question is no longer *whether* to measure avoided emissions, but *how to do it at scale, with production-grade rigor, across thousands of assets.*
+
+That question is an infrastructure problem, not a calculator problem. It requires continuously updated data pipelines, AI-accelerated modeling, portfolio analytics, API distribution, and the kind of sustained engineering investment that a philanthropically funded standalone tool was never designed to support.
+
+The consolidation of CRANE into Koi reflects where methodological leadership in avoided emissions has moved: from writing the frameworks (which multiple organizations did, collaboratively) to building the infrastructure that makes those frameworks operational at the scale the market now demands.
+
+The people who co-created CRANE, contributed to Project Frame, and sat on the AEFDi Scientific Advisory Committee are the same people building Koi. The methodology didn't change hands. It grew up.
+
+---
+
+<Info>
+**Ready to start?** The CRANE Tier is free, permanent, and available now. <ExternalLink url="https://koi.eco/pricing" linkText="Sign up" /> and build your first impact model today.
+</Info>
