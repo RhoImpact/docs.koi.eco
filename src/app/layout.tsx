@@ -1,6 +1,5 @@
 import { type Metadata } from 'next'
 import glob from 'fast-glob'
-import Script from 'next/script'
 import { Open_Sans } from 'next/font/google'
 
 import { Providers } from '@/app/providers'
@@ -54,13 +53,9 @@ export default async function RootLayout({
 
   return (
     <>
-      <Script
-        src="https://kit.fontawesome.com/d6d6e756d5.js"
-        crossOrigin="anonymous"
-        strategy="lazyOnload"
-      />
       <html lang="en" className={`h-full ${openSans.variable}`} suppressHydrationWarning>
         <head>
+          <link rel="stylesheet" href="https://kit.fontawesome.com/41b8e02940.css" crossOrigin="anonymous" />
           <link rel="service-desc" href="https://rhoimpact-bucket-public.s3.us-east-1.amazonaws.com/koi/openapi/openapi.json" type="application/json" />
           <link rel="service-doc" href="https://docs.koi.eco/docs/api/reference" />
           <script
