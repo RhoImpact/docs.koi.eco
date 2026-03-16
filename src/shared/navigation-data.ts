@@ -179,6 +179,10 @@ export const navigation: Array<NavGroup> = [
         title: 'Methodology Alignment',
         href: '/docs/data-and-methodology/methodology-alignment',
       },
+      {
+        title: 'CRANE Tier',
+        href: '/docs/data-and-methodology/crane-tier',
+      },
     ],
   },
   {
