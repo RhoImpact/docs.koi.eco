@@ -4,11 +4,21 @@ import { excludedUrls } from './sitemap'
 
 export default function robots(): MetadataRoute.Robots {
   return {
-    rules: {
-      userAgent: '*',
-      allow: '/',
-      disallow: Array.from(excludedUrls).map(url => url.replace(docsUrl || '', '')),
-    },
+    rules: [
+      {
+        userAgent: '*',
+        allow: '/',
+        disallow: Array.from(excludedUrls).map(url => url.replace(docsUrl || '', '')),
+      },
+      {
+        userAgent: 'Bytespider',
+        disallow: '/',
+      },
+      {
+        userAgent: 'CCBot',
+        disallow: '/',
+      },
+    ],
     sitemap: `${docsUrl}/sitemap.xml`,
   }
 } 
