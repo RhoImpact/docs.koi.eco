@@ -152,6 +152,12 @@ export const navigation: Array<NavGroup> = [
       {
         title: 'Data Sources & Inputs',
         href: '/docs/data-and-methodology/koi-data',
+        links: [
+          {
+            title: 'LCA Library',
+            href: '/docs/data-and-methodology/lca-library',
+          },
+        ],
       },
       {
         title: 'Koi Engine',

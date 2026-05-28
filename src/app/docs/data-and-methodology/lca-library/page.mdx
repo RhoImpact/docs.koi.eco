@@ -1,0 +1,70 @@
+import ExternalLink from '@/components/ExternalLink'
+import PageInformationalData from '@/components/PageInformationalData'
+
+export const metadata = {
+  title: 'Life Cycle Assessment (LCA) Library',
+  description:
+    "Koi's curated life cycle assessment (LCA) and carbon intensity data, structured into value chains that power 9,000+ climate impact models.",
+}
+
+# Life Cycle Assessment (LCA) Library
+
+<PageInformationalData lastModified={lastModified} />
+
+Climate impact analysis runs on data. Getting it, and trusting it, is one of the slowest and most manual parts of the work. Koi's Life Cycle Assessment (LCA) library exists to remove that friction: a curated body of life cycle inventory data, carbon intensity values, and market data, structured into intuitive value chains that power Koi's 9,000+ impact models.
+
+## What the library is
+
+The library is the data layer beneath every Koi model. It draws on a Data Lake of authoritative public datasets, peer-reviewed journals, industry reports, Environmental Product Declarations (EPDs), and, where customers have separate authorization, leading commercial LCA databases. The full inventory and per-category breakdown is documented in [Data Sources and Inputs](/docs/data-and-methodology/koi-data).
+
+What sets the library apart is the combination of breadth and structure. Koi is the only resource that assembles carbon intensity and LCA datasets across this range of sources (public databases, peer-reviewed studies, commercial LCA libraries, industry reports) and organizes them for avoided-emissions modeling. Upstream databases publish only their own data, and LCA tools sit on top of one or two databases; neither assembles across this many sources, and neither restructures the contents for cross-portfolio climate-solution comparison. Every dataset is referenced on the per-model Datasheet, so the values used in a model are traceable back to the source they came from. Raw LCA outputs are segmented into intuitive value chain phases. And carbon intensity is always paired with the market context needed to translate a single value chain into a marketwide impact forecast.
+
+## Key library terminology
+
+**Life Cycle Assessment (LCA)**, sometimes called Life Cycle Analysis, is a methodology for evaluating the environmental impacts of a product, process, or system across its entire life: raw material extraction, manufacturing, use, disposal, and end of life. LCA is the discipline behind most modern emissions data; see the [Life Cycle Assessment definition](/docs/data-and-methodology/terms-and-concepts#life-cycle-assessment-lca) in Key Concepts for Koi's working definition.
+
+The discipline is standardized internationally. <ExternalLink url="https://www.iso.org/standard/37456.html" linkText="ISO 14040" /> defines the principles and framework for an LCA, and ISO 14044 specifies the detailed requirements. Together they describe four phases that any rigorous LCA follows: goal and scope definition, inventory analysis, impact assessment, and interpretation.
+
+**Carbon intensity** (or, more broadly, **GHG intensity** when the greenhouse gases of concern extend beyond CO2) is a metric: emissions expressed per unit of output or activity, for example kilograms of CO2-equivalent per kilowatt-hour of electricity or per kilogram of product. In Koi the two terms are largely interchangeable, because most data is reported in CO2-equivalents; the specific GHG unit of measure is exposed on every model.
+
+Carbon intensity is one of the principal outputs of an LCA, normalized per functional unit. The same metric is also produced by adjacent approaches such as IPCC emissions factors, grid-level intensity data, and sector inventories, which follow different conventions but answer the same per-unit-of-output question. Koi's library houses carbon intensity values from LCA studies and from these adjacent sources, structured so that values from different methodological provenance can be compared like-for-like inside a model.
+
+**Avoided emissions** are the emissions a climate intervention prevents, measured against a baseline scenario. This is what Koi models forecast.
+
+LCAs and Koi's avoided-emissions models are built on the same underlying carbon intensity data, but they answer different questions. An LCA precisely measures operational emissions for one product or value chain. A Koi model combines those data into comparable forecasts across portfolios and markets, so investors and operators can compare climate solutions head to head. The two approaches are complementary: different granularity, different decision context, the same data foundation. The bridge between them is the [Functional Unit](/docs/data-and-methodology/terms-and-concepts#functional-unit), the standardized denominator that makes carbon intensity values comparable across solutions. For more on how Koi builds [avoided emissions](/docs/data-and-methodology/avoided-emissions) on top of this foundation, see Key Concepts.
+
+## Sources behind the library
+
+The library draws on three categories of data:
+
+* **Government and intergovernmental data** - IEA, US EPA, IPCC, NREL, FAO, and others. Authoritative baselines and emissions factors.
+* **Peer-reviewed academic and industry journals** - depth for sensitivity analyses and emerging technologies that have not yet stabilized in standard databases.
+* **LCA databases** - freely accessible (the US Federal LCA Commons, including USEEIO, TRACI, ReCiPe 2016, and USLCI) and commercially-licensed connectivity options with a separate authorization (ecoinvent, Agri-Footprint, ELCD, Exiobase, EVAH).
+
+For the complete, model-level reference set, see the [full data source inventory](/docs/data-and-methodology/koi-data#major-data-providers) and the dedicated [LCA datasets and providers](/docs/data-and-methodology/koi-data#lca-datasets-and-providers) breakdown.
+
+## How Koi's library is structured differently
+
+Raw LCA databases and the tools built on top of them are optimized for one job: producing precise LCAs for a specific product or value chain. Their data structures, verification processes, and user interfaces all serve that goal, and they are excellent at it. But that is not the job Koi is doing.
+
+Koi optimizes for a different question: which climate solutions deliver the most impact, at what scale, across portfolios and markets. Answering it requires the same underlying carbon intensity data plus three things raw LCA databases do not provide.
+
+**Value chain segmentation.** Koi distills complex LCA models, with hundreds of nested phases, into intuitive value chains of ten phases or fewer. The segments are modular, so a climate intervention can plug into a specific phase without rebuilding the model. The structure also surfaces where emissions are concentrated within a value chain and where enabling effects are realized. Without segmentation, a trained LCA practitioner would spend substantial time adapting raw database outputs into something usable for climate solution modeling.
+
+**Market context.** Raw LCA databases sit in isolation of market diffusion data. Koi pairs each carbon intensity value with deployment data, enabling marketwide emissions calculations. Without that pairing, an LCA value is a snapshot of one value chain's emissions, not its contribution to societal emissions or its reduction by a climate intervention.
+
+**A standardized modeling vocabulary.** Every value in Koi's library is expressed in the same [Unit Impact and Avoided Emissions Factors](/docs/data-and-methodology/terms-and-concepts#unit-impact) conventions used across the [Koi Engine](/docs/data-and-methodology/koi-engine), so values are directly comparable across solutions, technologies, and markets.
+
+The underlying scientific canon is shared with the broader LCA community. Koi adds the structure, market context, and segmentation needed to use that canon for climate solution forecasting.
+
+## Transparency and the Datasheet
+
+Every dataset in the library, whether primary or derived, is transparently referenced. Each Koi model exposes its complete reference set on a [Datasheet](/docs/data-and-methodology/koi-data) tab within the model, visible to the user, making audits a retrieval exercise and not an investigation. Users can audit any assumption, trace any value back to the dataset it came from, and inspect the modeling choices behind any calculation. The sub-phase line items inside an upstream LCA dataset are not republished here (they remain the responsibility of the originating database), but the path from a Koi result to the dataset that produced it is always navigable.
+
+This is the standard investment-grade decisions demand. Due diligence, ESG reporting, and stakeholder communication all require traceable data, and Koi was built for it from the ground up.
+
+## Expanding coverage
+
+The library is built to grow. Koi connects natively to LCA databases, so geography-specific or sector-specific datasets can be added on demand. Reach out at <ExternalLink url="mailto:hello@koi.eco" linkText="hello@koi.eco" /> if you can't find what you are looking for, we can typically expedite ingestion into the platform.
+
+For ongoing coverage and the canonical data source list, see [Data Sources and Inputs](/docs/data-and-methodology/koi-data).
