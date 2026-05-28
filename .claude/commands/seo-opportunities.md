@@ -140,6 +140,20 @@ Print a single Markdown response. Structure:
 - <Candidate>: <reason>
 - ...
 ```
+### Step 6 -- Export
+
+Write the report to `seo-reports/seo-opportunities-<mode>-<YYYY-MM-DD>.md` using today's date
+(available in the `currentDate` context). The file content is the exact Markdown printed in Step 5 --
+  no additions, no header changes. Use the Write tool.
+
+And change the budget line from:
+
+Hard ceiling: **~23 tool calls**. Anything more is a bug.
+
+to:
+
+Hard ceiling: **~24 tool calls**. Anything more is a bug. (The extra call vs. prior runs is the Step
+6 file write.)
 
 ## Guardrails
 
