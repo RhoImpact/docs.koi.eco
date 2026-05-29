@@ -184,6 +184,12 @@ export const navigation: Array<NavGroup> = [
       {
         title: 'Methodology Alignment',
         href: '/docs/data-and-methodology/methodology-alignment',
+        links: [
+          {
+            title: 'Financed Emissions',
+            href: '/docs/data-and-methodology/financed-emissions',
+          },
+        ],
       },
     ],
   },

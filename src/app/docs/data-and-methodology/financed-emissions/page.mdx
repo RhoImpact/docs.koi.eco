@@ -1,0 +1,58 @@
+import ExternalLink from '@/components/ExternalLink'
+import PageInformationalData from '@/components/PageInformationalData'
+
+export const metadata = {
+  title: 'Financed Emissions and Avoided Emissions',
+  description:
+    'What financed emissions measure under PCAF, how financed avoided emissions are defined and reported separately, and why the two remain distinct metrics.',
+}
+
+# Financed Emissions and Avoided Emissions
+
+<PageInformationalData lastModified={lastModified} />
+
+Financed emissions and avoided emissions are distinct climate-finance metrics that answer different questions. Financed emissions quantify the greenhouse gas emissions attributable to a financial institution's loans and investments. Avoided emissions quantify the reduction, relative to a counterfactual baseline, that results from a solution being deployed. This page defines financed emissions, situates avoided emissions within institutional accounting, and explains why the two are reported in separate ledgers.
+
+## What financed emissions are
+
+Financed emissions are the greenhouse gas emissions associated with a financial institution's loans and investments. In the GHG Protocol accounting structure they sit in Scope 3 Category 15 (investments): when an institution holds equity or debt in a company, a share of that company's emissions is attributed to the institution based on proportional ownership. See the <ExternalLink url="https://ghgprotocol.org/corporate-value-chain-scope-3-standard" target="_blank" rel="noopener noreferrer" linkText="GHG Protocol Corporate Value Chain (Scope 3) Standard" /> for the underlying accounting.
+
+The attribution is proportional rather than absolute. An investor that finances a small slice of a company carries a correspondingly small share of that company's emissions, scaled to its stake. PCAF (the Partnership for Carbon Accounting Financials) maintains the most widely used method for measuring this, the <ExternalLink url="https://carbonaccountingfinancials.com/standard" target="_blank" rel="noopener noreferrer" linkText="PCAF Standard" />, which is built on and formally recognized by the GHG Protocol.
+
+When an institutional investor sets a net-zero target, it means the portfolio's attributable financed emissions are reduced and balanced to net zero by a target date, typically 2050 or earlier.
+
+## Financed avoided emissions and forward-looking metrics
+
+PCAF addresses avoided emissions and forward-looking metrics in <ExternalLink url="https://carbonaccountingfinancials.com/files/standard-launch-2025/PartA-PCAF-Supplement-Avoided-Emissions-FLM.pdf" target="_blank" rel="noopener noreferrer" linkText="supplemental guidance" /> that accompanies the PCAF Standard: Part A, launched December 2, 2025 and currently applicable to financed emissions across asset classes. The supplement covers two distinct categories.
+
+*Financed avoided emissions* attribute the historical emissions a financed solution has displaced to a financial institution, in proportion to its share of the financing. This is the same proportional attribution used for financed emissions, applied to displaced emissions rather than generated ones. The GHG Protocol defines avoided emissions as "the positive GHG emissions impact of a product (good or service), relative to the situation where that product does not exist." Under PCAF, the metric is backward-looking: it counts emissions a solution has already avoided. The supplement broadens prior Part A guidance, once limited to renewable power projects, to all asset classes, and connects it to PCAF's Use of Proceeds (UoP) accounting.
+
+*Forward-looking emissions metrics (FLM)* assess the future decarbonization potential of a financial exposure. They include Expected Emissions Reductions (EER), proposed by the GFANZ Secretariat to support transition finance, and Expected Avoided Emissions (EAE), the anticipated, estimated counterpart to historical avoided emissions. Koi treats [avoided emissions](/docs/data-and-methodology/avoided-emissions) as either backward-looking or forward-looking, depending on whether they are historic and realized or anticipated estimates, so Koi's avoided-emissions analysis spans both PCAF categories.
+
+Worth noting on the corporate side: the GHG Protocol Corporate Standard does not yet provide a standard on avoided emissions, though it has published a neutral framework for estimating and disclosing positive GHG impacts, and the WBCSD has published corporate guidance on the topic. These are the same foundations Koi's avoided-emissions methodology builds on.
+
+Reporting both categories is currently optional, given their early-stage nature and the challenges of data availability, aggregation, and potential double counting. If an institution does report them, PCAF is explicit that they shall be reported separately from the regular financed emissions inventory. 
+
+## Why the two stay in separate ledgers
+
+Financed emissions and avoided emissions answer different questions. Financed emissions measure the share of present-day emissions an institution's capital is associated with. Avoided emissions measure how much lower emissions are, relative to a counterfactual baseline, because a solution exists or has scaled. The first is an attributional inventory of emissions that occur. The second is a consequential, scenario-based estimate of emissions that would otherwise have occurred.
+
+The separation preserves the integrity of both metrics. If a portfolio could offset its attributed emissions against the avoided emissions of its EV manufacturers, heat-pump producers, and renewables developers, it could report a "net negative" position while continuing to finance substantial real-economy emissions. Netting one against the other produces a figure that misrepresents both.
+
+<Info>
+PCAF's supplement states that financed avoided emissions and forward-looking metrics are "fundamentally distinct from financed (generated) emissions," that they "should not be aggregated for portfolio-level comparisons," and that they "shall not be used to substantiate net-zero commitments or claims." The GHG Protocol's avoided-emissions framework and WBCSD guidance hold the same line.
+</Info>
+
+## How avoided emissions fit a net-zero strategy
+
+Credible net-zero commitments run two parallel targets, not one blended number. The first reduces financed emissions on an absolute basis against a 1.5°C pathway, with no avoided-emissions netting. The second increases capital exposure to climate solutions, with avoided emissions as one impact metric for that allocation. Consistent with PCAF, avoided emissions and forward-looking metrics inform the climate-solutions story but do not substantiate the net-zero claim itself.
+
+The distinction also guards against paper decarbonization. A portfolio's financed emissions can drop simply by selling high-emitting holdings to another investor, which changes nothing in the real world. Credible strategies emphasize engagement and capital allocation toward solutions, treating divestment as a signal or a last resort. Any residual emissions at the target date are neutralized with [durable carbon removals](/docs/data-and-methodology/classification-emissions-removal), not avoided-emissions offsets.
+
+Keeping the two metrics separate is what preserves their analytical value. Koi quantifies the avoided-emissions and climate-solutions side of this picture using transparent baselines and auditable assumptions. For the standards Koi maps onto, see [Koi's methodology alignment with PCAF](/docs/data-and-methodology/methodology-alignment#pcaf) and [how Koi classifies climate solutions](/docs/data-and-methodology/classification-overview). [Asset owners](/docs/getting-started/use-cases/asset-owners) report these climate-solution allocations alongside their financed-emissions inventory.
+
+## Where the standards are heading
+
+The GHG Protocol is developing a new standard, <ExternalLink url="https://ghgprotocol.org/blog/ghg-protocol-launches-action-and-market-instruments-request-information-what-it-and-why-it" target="_blank" rel="noopener noreferrer" linkText="Action and Market Instruments" /> (AMI), with a full draft for public consultation expected in 2027 (it is currently in a request-for-information phase). AMI responds to a reporting gap: climate actions that fall outside today's Scope 1, 2, and 3 inventories, such as financing green steel or low-carbon cement, buying sustainable aviation fuel certificates, signing power purchase agreements, or shifting a portfolio toward low-carbon technologies. It proposes a GHG impact statement, built on consequential accounting and reported alongside the traditional inventory, so that contributions which reduce real-world emissions but stay invisible in conventional reporting become visible.
+
+Koi was built to address this need: a holistic assessment of climate action. It quantifies a portfolio's real-world impact against transparent baselines and resolves that impact to the level of specific climate interventions and portfolio composition. As reporting standards expand to capture these broader effects, the consequential, baseline-driven analysis Koi already produces, with auditable assumptions, is the analysis these statements will require.
