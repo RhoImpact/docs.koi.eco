@@ -191,6 +191,10 @@ export const navigation: Array<NavGroup> = [
           },
         ],
       },
+      {
+        title: 'CRANE Tier',
+        href: '/docs/data-and-methodology/crane-tier',
+      },
     ],
   },
   {

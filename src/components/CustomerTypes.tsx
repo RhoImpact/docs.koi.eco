@@ -13,7 +13,7 @@ interface CustomerTypesProps {
 }
 
 const colorStyles: Record<CustomerTypeColor, string> = {
-  blue: 'bg-cyan-400/10 text-cyan-300 ring-cyan-400/30',
+  blue: 'bg-koiBlue-400/10 text-koiBlue-300 ring-koiBlue-400/30',
   green: 'bg-emerald-400/10 text-emerald-300 ring-emerald-400/30',
   gray: 'bg-zinc-400/10 text-zinc-300 ring-zinc-400/30',
   yellow: 'bg-amber-400/10 text-amber-300 ring-amber-400/30',

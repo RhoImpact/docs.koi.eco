@@ -34,3 +34,8 @@ next-env.d.ts
 
 
 .claude/settings.local.json
+
+# Generated at build time (scripts/copy-scalar-css.mjs)
+/public/scalar-api-reference.css
+
+tmp/

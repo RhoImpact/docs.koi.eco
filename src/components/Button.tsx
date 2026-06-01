@@ -16,14 +16,14 @@ function ArrowIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
 
 const variantStyles = {
   primary:
-    'rounded-full bg-zinc-900 py-1 px-3 text-white hover:bg-zinc-700 dark:bg-cyan-400/10 dark:text-cyan-400 dark:ring-1 dark:ring-inset dark:ring-cyan-400/20 dark:hover:bg-cyan-400/10 dark:hover:text-cyan-300 dark:hover:ring-cyan-300',
+    'rounded-full bg-koiGray-700 py-1 px-3 text-white hover:bg-koiGray-600 dark:bg-koiBlue-400/10 dark:text-koiBlue-400 dark:ring-1 dark:ring-inset dark:ring-koiBlue-400/20 dark:hover:bg-koiBlue-400/10 dark:hover:text-koiBlue-300 dark:hover:ring-koiBlue-300',
   secondary:
-    'rounded-full bg-zinc-100 py-1 px-3 text-zinc-900 hover:bg-zinc-200 dark:bg-zinc-800/40 dark:text-zinc-400 dark:ring-1 dark:ring-inset dark:ring-zinc-800 dark:hover:bg-zinc-800 dark:hover:text-zinc-300',
+    'rounded-full bg-koiGray-100 py-1 px-3 text-koiGray-800 hover:bg-koiGray-200 dark:bg-koiGray-600/40 dark:text-koiGray-200 dark:ring-1 dark:ring-inset dark:ring-koiGray-500 dark:hover:bg-koiGray-600 dark:hover:text-koiGray-100',
   filled:
-    'rounded-full bg-zinc-900 py-1 px-3 text-white hover:bg-zinc-700 dark:bg-cyan-500 dark:text-white dark:hover:bg-cyan-400',
+    'rounded-full bg-koiGray-700 py-1 px-3 text-white hover:bg-koiGray-600 dark:bg-koiBlue-500 dark:text-white dark:hover:bg-koiBlue-400',
   outline:
-    'rounded-full py-1 px-3 text-zinc-700 ring-1 ring-inset ring-zinc-900/10 hover:bg-zinc-900/2.5 hover:text-zinc-900 dark:text-zinc-400 dark:ring-white/10 dark:hover:bg-white/5 dark:hover:text-white',
-  text: 'text-cyan-500 hover:text-cyan-600 dark:text-cyan-400 dark:hover:text-cyan-500',
+    'rounded-full py-1 px-3 text-koiGray-300 ring-1 ring-inset ring-koiGray-400/10 hover:bg-koiGray-400/5 hover:text-koiGray-100 dark:text-koiGray-200 dark:ring-white/10 dark:hover:bg-white/5 dark:hover:text-white',
+  text: 'text-koiBlue-400 hover:text-koiBlue-300 dark:text-koiBlue-400 dark:hover:text-koiBlue-300',
 }
 
 type ButtonProps = {

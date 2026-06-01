@@ -2,11 +2,10 @@
 
 import React, { createContext, useContext, useEffect, useState } from 'react'
 import { ThemeProvider, useTheme } from 'next-themes'
-import posthog from 'posthog-js'
-import { PostHogProvider as OriginalPostHogProvider } from 'posthog-js/react'
+import type PostHogType from 'posthog-js'
 
 const PostHogContext = createContext<{
-  posthog: typeof posthog
+  posthog: typeof PostHogType | null
   initialized: boolean
 } | null>(null)
 
@@ -25,28 +24,43 @@ function ThemeWatcher() {
 export const PostHogProvider: React.FC<{ children: React.ReactNode }> = ({
   children,
 }) => {
+  const [posthogClient, setPosthogClient] = useState<typeof PostHogType | null>(null)
   const [posthogInitialized, setPosthogInitialized] = useState(false)
 
   useEffect(() => {
-    if (
-      process.env.NODE_ENV !== 'development' &&
-      !posthog.isFeatureEnabled('posthog-initialized')
-    ) {
-      posthog.init(process.env.NEXT_PUBLIC_POSTHOG_KEY || '', {
-        api_host: process.env.NEXT_PUBLIC_POSTHOG_HOST || '',
-      })
-      posthog.featureFlags.override({ 'posthog-initialized': true })
-      setPosthogInitialized(true)
+    if (process.env.NODE_ENV === 'development') return
+
+    // Defer PostHog loading until the main thread is idle to avoid
+    // blocking TBT with the ~500ms posthog-recorder.js long task
+    const scheduleInit = () => {
+      const doInit = async () => {
+        try {
+          const posthog = (await import('posthog-js')).default
+          posthog.init(process.env.NEXT_PUBLIC_POSTHOG_KEY || '', {
+            api_host: process.env.NEXT_PUBLIC_POSTHOG_HOST || '',
+          })
+          setPosthogClient(posthog)
+          setPosthogInitialized(true)
+        } catch (err) {
+          console.error('PostHog init failed:', err)
+        }
+      }
+
+      if (typeof requestIdleCallback !== 'undefined') {
+        requestIdleCallback(() => doInit(), { timeout: 3000 })
+      } else {
+        setTimeout(() => doInit(), 2000)
+      }
     }
+
+    scheduleInit()
   }, [])
 
   return (
     <PostHogContext.Provider
-      value={{ posthog, initialized: posthogInitialized }}
+      value={{ posthog: posthogClient, initialized: posthogInitialized }}
     >
-      <OriginalPostHogProvider client={posthog}>
-        {children}
-      </OriginalPostHogProvider>
+      {children}
     </PostHogContext.Provider>
   )
 }

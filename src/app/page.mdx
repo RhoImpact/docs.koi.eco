@@ -11,7 +11,7 @@ import { baseUrl, feedbackUrl, roadmapUrl, changelogUrl } from '@/shared/urls'
 
 export const metadata = {
   title: 'Koi Documentation',
-  description: 'Learn about Koi and how to use it.',
+  description: 'Decision-grade climate data and impact forecasting. Documentation for Koi by Rho Impact.',
 }
 
 {/* Explicitly zero this out for the sake of cleanliness on main page. */}
@@ -19,9 +19,9 @@ export const sections = []
 
 <HeroPattern />
 
-<Image src={koiLogoBanner} alt="Koi Logo Banner" className="mt-0 w-full" />
+<Image src={koiLogoBanner} alt="Koi Logo Banner" className="mt-0 w-full" priority />
 
-<h1 className="leading-normal">Intelligence for Investing in Climate Solutions</h1>
+<h1 className="leading-normal">Climate data you can actually use.</h1>
 
 <div className="text-sm italic">
   *Last updated: {packageJson.lastUpdated}*<br />
@@ -33,9 +33,9 @@ export const sections = []
   utmContent="hero-banner-link"
   ariaLabel="Explore Koi"
   linkText="Koi"
-/> is an intuitive, forward-looking data platform that blends the **latest generative AI
-with decades of methodological development and research**. Experience the world's
-only climate impact platform built for **transparency**, **speed**, and **scale**.
+/> is climate data infrastructure built for investing. Koi combines **decades of climate science
+research** with modern engineering to produce **decision-grade forecasts** at the asset level
+and above. Built for **transparency**, **speed**, and **scale**.
 
 ## Where to Begin
 
@@ -49,7 +49,7 @@ only climate impact platform built for **transparency**, **speed**, and **scale*
   />
   : Create a free account.
 - [**Get Started**](/docs/getting-started): Quickstart guides and pointers.
-- [**Explore Use Cases**](/docs/getting-started/use-cases): Common ways users harness the value of an avoided emissions forecast.
+- [**Explore Use Cases**](/docs/getting-started/use-cases): How teams use avoided emissions forecasts.
 - [**Review Methodology**](/docs/data-and-methodology/overview): Dive into the art and science of impact forecasting.
 
 <div className="not-prose mb-16 mt-6 flex gap-3">
@@ -60,7 +60,7 @@ only climate impact platform built for **transparency**, **speed**, and **scale*
     linkText="Sign Up &rarr;"
     rel="noopener noreferrer"
     target="_blank"
-    className="inline-flex gap-0.5 justify-center overflow-hidden text-sm font-medium transition rounded-full bg-zinc-900 py-1 px-3 text-white hover:bg-zinc-700 dark:bg-cyan-400/10 dark:text-cyan-400 dark:ring-1 dark:ring-inset dark:ring-cyan-400/20 dark:hover:bg-cyan-400/10 dark:hover:text-cyan-300 dark:hover:ring-cyan-300"
+    className="inline-flex gap-0.5 justify-center overflow-hidden text-sm font-medium transition rounded-full bg-koiGray-700 py-1 px-3 text-white hover:bg-koiGray-600 dark:bg-koiBlue-400/10 dark:text-koiBlue-400 dark:ring-1 dark:ring-inset dark:ring-koiBlue-400/20 dark:hover:bg-koiBlue-400/10 dark:hover:text-koiBlue-300 dark:hover:ring-koiBlue-300"
   />
   <Button href="/docs/getting-started" variant="outline">
     <>Get Started</>

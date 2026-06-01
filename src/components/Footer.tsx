@@ -31,7 +31,7 @@ function PageLink({
         href={page.href}
         tabIndex={-1}
         aria-hidden="true"
-        className="text-base font-semibold text-zinc-900 transition hover:text-zinc-600 dark:text-white dark:hover:text-zinc-300"
+        className="text-base font-semibold text-koiGray-700 transition hover:text-koiGray-300 dark:text-koiGray-100 dark:hover:text-koiGray-200"
       >
         {page.title}
       </Link>
@@ -89,7 +89,7 @@ function SocialLink({
     >
       <span className="sr-only">{children}</span>
       <i
-        className={`h-5 w-5 fill-zinc-700 transition group-hover:fill-zinc-900 dark:group-hover:fill-zinc-500 ${icon}`}
+        className={`h-5 w-5 fill-koiGray-300 transition group-hover:fill-koiGray-700 dark:group-hover:fill-koiGray-200 ${icon}`}
       />
     </Link>
   )
@@ -97,8 +97,8 @@ function SocialLink({
 
 function SmallPrint() {
   return (
-    <div className="flex flex-col items-center justify-between gap-5 border-t border-zinc-900/5 pt-8 sm:flex-row dark:border-white/5">
-      <p className="text-xs text-zinc-600 dark:text-zinc-400">
+    <div className="flex flex-col items-center justify-between gap-5 border-t border-koiGray-900/5 pt-8 sm:flex-row dark:border-white/5">
+      <p className="text-xs text-koiGray-300 dark:text-koiGray-200">
         &copy; Copyright {new Date().getFullYear()}. All rights reserved.
       </p>
       <div className="flex gap-4">

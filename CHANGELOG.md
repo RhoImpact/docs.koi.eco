@@ -1,5 +1,13 @@
 # Changelog
 
+## 2026-03-15 - 0.19.0
+
+- Full SEO support
+- Fix color system drift in shell components
+- Visual updates and homepage messaging refresh
+- Migrate from Netlify to Cloudflare Pages (static export)
+- Migrate from npm to pnpm
+
 ## 2026-01-17 - 0.18.2
 
 - Update API ref docs and messaging

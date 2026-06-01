@@ -31,6 +31,9 @@ export default {
     typography: typographyStyles,
     extend: {
       colors: { ...koiColors },
+      fontFamily: {
+        sans: ['var(--font-open-sans)', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+      },
       boxShadow: {
         glow: '0 0 4px rgb(0 0 0 / 0.1)',
       },

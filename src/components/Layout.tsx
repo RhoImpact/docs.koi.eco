@@ -73,7 +73,7 @@ export function Layout({
               className={`mr-0 flex w-full flex-col ${allSections[pathname]?.length > 0 ? 'xl:mr-48' : ''}`}
             >
               <main
-                className="mx-auto flex-1 transition-all duration-300"
+                className="mx-auto flex-1 px-4 transition-all duration-300 sm:px-6 lg:px-8"
                 id="main-content"
               >
                 {children}
