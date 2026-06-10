@@ -189,6 +189,10 @@ export const navigation: Array<NavGroup> = [
             title: 'Financed Emissions',
             href: '/docs/data-and-methodology/financed-emissions',
           },
+          {
+            title: 'Green Bonds',
+            href: '/docs/data-and-methodology/green-bond-avoided-emissions',
+          },
         ],
       },
       {

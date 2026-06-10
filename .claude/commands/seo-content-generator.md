@@ -1,13 +1,14 @@
 Build a single SEO-opportunity into a new docs page, in four checkpointed phases, with the SME (the user) reviewing and editing between each.
 
-This skill consumes one opportunity from a report produced by `/seo-opportunities`. It does research, proposes an outline + integration plan, drafts the MDX, and wires in nav + cross-links + FAQ updates. Each phase produces a file the SME can edit directly before the next phase runs.
+This skill consumes one opportunity and builds it into a docs page. The opportunity can come from a report produced by `/seo-opportunities`, or from a markdown summary the SME wrote themselves (a saved note, a competitor teardown, a research dump). It does research, proposes an outline + integration plan, drafts the MDX, and wires in nav + cross-links + FAQ updates. Each phase produces a file the SME can edit directly before the next phase runs.
 
 ## Modes
 
 Parse the first argument:
 
-- `<report-path>#<N>` -- full run starting from Phase 1 (research). Example: `seo-reports/seo-opportunities-faq-2026-05-28.md#1`.
-- `phase=research <report-path>#<N>` -- same as the full-run form, explicit. Stops after Phase 1.
+- `<report-path>#<N>` -- full run starting from Phase 1 (research), seeded from a `/seo-opportunities` report. Example: `seo-reports/seo-opportunities-faq-2026-05-28.md#1`.
+- `<summary-path>` -- full run starting from Phase 1, seeded from an SME-authored markdown summary instead of a report. Detected by the arg being a `.md` file with no trailing `#<N>`. Example: `~/.claude/notes/koi-vs-spglobal-avoided-emissions.md`.
+- `phase=research <report-path>#<N>` or `phase=research <summary-path>` -- same as the full-run form, explicit. Stops after Phase 1.
 - `phase=outline <slug>` -- skip research, read existing `seo-drafts/<slug>-research.md`, produce the outline. Stops after Phase 2.
 - `phase=draft <slug>` -- skip research + outline, read both artifacts, write the MDX. Stops after Phase 3.
 - `phase=integrate <slug>` -- skip everything else, read the outline for the integration plan, apply the nav + FAQ + cross-link edits.
@@ -15,13 +16,14 @@ Parse the first argument:
 
   ```
   Usage: /seo-content-generator <report-path>#<N>
-         /seo-content-generator phase=research <report-path>#<N>
+         /seo-content-generator <summary-path>                       (SME-authored .md summary)
+         /seo-content-generator phase=research <report-path>#<N> | <summary-path>
          /seo-content-generator phase=outline   <slug>
          /seo-content-generator phase=draft     <slug>
          /seo-content-generator phase=integrate <slug>
   ```
 
-`<slug>` is the leaf segment of the opportunity's proposed nav path (e.g. `lca-carbon-intensity-library` from `/docs/data-and-methodology/lca-carbon-intensity-library`). It is the key used to name artifacts in `seo-drafts/`.
+`<slug>` is the leaf segment of the opportunity's proposed nav path (e.g. `lca-carbon-intensity-library` from `/docs/data-and-methodology/lca-carbon-intensity-library`). It is the key used to name artifacts in `seo-drafts/`. For a report input the slug comes from the opportunity block; for a summary input it comes from the summary's `seo_opportunity.slug` front-matter field (or is proposed and confirmed at the Phase 1 checkpoint).
 
 There is no "do everything end-to-end without stopping" mode. Stopping between phases is the point -- the SME edits artifacts in place and re-runs the next phase.
 
@@ -42,9 +44,11 @@ If a phase is approaching its ceiling, stop and hand back to the SME rather than
 
 ### Phase 1 -- Research
 
-**Input:** `<report-path>#<N>`.
+**Input:** `<report-path>#<N>` (a `/seo-opportunities` report) **or** `<summary-path>` (an SME-authored `.md` summary, no trailing `#<N>`).
 
-1. Read the report. Find the `### N. <Title>` block. Parse:
+1. **Resolve the opportunity block.** Two cases:
+
+   **a. Report input (`<report-path>#<N>`).** Read the report. Find the `### N. <Title>` block. Parse:
    - Title
    - Type (FAQ promotion | Gap fill)
    - Source (FAQ question text, or "not currently covered")
@@ -54,6 +58,11 @@ If a phase is approaching its ceiling, stop and hand back to the SME rather than
    - Competition
    - Rationale
    - Effort
+
+   **b. Summary input (`<summary-path>`).** Read the whole file. The body is the research substrate: most of the "Topic summary" and "Key claims" will be drawn from it. Read the optional `seo_opportunity` front-matter block (YAML) for the structured fields: `title`, `type`, `slug`, `nav_location`, `target_keywords`, `demand_evidence`. For any field absent from front matter (or if there is no front matter at all), propose a value from the summary body and list it under "Open questions for SME" so it gets confirmed at the checkpoint. Constraints specific to summary input:
+   - **No measured demand passthrough.** Set Demand evidence to whatever the front matter states, otherwise "not measured (SME-authored summary)". Do not fabricate Trends / Wikipedia / autocomplete numbers ([[feedback-seo-evidence]]). If the SME wants measured demand, point them to `/seo-opportunities`.
+   - **Tagging.** Claims pulled from the summary body are `internal` or `generally-accepted` unless the summary itself names an external source, in which case carry that source and tag it accordingly. Apply the `[differentiated? y/n]` flag as usual (default `n`).
+   - The external-research step (step 5) is still allowed but optional here; the summary often already carries the substance, so spend external fetches only on claims the page genuinely needs to source first-hand.
 
 2. **Internal coverage scan.** For each target keyword, run a single ripgrep pass across `src/app/docs/**/*.mdx`. Collect the file paths and a one-line excerpt of each match. Read the 2-3 most relevant pages in full so the new page does not contradict existing material.
 
@@ -82,7 +91,7 @@ If a phase is approaching its ceiling, stop and hand back to the SME rather than
    # Research -- <Title>
 
    ## Opportunity summary
-   <verbatim passthrough of the opportunity block from the report>
+   <verbatim passthrough of the opportunity block from the report; for a summary input, the `seo_opportunity` front-matter block plus a pointer to the source summary file>
 
    ## Topic summary
    <3-4 sentence working definition using established terminology>
@@ -268,7 +277,7 @@ If a phase is approaching its ceiling, stop and hand back to the SME rather than
 
 - Each phase has a tool-call budget. Do not skip a checkpoint to stay inside it -- stop early instead.
 - **Citation policy on the final page is sparse** ([[feedback-docs-citation-style]]). Default is to drop external citations. Keep only differentiated sources confirmed by the SME. Company philosophy is uncited.
-- **Demand evidence in the research file is passthrough** from the report -- do not re-validate it. The `/seo-opportunities` skill already paid for those signals.
+- **Demand evidence in the research file is passthrough** from the report -- do not re-validate it. The `/seo-opportunities` skill already paid for those signals. For a summary input there is no measured demand: record what the front matter states (or "not measured"), never fabricate Trends / Wikipedia / autocomplete numbers ([[feedback-seo-evidence]]), and point the SME to `/seo-opportunities` if they want measured signals.
 - **Internal terminology takes precedence.** Never coin a new term for a concept the existing docs already name.
 - Every new nav entry is hand-added to `src/shared/navigation-data.ts`. Pages are not auto-discovered.
 - Do not import or invoke `src/mdx/search.mjs`. Read MDX directly.

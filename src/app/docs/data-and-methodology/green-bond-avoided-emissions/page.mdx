@@ -1,0 +1,63 @@
+import ExternalLink from '@/components/ExternalLink'
+import PageInformationalData from '@/components/PageInformationalData'
+import { LinksGrid } from '@/components/LinksGrid'
+
+export const metadata = {
+  title: 'Green Bond Avoided Emissions Data',
+  description:
+    "How green-bond avoided-emissions datasets like S&P Global's Trucost data model impact, why they share Koi's LCA approach, and how the two fit together.",
+}
+
+# Green Bond Avoided Emissions Data
+
+<PageInformationalData lastModified={lastModified} />
+
+Green bonds raise capital for projects intended to reduce emissions. Quantifying how much a given issuance avoids, on a basis comparable across bonds, requires life-cycle emissions data, a counterfactual baseline, and a way to attribute results to the financed projects. Koi supplies that underlying data and modeling; third-party green-bond datasets apply the same comparison inside a financial reporting wrapper.
+
+## The green-bond reporting gap
+
+A green bond ring-fences its proceeds for eligible green projects. No single standard governs how the resulting avoided emissions are calculated. The framework most issuers follow, the International Capital Market Association's (ICMA) <ExternalLink url="https://www.icmagroup.org/sustainable-finance/impact-reporting/green-projects/" target="_blank" rel="noopener noreferrer" linkText="Harmonised Framework for Impact Reporting" />, is voluntary and does not prescribe one calculation method. The figures that result are not consistent or directly comparable across bonds. Koi treats transparent baselines and auditable assumptions as the default, which makes an avoided-emissions estimate independently verifiable rather than self-asserted. It is the same basis on which asset managers [cut through greenwashing](/docs/getting-started/use-cases/asset-managers) when screening investments.
+
+## What a green-bond avoided-emissions dataset measures
+
+Dedicated datasets that quantify avoided emissions at the level of an individual bond remain uncommon. <ExternalLink url="https://www.marketplace.spglobal.com/en/datasets/trucost-green-bond-data-(262)" target="_blank" rel="noopener noreferrer" linkText="S&P Global's Trucost Green Bond Data" /> is the most developed example. The unit of analysis is the bond, built from its financed projects and apportioned by the issuer's financial stake. For each project, the green technology's life-cycle emissions are compared against a location-specific business-as-usual (BAU) counterfactual: the conventional source the investment displaces, such as the national grid an onshore wind project would otherwise feed into. The project results then aggregate to a bond-level figure.
+
+The dataset reports a modeled "Calculated" value alongside the issuer-"Disclosed" value, each with a Confidence Level, so the independent estimate can be checked against the self-reported one. Avoided emissions are reported both as an annual figure and normalized per million dollars invested, so investors can compare the carbon efficiency of capital across issuances. Coverage is a fixed set of commercially mature technologies across green energy, transport, buildings, and energy efficiency.
+
+That comparison, the life-cycle emissions of a solution measured [against a counterfactual baseline](/docs/data-and-methodology/avoided-emissions), is exactly what Koi performs. Both approaches are LCA-grounded, bottom-up, and technology- and location-specific, and both account for grid decarbonization over time.
+
+## The same science Koi runs
+
+Koi expresses that comparison through [its core avoided emissions formula](/docs/data-and-methodology/mathematical-foundations): per unit impact, the difference between baseline and solution GHG intensity, multiplied by the scale deployed.
+
+Measuring avoided emissions on green capital is still early, and S&P published its <ExternalLink url="https://portal.s1.spglobal.com/survey/documents/SPG_S1_Green_Bond_Data_Methodology.pdf" target="_blank" rel="noopener noreferrer" linkText="Trucost methodology" /> in 2025. A dataset like it applies this modeling to one use case, the green-bond market, and to a select portion of the technologies Koi already covers: commercially mature solutions in deployment. Koi models those and the next generation of solutions not yet at scale, through [the Koi Engine](/docs/data-and-methodology/koi-engine), [bottom-up LCA value chains](/docs/data-and-methodology/lca-library), versioned baselines, and [portfolio roll-up](/docs/getting-started/features/collections) with scenario testing.
+
+What a green-bond dataset adds is a financial and deployment lens (the instrument, the issuer's stake, disclosed deployment data, per-dollar normalization) that Koi's science can sit beneath. We see that as a useful complement, and we welcome the wider effort to put rigorous data behind green capital.
+
+## What this means for climate capital
+
+Climate-capital reporting needs life-cycle data underneath it. As disclosure standards expand, with PCAF adding forward-looking metrics and the GHG Protocol developing new guidance, the shared LCA-grounded layer moves from optional to required. See [where those standards are heading](/docs/data-and-methodology/financed-emissions#where-the-standards-are-heading) for how Koi maps onto them.
+
+<LinksGrid
+  title="Related Pages"
+  gridLinks={[
+    {
+      href: "/docs/data-and-methodology/financed-emissions",
+      name: "Financed Emissions",
+      description: "How avoided and financed emissions relate, and stay in separate ledgers.",
+      icon: "fa-regular fa-scale-balanced text-koiBlue-400"
+    },
+    {
+      href: "/docs/data-and-methodology/avoided-emissions",
+      name: "Avoided Emissions",
+      description: "The counterfactual baseline comparison behind every Koi model.",
+      icon: "fa-regular fa-chart-line-up-down text-koiGreen-400"
+    },
+    {
+      href: "/docs/data-and-methodology/methodology-alignment",
+      name: "Methodology Alignment",
+      description: "Compatibility with existing frameworks and standards.",
+      icon: "fa-regular fa-shapes text-koiYellow-400"
+    }
+  ]}
+/>
