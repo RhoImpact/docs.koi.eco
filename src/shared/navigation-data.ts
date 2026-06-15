@@ -193,6 +193,10 @@ export const navigation: Array<NavGroup> = [
             title: 'Green Bonds',
             href: '/docs/data-and-methodology/green-bond-avoided-emissions',
           },
+          {
+            title: 'Transition Planning',
+            href: '/docs/data-and-methodology/transition-planning',
+          },
         ],
       },
       {

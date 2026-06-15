@@ -1,0 +1,16 @@
+#!/bin/sh
+# Auto-update the landing page's "Last updated" date and "Docs Version" when
+# MDX content pages are part of a commit. Both values live in package.json and
+# are rendered by src/app/page.mdx.
+#
+# Enabled via `git config core.hooksPath .githooks` (run automatically by the
+# package.json "prepare" script on install).
+
+# Staged content pages: any added/copied/modified/renamed *.mdx under src/app.
+staged_mdx=$(git diff --cached --name-only --diff-filter=ACMR -- 'src/app/*.mdx' 'src/app/**/*.mdx')
+
+if [ -z "$staged_mdx" ]; then
+  exit 0
+fi
+
+node scripts/update-docs-stamp.mjs </dev/null
