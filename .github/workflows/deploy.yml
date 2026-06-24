@@ -21,6 +21,8 @@ jobs:
       AWS_PROFILE: sops-ri
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0  # full history required for per-page last-modified dates (remark-modified-time)
 
       - uses: pnpm/action-setup@v4
 

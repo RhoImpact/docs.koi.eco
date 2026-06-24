@@ -110,38 +110,28 @@ function getSections(node) {
 }
 
 function rehypeAddLastModified() {
-  // This function adds a lastModified export to the tree if it exists, or sets it to the current date if it doesn't.
-  // It also formats the date to be in the format YYYY-MM-DD.
-  // It is accessible in a page as {lastModified}.
-  // The original value is set by the remark-modified-time plugin.
+  // Exports the git-derived lastModified date as a named export on each MDX page.
+  // Formats to YYYY-MM-DD and accessible in a page as {lastModified}.
+  // The value is set upstream by the remarkModifiedTime plugin.
   return (tree, file) => {
     const lastModified = file.data.lastModified;
-    if (lastModified) {
-      const exportStr = `export const lastModified = "${lastModified.split('T')[0]}";`;
-      tree.children.push({
-        type: 'mdxjsEsm',
-        value: exportStr,
-        data: {
-          estree: acorn.parse(exportStr, {
-            sourceType: 'module',
-            ecmaVersion: 'latest',
-          }),
-        },
-      });
-    } else {
-      const now = new Date().toISOString().split('T')[0];
-      const exportStr = `export const lastModified = "${now}";`;
-      tree.children.push({
-        type: 'mdxjsEsm',
-        value: exportStr,
-        data: {
-          estree: acorn.parse(exportStr, {
-            sourceType: 'module',
-            ecmaVersion: 'latest',
-          }),
-        },
-      });
+    if (!lastModified) {
+      throw new Error(
+        `[rehypeAddLastModified] file.data.lastModified is missing for ${file.history[0]}. ` +
+          `The remarkModifiedTime plugin should have set it.`
+      )
     }
+    const exportStr = `export const lastModified = "${lastModified.split('T')[0]}";`;
+    tree.children.push({
+      type: 'mdxjsEsm',
+      value: exportStr,
+      data: {
+        estree: acorn.parse(exportStr, {
+          sourceType: 'module',
+          ecmaVersion: 'latest',
+        }),
+      },
+    });
   };
 }
 
